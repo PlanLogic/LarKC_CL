@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="http://marketplace.eclipse.org/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eclipse Plugins, Bundles and Products - Eclipse Marketplace</title>
+    <link>http://marketplace.eclipse.org/</link>
+    <description></description>
+    <language>en</language>
+     <atom:link href="http://marketplace.eclipse.org/rss.xml" rel="self" type="application/rss+xml" />
+      <item>
+    <title>LiClipse</title>
+    <link>http://marketplace.eclipse.org/content/liclipse</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/logo_110_80.png&quot; width=&quot;110&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2013-10-22 07:26&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2017-01-31 13:05&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22Brainwy%20Software%20Ltda%22&quot;&gt;Brainwy Software Ltda&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/fzadroznyr0g/listings&quot; title=&quot;Fabio Zadrozny&quot;&gt;Fabio Zadrozny&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;LiClipse: Lightweight editors, theming and usability improvements for Eclipse&lt;/p&gt;
+&lt;p&gt;LiClipse provides a number of enhancements to the Eclipse platform:&lt;/p&gt;
+&lt;p&gt;* Improved theming support based on Eclipse 4 improvements (and scrollbar theming).&lt;/p&gt;
+&lt;p&gt;* Improved text search capabilities (see: &lt;a href=&quot;http://www.liclipse.com/search.html&quot;&gt;http://www.liclipse.com/search.html&lt;/a&gt;). &lt;/p&gt;
+&lt;p&gt;* A fast editor supporting many languages builtin (i.e.: currently it supports out of the box CoffeScript, C/C++, CSS, Dart, Django Templates, HTML, Mako Templates, Java, JavaScript, Python, RST, SCSS, StringTemplate, XML, YAML, Nim, Go, Jinja2, Linux shell files, Windows bat files, PERL, Markdown, PHP, RAML, Ruby, Swift).&lt;/p&gt;
+&lt;p&gt;* Support for TextMate bundles (see: &lt;a href=&quot;http://www.liclipse.com/textmate_bundles.html&quot;&gt;http://www.liclipse.com/textmate_bundles.html&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;* It&#039;s easy to add support for a new language (mainly create a .liclipse file -- see: &lt;a href=&quot;http://www.liclipse.com/supported_languages.html&quot;&gt;http://www.liclipse.com/supported_languages.html&lt;/a&gt; for details)&lt;/p&gt;
+&lt;p&gt;* Usability improvements for all Eclipse editors (currently multi-cursors: specifying and editing multiple locations and vertical indent guides in any editor).&lt;/p&gt;
+&lt;p&gt;* Bundling of many useful plugins in a single package (currently it also bundles Eclipse Color Theme, StartExplorer, AnyEdit, EGit and PyDev).&lt;/p&gt;
+&lt;p&gt;* Native installers (with a provided JRE) are available for Linux, Mac and Windows.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_end --&gt;</description>
+     <pubDate>Tue, 22 Oct 2013 11:26:19 +0000</pubDate>
+ <dc:creator>fzadroznyr0g</dc:creator>
+ <guid isPermaLink="false">1261140 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/liclipse#comments</comments>
+  </item>
+  <item>
+    <title>PyDev - Python IDE for Eclipse</title>
+    <link>http://marketplace.eclipse.org/content/pydev-python-ide-eclipse</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/pydev_banner_110_80.png&quot; width=&quot;110&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Wed, 2004-07-07 08:06&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2017-01-31 11:58&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22Brainwy%20Software%22&quot;&gt;Brainwy Software&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/fzadroznyr0g/listings&quot; title=&quot;Fabio Zadrozny&quot;&gt;Fabio Zadrozny&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;PyDev is a plugin that enables Eclipse to be used as a Python IDE (supporting also Jython and IronPython). &lt;/p&gt;
+&lt;p&gt;It uses advanced type inference techniques which allow it to provide things such as code completion and code analysis, besides providing  a debugger, interactive console, refactoring, tokens browser, django integration, etc.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Homepage:&lt;/strong&gt;&lt;br /&gt;
+    &lt;a href=&quot;http://www.pydev.org&quot;&gt;pydev.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Getting Started:&lt;/strong&gt;&lt;br /&gt;
+    &lt;a href=&quot;http://www.pydev.org/manual_101_root.html&quot;&gt;Getting Started (read to make sure you can get most out of PyDev)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Feature Matrix:&lt;/strong&gt;&lt;br /&gt;
+    &lt;a href=&quot;http://www.pydev.org/manual_adv_features.html&quot;&gt;pydev.org/manual_adv_features.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;General questions:&lt;/strong&gt;&lt;br /&gt;
+    &lt;a href=&quot;http://stackoverflow.com/questions/tagged/pydev&quot;&gt;StackOverflow (with the PyDev tag)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Report issues/features: &lt;/strong&gt;&lt;br /&gt;
+    &lt;a href=&quot;https://sw-brainwy.rhcloud.com&quot;&gt;Brainwy Tracker&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Code questions:&lt;/strong&gt;&lt;br /&gt;
+    &lt;a href=&quot;http://lists.sourceforge.net/lists/listinfo/pydev-code&quot;&gt;pydev-code list&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Source Code:&lt;/strong&gt;&lt;br /&gt;
+    &lt;a href=&quot;https://github.com/fabioz/Pydev&quot;&gt;github.com/fabioz/Pydev&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Blog:&lt;/strong&gt;&lt;br /&gt;
+    &lt;a href=&quot;http://pydev.blogspot.com&quot;&gt;pydev.blogspot.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Below are some of its highlighted features.&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Python&lt;/strong&gt;, &lt;strong&gt;Jython&lt;/strong&gt; and &lt;strong&gt;IronPython&lt;/strong&gt; support&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Django integration&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Django templates editor&lt;/strong&gt; (requires LiClipse)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Code completion&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Debugger&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unittest integration&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Interactive Console&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Code analysis&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Go to definition (F3)&lt;/li&gt;
+&lt;li&gt;Find References (Ctrl+Shift+G)&lt;/li&gt;
+&lt;li&gt;Refactoring&lt;/li&gt;
+&lt;li&gt;Google App Engine integration&lt;/li&gt;
+&lt;li&gt;Syntax highlighting&lt;/li&gt;
+&lt;li&gt;Parser errors&lt;/li&gt;
+&lt;li&gt;Outline view&lt;/li&gt;
+&lt;li&gt;Tabs or spaces preferences&lt;/li&gt;
+&lt;li&gt;Smart indent / dedent&lt;/li&gt;
+&lt;li&gt;Comment / uncomment / comment blocks&lt;/li&gt;
+&lt;li&gt;Code folding&lt;/li&gt;
+&lt;li&gt;TODO tasks&lt;/li&gt;
+&lt;li&gt;Content Assistants (Ctrl+1)&lt;/li&gt;
+&lt;li&gt;Scripting with Jython&lt;/li&gt;
+&lt;li&gt;Mark Occurrences&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_end --&gt;</description>
+     <pubDate>Wed, 07 Jul 2004 12:06:36 +0000</pubDate>
+ <dc:creator>fzadroznyr0g</dc:creator>
+ <guid isPermaLink="false">114 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/pydev-python-ide-eclipse#comments</comments>
+  </item>
+  <item>
+    <title>Cantata</title>
+    <link>http://marketplace.eclipse.org/content/cantata</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/Eclipse%20110%20x%2080%20Cantata%20Logo.png&quot; width=&quot;110&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Thu, 2010-10-14 10:54&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2017-01-31 11:21&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22QA%20Systems%20GmbH%22&quot;&gt;QA Systems GmbH&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/jwilliamstxw/listings&quot; title=&quot;Jasmine Williams&quot;&gt;Jasmine Williams&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;Cantata advanced high productivity techniques allow developers to dynamically prove their code with intelligent unit and integration testing, in the most cost effective manner.  The Cantata Eclipse user interface provides a complete test development environment for the creation, execution and analysis of unit and integration tests. It easily integrates with the developer desktop, compilers and embedded target platforms. It is available Built-on-Eclipse and as Eclipse Ready plug-ins.  The main features are:&lt;/p&gt;
+&lt;p&gt;•	Unit and Integration Testing: on both host and embedded target platforms&lt;br /&gt;
+•	Full support for: ANSI C (89 and 99), ISO C++, EC++ and Java coverage&lt;br /&gt;
+•	Automated Test Script generation in C/C++&lt;br /&gt;
+•	Editing via synchronised Eclipse graphical plug-in and CDT&lt;br /&gt;
+•	Black-Box, White-Box, OO, and Robustness test case styles&lt;br /&gt;
+•	Automatic generation of complete baseline of unit tests for legacy C code&lt;br /&gt;
+•	Integrated Coverage Analysis (C/C++, Java)&lt;br /&gt;
+•	Stubbing and Wrapping: to simulate and control external interfaces&lt;br /&gt;
+•	Static analysis: code complexity and size metrics&lt;br /&gt;
+•	Fully qualifiabl;e for safety critical use&lt;/p&gt;
+&lt;p&gt;Unit / Integration Testing:&lt;/p&gt;
+&lt;p&gt;Automated production of structured tests in C/C++, supporting black box large data sets, robustness, white-box and object oriented testing methodologies.&lt;/p&gt;
+&lt;p&gt;Stubs &amp;amp; Isolates - programmable simulations of called objects.&lt;/p&gt;
+&lt;p&gt;Wrapping - programmable interceptions to called objects.&lt;/p&gt;
+&lt;p&gt;Automated accessibility instrumentation provides access to code internals (private and static)&lt;/p&gt;
+&lt;p&gt;Detailed results with tree views and drill-down for easy navigation to individual tests in XML and ASCII.&lt;/p&gt;
+&lt;p&gt;Coverage Analysis:&lt;br /&gt;
+Objective measure of how effective testing has been in executing the source code. &lt;/p&gt;
+&lt;p&gt;Code coverage metrics in configurable RuleSets provided are:&lt;br /&gt;
+- Entry points&lt;br /&gt;
+- Call Returns&lt;br /&gt;
+- Statements&lt;br /&gt;
+- Basic Blocks&lt;br /&gt;
+- Decisions (branches)&lt;br /&gt;
+- Relational Operators&lt;br /&gt;
+- MC/DC (Masking and Unique Cauee for DO-178B)&lt;/p&gt;
+&lt;p&gt;Coverage Checks - integrated into dynamic tests resulting in Pass/Fail for coverage requirements.&lt;/p&gt;
+&lt;p&gt;Option for test coverage optimisation - pick the minimum set of test cases for maximum coverage. &lt;/p&gt;
+&lt;p&gt;Test Java with JUnit tests with integrated coverage by test case for Entry-Points, Statements &amp;amp; Decisions.&lt;/p&gt;
+&lt;p&gt;Coverage Trees for drill-down to annotated source, and results reported by individual syntax and test case.&lt;/p&gt;
+&lt;p&gt;Static Analysis:&lt;br /&gt;
+300+ source code metrics - used to help enforce code quality standards. &lt;/p&gt;
+&lt;p&gt;Metrics reports in .csv format can be imported into spreadsheets for graphical and numerical analysis.&lt;/p&gt;
+&lt;p&gt;Procedural metric counts and scientific metrics sets.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_end --&gt;</description>
+     <pubDate>Thu, 14 Oct 2010 14:54:07 +0000</pubDate>
+ <dc:creator>jwilliamstxw</dc:creator>
+ <guid isPermaLink="false">15434 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/cantata#comments</comments>
+  </item>
+  <item>
+    <title>Java 9 Support (BETA) for Oxygen</title>
+    <link>http://marketplace.eclipse.org/content/java-9-support-beta-oxygen</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/default_images/default_2.png&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2015-06-16 11:11&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2017-01-31 07:04&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22The%20Eclipse%20Foundation%22&quot;&gt;The Eclipse Foundation&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/wbeaton/listings&quot; title=&quot;Wayne Beaton&quot;&gt;Wayne Beaton&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;Java™ 9 support has not yet landed in our standard download packages. But you can add an early access preview to your existing Eclipse Oxygen (4.7) install.&lt;/p&gt;
+&lt;p&gt;The Eclipse Java™ 9 Support (BETA) contains the following:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;ability to add JRE and JDK 9 as installed JRE&lt;/li&gt;
+&lt;li&gt;support for JavaSE-9 execution environment&lt;/li&gt;
+&lt;li&gt;ability to create Java and Plug-in projects that use a JRE or JDK 9&lt;/li&gt;
+&lt;li&gt;ability to compile modules that are part of a Java project&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Notes:&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;You need the most recent Oxygen (4.7) Eclipse SDK milestone or integration build&lt;/li&gt;
+&lt;li&gt;You need a recent Java™ 9 JDK from &lt;a href=&quot;https://jdk9.java.net/&quot;&gt;https://jdk9.java.net/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Recent Java 9 previews require you to add &lt;code&gt;--add-modules=java.se.ee&lt;/code&gt; (&lt;code&gt;-addmods java.se.ee&lt;/code&gt; for older Java 9 builds) to the vmargs when launching Eclipse, see &lt;a href=&quot;https://www.eclipse.org/eclipse/news/4.6/platform.php#java-9&quot;&gt;https://www.eclipse.org/eclipse/news/4.6/platform.php#java-9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;For the modular dependency between projects to work (without explicit project dependency) the following needs to be added to the .classpath manually:&lt;br /&gt;&lt;i&gt; &amp;lt;classpathentry kind=&quot;con&quot; path=&quot;org.eclipse.jdt.MODULE_PATH&quot;/&amp;gt; &lt;/i&gt;
+&lt;p&gt;If this does not seem to have an effect, the project should be closed and reopened, as a workaround. Once it is done, the entry &lt;b&gt;Module Source Path&lt;/b&gt; should appear as a child in the Package Explorer and projects referenced in the module-info should be visible under the Module Source Path just like they do under the Referenced Libraries entry.
+&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Note: This has been tested with JDK 9 early access build 149. Other versions may not work with this patch.&lt;/b&gt; &lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;This is an implementation of an early-draft specification developed under the Java Community Process (JCP) and is made available for testing and evaluation purposes only. The code is not compatible with any specification of the JCP.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_end --&gt;</description>
+     <pubDate>Tue, 16 Jun 2015 15:11:01 +0000</pubDate>
+ <dc:creator>wbeaton</dc:creator>
+ <guid isPermaLink="false">2393593 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/java-9-support-beta-oxygen#comments</comments>
+  </item>
+  <item>
+    <title>Kotlin Plugin for Eclipse</title>
+    <link>http://marketplace.eclipse.org/content/kotlin-plugin-eclipse</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/em_size.png&quot; width=&quot;110&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Wed, 2015-03-25 19:04&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2017-01-31 06:32&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22JetBrains%22&quot;&gt;JetBrains&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/jjetbrains/listings&quot; title=&quot;JB JetBrains&quot;&gt;JB JetBrains&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;p&gt;The Kotlin Plugin for Eclipse helps you write, run, debug and test programs in &lt;a href=&quot;http://kotlinlang.org/&quot;&gt;Kotlin language&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_end --&gt;</description>
+     <pubDate>Wed, 25 Mar 2015 23:04:10 +0000</pubDate>
+ <dc:creator>jjetbrains</dc:creator>
+ <guid isPermaLink="false">2257536 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/kotlin-plugin-eclipse#comments</comments>
+  </item>
+  <item>
+    <title>MintJams FetchMail</title>
+    <link>http://marketplace.eclipse.org/content/mintjams-fetchmail</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/default_images/default_2.png&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Sun, 2015-01-25 07:10&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2017-01-31 04:03&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22MintJams%20Inc.%22&quot;&gt;MintJams Inc.&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/kfukudar10/listings&quot; title=&quot;Kenichi Fukuda&quot;&gt;Kenichi Fukuda&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;div&gt;MintJams FetchMail is mail-retrieval and forwarding tool.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_end --&gt;</description>
+     <pubDate>Sun, 25 Jan 2015 12:10:47 +0000</pubDate>
+ <dc:creator>kfukudar10</dc:creator>
+ <guid isPermaLink="false">2156826 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/mintjams-fetchmail#comments</comments>
+  </item>
+  <item>
+    <title>MintJams PKI Tools</title>
+    <link>http://marketplace.eclipse.org/content/mintjams-pki-tools</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/pkilogo.png&quot; width=&quot;110&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Wed, 2013-05-15 04:39&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2017-01-31 04:02&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22MintJams%20Inc.%22&quot;&gt;MintJams Inc.&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/kfukudar10/listings&quot; title=&quot;Kenichi Fukuda&quot;&gt;Kenichi Fukuda&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;div&gt;MintJams PKI Tools is a Public Key Infrastructure (PKI) starting tool. It allows to manage own key pairs and associated certificates and build the Certification Authorities.&lt;/div&gt;
+
+&lt;div style=&quot;padding-top:1em; clear:both;&quot;&gt;
+  &lt;div style=&quot;margin:0; padding:0; width:100%;&quot;&gt;
+    &lt;div style=&quot;margin:0; padding:0; width:258px; float:right;&quot;&gt;&lt;img width=&quot;258&quot; height=&quot;148&quot; src=&quot;http://www.mintjams.co.jp/images/marketplace.eclipse.org/pki/cert_wiz.png&quot; alt=&quot;X.509 Certificate wizard&quot; title=&quot;&quot; /&gt;&lt;/div&gt;
+    &lt;div style=&quot;margin:0; padding:0; margin-right:264px;&quot;&gt;
+      &lt;div style=&quot;font-weight:bold;&quot;&gt;Create Unlimited Certificates&lt;/div&gt;
+      &lt;ul style=&quot;margin:0; padding:0;&quot;&gt;&lt;li&gt;X.509 Certificate wizard: Makes it easy to create certificates.&lt;/li&gt;
+        &lt;li&gt;PKI Tools supports the following algorithms for key pair generation: RSA, DSA and EC.&lt;/li&gt;
+        &lt;li&gt;Created identities are stored in a PKI Storage and protected with a password.&lt;/li&gt;
+      &lt;/ul&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;padding-top:1em; clear:both;&quot;&gt;
+  &lt;div style=&quot;margin:0; padding:0; width:100%;&quot;&gt;
+    &lt;div style=&quot;margin:0; padding:0; width:258px; float:left;&quot;&gt;&lt;img width=&quot;258&quot; height=&quot;148&quot; src=&quot;http://www.mintjams.co.jp/images/marketplace.eclipse.org/pki/cert_view.png&quot; alt=&quot;Certificates view&quot; title=&quot;&quot; /&gt;&lt;/div&gt;
+    &lt;div style=&quot;margin:0; padding:0; margin-left:268px;&quot;&gt;
+      &lt;div style=&quot;font-weight:bold;&quot;&gt;Certificates View&lt;/div&gt;
+      &lt;ul style=&quot;margin:0; padding:0; float:left;&quot;&gt;&lt;li&gt;Lists all certificates.&lt;/li&gt;
+        &lt;li&gt;Grouping items by organization.&lt;/li&gt;
+        &lt;li&gt;Exports the identities into a KeyStore file.&lt;/li&gt;
+        &lt;li&gt;Double-click to open an item in X.509 Certificate editor.&lt;/li&gt;
+      &lt;/ul&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;padding-top:1em; clear:both;&quot;&gt;
+  &lt;div style=&quot;margin:0; padding:0; width:100%;&quot;&gt;
+    &lt;div style=&quot;margin:0; padding:0; width:258px; float:right;&quot;&gt;&lt;img width=&quot;258&quot; height=&quot;148&quot; src=&quot;http://www.mintjams.co.jp/images/marketplace.eclipse.org/pki/cert_edit.png&quot; alt=&quot;X.509 Certificate editor&quot; title=&quot;&quot; /&gt;&lt;/div&gt;
+    &lt;div style=&quot;margin:0; padding:0; margin-right:264px;&quot;&gt;
+      &lt;div style=&quot;font-weight:bold;&quot;&gt;X.509 Certificate Editor&lt;/div&gt;
+      &lt;ul style=&quot;margin:0; padding:0;&quot;&gt;&lt;li&gt;Views all X.509 certificate fields.&lt;/li&gt;
+        &lt;li&gt;Certificate Signing Request (CSR) is auto-generated and can be copied for sending to a Certification Authority (CA).&lt;/li&gt;
+        &lt;li&gt;Public key can be copied for pasting into OpenSSH authorized_keys file.&lt;/li&gt;
+      &lt;/ul&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;padding-top:1em; clear:both;&quot;&gt;
+&lt;div style=&quot;font-weight:bold;&quot;&gt;Perspectives:&lt;/div&gt;
+&lt;ul style=&quot;margin:0; padding:0;&quot;&gt;&lt;li&gt;PKI&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+
+&lt;div style=&quot;padding:1em 0; clear:both;&quot;&gt;
+&lt;div style=&quot;font-weight:bold;&quot;&gt;Prerequisites:&lt;/div&gt;
+&lt;ul style=&quot;margin:0; padding:0;&quot;&gt;&lt;li&gt;Java SE 7 or 8&lt;/li&gt;
+&lt;li&gt;Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_end --&gt;</description>
+     <pubDate>Wed, 15 May 2013 08:39:18 +0000</pubDate>
+ <dc:creator>kfukudar10</dc:creator>
+ <guid isPermaLink="false">855870 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/mintjams-pki-tools#comments</comments>
+  </item>
+  <item>
+    <title>MintJams Terminal Plug-in</title>
+    <link>http://marketplace.eclipse.org/content/mintjams-terminal-plug</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/default_images/no_image.png&quot; width=&quot;110&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2013-06-11 15:02&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2017-01-31 04:01&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22MintJams%20Inc.%22&quot;&gt;MintJams Inc.&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/kfukudar10/listings&quot; title=&quot;Kenichi Fukuda&quot;&gt;Kenichi Fukuda&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;div&gt;MintJams Terminal Plug-in allows to open a terminal window in Eclipse. It adds a following two pop-up menu item to the Package Explorer and Project Explorer.&lt;/div&gt;
+
+&lt;div style=&quot;padding-top:1em; clear:both;&quot;&gt;
+  &lt;div style=&quot;margin:0; padding:0; width:100%;&quot;&gt;
+    &lt;div style=&quot;margin:0; padding:0; width:208px; float:right;&quot;&gt;&lt;img width=&quot;208&quot; height=&quot;49&quot; src=&quot;http://www.mintjams.co.jp/images/marketplace.eclipse.org/tp/popup_menu.png&quot; alt=&quot;Open Terminal Here / Open Terminal&quot; title=&quot;&quot; /&gt;&lt;/div&gt;
+    &lt;div style=&quot;margin:0; padding:0; margin-right:216px;&quot;&gt;
+      &lt;ul style=&quot;margin:0;  padding:0;&quot;&gt;&lt;li&gt;Open Terminal Here: Terminal window is opened in a editor area. The current directory of the terminal is the directory which was selected with the popup menu.&lt;/li&gt;
+        &lt;li&gt;Open Terminal: Terminal window is opened in a editor area. The current directory of the terminal is current user&#039;s home directory.&lt;/li&gt;
+      &lt;/ul&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;margin-bottom:1em;&quot;&gt;
+  &lt;div style=&quot;font-weight:bold;&quot;&gt;New features in v2.0.5:&lt;/div&gt;
+  &lt;ul style=&quot;margin-top:0;&quot;&gt;&lt;li&gt;Integrate with Console view.&lt;/li&gt;
+  &lt;/ul&gt;&lt;div style=&quot;font-weight:bold;&quot;&gt;New features in v1.1.0:&lt;/div&gt;
+  &lt;ul style=&quot;margin-top:0;&quot;&gt;&lt;li&gt;Pasting file path into the Terminal via drag-and-drop.&lt;/li&gt;
+  &lt;/ul&gt;&lt;/div&gt;
+
+&lt;div style=&quot;margin-bottom:1em;&quot;&gt;
+  &lt;div style=&quot;font-weight:bold;&quot;&gt;Features:&lt;/div&gt;
+  &lt;ul style=&quot;margin-top:0;&quot;&gt;&lt;li&gt;Command-line terminal for Windows&lt;/li&gt;
+    &lt;li&gt;Local shell terminal for Mac OS X&lt;/li&gt;
+  &lt;/ul&gt;&lt;/div&gt;
+
+&lt;div style=&quot;margin-bottom:1em;&quot;&gt;&lt;div style=&quot;font-weight:bold;&quot;&gt;Related:&lt;/div&gt;
+&lt;ul style=&quot;margin-top:0;&quot;&gt;&lt;li&gt;&lt;a href=&quot;http://www.slideshare.net/mintjams/creating-a-web-application-with-javascript-jquery?qid=bb946b81-bae1-4124-ae7b-897841fe552f&quot;&gt;Creating a Web Application with JavaScript + jQuery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.slideshare.net/mintjams/event-handling-basics?qid=09d056d6-e14d-4dd4-a09c-848917c095af&quot;&gt;Event Handling Basics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_end --&gt;</description>
+     <pubDate>Tue, 11 Jun 2013 19:02:13 +0000</pubDate>
+ <dc:creator>kfukudar10</dc:creator>
+ <guid isPermaLink="false">909243 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/mintjams-terminal-plug#comments</comments>
+  </item>
+  <item>
+    <title>MintJams Content Management Tools</title>
+    <link>http://marketplace.eclipse.org/content/mintjams-content-management-tools</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/cmtlogo.png&quot; width=&quot;110&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Mon, 2012-08-27 02:05&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2017-01-31 04:00&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22MintJams%20Inc.%22&quot;&gt;MintJams Inc.&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/kfukudar10/listings&quot; title=&quot;Kenichi Fukuda&quot;&gt;Kenichi Fukuda&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;div style=&quot;margin-bottom:1em;&quot;&gt;The MintJams Content Management Tools is an innovative content management tool. MintJams Content Management Tools enables you to connect, access and manage local storage, WebDAV storage, and FTP storage using same user interface in powerful new ways. Designed to meet the needs of today&#039;s business, MintJams Content Management Tools helps you get more done -- easier, faster, better.
+&lt;/div&gt;
+
+&lt;div style=&quot;margin-bottom:3em;&quot;&gt;
+&lt;a href=&quot;http://www.slideshare.net/mintjams/creating-a-web-application-with-javascript-jquery?qid=bb946b81-bae1-4124-ae7b-897841fe552f&quot;&gt;Creating a Web Application with JavaScript + jQuery&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://www.slideshare.net/mintjams/event-handling-basics?qid=09d056d6-e14d-4dd4-a09c-848917c095af&quot;&gt;Event Handling Basics&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://www.slideshare.net/mintjams/adding-social-login-with-bpmn-20?qid=ef98a24b-4bea-43e3-a13b-ea356349dc1c&quot;&gt;Adding Social Login with BPMN 2.0&lt;/a&gt;&lt;br /&gt;&lt;/div&gt;
+
+&lt;div style=&quot;margin-bottom:1em;&quot;&gt;&lt;div style=&quot;font-weight:bold;&quot;&gt;New features in v3.12.0:&lt;/div&gt;
+&lt;ul style=&quot;margin-top:0;&quot;&gt;&lt;li&gt;Support for Amazon S3&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+
+&lt;div style=&quot;margin-bottom:1em;&quot;&gt;&lt;div style=&quot;font-weight:bold;&quot;&gt;New features in v2.9.0:&lt;/div&gt;
+&lt;ul style=&quot;margin-top:0;&quot;&gt;&lt;li&gt;Support for SSH/local terminal (integrate with &lt;a href=&quot;http://marketplace.eclipse.org/content/mintjams-terminal-plug&quot;&gt;Terminal plug-in&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+
+&lt;div style=&quot;margin-bottom:1em;&quot;&gt;&lt;div style=&quot;font-weight:bold;&quot;&gt;New features in v2.8.50:&lt;/div&gt;
+&lt;ul style=&quot;margin-top:0;&quot;&gt;&lt;li&gt;SSH login with the managed identity (integrate with &lt;a href=&quot;http://marketplace.eclipse.org/content/mintjams-pki-tools&quot;&gt;PKI tools&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+
+&lt;div style=&quot;margin-bottom:1em;&quot;&gt;&lt;div style=&quot;font-weight:bold;&quot;&gt;Perspectives:&lt;/div&gt;
+&lt;ul style=&quot;margin-top:0;&quot;&gt;&lt;li&gt;Content Management&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+
+&lt;div style=&quot;margin-bottom:1em;&quot;&gt;&lt;div style=&quot;font-weight:bold;&quot;&gt;Team providers:&lt;/div&gt;
+&lt;ul style=&quot;margin-top:0;&quot;&gt;&lt;li&gt;Content Management Tools&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+
+&lt;div style=&quot;margin-bottom:1em;&quot;&gt;&lt;div style=&quot;font-weight:bold;&quot;&gt;Supported protocols and schemes:&lt;/div&gt;
+&lt;div style=&quot;margin-left:1em;&quot;&gt;&lt;b&gt;WebDAV storage&lt;/b&gt;&lt;/div&gt;
+&lt;ul style=&quot;margin-top:0;&quot;&gt;&lt;li&gt;HTTP) webdav://host:[port]/...&lt;/li&gt;
+&lt;li&gt;HTTP over SSL) webdavs://host:[port]/...&lt;/li&gt;
+&lt;/ul&gt;&lt;div style=&quot;margin-left:1em;&quot;&gt;&lt;b&gt;FTP storage&lt;/b&gt;&lt;/div&gt;
+&lt;ul style=&quot;margin-top:0;&quot;&gt;&lt;li&gt;FTP) &lt;a href=&quot;ftp://host:[port]/&quot;&gt;ftp://host:[port]/&lt;/a&gt;...&lt;/li&gt;
+&lt;li&gt;FTP over SSL) ftps://host:[port]/... OR ftpes://host:[port]/...&lt;/li&gt;
+&lt;li&gt;FTP over SSH) &lt;a href=&quot;sftp://host:[port]/&quot;&gt;sftp://host:[port]/&lt;/a&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_end --&gt;</description>
+     <pubDate>Mon, 27 Aug 2012 06:05:12 +0000</pubDate>
+ <dc:creator>kfukudar10</dc:creator>
+ <guid isPermaLink="false">390933 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/mintjams-content-management-tools#comments</comments>
+  </item>
+  <item>
+    <title>MintJams Content Management Tools Standard</title>
+    <link>http://marketplace.eclipse.org/content/mintjams-content-management-tools-standard</link>
+    <description>&lt;div class=&quot;field field-name-field-resource-image field-type-image field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;img class=&quot;img-responsive&quot; src=&quot;http://marketplace.eclipse.org/sites/default/files/cmtlogo_0.png&quot; width=&quot;110&quot; height=&quot;80&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-created field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Created:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Wed, 2010-05-05 23:48&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;field field-name-shared-date-updated field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Date Updated:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;Tue, 2017-01-31 03:59&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;a href=&quot;/search/content/%22MintJams%20Inc.%22&quot;&gt;MintJams Inc.&lt;/a&gt;&lt;div class=&quot;field field-name-shared-submitted-by field-type-text field-label-inline clearfix&quot;&gt;&lt;div class=&quot;field-label&quot;&gt;Submitted by:&amp;nbsp;&lt;/div&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;a href=&quot;/user/kfukudar10/listings&quot; title=&quot;Kenichi Fukuda&quot;&gt;Kenichi Fukuda&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_start --&gt;&lt;div class=&quot;field field-name-body field-type-text-with-summary field-label-hidden&quot;&gt;&lt;div class=&quot;field-items&quot;&gt;&lt;div class=&quot;field-item even&quot;&gt;&lt;div style=&quot;margin-bottom:1em;&quot;&gt;MintJams Content Management Tools Standard is user interface for CR5.&lt;/div&gt;
+
+&lt;div style=&quot;margin-bottom:3em;&quot;&gt;
+&lt;a href=&quot;http://www.slideshare.net/mintjams/creating-a-web-application-with-javascript-jquery?qid=bb946b81-bae1-4124-ae7b-897841fe552f&quot;&gt;Creating a Web Application with JavaScript + jQuery&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://www.slideshare.net/mintjams/event-handling-basics?qid=09d056d6-e14d-4dd4-a09c-848917c095af&quot;&gt;Event Handling Basics&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://www.slideshare.net/mintjams/adding-social-login-with-bpmn-20?qid=ef98a24b-4bea-43e3-a13b-ea356349dc1c&quot;&gt;Adding Social Login with BPMN 2.0&lt;/a&gt;&lt;br /&gt;&lt;/div&gt;
+
+&lt;div style=&quot;margin-top: 1em;&quot;&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Documents:&lt;/span&gt;&lt;br /&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;http://www.slideshare.net/mintjams/getting-started-31643179&quot;&gt;Getting Started&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.slideshare.net/mintjams/managing-users-and-groups&quot;&gt;Managing Users and Groups&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.slideshare.net/mintjams/recommended-securitysettings&quot;&gt;Recommended Security Settings&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- google_ad_section_end --&gt;</description>
+     <pubDate>Thu, 06 May 2010 03:48:40 +0000</pubDate>
+ <dc:creator>kfukudar10</dc:creator>
+ <guid isPermaLink="false">1200 at http://marketplace.eclipse.org</guid>
+ <comments>http://marketplace.eclipse.org/content/mintjams-content-management-tools-standard#comments</comments>
+  </item>
+  </channel>
+</rss>

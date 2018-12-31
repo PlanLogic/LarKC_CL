@@ -1,0 +1,6 @@
+decompile.count=0
+eclipse.preferences.version=1
+org.sf.feeling.decompiler.check_update=false
+org.sf.feeling.decompiler.reusebuff=true
+org.sf.feeling.decompiler.type=FernFlower
+org.sf.feeling.decompiler.use_eclipse_formatter=false

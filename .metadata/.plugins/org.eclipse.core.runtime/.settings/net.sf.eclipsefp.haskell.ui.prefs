@@ -1,0 +1,6 @@
+BUILDWRAPPER_EXECUTABLE=C\:\\Users\\Administrator\\AppData\\Roaming\\cabal\\bin\\buildwrapper.exe
+HLINT_EXECUTABLE=/root/.eclipsefp/sandbox/bin/hlint
+SCION_BROWSER_EXTRA_HOOGLE_PATH=/root/.eclipsefp/sandbox/bin/hoogle
+SCION_BROWSER_SERVER_EXECUTABLE=C\:\\Users\\Administrator\\AppData\\Roaming\\cabal\\bin\\scion-browser.exe
+STYLISHHASKELL_EXECUTABLE=/root/.eclipsefp/sandbox/bin/stylish-haskell
+eclipse.preferences.version=1

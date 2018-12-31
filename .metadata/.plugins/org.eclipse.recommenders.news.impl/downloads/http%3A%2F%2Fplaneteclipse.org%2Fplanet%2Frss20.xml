@@ -1,0 +1,817 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+
+<channel>
+	<title>Planet Eclipse</title>
+	<link>http://planeteclipse.org/planet/</link>
+	<language>en</language>
+	<description>Planet Eclipse - http://planeteclipse.org/planet/</description>
+
+<item>
+	<title>Tom Schindl: e(fx)clipse runtime library – Dealing with listeners on JavaFX-Observables</title>
+	<guid isPermaLink="false">http://tomsondev.bestsolution.at/?p=4940</guid>
+	<link>https://tomsondev.bestsolution.at/2017/01/31/efxclipse-runtime-library-dealing-with-listeners-on-javafx-observables/</link>
+	<description>&lt;p&gt;Now that the e(fx)clipse runtime code base is available to any application developer (&lt;a href=&quot;https://tomsondev.bestsolution.at/2017/01/26/make-it-easy-to-consume-efxclipse-libraries-in-maven-or-gradle/&quot;&gt;see this blog post&lt;/a&gt;). It is time to explore all the cool stuff it provides for Java(FX) application development.&lt;/p&gt;
+&lt;p&gt;In the next few weeks I’ll blog about new stuff and old stuff you can make use by just adding a dependency on one of our libraries. I’ll use maven in the samples because that’s what I’m most used to but IIRC things will work for gradle as well.&lt;/p&gt;
+&lt;p&gt;In this first post I’d like to draw your attention to an Utility-Class (&lt;code&gt;org.eclipse.fx.core.observable.FXObservableUtil&lt;/code&gt;) I just checked in a few minutes ago into the repository helping you to write fewer and less error prone code:&lt;/p&gt;
+&lt;h1&gt;FXObservableUtil.onChange for ObservableValue &amp;amp; Property&lt;/h1&gt;
+&lt;p&gt;Let’s take a look at a first code-pattern, I’ve noticed frequently in my JavaFX code-bases:&lt;/p&gt;
+&lt;pre class=&quot;brush: java; title: ; notranslate&quot;&gt;private StringProperty p = ...;
+
+void attachHandler() {
+   p.addListener( this::handle );
+}
+
+void detachHandler() {
+   p.removeListener( this::handle );
+}
+
+void handle(Observable ob, String ol, String ne) {
+   System.out.println( ne );
+}
+&lt;/pre&gt;
+&lt;p&gt;The code above has the following problems:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I have to declare a method with 3 arguments although I only make use of the new value&lt;/li&gt;
+&lt;li&gt;I have created a &lt;strong&gt;huuuge&lt;/strong&gt; listener leak (Arghhh!)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let’s improve the situation by using one of our core-libraries &lt;code&gt;org.eclipse.fx.core&lt;/code&gt;. Just the following to your maven build:&lt;/p&gt;
+&lt;pre class=&quot;brush: xml; title: ; notranslate&quot;&gt;...
+&amp;lt;repositories&amp;gt;
+  ...
+  &amp;lt;repository&amp;gt;
+    &amp;lt;name&amp;gt;BestSolution e(fx)clipse snapshots&amp;lt;/name&amp;gt;
+    &amp;lt;id&amp;gt;efxclipse-snapshots&amp;lt;/id&amp;gt;
+    &amp;lt;url&amp;gt;http://maven.bestsolution.at/efxclipse-snapshots/&amp;lt;/url&amp;gt;
+    &amp;lt;snapshots&amp;gt;
+      &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt;
+    &amp;lt;/snapshots&amp;gt;
+  &amp;lt;/repository&amp;gt;
+&amp;lt;/repositories&amp;gt;
+...
+&amp;lt;dependencies&amp;gt;
+  ...
+  &amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;at.bestsolution.efxclipse.rt&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;org.eclipse.fx.core&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;3.0.0-SNAPSHOT&amp;lt;/version&amp;gt;
+  &amp;lt;/dependency&amp;gt;
+&amp;lt;/dependencies&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;And now we can change our code using an Utility-Class named &lt;code&gt;org.eclipse.fx.core.observable.FXObservableUtil&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&quot;brush: java; title: ; notranslate&quot;&gt;import org.eclipse.fx.core.observable.FXObservableUtil;
+
+private StringProperty p = ...;
+private Subscription s;
+
+void attachHandler() {
+   s = FXObservableUtil.onChange( p, this::handle );
+}
+
+void detachHandler() {
+   if( s != null ) {
+     s.dispose();
+     s = null;
+   }
+}
+
+void handle(Observable ob, String ol, String ne) {
+   System.out.println( ne );
+}
+&lt;/pre&gt;
+&lt;p&gt;But we can improve the code even more because:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We can add static imports&lt;/li&gt;
+&lt;li&gt;Instead of using &lt;code&gt;FXObservableUtil#onChange(ObservableValue&amp;lt;T&amp;gt;, ChangeListener&amp;lt;T&amp;gt;)&lt;/code&gt; we can use the overloaded method with the signature &lt;code&gt;FXObservableUtil#onChange(ObservableValue&amp;lt;T&amp;gt;, Consumer&amp;lt;T&amp;gt;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;brush: java; title: ; notranslate&quot;&gt;import static org.eclipse.fx.core.observable.FXObservableUtil.*;
+
+private StringProperty p = ...;
+private Subscription s;
+
+void attachHandler() {
+   s = onChange( p, System.out::println );
+}
+
+void detachHandler() {
+   if( s != null ) {
+     s.dispose();
+     s = null;
+   }
+}
+&lt;/pre&gt;
+&lt;h1&gt;FXObservableUtil.onChange for ObservableList&lt;/h1&gt;
+&lt;p&gt;In general the JavaFX APIs is designed very well to work with &lt;code&gt;@FunctionalInterface&lt;/code&gt; types but IMHO there’s one big mistake that has happened when we look at the &lt;code&gt;Observable&lt;/code&gt;-API who strikes back in case of &lt;code&gt;ObservableList&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The class hierarchy in JavaFX looks like this:&lt;/p&gt;
+&lt;pre class=&quot;brush: plain; title: ; notranslate&quot;&gt;+ Observable
+  - addListener( InvalidationListener listener ) : void
+  + ObservableValue
+    - addListener( ChangeListener&amp;lt;? super T&amp;gt; listener )
+  + ObservableList
+    - addListener( ListChangeListener&amp;lt;? super E&amp;gt; listener )
+&lt;/pre&gt;
+&lt;p&gt;The overloading of &lt;code&gt;addListener()&lt;/code&gt; in case of &lt;code&gt;ObservableValue&lt;/code&gt; is fine as &lt;code&gt;ChangeListener#changed(ObservableValue&amp;lt;? extends T&amp;gt; , T , T )&lt;/code&gt; requires 3 arguments wherease &lt;code&gt;InvalidationListener#invalidated(Observable)&lt;/code&gt; takes only one.&lt;/p&gt;
+&lt;p&gt;In case of &lt;code&gt;ObservableList&lt;/code&gt; unfortunately &lt;code&gt;ListChangeListener#onChanged( Change&amp;lt;? extends E&amp;gt; c)&lt;/code&gt; like &lt;code&gt;InvalidationListener#invalidated(Observable)&lt;/code&gt; accepts one argument. Because of this it’s impossible to benefit of the automatic type inference done by the compiler to remove boilerplate code for lambda expressions and you need to fill in the correct type in the lambdas argument section:&lt;/p&gt;
+&lt;pre class=&quot;brush: java; title: ; notranslate&quot;&gt;ObservableList&amp;lt;String&amp;gt; l = ...
+
+l.addListener( (Change&amp;lt;? extends String&amp;gt; c) -&amp;gt; 
+  { while( c.next() ) { /* ... */ } } );
+// although you really wanted to write
+l.addListener( c -&amp;gt; { while( c.next() ) { /* ... */ } } );
+
+&lt;/pre&gt;
+&lt;p&gt;To make this usecase less type heavy &lt;code&gt;FXObservableUtil&lt;/code&gt; distinguishes between&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Invalidation: &lt;code&gt;FXObservableUtil.onInvalidate(Observable,InvalidationListener)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Change: &lt;code&gt;FXObservableUtil.onChange(ObservableList&amp;lt;E&amp;gt;,ListChangeListener&amp;lt;? super E&amp;gt;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;brush: java; title: ; notranslate&quot;&gt;import static org.eclipse.fx.core.observable.FXObservableUtil.*;
+
+ObservableList&amp;lt;String&amp;gt; l = ...
+Subscription s = 
+  onChange( l, c -&amp;gt; { while( c.next() ) { /* ... */ } } );
+&lt;/pre&gt;&lt;br /&gt;  &lt;a href=&quot;http://feeds.wordpress.com/1.0/gocomments/tomsondev.wordpress.com/4940/&quot; rel=&quot;nofollow&quot;&gt;&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;http://feeds.wordpress.com/1.0/comments/tomsondev.wordpress.com/4940/&quot; /&gt;&lt;/a&gt; &lt;img alt=&quot;&quot; border=&quot;0&quot; height=&quot;1&quot; src=&quot;https://pixel.wp.com/b.gif?host=tomsondev.bestsolution.at&amp;amp;blog=7995503&amp;amp;post=4940&amp;amp;subd=tomsondev&amp;amp;ref=&amp;amp;feed=1&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Tue, 31 Jan 2017 22:35:07 +0000</pubDate>
+</item>
+<item>
+	<title>vert.x project: An Introduction to the Vert.x Context Object</title>
+	<guid isPermaLink="true">http://vertx.io/blog/an-introduction-to-the-vert-x-context-object</guid>
+	<link>http://vertx.io/blog/an-introduction-to-the-vert-x-context-object</link>
+	<description>&lt;article&gt;&lt;p&gt;Under the hood, the vert.x Context class plays a critical part in maintaining the thread-safety guarantees of verticles. Most of the time, vert.x coders don’t need to make use of Context objects directly. However, sometimes you may need to. This article provides a brief introduction to the vert.x Context class, which covers why it’s important, and why and when you might wish to make use of the Context directly, based on the author’s experience of building a generic async library which can be used with vert.x.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;div class=&quot;admonition-block note&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;admonition-icon&quot;&gt;&lt;i class=&quot;admonition-icon fa fa-comment&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;td class=&quot;content&quot;&gt;&lt;span class=&quot;content&quot;&gt;this is a re-publication of the following &lt;a href=&quot;http://www.millross-consultants.com/vertx_context_object.html&quot;&gt;blog post&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;the-context-object-in-vert-x-a-brief-introduction&quot;&gt;The Context object in Vert.x - a brief introduction&lt;/h2&gt;
+&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Recently I’ve been looking at the possibility of building an asynchronous version of the &lt;a href=&quot;http://www.pac4j.org&quot;&gt;pac4j&lt;/a&gt; library, with a view to then migrating the &lt;a href=&quot;https://github.com/pac4j/vertx-pac4j&quot;&gt;vertx-pac4j&lt;/a&gt; implementation to use the asynchronous version of pac4j by default.&lt;/p&gt;
+&lt;p&gt;I’m keen (for obvious reasons) that the async version of pac4j is not tightly coupled to  one particular asynchronous/non-blocking framework, I decided to expose the API via the &lt;a href=&quot;http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html&quot;&gt;CompletableFuture&lt;/a&gt; class, using this to wrap values which will be determined in the future. However, I opted to use the &lt;a href=&quot;http://vertx.io&quot;&gt;vert.x&lt;/a&gt; framework for my asynchronous testing as a way of testing the API as it emerged. This in turn has led me to learn some aspects of the vert.x &lt;a href=&quot;http://vertx.io/docs/apidocs/io/vertx/core/Context.html&quot;&gt;Context&lt;/a&gt; class which I didn’t really understand before.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;div class=&quot;admonition-block note&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;admonition-icon&quot;&gt;&lt;i class=&quot;admonition-icon fa fa-comment&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;td class=&quot;content&quot;&gt;&lt;span class=&quot;content&quot;&gt;The information presented relates to Vert.x version 3.3.3. It is conceivable that later versions of vert.x could render aspects of this article incorrect.&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;h3 id=&quot;introduction-to-the-context-class&quot;&gt;Introduction to the Context class&lt;/h3&gt;
+&lt;p&gt;Whenever a vert.x &lt;a href=&quot;http://vertx.io/docs/apidocs/io/vertx/core/Handler.html&quot;&gt;Handler&lt;/a&gt; is executed, or the start or step method of a verticle is called, then that execution is associated with a specific context. Generally a context is an event-loop context and is therefore associated with an event loop thread (exceptions are covered in the Further Reading referenced below). Contexts are propagated. When a handler is set by code running on a specific context, then that handler will also be executed on the same context. This means for example, that if the start method of a verticle instance sets a number of event bus handlers (as many do), then they will all run on the same context as the start method for that verticle (so all handlers for that verticle instance will share a common context). &lt;/p&gt;
+&lt;p&gt;A schematic of the relationships between non-worker verticles, contexts and eventloop threads is shown in Figure 1. &lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;Vertx Context/Thread/Verticle Relationships&quot; src=&quot;http://vertx.io/assets/blog/vertx3-intro-to-context-object/VertxContextRelationships.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Note that each verticle effectively has only one context for handlers created by its start method, and each context is bound to a single event-loop thread. A given event-loop thread can, however, have multiple contexts bound to it. &lt;/p&gt;
+&lt;h3 id=&quot;when-are-contexts-not-propagated-&quot;&gt;When are contexts not propagated?&lt;/h3&gt;
+&lt;p&gt;When a verticle’s start method is called, a new context is created. If 4 identical verticles are deployed via the instances parameter on DeploymentOptions, the start method of each will be on a new context. This is logical as we may not want all non-worker verticles to be bound to a single eventloop thread when multiple eventloop threads are available. &lt;/p&gt;
+&lt;h3 id=&quot;threading-guarantees&quot;&gt;Threading Guarantees&lt;/h3&gt;
+&lt;p&gt;There are certain consequences of the propagation of contexts to handlers as mentioned above. The most important one is that since all handlers in a given eventloop verticle run on the same context (the one on which its start method ran), they all run on the same eventloop thread. This gives rise to the threading guarantee within vert.x, that as long as a given verticle is the only one to ever access a piece of state, then that state is being accessed by only one thread, so no synchronization will be necessary. &lt;/p&gt;
+&lt;h3 id=&quot;exception-handling&quot;&gt;Exception Handling&lt;/h3&gt;
+&lt;p&gt;Each context can have its own exception handler attached for handling exceptions which occur during event loop processing.&lt;/p&gt;
+&lt;h4 id=&quot;why-might-you-not-want-the-default-exception-handler-&quot;&gt;Why might you not want the default exception handler?&lt;/h4&gt;
+&lt;p&gt;As one example, you might have some verticles running whose job it is to monitor other verticles, and if something appears to go wrong with them, undeploy and restart them, a frequent pattern in an actor- or microservices- style archictecture. So one option could be that when a supervised verticle encounters an unrecoverable error, it could simply notify its supervisor that it has gone wrong via an eventbus message, and its supervisor could then undeploy and redeploy (and after a number of failures in rapid succession possibly give up hope or escalate to its own supervisor.&lt;/p&gt;
+&lt;h3 id=&quot;going-off-context-and-getting-back-onto-a-particular-context&quot;&gt;Going off-context and getting back onto a particular context&lt;/h3&gt;
+&lt;p&gt;There are several reasons why you might execute code off-context and then want to operate back on a vert.x context when complete. I’ll outline a couple of scenarios below&lt;/p&gt;
+&lt;h4 id=&quot;running-code-on-a-separate-thread&quot;&gt;Running code on a separate thread&lt;/h4&gt;
+&lt;p&gt;Firstly you might be using an asynchronous driver which is entirely vertx-unaware. Its code will run on non-eventloop threads but it’s possible you may then want to use the results of that code to update information within your verticle. If you don’t get back onto the correct context, you can’t make any guarantees about thread-safety, so your subsequent processing needs to be run back on the correct eventloop thread.&lt;/p&gt;
+&lt;h4 id=&quot;using-asynchronous-java-8-apis&quot;&gt;Using asynchronous Java 8 APIs&lt;/h4&gt;
+&lt;p&gt;APIs such as CompletableFuture are context-unaware. In one example, I created an already completed future on the vert.x event loop in a test. I then attached subsequent processing to it via thenRun:-&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;&lt;span class=&quot;hljs-annotation&quot;&gt;@RunWith&lt;/span&gt;(VertxUnitRunner.class)
+&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;ImmediateCompletionTest&lt;/span&gt; &lt;/span&gt;{
+    &lt;span class=&quot;hljs-annotation&quot;&gt;@Rule&lt;/span&gt;
+    &lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;final&lt;/span&gt; RunTestOnContext rule = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; RunTestOnContext();
+
+    &lt;span class=&quot;hljs-annotation&quot;&gt;@Test&lt;/span&gt;
+    &lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;testImmediateCompletion&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(TestContext context)&lt;/span&gt; &lt;/span&gt;{
+
+        &lt;span class=&quot;hljs-keyword&quot;&gt;final&lt;/span&gt; Async async = context.async();
+        &lt;span class=&quot;hljs-keyword&quot;&gt;final&lt;/span&gt; Vertx vertx = rule.vertx();
+        &lt;span class=&quot;hljs-keyword&quot;&gt;final&lt;/span&gt; CompletableFuture toComplete = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; CompletableFuture&lt;span&gt;();
+        &lt;span class=&quot;hljs-comment&quot;&gt;// delay future completion by 500 ms&lt;/span&gt;
+        &lt;span class=&quot;hljs-keyword&quot;&gt;final&lt;/span&gt; String threadName = Thread.currentThread().getName();
+        toComplete.complete(&lt;span class=&quot;hljs-number&quot;&gt;100&lt;/span&gt;);
+        toComplete.thenRun(() -&amp;gt; {
+            assertThat(Thread.currentThread().getName(), is(threadName));
+            async.complete();
+        });
+    }
+}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  Naively one might expect this to automatically run on the context, since it hasn’t left the eventloop thread on which the future was completed, and indeed it’s provable that it is on the correct thread. However, it will not be on the correct context. This would mean that it wouldn’t, for example, invoke any modified exception handler attached to the context.&lt;/p&gt;
+&lt;h4 id=&quot;getting-back-on-context&quot;&gt;Getting back on context&lt;/h4&gt;
+&lt;p&gt;Fortunately, once we’ve left the context, it’s quite straightforward to return to it. Prior to definition of the code block within thenRun, we can use Vertx.currentContext() or vertx.getOrCreateContext() to get a handle to the context on which our eventloop code is running, We can then execute the code block inside a call to Context::runOnContext, similar to&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;final&lt;/span&gt; Context currentContext = vertx.getOrCreateContext();
+toComplete.thenRun(() -&amp;gt; {
+        currentContext.runOnContext(v -&amp;gt; {
+        assertThat(Thread.currentThread().getName(), is(threadName));
+        async.complete();
+    }
+});&lt;/code&gt;&lt;/pre&gt;
+While getting back onto the correct context may not be critical if you have remained on the event loop thread throughout, it is critical if you are going to invoke subsequent vert.x handlers, update verticle state or anything similar, so it’s a sensible general approach.&lt;p&gt;&lt;/p&gt;
+&lt;h3 id=&quot;further-reading&quot;&gt;Further Reading&lt;/h3&gt;
+&lt;p&gt;The vert.x team themselves offer an excellent blog about the Vert.x eventloop, with excellent material on the context, on &lt;a href=&quot;https://github.com/vietj/vertx-materials/blob/master/src/main/asciidoc/Demystifying_the_event_loop.adoc&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
+&lt;p&gt;Thanks very much to the vert.x core team for their clear github pages on the eventloop, and also to &lt;a href=&quot;https://twitter.com/alexlehm?lang=en&quot;&gt;Alexander Lehmann&lt;/a&gt; for his answers to my stupid and naive questions on the &lt;a href=&quot;https://groups.google.com/forum/#!forum/vertx&quot;&gt;Vert.x google group&lt;/a&gt;.&lt;/p&gt;
+&lt;/article&gt;</description>
+	<pubDate>Tue, 31 Jan 2017 00:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Keynotes for Devoxx US Announced</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/49_scA5uE0w/20170130devoxxuskeynotes.php</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/49_scA5uE0w/20170130devoxxuskeynotes.php</link>
+	<description>Industry experts will present topics about identity, deep learning, and design at Devoxx US 2017.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/49_scA5uE0w&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Mon, 30 Jan 2017 14:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>itemis: Bewirb dich bei itemis und werde Teil unseres Xtext-Teams</title>
+	<guid isPermaLink="true">https://blogs.itemis.com/de/bewirb-dich-bei-itemis</guid>
+	<link>https://blogs.itemis.com/de/bewirb-dich-bei-itemis</link>
+	<description>&lt;p&gt;&lt;span&gt;&lt;a href=&quot;https://hosting.itemis.de/author/holger-schill&quot;&gt;Holger Schill&lt;/a&gt; und &lt;a href=&quot;https://hosting.itemis.de/author/Karsten-Thoms&quot;&gt;Karsten Thoms&lt;/a&gt; sind Softwarearchitekten und entwickeln neue Programmiersprachen. Beide sind Committer im &lt;a href=&quot;http://www.eclipse.org/Xtext/&quot;&gt;Eclipse Xtext-Projekt&lt;/a&gt; und suchen dringend gute Leute zur Verstärkung ihres Teams. Schau dir doch mal an, was die beiden in ihrem Video zu sagen haben. Vielleicht hast du ja Lust mit ihnen zusammenzuarbeiten.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;div class=&quot;wistia_responsive_padding&quot; style=&quot;padding: 56.25% 0 0 0;&quot;&gt;
+ &lt;div class=&quot;wistia_responsive_wrapper&quot; style=&quot;height: 100%; width: 100%;&quot;&gt;
+  &lt;span class=&quot;wistia_embed wistia_async_44u1f1ayde  videoFoam=true&quot; style=&quot;display: inline-block; height: 100%; width: 100%;&quot;&gt;undefined&lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span&gt;Wenn wir dein Interesse geweckt haben, hinterlass uns einfach und unverbindlich eine Nachricht am Ende des Videos. Wir nehmen dann gerne Kontakt mit dir auf.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span&gt;Natürlich kannst du dich auch gerne offziell bewerben. Besuch dazu einfach unsere &lt;a href=&quot;https://www.itemis.com/de/jobs/bewerben/&quot;&gt;Karriereseiten&lt;/a&gt;.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span&gt;Liebe Grüße&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span&gt;Sandra&lt;/span&gt;&lt;/p&gt;  
+&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://track.hubspot.com/__ptq.gif?a=761475&amp;amp;k=14&amp;amp;r=https%3A%2F%2Fblogs.itemis.com%2Fde%2Fbewirb-dich-bei-itemis&amp;amp;bu=https%253A%252F%252Fblogs.itemis.com&amp;amp;bvt=rss&quot; style=&quot;width: 1px!important;&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Sat, 28 Jan 2017 11:54:26 +0000</pubDate>
+	<author>rennemann@itemis.de (Sandra Rennemann)</author>
+</item>
+<item>
+	<title>itemis: Bewirb dich bei itemis und werde Teil unseres Xtext Teams</title>
+	<guid isPermaLink="true">https://blogs.itemis.com/bewirb-dich-bei-itemis</guid>
+	<link>https://blogs.itemis.com/bewirb-dich-bei-itemis</link>
+	<description>&lt;p&gt;&lt;span&gt;&lt;a href=&quot;https://hosting.itemis.de/author/holger-schill&quot;&gt;Holger Schill&lt;/a&gt; und &lt;a href=&quot;https://hosting.itemis.de/author/Karsten-Thoms&quot;&gt;Karsten Thoms&lt;/a&gt; sind Softwarearchitekten und entwickeln neue Programmiersprachen. Beide sind Committer im &lt;a href=&quot;http://www.eclipse.org/Xtext/&quot;&gt;Eclipse Xtext Projekt&lt;/a&gt; und suchen dringend gute Leute zur Verstärkung ihres Teams. Schaut euch doch mal an, was die beiden in ihrem Video zu sagen haben. Vielleicht habt ihr ja Lust mit ihnen zusammenzuarbeiten.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;div class=&quot;wistia_responsive_padding&quot; style=&quot;padding: 56.25% 0 0 0;&quot;&gt;
+ &lt;div class=&quot;wistia_responsive_wrapper&quot; style=&quot;height: 100%; width: 100%;&quot;&gt;
+  &lt;span class=&quot;wistia_embed wistia_async_44u1f1ayde  videoFoam=true&quot; style=&quot;display: inline-block; height: 100%; width: 100%;&quot;&gt;undefined&lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt; 
+&lt;p&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span&gt;Wenn wir euer Interesse geweckt haben, hinterlasst uns einfach und unverbindlich eine Nachricht am Ende des Videos. Wir nehmen dann gerne Kontakt mit euch auf.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span&gt;Natürlich könnte ihr euch auch gerne offziell bewerben. Besucht dazu einfach unsere &lt;a href=&quot;https://www.itemis.com/de/jobs/bewerben/&quot;&gt;Karriereseiten&lt;/a&gt;.&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span&gt;Liebe Grüße&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span&gt;Sandra&lt;/span&gt;&lt;/p&gt;  
+&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://track.hubspot.com/__ptq.gif?a=761475&amp;amp;k=14&amp;amp;r=https%3A%2F%2Fblogs.itemis.com%2Fbewirb-dich-bei-itemis&amp;amp;bu=https%253A%252F%252Fblogs.itemis.com&amp;amp;bvt=rss&quot; style=&quot;width: 1px!important;&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Sat, 28 Jan 2017 11:54:26 +0000</pubDate>
+	<author>rennemann@itemis.de (Sandra Rennemann)</author>
+</item>
+<item>
+	<title>Chris Aniszczyk: Open Container Initiative in 2017</title>
+	<guid isPermaLink="false">http://aniszczyk.org/?p=4115</guid>
+	<link>http://aniszczyk.org/2017/01/27/open-container-initiative-in-2017/</link>
+	<description>&lt;p&gt;Last year I had the opportunity to help build out/run the Open Container Initiative (OCI) and I wanted to take some time to reflect back on what the OCI community accomplished in 2016 and how far we’ve come in a short time since we were founded a little over a year ago.&lt;/p&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;
+&lt;p dir=&quot;ltr&quot; lang=&quot;en&quot;&gt;New &lt;a href=&quot;https://twitter.com/hashtag/OCI?src=hash&quot;&gt;#OCI&lt;/a&gt; blog post highlights 2016 milestones and what's to come in 2017 &lt;a href=&quot;https://t.co/EOdxcfNMs5&quot;&gt;https://t.co/EOdxcfNMs5&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;— OCI (@OCI_ORG) &lt;a href=&quot;https://twitter.com/OCI_ORG/status/823628292465053697&quot;&gt;January 23, 2017&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;The community has been busy! The project saw &lt;a href=&quot;https://oci.biterg.io/&quot;&gt;3000+ commits from 128 different authors across 36 different organizations&lt;/a&gt;. With the addition of the &lt;a href=&quot;https://github.com/opencontainers/image-spec&quot;&gt;Image Format specification project&lt;/a&gt;, we expanded our initial scope from just the &lt;a href=&quot;https://github.com/opencontainers/runc&quot;&gt;runtime specification&lt;/a&gt;. Our membership grew to nearly 50 members and we also added new developer tools projects —&lt;a href=&quot;https://github.com/opencontainers/tob/blob/master/proposals/tools.md&quot;&gt;runtime-tools and image-tools&lt;/a&gt;— which serve as repositories for conformance testing tools and have been instrumental in gearing up for the upcoming v1.0 release.&lt;/p&gt;
+&lt;p&gt;We’ve also recently created a new project within OCI called &lt;a href=&quot;https://github.com/opencontainers/go-digest&quot;&gt;go-digest&lt;/a&gt; (which was donated and migrated from docker/go-digest). This provides a strong hash-identity implementation in Go and services as a common digest package to be used across the container ecosystem.&lt;/p&gt;
+&lt;p&gt;In terms of early adoption, we have seen Docker support the OCI technology in its container runtime (libcontainer) and contribute it to the OCI project (as runc). Additionally, Docker has committed to adopting OCI technology in its latest &lt;a href=&quot;https://blog.docker.com/2016/12/introducing-containerd/&quot;&gt;containerd announcement&lt;/a&gt;. The Cloud Foundry community has been an early consumer of OCI by &lt;a href=&quot;https://blog.pivotal.io/pivotal-cloud-foundry/products/how-cloud-foundry-gives-developers-a-reliable-container-runtime&quot;&gt;embedding runc via Garden&lt;/a&gt; as the cornerstone of its container runtime technology. The Kubernetes project is incubating a new &lt;a href=&quot;https://github.com/kubernetes-incubator/cri-o&quot;&gt;Container Runtime Interface&lt;/a&gt; (CRI) that adopts OCI components via implementations like &lt;a href=&quot;https://github.com/kubernetes-incubator/cri-o&quot;&gt;CRI-O&lt;/a&gt; and &lt;a href=&quot;https://github.com/kubernetes-incubator/rktlet&quot;&gt;rklet&lt;/a&gt;. The rkt community is adopting OCI technology already and is planning to &lt;a href=&quot;https://coreos.com/blog/containers-to-clusters.html&quot;&gt;leverage the reference OCI container runtime runc&lt;/a&gt; in 2017. The Apache Mesos community is currently building out support for the &lt;a href=&quot;https://issues.apache.org/jira/browse/MESOS-5011&quot;&gt;OCI image specification&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Speaking of the v1.0 release, we are getting close to launch! The milestone release of the OCI &lt;a href=&quot;https://github.com/opencontainers/runtime-spec&quot;&gt;Runtime &lt;/a&gt;and &lt;a href=&quot;https://github.com/opencontainers/image-spec&quot;&gt;Image Format&lt;/a&gt; Specifications version 1.0 will hopefully be available this first quarter of 2017 or shortly the following quarter, drawing the industry that much closer to standardization and true portability. To that end, we’ll be launching an official OCI Certification program once the v1.0 release is out. With OCI certification, folks can be confident that their OCI-certified solutions meet a high set of criteria that deliver agile, interoperable solutions.&lt;/p&gt;
+&lt;p&gt;We’ll be looking into the possibility of adding more projects in the coming year, and we hope to showcase even more demonstrations of the specs in action under different scenarios. We’ll be onsite at several industry events, so please be on the lookout and check out &lt;a href=&quot;https://www.opencontainers.org/events&quot;&gt;events page&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;There is still much work to be done!  The success of our community depends on a wide array of contributions from all across the industry; the door is always open, so please come join us in shaping the future of container technology! In particular, if you’re interested in contributing to the technology, we recommend joining the &lt;a href=&quot;https://www.opencontainers.org/community&quot;&gt;OCI developer community&lt;/a&gt; which is open to everyone. If you’re building products on OCI technology, we recommend joining as a member and participating in the &lt;a href=&quot;https://www.opencontainers.org/join&quot;&gt;upcoming certification program&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note: This was cross-posted to the OCI community &lt;a href=&quot;https://www.opencontainers.org/blog/2017/01/23/oci-moves-into-2017&quot;&gt;blog&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</description>
+	<pubDate>Fri, 27 Jan 2017 13:14:10 +0000</pubDate>
+</item>
+<item>
+	<title>Jeremie Bresson: Ressource filter at project level in Eclipse IDE</title>
+	<guid isPermaLink="true">http://jmini.github.io/blog/2017/2017-01-27_ressource-filter.html</guid>
+	<link>http://jmini.github.io/blog/2017/2017-01-27_ressource-filter.html</link>
+	<description>&lt;div class=&quot;paragraph&quot;&gt; 
+ &lt;p&gt;If you follow the maven convention in multi-modules maven project, your directory structure will looks like this:&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;listingblock&quot;&gt; 
+ &lt;div class=&quot;content&quot;&gt; 
+  &lt;pre&gt;\---parent
+    |   .project
+    |   pom.xml
+    |
+    +---project1
+    |   |   .classpath
+    |   |   .project
+    |   |   pom.xml
+    |   |
+    |   \---src/main/java
+    |       \---...
+    |
+    \---project2
+        |   .classpath
+        |   .project
+        |   pom.xml
+        |
+        \---src/main/java
+            \---...&lt;/pre&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;paragraph&quot;&gt; 
+ &lt;p&gt;When the projects are imported in Eclipse IDE, the parent project looks not nice in the &lt;em&gt;Package Explorer&lt;/em&gt;. The child modules &lt;code&gt;project1&lt;/code&gt; and &lt;code&gt;project2&lt;/code&gt; appear twice: as sub-folder of the &lt;code&gt;parent&lt;/code&gt; project and as separated java project. In my opinion this is not really user-friendly.&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;imageblock&quot;&gt; 
+ &lt;div class=&quot;content&quot;&gt; 
+  &lt;img alt=&quot;Package Explorer&quot; src=&quot;http://jmini.github.io/blog/2017/2017-01-27_package-explorer.png&quot; /&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;paragraph&quot;&gt; 
+ &lt;p&gt;A solution was suggested by Ed Merks: in the parent project, the child folders can be filtered. Use the &lt;em&gt;Ressource Filters&lt;/em&gt; at project level. Select the &lt;span class=&quot;menu&quot;&gt;Properties&lt;/span&gt; context menu on the parent project and select &quot;Ressource Filters&quot; under &quot;Ressource&quot; in the tree. Click on the &lt;b class=&quot;button&quot;&gt;Add Filter…​&lt;/b&gt; button. In the Dialog configure your filter to exclude all folders with a name that matches &lt;code&gt;*&lt;/code&gt;.&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;imageblock&quot;&gt; 
+ &lt;div class=&quot;content&quot;&gt; 
+  &lt;img alt=&quot;Add a Ressource Filter for project parent&quot; src=&quot;http://jmini.github.io/blog/2017/2017-01-27_add-resource-filter.png&quot; /&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;paragraph&quot;&gt; 
+ &lt;p&gt;The configuration should look like this:&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;imageblock&quot;&gt; 
+ &lt;div class=&quot;content&quot;&gt; 
+  &lt;img alt=&quot;Ressource Filters - project configuration page&quot; src=&quot;http://jmini.github.io/blog/2017/2017-01-27_resource-filters.png&quot; /&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;paragraph&quot;&gt; 
+ &lt;p&gt;If you have a look at the xml content in the &lt;code&gt;.project&lt;/code&gt; file of the &lt;code&gt;parent&lt;/code&gt; project, you should see something like this:&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;listingblock&quot;&gt; 
+ &lt;div class=&quot;content&quot;&gt; 
+  &lt;pre class=&quot;prettyprint highlight&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;	&amp;lt;filteredResources&amp;gt;
+		&amp;lt;filter&amp;gt;
+			&amp;lt;id&amp;gt;1485436062166&amp;lt;/id&amp;gt;
+			&amp;lt;name&amp;gt;&amp;lt;/name&amp;gt;
+			&amp;lt;type&amp;gt;10&amp;lt;/type&amp;gt;
+			&amp;lt;matcher&amp;gt;
+				&amp;lt;id&amp;gt;org.eclipse.ui.ide.multiFilter&amp;lt;/id&amp;gt;
+				&amp;lt;arguments&amp;gt;1.0-name-matches-false-false-*&amp;lt;/arguments&amp;gt;
+			&amp;lt;/matcher&amp;gt;
+		&amp;lt;/filter&amp;gt;
+	&amp;lt;/filteredResources&amp;gt;&lt;/code&gt;&lt;/pre&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;paragraph&quot;&gt; 
+ &lt;p&gt;With this new project configuration, the &lt;em&gt;Package Explorer&lt;/em&gt; now hides its child folders. This means that you no longer see the modules &lt;code&gt;project1&lt;/code&gt; and &lt;code&gt;project2&lt;/code&gt; in the &lt;code&gt;parent&lt;/code&gt; project:&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;imageblock&quot;&gt; 
+ &lt;div class=&quot;content&quot;&gt; 
+  &lt;img alt=&quot;Package Explorer with hidden child modules&quot; src=&quot;http://jmini.github.io/blog/2017/2017-01-27_package-explorer_nice.png&quot; /&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;paragraph&quot;&gt; 
+ &lt;p&gt;I hope this will helps projects that have similar needs.&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;hr /&gt; 
+&lt;div class=&quot;paragraph&quot;&gt; 
+ &lt;p&gt;There is also an easier way to display this standard maven structure in Eclipse IDE: use the &lt;em&gt;Project Explorer&lt;/em&gt; instead of the &lt;em&gt;Package Explorer&lt;/em&gt;.&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;paragraph&quot;&gt; 
+ &lt;p&gt;With the menu item &lt;span class=&quot;menuseq&quot;&gt;&lt;span class=&quot;menu&quot;&gt;Projects Presentation&lt;/span&gt; ▸ &lt;span class=&quot;menuitem&quot;&gt;Hierarchical&lt;/span&gt;&lt;/span&gt; the display behavior in the &lt;em&gt;Project Explorer&lt;/em&gt; can be modified.&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;imageblock&quot;&gt; 
+ &lt;div class=&quot;content&quot;&gt; 
+  &lt;img alt=&quot;Switch the Projects Presentation configuration in the Project Explorer&quot; src=&quot;http://jmini.github.io/blog/2017/2017-01-27_project-explorer-configuration.png&quot; /&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;paragraph&quot;&gt; 
+ &lt;p&gt;With this new configuration, the maven structure is reflected in the IDE:&lt;/p&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;imageblock&quot;&gt; 
+ &lt;div class=&quot;content&quot;&gt; 
+  &lt;img alt=&quot;Project Explorer displaying the maven structure&quot; src=&quot;http://jmini.github.io/blog/2017/2017-01-27_project-explorer.png&quot; /&gt; 
+ &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;div class=&quot;paragraph&quot;&gt; 
+ &lt;p&gt;This works even with the resource filter configuration approach presented in this blog post.&lt;/p&gt; 
+&lt;/div&gt;</description>
+	<pubDate>Thu, 26 Jan 2017 23:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Ian Skerrett: Eclipse IoT Day in San Jose</title>
+	<guid isPermaLink="false">http://ianskerrett.wordpress.com/?p=3966</guid>
+	<link>http://feedproxy.google.com/~r/IanSkerrett/~3/bco00yAxY8U/</link>
+	<description>&lt;p&gt;&lt;img alt=&quot;redblack&quot; class=&quot;aligncenter size-medium wp-image-4002&quot; height=&quot;169&quot; src=&quot;https://ianskerrett.files.wordpress.com/2017/01/redblack.png?w=300&amp;amp;h=169&quot; width=&quot;300&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;We are planning another &lt;a href=&quot;https://iot.eclipse.org/eclipse-iot-day-san-jose/&quot;&gt;Eclipse IoT Day&lt;/a&gt;, this time in San Jose, CA on March 20. It will be co-located with Eclipse Converge and Devoxx US.&lt;/p&gt;
+&lt;p&gt;In San Jose, the &lt;a href=&quot;https://iot.eclipse.org/eclipse-iot-day-san-jose/#schedule&quot;&gt;schedule will be highlighting many of the new projects and participants&lt;/a&gt; in the Eclipse IoT community, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A session on Eclipse hawkBit from Michael Hirsch from Bosch SI. hawkBit solves the problem of how to do a software update to hundreds of thousands of IoT devices. This is a critical feature for IoT at scale and something hawkBit uniquely solves.&lt;/li&gt;
+&lt;li&gt;Samsung’s Dan Gross will be talking about the Samsung Artik platform and how Samsung is embracing open source in their platform.&lt;/li&gt;
+&lt;li&gt;Laurent Lagosanto from MicroEJ will talk about using Java for small IoT devices and how Eclipse Edje is providing the framework and apis to make Java portable across different MCU and hardware platforms.&lt;/li&gt;
+&lt;li&gt;Eclipse ioFog is a new project led by Kilton Hopkins from IOTRACKS. A lot of people are talking about Fog computing but I am excited to have Kilton talk about how Eclipse ioFog implements fog computing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Industrial IoT is where the serious and significant IoT use cases can be found.  For this reason, I am thrilled we have a number of sessions focused on Industrial IoT, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;An introduction to Eclipse Milo, which is an implementation of OPC-UA. Milo also just had it’s first release.&lt;/li&gt;
+&lt;li&gt;Intel will be talking about their work on industrial use cases with Eclipse Kura and Intel Data Analytics Acceleration. Analytics at the edge is a key trend in 2017.&lt;/li&gt;
+&lt;li&gt;There will also be a presentation on how Eclipse Kura acts as the gateway for Industry 4.0 use cases.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We will also have session on Eclipse Smarthome and IoT Cloud Platforms, featuring Eclipse Kapua.&lt;/p&gt;
+&lt;p&gt;If you are interested in IoT, open source and the Eclipse IoT community, then I hope you will attend. It will be a great opportunity to meet some of the IoT experts and learn about the Eclipse IoT technology.  The cost to register is $275. I hope you &lt;a href=&quot;https://www.regonline.com/register/checkin.aspx?EventId=1845425&amp;amp;RegTypeID=648137&quot;&gt;register&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We will also be hosting an &lt;a href=&quot;https://wiki.eclipse.org/EclipseIoT_SanJose2017&quot;&gt;Eclipse IoT Working Group meeting &lt;/a&gt;the next day. This will be a more technical meeting that focuses on the specific projects. This will be an open meeting so feel free to attend.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;br /&gt;  &lt;a href=&quot;http://feeds.wordpress.com/1.0/gocomments/ianskerrett.wordpress.com/3966/&quot; rel=&quot;nofollow&quot;&gt;&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;http://feeds.wordpress.com/1.0/comments/ianskerrett.wordpress.com/3966/&quot; /&gt;&lt;/a&gt; &lt;img alt=&quot;&quot; border=&quot;0&quot; height=&quot;1&quot; src=&quot;https://pixel.wp.com/b.gif?host=ianskerrett.wordpress.com&amp;amp;blog=405862&amp;amp;post=3966&amp;amp;subd=ianskerrett&amp;amp;ref=&amp;amp;feed=1&quot; width=&quot;1&quot; /&gt;&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/IanSkerrett/~4/bco00yAxY8U&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Thu, 26 Jan 2017 18:59:01 +0000</pubDate>
+</item>
+<item>
+	<title>Tom Schindl: Make it easy to consume e(fx)clipse libraries in maven (or gradle)</title>
+	<guid isPermaLink="false">http://tomsondev.bestsolution.at/?p=4905</guid>
+	<link>https://tomsondev.bestsolution.at/2017/01/26/make-it-easy-to-consume-efxclipse-libraries-in-maven-or-gradle/</link>
+	<description>&lt;p&gt;In the past we now and then published some of our artifacts on &lt;a href=&quot;http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22at.bestsolution.eclipse%22&quot;&gt;maven central&lt;/a&gt; but because this was a manual process we’ve often been too lazy leading to do it on each release. This leads frustration because while we’ve released &lt;a href=&quot;http://projects.eclipse.org/projects/technology.efxclipse/releases/2.5.0&quot;&gt;e(fx)clipse 2.5.0&lt;/a&gt; already, the maven bits are stuck on 2.2.0.&lt;/p&gt;
+&lt;p&gt;I think not being able to consume our code outside the OSGi world has led to the &lt;a href=&quot;http://www.slideshare.net/aalmiray/vjug-the-javafx-ecosystem&quot;&gt;false impression&lt;/a&gt; that e(fx)clipse runtime is just about OSGi although central parts of our framework happily run outside OSGi and so can be used like any other library:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We have additional &lt;a href=&quot;http://git.eclipse.org/c/efxclipse/org.eclipse.efxclipse.git/tree/bundles/runtime/org.eclipse.fx.ui.panes/src/org/eclipse/fx/ui/panes&quot;&gt;layout containers&lt;/a&gt; like RowLayoutPane, FillLayoutPane, GridLayoutPane, SashPane&lt;/li&gt;
+&lt;li&gt;We have additional &lt;a href=&quot;http://git.eclipse.org/c/efxclipse/org.eclipse.efxclipse.git/tree/bundles/runtime/org.eclipse.fx.ui.controls/src/org/eclipse/fx/ui/controls/&quot;&gt;controls&lt;/a&gt; like FileSystemViewers, StyledTextArea, FontIconNode&lt;/li&gt;
+&lt;li&gt;We have a complete code editor framework with syntax highlighting, auto-complete, line/error markers, hover-support, navigation support, …&lt;/li&gt;
+&lt;li&gt;A Service Registry supporting a subset of the OSGi-Declarative-Service Framework outside the OSGi world in plain Java – say good bye to ServiceLoader once you used our service stuff&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Solving this problem was at the top of my list for the Q1/2017 and I’m happy to announce that the &lt;strong&gt;complete&lt;/strong&gt; &lt;em&gt;e(fx)clipse runtime target platform&lt;/em&gt; is available from a maven-repository starting from today.&lt;/p&gt;
+&lt;p&gt;We’ve chose to publish the artifacts to one of our own public servers (&lt;a href=&quot;http://maven.bestsolution.at/&quot;&gt;http://maven.bestsolution.at/&lt;/a&gt;) instead of maven-central and there are multiple reasons for that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We need to get confidence that our OSGi-To-Maven-Dependency translation is correct&lt;/li&gt;
+&lt;li&gt;We need to extract more meta-information to publish accurate informations like Developers, SCM-URLs&lt;/li&gt;
+&lt;li&gt;We need to refine how we deal with none Eclipse dependencies like apache-commons, …&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It’s a nice coincidence that &lt;a href=&quot;https://objectteams.wordpress.com/2017/01/09/eclipse-neon-2-is-on-maven-central/&quot;&gt;Stephan Herrmann did the same for the Eclipse Platform, JDT and PDE&lt;/a&gt; but there are some differences (today) from what I read on his blog entry (don’t shoot me Stephan if I got it wrong):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stephan uses some &lt;a href=&quot;https://wiki.eclipse.org/CBI/aggregator&quot;&gt;CBI-stuff&lt;/a&gt; to translate the OSGi-Dependencies to maven pom dependencies, we use a simple helper library to do the same thing&lt;/li&gt;
+&lt;li&gt;Stephan replaces OSS-Dependencies like Apache-Commons through the direct maven substitutions, we are republishing the dependencies as we publish them from the &lt;a href=&quot;http://www.eclipse.org/orbit/&quot;&gt;Eclipse Orbit Project&lt;/a&gt; or any other Eclipse project.&lt;br /&gt;
+The reason is that we want the maven artifact repository to contain &lt;strong&gt;100%&lt;/strong&gt; the same bits as our p2-update-site and r5-repository. That’s the current state and it might change in future!&lt;/li&gt;
+&lt;/ul&gt;&lt;br /&gt;  &lt;a href=&quot;http://feeds.wordpress.com/1.0/gocomments/tomsondev.wordpress.com/4905/&quot; rel=&quot;nofollow&quot;&gt;&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;http://feeds.wordpress.com/1.0/comments/tomsondev.wordpress.com/4905/&quot; /&gt;&lt;/a&gt; &lt;img alt=&quot;&quot; border=&quot;0&quot; height=&quot;1&quot; src=&quot;https://pixel.wp.com/b.gif?host=tomsondev.bestsolution.at&amp;amp;blog=7995503&amp;amp;post=4905&amp;amp;subd=tomsondev&amp;amp;ref=&amp;amp;feed=1&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Thu, 26 Jan 2017 11:45:01 +0000</pubDate>
+</item>
+<item>
+	<title>Dave Carver: Andmore 0.5.1</title>
+	<guid isPermaLink="false">http://intellectualcramps.wordpress.com/?p=949</guid>
+	<link>https://intellectualcramps.wordpress.com/2017/01/25/andmore-0-5-1/</link>
+	<description>&lt;p&gt;A &lt;a href=&quot;https://github.com/eclipse/andmore/blob/develop/CHANGES.md&quot;&gt;small maintenance release&lt;/a&gt; for the Andmore project has been released. This release contains a handful of bug fixes that have been provided entirely by the community. So if you have the will and desire to help move Android development for eclipse along, you just need to submit a pull request to the project and it will more than likely be included.&lt;/p&gt;
+&lt;p&gt;If you really, want to become a committer. The barrier to entry is pretty low. Just submit some quality pull requests to the project, and if you have the desire to work on the project more we will probably ask. Andmore is what the community makes it.&lt;/p&gt;
+&lt;p&gt;The maintenance release is available through the &lt;a href=&quot;https://marketplace.eclipse.org/content/andmore-development-tools-android%E2%84%A2&quot;&gt;eclipse marketplace&lt;/a&gt;.&lt;/p&gt;&lt;br /&gt;  &lt;a href=&quot;http://feeds.wordpress.com/1.0/gocomments/intellectualcramps.wordpress.com/949/&quot; rel=&quot;nofollow&quot;&gt;&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;http://feeds.wordpress.com/1.0/comments/intellectualcramps.wordpress.com/949/&quot; /&gt;&lt;/a&gt; &lt;img alt=&quot;&quot; border=&quot;0&quot; height=&quot;1&quot; src=&quot;https://pixel.wp.com/b.gif?host=intellectualcramps.wordpress.com&amp;amp;blog=20154979&amp;amp;post=949&amp;amp;subd=intellectualcramps&amp;amp;ref=&amp;amp;feed=1&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Thu, 26 Jan 2017 02:40:15 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Diversity at Eclipse</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/s-Zq787sUWQ/</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/s-Zq787sUWQ/</link>
+	<description>Thea Aldrich, Diversity Champion at the Eclipse Foundation, outlines plans for fostering diversity in the Eclipse Community.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/s-Zq787sUWQ&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Wed, 25 Jan 2017 17:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Eclipse Announcements: Diversity at Eclipse</title>
+	<guid isPermaLink="true">http://feedproxy.google.com/~r/eclipse/fnews/~3/bL9iiFAmB2g/</guid>
+	<link>http://feedproxy.google.com/~r/eclipse/fnews/~3/bL9iiFAmB2g/</link>
+	<description>Thea Aldrich, Diversity Champion at the Eclipse Foundation, outlines plans for fostering diversity in the Eclipse Community.&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://feeds.feedburner.com/~r/eclipse/fnews/~4/bL9iiFAmB2g&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Wed, 25 Jan 2017 17:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>vert.x project: Building services and APIs with AMQP 1.0</title>
+	<guid isPermaLink="true">http://vertx.io/blog/building-services-and-apis-with-amqp-1-0</guid>
+	<link>http://vertx.io/blog/building-services-and-apis-with-amqp-1-0</link>
+	<description>&lt;article&gt;&lt;p&gt;Microservices and APIs are everywhere. Everyone talks about them, presentation slides are full of them … some people are actually even building them. Microservices and APIs are of course not completely new concepts and they are a bit over-hyped. But in general the ideas behind them are not bad. Unfortunately, many people seem to believe that the only way how to implement an API in microservice is to use HTTP and REST. That is of course not true. Microservices and APIs can be based on many different protocols and technologies. My favorite one is of course &lt;a href=&quot;http://www.amqp.org&quot;&gt;AMQP&lt;/a&gt;. Don’t take me wrong, HTTP and REST is not necessarily bad. But in some cases AMQP is simply better and creating AMQP based APIs does not need to be complicated.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;div class=&quot;admonition-block note&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;admonition-icon&quot;&gt;&lt;i class=&quot;admonition-icon fa fa-comment&quot;&gt;&lt;/i&gt;&lt;/td&gt;&lt;td class=&quot;content&quot;&gt;&lt;span class=&quot;content&quot;&gt;this is a re-publication of the following &lt;a href=&quot;http://blog.effectivemessaging.com/2017/01/building-services-and-apis-with-amqp-10.html&quot;&gt;blog post&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;livescore-service&quot;&gt;LiveScore service&lt;/h2&gt;
+&lt;p&gt;For demonstration, I will use a very simple service for keeping scores of football games. It has very basic API. It has only three calls:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add a new game&lt;/li&gt;
+&lt;li&gt;Update a score of existing game&lt;/li&gt;
+&lt;li&gt;List the scores
+The AMQP variants will be additionally able to push live updates to the clients.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The demo is using Java and Vert.x toolkit. &lt;a href=&quot;http://vertx.io/&quot;&gt;Vert.x&lt;/a&gt; is cool and I definitely recommend it to everyone. But most of the stuff from the demo should be possible also in any other programming languages and/or framework.&lt;/p&gt;
+&lt;h2 id=&quot;http-api&quot;&gt;HTTP API&lt;/h2&gt;
+&lt;p&gt;HTTP implementation of my service is a typical REST API. Since it is very simple, it accepts requests only on one endpoint – /api/v1.0/scores. New games are added as POST operations, scores are updated with PUT operations and list of all scores can be obtained with GET.&lt;/p&gt;
+&lt;p&gt;With Vert.x, creating HTTP/REST API is very easy. First the web router has to be created with all planned API calls:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;router = Router.router(vertx);  
+router.route(&lt;span class=&quot;hljs-string&quot;&gt;&quot;/api/v1.0/*&quot;&lt;/span&gt;).handler(BodyHandler.create());  
+router.get(&lt;span class=&quot;hljs-string&quot;&gt;&quot;/api/v1.0/scores&quot;&lt;/span&gt;).handler(&lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;::getScores);  
+router.post(&lt;span class=&quot;hljs-string&quot;&gt;&quot;/api/v1.0/scores&quot;&lt;/span&gt;).handler(&lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;::addGame);  
+router.put(&lt;span class=&quot;hljs-string&quot;&gt;&quot;/api/v1.0/scores&quot;&lt;/span&gt;).handler(&lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;::setScore);&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then the HTTP server has to be created and linked with the router:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;HttpServerOptions httpOptions = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; HttpServerOptions();  
+server = vertx.createHttpServer(httpOptions)  
+   .requestHandler(router::accept)  
+   .listen(httpPort);&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And finally the handlers which will be triggered for each API call have to be implemented as well. The full code is on &lt;a href=&quot;https://github.com/scholzj/livescore-demo-vertx-http&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;HTTP based API&quot; src=&quot;http://vertx.io/assets/blog/services-and-apis-with-amqp/HTTP-API.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;The HTTP API doesn’t provide any way how to automatically push the score updates to the clients. The clients simply have to poll the service periodically to get the updates. HTTP has of course some ways how to push live updates to clients. For example, with WebSockets or with chunked transfers. However, these are not that easy to implement. The service would also need to keep separate connection with every client and push the updates for each of them separately.&lt;/p&gt;
+&lt;h2 id=&quot;amqp-api&quot;&gt;AMQP API&lt;/h2&gt;
+&lt;p&gt;Creating the HTTP API was really easy. Creating an AMQP API has to be more complicated, right? We would need an AMQP server, which will listen on some port, accept the connections, sessions, links and so on. There are usually no nice and simple to use libraries for this.&lt;/p&gt;
+&lt;p&gt;Sure, this is one way how to do it. There is actually a nice library called &lt;a href=&quot;http://qpid.apache.org/proton/index.html&quot;&gt;Apache Qpid Proton&lt;/a&gt;. It has Java and C versions and bindings into many other languages (Go, C++, Python, …). It makes creating your own AMQP server lot easier. It will take care of decoding and encoding the AMQP protocol, handling the connections, sessions etc. But still, Qpid Proton is not even nearly as easy to use as the HTTP router used for the HTTP API.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;API with AMQP server&quot; src=&quot;http://vertx.io/assets/blog/services-and-apis-with-amqp/AMQP-Server-API.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Are there any easier options? What if all what is needed to create AMQP based API is a simple AMQP client? Normally, that should not be a possible because we need the API to listen on some port for the clients to connect to it and send requests. And clients usually don’t listen on any ports. However, Apache Qpid has something called &lt;a href=&quot;http://qpid.apache.org/components/dispatch-router/index.html&quot;&gt;Dispatch&lt;/a&gt;. It works as a lightweight AMQP router. Dispatch will serve as the AMQP server which was missing. It will take care of handling client connections, security and shield the service from the actual clients. All the service needs to do is to use AMQP client to connect to Dispatch on predefined address and wait for the request.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;AMQP API with Dispatch router&quot; src=&quot;http://vertx.io/assets/blog/services-and-apis-with-amqp/AMQP-API.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Dispatch needs to be configured with three API entry points as addresses:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;address&lt;/span&gt; &lt;span class=&quot;hljs-rules&quot;&gt;{  
+    &lt;span class=&quot;hljs-rule&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;prefix&lt;/span&gt;:&lt;span class=&quot;hljs-value&quot;&gt; /setScore  
+    distribution: balanced  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;}  
+&lt;span class=&quot;hljs-tag&quot;&gt;address&lt;/span&gt; &lt;span class=&quot;hljs-rules&quot;&gt;{  
+    &lt;span class=&quot;hljs-rule&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;prefix&lt;/span&gt;:&lt;span class=&quot;hljs-value&quot;&gt; /getScore  
+    distribution: balanced  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;}  
+&lt;span class=&quot;hljs-tag&quot;&gt;address&lt;/span&gt; &lt;span class=&quot;hljs-rules&quot;&gt;{  
+    &lt;span class=&quot;hljs-rule&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;prefix&lt;/span&gt;:&lt;span class=&quot;hljs-value&quot;&gt; /addGame  
+    distribution: balanced  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;LiveScore service will connect to these addresses as a receiver / consumer. Clients will connect to them as senders  /producers. And Dispatch will take care of routing the messages between the clients and the service. Clients can also create additional receivers so that the service is able to respond to their requests and specify the address of the receiver as the reply-to header in the request message. LiveScore service will automatically send the response to this address. But specifying a reply-to is not mandatory. If the client wants, it can simply fire the request and forget about the response.&lt;/p&gt;
+&lt;p&gt;LiveScore service is using Vert.x AMQP Bridge which allows easy integration between the Vert.x Event Bus and the AMQP connection to my router. The service starts the AMQP Bridge and if it successfully connects to Dispatch it creates three receivers for the API calls.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;AmqpBridgeOptions options = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; AmqpBridgeOptions().addEnabledSaslMechanism(&lt;span class=&quot;hljs-string&quot;&gt;&quot;ANONYMOUS&quot;&lt;/span&gt;);  
+bridge = AmqpBridge.create(vertx, options);  
+bridge.start(amqpHostname, amqpPort, res -&amp;gt; {  
+   &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (res.succeeded())  
+   {  
+     bridge.createConsumer(&lt;span class=&quot;hljs-string&quot;&gt;&quot;/setScore&quot;&lt;/span&gt;).setMaxBufferedMessages(&lt;span class=&quot;hljs-number&quot;&gt;100&lt;/span&gt;).handler(&lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;::setScore);  
+     bridge.createConsumer(&lt;span class=&quot;hljs-string&quot;&gt;&quot;/getScores&quot;&lt;/span&gt;).setMaxBufferedMessages(&lt;span class=&quot;hljs-number&quot;&gt;100&lt;/span&gt;).handler(&lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;::getScores);  
+     bridge.createConsumer(&lt;span class=&quot;hljs-string&quot;&gt;&quot;/addGame&quot;&lt;/span&gt;).setMaxBufferedMessages(&lt;span class=&quot;hljs-number&quot;&gt;100&lt;/span&gt;).handler(&lt;span class=&quot;hljs-keyword&quot;&gt;this&lt;/span&gt;::addGame);  
+     fut.complete();  
+   }  
+   &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;  
+   {  
+     fut.fail(res.cause());  
+   }  
+});&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The only other thing which needs to be done is creating handlers for handling the requests received from clients:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;getScores&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(Message msg)&lt;/span&gt;  
+&lt;/span&gt;{  
+   &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt;(msg.replyAddress() != &lt;span class=&quot;hljs-keyword&quot;&gt;null&lt;/span&gt;)  
+   {  
+     JsonObject response = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; JsonObject();  
+     response.put(&lt;span class=&quot;hljs-string&quot;&gt;&quot;application_properties&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; JsonObject().put(&lt;span class=&quot;hljs-string&quot;&gt;&quot;status&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;200&lt;/span&gt;));  
+     response.put(&lt;span class=&quot;hljs-string&quot;&gt;&quot;body&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; JsonArray(Json.encode(scoreService.getScores())).encode());  
+     msg.reply(response);  
+   }  
+   &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;  
+   {  
+     LOG.warn(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Received LiveScore/getScores request without reply to address&quot;&lt;/span&gt;);  
+   }  
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Live broadcasting of score updates is also very easy. New address has to be added into Dispatch configuration. This address will be used in opposite direction. the service connects to it as sender / producer and clients which want to receive the live updates create a receiver against this address. What is important, this address has to be marked as multicast. Thanks to that every single message will be delivered to all connected clients and not just to one of them:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;address&lt;/span&gt; &lt;span class=&quot;hljs-rules&quot;&gt;{  
+    &lt;span class=&quot;hljs-rule&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;prefix&lt;/span&gt;:&lt;span class=&quot;hljs-value&quot;&gt; /liveScores  
+    distribution: multicast  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img alt=&quot;Multicasting messages&quot; src=&quot;http://vertx.io/assets/blog/services-and-apis-with-amqp/AMQP-API-multicast.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Thanks to the multicast distribution, the service doesn’t need to send a separate update to every single client. It sends the message only once and dispatch takes care of the rest.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs java&quot;&gt;&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;broadcastUpdates&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(Game game)&lt;/span&gt;  
+&lt;/span&gt;{  
+   LOG.info(&lt;span class=&quot;hljs-string&quot;&gt;&quot;Broadcasting game update &quot;&lt;/span&gt; + game);  
+   JsonObject message = &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; JsonObject();  
+   message.put(&lt;span class=&quot;hljs-string&quot;&gt;&quot;body&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-keyword&quot;&gt;new&lt;/span&gt; JsonObject(Json.encode(game)).encode());  
+   producer.send(message);  
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Again, the complete source codes of the demo service are available on &lt;a href=&quot;https://github.com/scholzj/livescore-demo-vertx-amqp-bridge&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;how-to-structure-amqp-apis-&quot;&gt;How to structure AMQP APIs?&lt;/h2&gt;
+&lt;p&gt;Compared to HTTP and REST, AMQP gives its users a lot more freedom when designing the API. It isn’t tied up by the available HTTP methods.&lt;/p&gt;
+&lt;p&gt;My LiveScore service is using the API endpoints named according to their function:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/LiveScore/addGame&lt;/li&gt;
+&lt;li&gt;/LiveScore/setScore&lt;/li&gt;
+&lt;li&gt;/LiveScore/getScores
+It also uses HTTP status codes in application properties of the different messages to describe the result of the request and JSON as the message payload with the actual request and response.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Is that the best way? To be honest, I don’t know. Just for the request encoding there are many different options. AMQP has its own encodings which supports all possible basic as well as more advanced data types and structures. But AMQP can also transfer any opaque data - be it JSON, XML, Google Protocol Buffers or anything else. For simple request, the payload can be completely skipped and application properties can be used instead. And for everyone who really loves HTTP/REST, one can also model the API in REST style as I did in an &lt;a href=&quot;https://github.com/scholzj/livescore-demo-vertx-amqp-bridge-rest-style&quot;&gt;alternative implementation&lt;/a&gt; of my demo service.&lt;/p&gt;
+&lt;h2 id=&quot;browser&quot;&gt;Browser&lt;/h2&gt;
+&lt;p&gt;One of the environments where HTTP is so to say “at home” is browser. AMQP will probably never be as “native” protocol for any browser as HTTP is. However AMQP can be used even from browsers. It has WebSocket binding and there are Javascript AMQP libraries - for example rhea. So AMQP can be also used really everywhere.&lt;/p&gt;
+&lt;h2 id=&quot;decoupling&quot;&gt;Decoupling&lt;/h2&gt;
+&lt;p&gt;It is important to mention that the Dispatch router doesn’t decouple the client from the service. If decoupling is what is needed, it can be easily achieved by replacing the Dispatch router with some AMQP broker. The broker would decouple the client from the service without any changes in the service or clients.&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;While creating APIs using AMQP can be very easy, it doesn’t mean that AMQP is the best protocol for all APIs. There are definitely APIs where HTTP is more suitable. But in some use cases, AMQP has clear advantages. In my LiveScore example it is especially one to many communication. It is important to keep the mind open and select the best available for given service.&lt;/p&gt;
+&lt;/article&gt;</description>
+	<pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Thea Aldrich: Diversity at Eclipse</title>
+	<guid isPermaLink="false">http://theaaaaaa.wordpress.com/?p=4</guid>
+	<link>https://theaaaaaa.wordpress.com/2017/01/24/diversity-at-eclipse/</link>
+	<description>&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Over the last 13 years the Eclipse Foundation has worked diligently to become the community of choice for commercially friendly open source software development. Today that community numbers in the millions and spans more than 200 unique projects and working groups with committers all over the world working together to build amazing things. While we are a well established organization, we are also one undergoing significant redesign of some of our core offerings. The goal of all the changes underway at the Foundation is to nurture and grow our community, and to make sure that as industries evolve, we continue to provide unique value to our member companies, committers and the open source community as a whole. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;It is in that spirit that I am incredibly honored to introduce myself as the coordinator of diversity and inclusion efforts at the Eclipse Foundation. Over the next few months myself, my colleagues and our community will be working together to develop and deploy impact driven initiatives aimed at ensuring the Eclipse Foundation ecosystem is as place where people from all walks of life and all aspects of software development feel respected, valued and included in our community. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Throughout my career I have gotten to know so many passionate, smart and hard working people who have dedicated their careers to making the technology industry more diverse and inclusive. At Eclipse we are thrilled to begin partnering with and participating in these initiatives. Additionally, we will be rolling out a number of exciting initiatives aimed at growing diversity within the Eclipse developer community and open source as a whole. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;So, with that said, I would like to invite our entire community to participate in the development and implementation of these new programs. Things we are working on now are:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li style=&quot;font-weight: 400;&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Identifying ways in which all Eclipse events are inclusive events and welcoming,&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot;font-weight: 400;&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Rolling out an ambassador program to involve the community in welcoming newcomers into the ecosystem,&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot;font-weight: 400;&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Reaching out to established projects to see how we can support their efforts,&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot;font-weight: 400;&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Making all Eclipse Foundation websites and resources easier to navigate for native non-English speakers,&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot;font-weight: 400;&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Providing the community with a direct path to Foundation staff for ideas, complaints, feedback and other issues that our community or members may encounter.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;If you would like to get involved with these efforts, think we missed something or need help, please contact me directly at &lt;/span&gt;&lt;a href=&quot;mailto:thea@eclipse.org&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;thea@eclipse.org&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; or join us on the Eclipse Foundation Mattermost Diversity Channel. &lt;a href=&quot;https://mattermost.eclipse.org/eclipse/channels/diversity&quot; rel=&quot;nofollow&quot;&gt;https://mattermost.eclipse.org/eclipse/channels/diversity&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;&lt;br /&gt;  &lt;a href=&quot;http://feeds.wordpress.com/1.0/gocomments/theaaaaaa.wordpress.com/4/&quot; rel=&quot;nofollow&quot;&gt;&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;http://feeds.wordpress.com/1.0/comments/theaaaaaa.wordpress.com/4/&quot; /&gt;&lt;/a&gt; &lt;img alt=&quot;&quot; border=&quot;0&quot; height=&quot;1&quot; src=&quot;https://pixel.wp.com/b.gif?host=theaaaaaa.wordpress.com&amp;amp;blog=123079642&amp;amp;post=4&amp;amp;subd=theaaaaaa&amp;amp;ref=&amp;amp;feed=1&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Tue, 24 Jan 2017 16:40:19 +0000</pubDate>
+</item>
+<item>
+	<title>itemis: XtextSummit goes EclipseCon France</title>
+	<guid isPermaLink="true">https://blogs.itemis.com/en/xtextsummit-goes-eclipsecon-france</guid>
+	<link>https://blogs.itemis.com/en/xtextsummit-goes-eclipsecon-france</link>
+	<description>&lt;p class=&quot;p1&quot;&gt;&lt;a href=&quot;https://www.itemis.com/en/xtext/&quot;&gt;Xtext&lt;/a&gt; is a well known framework and highly represented at conferences like EclipseCon around the world. It is always fun getting together with people who build great software and talk about their experiences &lt;span&gt;with the framework&lt;/span&gt;. In 2014 itemis decided to host a dedicated conference on Xtext – the XtextCon – to present more advanced talks on this special topic. We have come a long way since then...&lt;/p&gt;  
+&lt;h2&gt;From XtextCon to XtextSummit&lt;/h2&gt; 
+&lt;p class=&quot;p1&quot;&gt;&lt;span class=&quot;s1&quot;&gt;The conference attracted around 100 people and that meant a lot to us. It was a great event and the attendees enjoyed it. People from around the globe came to the city of Kiel. It was such a big thing to us that we decided to have another XtextCon in 2015 and so the story continued with even more attendees.&lt;/span&gt;&lt;/p&gt; 
+&lt;p class=&quot;p1&quot;&gt;&lt;span class=&quot;s1&quot;&gt;In 2016 we decided to take a break. We took a deep breath to come back in 2017 with a new idea:&lt;/span&gt;&lt;/p&gt; 
+&lt;p class=&quot;p1&quot;&gt;&lt;span class=&quot;s1&quot;&gt;Together with Sven Efftinge from &lt;a href=&quot;http://typefox.io/&quot;&gt;TypeFox&lt;/a&gt; and &lt;a href=&quot;http://www.lorenzobettini.it/&quot;&gt;Lorenzo Bettini&lt;/a&gt;, we are more than happy to announce that we are hosting a brand new event called &lt;strong&gt;XtextSummit&lt;/strong&gt; at &lt;a href=&quot;https://www.eclipsecon.org/france2017/&quot;&gt;EclipseCon France&lt;/a&gt; in lovely Toulouse this June.&lt;/span&gt;&lt;/p&gt; 
+&lt;p class=&quot;p1&quot;&gt;&lt;span class=&quot;s1&quot;&gt;We’ll start with a full day at the unconference where the Xtext community can exchange their thoughts and experience. At the conference we’ll have a full track to talk about advanced Xtext-related technical aspects, as we have done it before at XtextCon.&lt;/span&gt;&lt;/p&gt; 
+&lt;h2&gt;Be part of the Xtext story&lt;/h2&gt; 
+&lt;p class=&quot;p1&quot;&gt;&lt;span&gt;By &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&lt;a href=&quot;https://www.eclipsecon.org/france2017/cfp&quot;&gt;submitting a talk&lt;/a&gt; you can help make it a great event and let the story continue. We are looking forward to your talks and the EclipseCon France!&lt;/span&gt;&lt;/p&gt;  
+&lt;img alt=&quot;&quot; height=&quot;1&quot; src=&quot;http://track.hubspot.com/__ptq.gif?a=761475&amp;amp;k=14&amp;amp;r=https%3A%2F%2Fblogs.itemis.com%2Fen%2Fxtextsummit-goes-eclipsecon-france&amp;amp;bu=https%253A%252F%252Fblogs.itemis.com&amp;amp;bvt=rss&quot; style=&quot;width: 1px!important;&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Mon, 23 Jan 2017 15:11:06 +0000</pubDate>
+	<author>schill@itemis.com (Holger Schill)</author>
+</item>
+<item>
+	<title>Maximilian and Jonas: EMF Forms 1.11.0 Feature: Change Input Domain Object</title>
+	<guid isPermaLink="false">http://eclipsesource.com/blogs/?p=27605</guid>
+	<link>http://eclipsesource.com/blogs/2017/01/23/emf-forms-1-11-0-feature-change-input-domain-object/</link>
+	<description>&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;With Neon.2, we released EMF Forms 1.11.0. &lt;/span&gt;&lt;a href=&quot;https://www.eclipse.org/ecp/emfforms/&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;EMF Forms&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; makes it simple to create forms which will edit your data based on an EMF model. To get started with EMF Forms please refer to &lt;/span&gt;&lt;a href=&quot;http://eclipsesource.com/blogs/tutorials/getting-started-with-EMF-Forms/&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;our tutorial&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;. In this post, we want to outline a new feature in the 1.11.0 release: &lt;/span&gt;&lt;i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Changing the input of an already rendered view.&lt;/span&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Rendering a form with EMF Forms has always been a single line of code:&lt;/span&gt;&lt;/p&gt;
+
+&lt;pre lang=&quot;&quot;&gt;renderedComposite = ECPSWTViewRenderer.INSTANCE.render(parent, eObject);
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;The parameter “parent” is an SWT composite used to render the form on the parameter “eObject”, which is the data object to be shown in the rendered form (i.e. input). With this call, EMF Forms will render the form and bind all controls to the input object, e.g. like this:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://eclipsesource.com/blogs/wp-content/uploads/2017/01/image12-1.png&quot;&gt;&lt;img alt=&quot;image12&quot; class=&quot;alignnone size-medium wp-image-27626&quot; height=&quot;180&quot; src=&quot;http://eclipsesource.com/blogs/wp-content/uploads/2017/01/image12-1-300x180.png&quot; width=&quot;300&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;While this works well when you embed EMF Forms in a classic view or dialog, it has a flaw when using master-detail views. In this scenario, your view is split into a viewer (tree, table or list), in which you can select an element as well as the detail pane where you wish to render the selected object in a form. An example is shown in the following screenshot:&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://eclipsesource.com/blogs/wp-content/uploads/2017/01/image04-2.png&quot;&gt;&lt;img alt=&quot;image04&quot; class=&quot;alignnone size-medium wp-image-27627&quot; height=&quot;179&quot; src=&quot;http://eclipsesource.com/blogs/wp-content/uploads/2017/01/image04-2-300x179.png&quot; width=&quot;300&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;In this scenario, there would be a selection listener attached to the table on the right side. When the selection is changed, you render the selected object on the details form. As there can be a previously rendered form, you potentially need to dispose this first:&lt;/span&gt;&lt;/p&gt;
+
+&lt;pre lang=&quot;&quot;&gt;if (renderedComposite != null) {
+renderedComposite.dispose();
+}
+renderedComposite = ECPSWTViewRenderer.INSTANCE.render(content, eObject);
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;While the call is still simple, it actually does more than required. In fact, it will completely dispose the UI including all controls and recreate them for the new input object. In our example, both UIs look exactly the same, it would be better to replace the input of the already rendered form. This would also improve the performance, as SWT controls do not have to be re-created. EMF Forms 1.11.0 supports this call from scratch. Instead of re-rendering the form, you can simply pass in a new input object (see following code example).&lt;/span&gt;&lt;/p&gt;
+
+&lt;pre lang=&quot;&quot;&gt;if (renderedComposite != null) {
+renderedComposite.getViewModelContext().changeDomainModel(eObject);
+} else {
+renderedComposite = ECPSWTViewRenderer.INSTANCE.render(content, eObject);
+}
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Please note, that EMF Forms automatically binds all existing controls to the new input Object and refreshes the validation markers. Further, it will re-evaluate visibility and enablement rules, as they may have changed due to the new input object. So, while the usage of this feature is very simple, EMF Forms solves quite a few issues for you under the hood.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Please note that the described scenario was based on the simple scenario in which you only have to deal with one element type. When the left view contains multiple types, you can combine the input replacement with a view cache to deal with multiple types. This is also supported by EMF Forms. We will describe this in the next blog post.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;So have fun with the new feature! If you miss any feature or ways to adapt it, please provide feedback by &lt;/span&gt;&lt;a href=&quot;https://bugs.eclipse.org/bugs/enter_bug.cgi?product=ecp&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;submitting bugs or feature requests&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; or &lt;/span&gt;&lt;a href=&quot;mailto:munich@eclipsesource.com&quot;&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;contact us&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt; if you are interested in enhancements or support.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;&lt;div style=&quot;display: inline-block;&quot;&gt;&lt;a href=&quot;https://twitter.com/intent/tweet?source=webclient&amp;amp;text=EMF+Forms+1.11.0+Feature%3A+Change+Input+Domain+Object&amp;amp;via=eclipsesource&amp;amp;url=http://eclipsesource.com/blogs/2017/01/23/emf-forms-1-11-0-feature-change-input-domain-object/&quot; style=&quot;margin-right: 5px;&quot; target=&quot;_blank&quot; title=&quot;Share on Twitter&quot;&gt;&lt;img alt=&quot;Twitter&quot; src=&quot;http://eclipsesource.com/blogs/wp-content/plugins/custom-about-author/images/social_media/twitter.png&quot; title=&quot;Twitter&quot; /&gt;&lt;/a&gt;&lt;a href=&quot;https://plus.google.com/share?url=http://eclipsesource.com/blogs/2017/01/23/emf-forms-1-11-0-feature-change-input-domain-object/&quot; style=&quot;margin-right: 5px;&quot; target=&quot;_blank&quot; title=&quot;+1&quot;&gt;&lt;img alt=&quot;Google+&quot; src=&quot;http://eclipsesource.com/blogs/wp-content/plugins/custom-about-author/images/social_media/google_plus.png&quot; title=&quot;Google+&quot; /&gt;&lt;/a&gt;&lt;a href=&quot;http://www.linkedin.com/cws/share?url=http://eclipsesource.com/blogs/2017/01/23/emf-forms-1-11-0-feature-change-input-domain-object/&quot; style=&quot;margin-right: 5px;&quot; target=&quot;_blank&quot; title=&quot;Share on LinkedIn&quot;&gt;&lt;img alt=&quot;LinkedIn&quot; src=&quot;http://eclipsesource.com/blogs/wp-content/plugins/custom-about-author/images/social_media/linkedin.png&quot; title=&quot;LinkedIn&quot; /&gt;&lt;/a&gt;&lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http://eclipsesource.com/blogs/2017/01/23/emf-forms-1-11-0-feature-change-input-domain-object/&amp;amp;t=EMF+Forms+1.11.0+Feature%3A+Change+Input+Domain+Object&quot; style=&quot;margin-right: 5px;&quot; target=&quot;_blank&quot; title=&quot;Facebook&quot;&gt;&lt;img alt=&quot;Facebook&quot; src=&quot;http://eclipsesource.com/blogs/wp-content/plugins/custom-about-author/images/social_media/facebook.png&quot; title=&quot;Facebook&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;a href=&quot;http://eclipsesource.com/blogs/2017/01/23/emf-forms-1-11-0-feature-change-input-domain-object/#respond&quot;&gt;Leave a Comment&lt;/a&gt;. Tagged with &lt;a href=&quot;http://eclipsesource.com/blogs/tag/eclipse/&quot; title=&quot;eclipse Tag&quot;&gt;eclipse&lt;/a&gt;, &lt;a href=&quot;http://eclipsesource.com/blogs/tag/emf/&quot; title=&quot;emf Tag&quot;&gt;emf&lt;/a&gt;, &lt;a href=&quot;http://eclipsesource.com/blogs/tag/emfcp/&quot; title=&quot;emfcp Tag&quot;&gt;emfcp&lt;/a&gt;, &lt;a href=&quot;http://eclipsesource.com/blogs/tag/emfforms/&quot; title=&quot;emfforms Tag&quot;&gt;emfforms&lt;/a&gt;, &lt;a href=&quot;http://eclipsesource.com/blogs/tag/eclipse/&quot; title=&quot;eclipse Tag&quot;&gt;eclipse&lt;/a&gt;, &lt;a href=&quot;http://eclipsesource.com/blogs/tag/emf/&quot; title=&quot;emf Tag&quot;&gt;emf&lt;/a&gt;, &lt;a href=&quot;http://eclipsesource.com/blogs/tag/emfcp/&quot; title=&quot;emfcp Tag&quot;&gt;emfcp&lt;/a&gt;, &lt;a href=&quot;http://eclipsesource.com/blogs/tag/emfforms/&quot; title=&quot;emfforms Tag&quot;&gt;emfforms&lt;/a&gt;&lt;p&gt;&lt;/p&gt;</description>
+	<pubDate>Mon, 23 Jan 2017 14:22:39 +0000</pubDate>
+</item>
+<item>
+	<title>Kai Kreuzer: openHAB 2 has arrived!</title>
+	<guid isPermaLink="false">http://www.kaikreuzer.de/2017/01/23/openhab2</guid>
+	<link>http://www.kaikreuzer.de/2017/01/23/openhab2/</link>
+	<description>&lt;p&gt;Three years &lt;a href=&quot;http://www.kaikreuzer.de/2014/06/16/openhab-20-and-eclipse-smarthome#esh&quot;&gt;after initiating the Eclipse SmartHome project&lt;/a&gt;, I am proud to finally announce the general availability of openHAB 2.0, the first openHAB release that is based on &lt;a href=&quot;https://www.eclipse.org/smarthome/&quot;&gt;Eclipse SmartHome&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;This release replaces openHAB 1.8 as the officially recommended runtime, only the openHAB 1 compatible add-ons will be further maintained. They are now &lt;a href=&quot;https://github.com/openhab/openhab1-addons/releases/tag/v1.9.0&quot;&gt;available in version 1.9.0&lt;/a&gt; and can be used on existing openHAB 1.8 installations. We have reached far more than 200 add-ons in this package by now and most of them can also be used in conjunction with openHAB 2 (see below).&lt;/p&gt;
+
+
+
+&lt;p&gt;Back in 2014, &lt;a href=&quot;http://www.kaikreuzer.de/2014/06/16/openhab-20-and-eclipse-smarthome#1vs2&quot;&gt;our goals for openHAB 2&lt;/a&gt; were the following:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Better support for low-end embedded hardware&lt;/li&gt;
+  &lt;li&gt;Simpler setup and configuration possibilities for “regular” i.e. not tech-savvy users&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So what have we achieved?&lt;/p&gt;
+
+&lt;h3 id=&quot;embedded-use&quot;&gt;Embedded Use&lt;/h3&gt;
+
+&lt;p&gt;With respect to embedded systems, the evolution of hardware was quicker than us, which made our goal almost obsolete. While in 2014 many users were using a Raspberry Pi 1 which was not ideal for openHAB regarding system performance. Now in 2017 almost everyone has upgraded to more powerful boards like the Raspberry Pi 2/3 or the PINE64, where CPU power is no longer a problem. As a matter of fact, openHAB 2 runs very decently on such boards, even for large installations.&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;img alt=&quot;Hardware&quot; src=&quot;http://www.kaikreuzer.de/img/2017-01_hardware.jpg&quot; /&gt;
+&lt;small&gt;Powerful hardware options for openHAB&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;Constrained hardware resources are therefore merely still an issue for commercial platforms. Besides the free openHAB, there are other solutions being built on Eclipse SmartHome, like e.g. &lt;a href=&quot;https://www.qivicon.com/en/&quot;&gt;QIVICON&lt;/a&gt; of Deutsche Telekom. The shrinked core framework of Eclipse SmartHome proves its worth on such solutions. As a demonstrator, there is a &lt;a href=&quot;https://github.com/eclipse/smarthome-packaging-sample&quot;&gt;sample solution packaging&lt;/a&gt; available, which uses &lt;a href=&quot;https://www.eclipse.org/concierge/&quot;&gt;Eclipse Concierge&lt;/a&gt; as a low-footprint OSGi framework and only has an overall size of only 20MB and which requires less then 128MB Java heap.&lt;/p&gt;
+
+&lt;h3 id=&quot;usability-improvements&quot;&gt;Usability Improvements&lt;/h3&gt;
+
+&lt;p&gt;Usability has been addressed on many different levels and version 2.0 only marks the beginning of these efforts, upcoming versions 2.x will continue on this path.&lt;/p&gt;
+
+&lt;h4 id=&quot;setup-through-a-user-interface&quot;&gt;Setup Through a User Interface&lt;/h4&gt;
+
+&lt;p&gt;All newly introduced APIs and features are designed in a way that they enable setup and configuration through user interfaces.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;After a first start, the user can choose an initial installation package to start with. These packages define common sets of functionality for different user types. Additional add-ons can be installed at any time through the UI by a single click.&lt;/li&gt;
+  &lt;li&gt;A major feature of all newly introduced bindings is the device discovery, i.e. the bindings will scan themselves the network/system for supported devices and offer them to the user. This heavily simplifies the integration of devices in openHAB.&lt;/li&gt;
+  &lt;li&gt;A new rule engine has been created, which allows building simple rules through a UI, similar to IFTTT, but with the big difference that no cloud connection is required as everything is executed locally.&lt;/li&gt;
+  &lt;li&gt;A &lt;a href=&quot;http://docs.openhab.org/addons/uis/habpanel/readme.html&quot;&gt;new UI called HABPanel&lt;/a&gt; has been introduced, which provides flexible dashboards for tablets, which can be created and modified fully UI-driven. HABPanel is specifically well-suited for wall-mounted displays.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;img alt=&quot;UIs&quot; src=&quot;http://www.kaikreuzer.de/img/2017-01_uis.jpg&quot; /&gt;
+&lt;small&gt;Usability Improvements: Initial Setup - Discovery - Rule Editor - HABPanel&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;These features together allow for the first time &lt;a href=&quot;https://youtu.be/T0kzK2voy94?list=PLGlxCdrGUagyDLSdoOUAmwsf4RD7URP4u&quot;&gt;a purely UI-driven setup of openHAB&lt;/a&gt; - but it must be said that this only covers a small fraction of the capabilities of openHAB. A core strength of openHAB is its flexibility and the possibility to cover all kinds of special - sometimes really weird - individual use cases. To do so, the textual configuration, as known from openHAB 1, is still required and recommended.&lt;/p&gt;
+
+&lt;h4 id=&quot;x-compatibility&quot;&gt;1.x Compatibility&lt;/h4&gt;
+
+&lt;p&gt;While these new features for beginners have been introduced, a focus has also been to have as little disruption for existing openHAB users as possible and to keep and even extend the textual configuration options. No one is forced to use UIs in future, they should be merely seen as an optional alternative. Most functionality of openHAB 1 has therefore be retained and only minor changes need to be done to the personal configurations and rules. Specifically, most openHAB 1.9 add-ons can be used as openHAB 2 as it has a built-in compatibility layer.&lt;/p&gt;
+
+&lt;h4 id=&quot;installation&quot;&gt;Installation&lt;/h4&gt;
+
+&lt;p&gt;A major obstacle in the past for many users was also the required setup around openHAB, e.g. installing Linux on the Raspberry Pi, configuring users, shares, ssh, etc.
+This is all much simpler now through &lt;a href=&quot;http://docs.openhab.org/installation/openhabian.html&quot;&gt;openHABian&lt;/a&gt; - a self-configuring Raspberry Pi setup, which starts off from a minimal SD card image. It automatically installs Java, openHAB, Samba and more and optionally even KNXd, Homegear, Mosquitto and others. This is definitely the best choice for Raspberry Pi users!&lt;/p&gt;
+
+&lt;h2 id=&quot;feature-overview&quot;&gt;Feature Overview&lt;/h2&gt;
+
+&lt;p&gt;So what is new in general in openHAB 2? Let me give you a rough overview:&lt;/p&gt;
+
+&lt;h4 id=&quot;bindings&quot;&gt;Bindings&lt;/h4&gt;
+
+&lt;p&gt;openHAB 2 comes with 130 bindings for different devices, technologies or protocols. 57 of them are using the new 2.0 APIs, so that they support discovery and graphical configuration. The rest are bindings from openHAB 1, which are included in the 2.0 distribution.&lt;/p&gt;
+
+&lt;p&gt;Many of these bindings support technologies, which are not supported by openHAB 1. There are e.g. bindings for &lt;a href=&quot;http://docs.openhab.org/addons/bindings/allplay/readme.html&quot;&gt;AllPlay&lt;/a&gt;, &lt;a href=&quot;http://docs.openhab.org/addons/bindings/miele/readme.html&quot;&gt;Miele@home&lt;/a&gt;, &lt;a href=&quot;http://docs.openhab.org/addons/bindings/minecraft/readme.html&quot;&gt;Minecraft&lt;/a&gt;, &lt;a href=&quot;http://docs.openhab.org/addons/bindings/russound/readme.html&quot;&gt;Russound&lt;/a&gt;, &lt;a href=&quot;http://docs.openhab.org/addons/bindings/zway/readme.html&quot;&gt;Z-Way&lt;/a&gt; and even &lt;a href=&quot;http://docs.openhab.org/addons/bindings/tesla/readme.html&quot;&gt;Tesla&lt;/a&gt;, just to name a few.&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;img alt=&quot;UIs&quot; src=&quot;http://www.kaikreuzer.de/img/2017-01_tech.png&quot; /&gt;
+&lt;small&gt;Some sample products &amp;amp; technologies that are supported by openHAB 2&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;Many other are currently under development or queued for review, so we can expect to reach 200 bindings by the end of this year.&lt;/p&gt;
+
+&lt;h4 id=&quot;user-interfaces&quot;&gt;User Interfaces&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The visually outdated &lt;a href=&quot;http://docs.openhab.org/addons/uis/classic/readme.html&quot;&gt;Classic UI&lt;/a&gt; (which is still available as an option) has been replaced by the much more modern &lt;a href=&quot;http://docs.openhab.org/addons/uis/basic/readme.html&quot;&gt;Basic UI&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;While being an external project for openHAB 1, &lt;a href=&quot;http://docs.openhab.org/addons/uis/habmin/readme.html&quot;&gt;HABmin&lt;/a&gt; has meanwhile become an official part of the project and is a very powerful administration tool, especially suited for Z-Wave users.&lt;/li&gt;
+  &lt;li&gt;The new &lt;a href=&quot;http://docs.openhab.org/addons/uis/paper/readme.html&quot;&gt;Paper UI&lt;/a&gt; is the main interface for doing UI-driven setup and configuration.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.openhab.org/addons/uis/habpanel/readme.html&quot;&gt;HABPanel&lt;/a&gt; is another new web UI, which specifically focuses on nifty dashboards on tablets.&lt;/li&gt;
+  &lt;li&gt;Besides Android and iOS, there is now a &lt;a href=&quot;https://youtu.be/IrUPL33b_jc?list=PLGlxCdrGUagyDLSdoOUAmwsf4RD7URP4u&quot;&gt;native client for Windows 10 (Mobile)&lt;/a&gt; available in the &lt;a href=&quot;https://www.microsoft.com/en-us/store/p/openhab/9nmq39ctwxgt&quot;&gt;official Microsoft App Store&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;img alt=&quot;UIs&quot; src=&quot;http://www.kaikreuzer.de/img/2017-01_uis2.jpg&quot; /&gt;
+&lt;small&gt;New UIs: Basic UI - HABPanel - HABmin - Windows 10 App&lt;/small&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;further-integrations&quot;&gt;Further Integrations&lt;/h3&gt;
+
+&lt;p&gt;Besides the bindings, which integrate external system in openHAB, the opposite is possible as well: To include openHAB in an external system:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A very simple integration in Amazon Echo is possible through the &lt;a href=&quot;http://docs.openhab.org/addons/io/hueemulation/readme.html&quot;&gt;Hue emulation add-on&lt;/a&gt;. This mimics a Philips Hue bridge and can also fool some other 3rd party apps that exist for Philips Hue.&lt;/li&gt;
+  &lt;li&gt;The &lt;a href=&quot;http://docs.openhab.org/addons/io/homekit/readme.html&quot;&gt;HomeKit add-on&lt;/a&gt; makes openHAB appear in iOS as a not-certified device that, once added, allow the use of any hardware from within HomeKit/iOS.&lt;/li&gt;
+  &lt;li&gt;IFTTT integration is now offered through the new &lt;a href=&quot;http://www.myopenhab.org/&quot;&gt;myopenHAB&lt;/a&gt; service that is operated by the &lt;a href=&quot;http://www.openhabfoundation.org/&quot;&gt;openHAB Foundation&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.openhab.org/concepts/audio.html&quot;&gt;Text-to-Speech and other audio playback&lt;/a&gt; can now be directed to remote devices (such as connected speakers). Already supported are e.g. Sonos speakers, Onkyo receivers, Chromecast and the Kodi media center.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;distribution-packages&quot;&gt;Distribution Packages&lt;/h3&gt;
+
+&lt;p&gt;Besides the classic zip archives as well as the APT packages for Linux, there are by now many further alternatives how to get hold of openHAB. (Please note that only openHABian is available from today on, the other types of packaging of the final 2.0 version will follow in the next days):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.openhab.org/installation/openhabian.html&quot;&gt;openHABian&lt;/a&gt;: A hassle-free setup for the Raspberry Pi, starting off a minimal SD card image.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wiki.pine64.org/index.php/Pine_A64_openHAB_Release&quot;&gt;PINE64 image&lt;/a&gt;: A pre-installed openHAB setup as an SD card image.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.openhab.org/installation/docker.html&quot;&gt;Docker&lt;/a&gt;: A Docker container, available for both x86 and ARM architectures.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.openhab.org/installation/synology.html&quot;&gt;Synology-NAS&lt;/a&gt;: Packages for the popular Synology Diskstations&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.openhab.org/installation/qnap.html&quot;&gt;QNAP-NAS&lt;/a&gt;: Likewise, there are installation packages available for QNAP.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/openhab/openhab-snap/blob/master/README.md&quot;&gt;Ubuntu Core Snap&lt;/a&gt;: Snaps for the new Ubuntu Core&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Overall, openHAB 2.0 is a huge step forward and I would like to thank all the new contributors and maintainers that have joined the project recently, as without them none of this would have been possible. Todays release 2.0 is just a first step and many more things are to be introduced with upcoming 2.x releases - so stay tuned!&lt;/p&gt;</description>
+	<pubDate>Mon, 23 Jan 2017 00:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Holger Voormann: Eclipse Neon.2: quick demo of three improvements</title>
+	<guid isPermaLink="false">http://eclipsehowl.wordpress.com/?p=1148</guid>
+	<link>https://eclipsehowl.wordpress.com/2017/01/19/eclipse-neon-2-quick-demo-of-three-improvements/</link>
+	<description>&lt;p&gt;In December 2016 Neon.2 was released with only a few but nonetheless very helpful improvements. My &lt;a href=&quot;https://youtu.be/xowalc4mghY&quot;&gt;Eclipse Neon.2: quick demo of 3 improvements&lt;/a&gt; shows three of these improvements:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;IDE – Compare Editor: &lt;a href=&quot;http://www.eclipse.org/eclipse/news/4.6.2/#configurable-left-right-in-compare-editor&quot;&gt;Swap Left and Right View&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Java – Open Projects from File System: new Java and JDK detectors&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://eclip.se/bg&quot;&gt;Arduino C++ Tools&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/xowalc4mghY&quot;&gt;&lt;img alt=&quot;Eclipse Neon.2: quick demo of 3 improvements&quot; class=&quot;alignnone size-full wp-image-1149&quot; height=&quot;253&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2017/01/eclipse_neon-2_3_improvements_video.png?w=450&amp;amp;h=253&quot; width=&quot;450&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Opening a Java project that has not been created with Eclipse becomes a no-brainer with the new Java detector that is used by &lt;em&gt;File &amp;gt; Open Projects from File System&lt;/em&gt;. Also the &lt;em&gt;Arduino Downloads Manager&lt;/em&gt; of the &lt;a href=&quot;http://eclip.se/bg&quot;&gt;&lt;em&gt;Arduino C++ Tools&lt;/em&gt;&lt;/a&gt; shows how simple things can be: Just choose your Arduino board or compatible system and the libraries you want to use. Everything required, e. g. C++ compiler, will be downloaded and configured for you. Watch &lt;a href=&quot;https://cdtdoug.ca/&quot;&gt;Doug&lt;/a&gt;‘s &lt;a href=&quot;https://youtu.be/TtPvkPpAx0E&quot;&gt;11-minute video for more details&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are also Eclipse IDE Git integration improvements, but EGit and JGit &lt;a href=&quot;https://twitter.com/masohn/status/808424469031256064&quot;&gt;forgot&lt;/a&gt; to contribute their version &lt;a href=&quot;http://projects.eclipse.org/projects/technology.egit/reviews/4.5-release-review&quot;&gt;4.5&lt;/a&gt; (I like auto-stage selected files on &lt;em&gt;Commit…&lt;/em&gt;) and &lt;a href=&quot;http://projects.eclipse.org/projects/technology.egit/reviews/4.6-release-review&quot;&gt;4.6&lt;/a&gt; to Neon.2. To get the latest Git improvements add the update site &lt;em&gt;&lt;a href=&quot;http://download.eclipse.org/egit/updates&quot;&gt;http://download.eclipse.org/egit/updates&lt;/a&gt;&lt;/em&gt; to &lt;em&gt;Window &amp;gt; Preferences &amp;gt; Install/Update &amp;gt; Available Software Sites&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;If you missed the last two releases, here are my quick demos of 10 Neon.1 and 22 Neon.0 improvements:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/hW0ENpGcP34&quot;&gt;&lt;img alt=&quot;Eclipse Neon: 5:30-minute demo of 22 nice improvements&quot; class=&quot;alignnone&quot; height=&quot;121&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2016/09/eclipse_neon-1_10_improvements_video.png?w=216&amp;amp;h=121&quot; style=&quot;margin-right: 4px;&quot; width=&quot;216&quot; /&gt;&lt;/a&gt;&lt;a href=&quot;https://youtu.be/lCsd681yo1c&quot;&gt;&lt;img alt=&quot;Eclipse Neon: 5:30-minute demo of 22 nice improvements&quot; class=&quot;alignnone&quot; height=&quot;121&quot; src=&quot;https://eclipsehowl.files.wordpress.com/2016/06/22_eclipse_neon_improvements_video.png?w=216&amp;amp;h=121&quot; style=&quot;margin-left: 4px;&quot; width=&quot;216&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The next and last Neon update Neon.3 will be released on March 23 before the next annual main release Oxygen on June 28.&lt;/p&gt;&lt;br /&gt;  &lt;a href=&quot;http://feeds.wordpress.com/1.0/gocomments/eclipsehowl.wordpress.com/1148/&quot; rel=&quot;nofollow&quot;&gt;&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;http://feeds.wordpress.com/1.0/comments/eclipsehowl.wordpress.com/1148/&quot; /&gt;&lt;/a&gt; &lt;img alt=&quot;&quot; border=&quot;0&quot; height=&quot;1&quot; src=&quot;https://pixel.wp.com/b.gif?host=eclipsehowl.wordpress.com&amp;amp;blog=11064764&amp;amp;post=1148&amp;amp;subd=eclipsehowl&amp;amp;ref=&amp;amp;feed=1&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Thu, 19 Jan 2017 14:30:07 +0000</pubDate>
+</item>
+<item>
+	<title>typefox.io: Xtext Summit @EclipseCon France – Call For Papers</title>
+	<guid isPermaLink="false">http://typefox.io/?p=14074</guid>
+	<link>http://typefox.io/xtext-summit-eclipsecon-france-call-for-papers</link>
+	<description>&lt;div class=&quot;fusion-fullwidth fullwidth-box nonhundred-percent-fullwidth&quot; style=&quot;background-color: rgba(255,255,255,0); background-position: center center; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px;&quot;&gt;&lt;div class=&quot;fusion-builder-row fusion-row &quot;&gt;&lt;div class=&quot;fusion-layout-column fusion_builder_column fusion_builder_column_1_1  fusion-one-full fusion-column-first fusion-column-last 1_1&quot; style=&quot;margin-top: 0px; margin-bottom: 0px;&quot;&gt;
+			&lt;div class=&quot;fusion-column-wrapper&quot;&gt;
+				&lt;p&gt;The Eclipse Foundation has just released the&lt;strong&gt; Call For Papers for the upcoming EclipseCon France&lt;/strong&gt; in lovely Toulouse. EclipseCon France is a three-day conference,  starting with an unconference day and followed by two days of sessions about Eclipse technologies. In previous years, introductory sessions and new &amp;amp; noteworthy talks about Xtext have been part of the standard program. This year, however, we decided to go for a &lt;strong&gt;full track and an unconference day related to Xtext&lt;/strong&gt;, which allows for the Xtext community to gather together and exchange their experiences. This includes the possibility to talk about technically challenging aspects of Xtext, that would have been too focussed at a regular EclipseCon. Please help making this a great event and submit your sessions.&lt;/p&gt;
+&lt;div class=&quot;fusion-button-wrapper&quot;&gt;&lt;a class=&quot;fusion-button button-flat button-round button-large button-default button-1&quot; href=&quot;https://www.eclipsecon.org/france2017/cfp&quot; target=&quot;_self&quot;&gt;&lt;span class=&quot;fusion-button-text&quot;&gt;Submit A Session&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;p&gt; &lt;/p&gt;
+&lt;div class=&quot;fusion-clearfix&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+	<pubDate>Thu, 19 Jan 2017 06:59:24 +0000</pubDate>
+</item>
+<item>
+	<title>Wayne Beaton: Eclipse Infrastructure Support for IP Due Due Diligence Type</title>
+	<guid isPermaLink="false">http://waynebeaton.wordpress.com/?p=3996</guid>
+	<link>https://waynebeaton.wordpress.com/2017/01/16/eclipse-infrastructure-support-for-ip-due-due-diligence-type/</link>
+	<description>&lt;p&gt;The Eclipse Foundation’s &lt;a href=&quot;https://www.eclipse.org/org/documents/Eclipse_IP_Policy.pdf&quot;&gt;Intellectual Property (IP) Policy&lt;/a&gt; was recently updated and we’re in the process of updating our processes and support infrastructure to accommodate the changes. With the updated IP Policy, we introduced the notion of &lt;em&gt;Type A&lt;/em&gt; (license certified) and &lt;em&gt;Type B&lt;/em&gt; (license certified, provenance checked, and scanned) due diligence types for third-party dependencies that projects can opt to adopt.&lt;/p&gt;
+&lt;p&gt;With &lt;em&gt;Type A&lt;/em&gt;, we assert only that third-party content is license compatible with a project. For &lt;em&gt;Type B&lt;/em&gt; third-party content, the Eclipse Foundation’s IP Team invests considerable effort to also assert that the provenance is clear and that the code has been scanned to ensure that it is clear of all sorts of potential issues (e.g. copyright or license violations). The type of due diligence &lt;strong&gt;applies at the release level&lt;/strong&gt;. That is, a project team can decide the level of scrutiny that they’d like to apply on a release-by-release basis.&lt;/p&gt;
+&lt;p&gt;For more background, please review &lt;a href=&quot;https://waynebeaton.wordpress.com/2017/01/12/license-certification-due-diligence/&quot;&gt;License Certification Due Diligence&lt;/a&gt; and &lt;a href=&quot;https://waynebeaton.wordpress.com/2017/01/13/whats-your-ip-due-diligence-type/&quot;&gt;What’s Your (IP Due Diligence) Type?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;By default all new projects at the Eclipse Foundation now start configured to use &lt;em&gt;Type A&lt;/em&gt; by default. We envision that many project teams will eventually employ a hybrid solution where they have many &lt;em&gt;Type A&lt;/em&gt; releases with period &lt;em&gt;Type B&lt;/em&gt; releases.&lt;/p&gt;
+&lt;p&gt;The default due diligence type is recorded in the project’s metadata, stored in the &lt;a href=&quot;https://www.eclipse.org/projects/handbook/#pmi&quot;&gt;Project Management Infrastructure&lt;/a&gt; (PMI). Any project committer or project lead can navigate to their project page, and click the “Edit” button to access project metadata.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;project_edit.png&quot; class=&quot;alignnone size-full wp-image-4032&quot; src=&quot;https://waynebeaton.files.wordpress.com/2017/01/project_edit.png?w=640&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;In the section titled “The Basics” (near the bottom), there’s a place where the project team can specify the default &lt;em&gt;due diligence type&lt;/em&gt; for the project (it’s reported on the &lt;em&gt;Governance&lt;/em&gt; page). If nothing is specified, &lt;em&gt;Type B&lt;/em&gt; is assumed. Specifying the value at the project level is basically a way for the project team to make a statement that their releases &lt;em&gt;tend&lt;/em&gt; to employ a certain type of due diligence for third-party content.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;project_dd_type.png&quot; class=&quot;alignnone size-full wp-image-4016 aligncenter&quot; src=&quot;https://waynebeaton.files.wordpress.com/2017/01/project_dd_type.png?w=640&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Project teams can also specify the due diligence type for third-party content in the release record. Again, a project committer or project lead can navigate to a release record page, and click “Edit” to gain access to the release metadata.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;release_dd_type.png&quot; class=&quot;alignnone size-full wp-image-4018 aligncenter&quot; src=&quot;https://waynebeaton.files.wordpress.com/2017/01/release_dd_type.png?w=640&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;As for projects, the metadata for IP due diligence type is found in the section titled “The Basics”. The field’s description is not exactly correct: if not specified in the release record, our processes all assume the value specified in the project metadata. We’ll fix this.&lt;/p&gt;
+&lt;p&gt;When the time comes to create a request to the Eclipse Foundation’s IP Team to review a contribution (a &lt;em&gt;contribution questionnaire&lt;/em&gt;, or &lt;em&gt;CQ&lt;/em&gt;), committers will see an extra question on the page for third-party content.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&quot;create_cq.png&quot; class=&quot;alignnone  wp-image-4019 aligncenter&quot; height=&quot;350&quot; src=&quot;https://waynebeaton.files.wordpress.com/2017/01/create_cq.png?w=493&amp;amp;h=350&quot; width=&quot;493&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;As an aside, committers that have tried to use our legacy system for requesting IP reviews (the &lt;em&gt;Eclipse Developer Portal&lt;/em&gt;) will have noticed that we’re now redirecting those requests to the PMI-based implementation. Project committers will find a direct link to this implementation under the &lt;em&gt;Committer Tools&lt;/em&gt; block on their project’s PMI page.&lt;/p&gt;
+&lt;p&gt;We’ve added an extra field to the record that gets created in our IP tracking system (&lt;a href=&quot;https://www.eclipse.org/projects/handbook/#ip-ipzilla&quot;&gt;IPZilla&lt;/a&gt;), &lt;em&gt;Type&lt;/em&gt;, that will be set to &lt;code&gt;Type_A&lt;/code&gt; or &lt;code&gt;Type_B&lt;/code&gt; (in some cases, it may be empty, “–“). We’ve also added a new &lt;em&gt;state&lt;/em&gt;, &lt;span style=&quot;background-color: #f3f6f8;&quot;&gt;license_certified&lt;/span&gt;, that indicates that the licenses has been checked and the content can be used by the project in any &lt;em&gt;Type A&lt;/em&gt; release.&lt;/p&gt;
+&lt;p&gt;Any content that is approved can be assumed to also be license certified.&lt;/p&gt;
+&lt;p&gt;There are many other questions that need to be answered, especially with regard to IP Logs, mixing IP due diligence types, and branding downloads. I’ll try to address these topics and more in posts over the next few days.&lt;/p&gt;&lt;br /&gt;  &lt;a href=&quot;http://feeds.wordpress.com/1.0/gocomments/waynebeaton.wordpress.com/3996/&quot; rel=&quot;nofollow&quot;&gt;&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;http://feeds.wordpress.com/1.0/comments/waynebeaton.wordpress.com/3996/&quot; /&gt;&lt;/a&gt; &lt;img alt=&quot;&quot; border=&quot;0&quot; height=&quot;1&quot; src=&quot;https://pixel.wp.com/b.gif?host=waynebeaton.wordpress.com&amp;amp;blog=19425814&amp;amp;post=3996&amp;amp;subd=waynebeaton&amp;amp;ref=&amp;amp;feed=1&quot; width=&quot;1&quot; /&gt;</description>
+	<pubDate>Mon, 16 Jan 2017 22:01:21 +0000</pubDate>
+</item>
+
+</channel>
+</rss>

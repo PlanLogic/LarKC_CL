@@ -1,0 +1,427 @@
+[Global]
+CurrentProject=powerloom-4.0.9.beta\powerloom-4.0.9.beta.vpj
+[ActiveConfig]
+ABCLVErsion.vpj=Release
+powerloom-4.0.9.beta\powerloom-4.0.9.beta.vpj=Release
+[ProjectDates]
+ABCLVErsion.vpj=20161013014012482
+platform\new-platform.vpj=20161014001749581
+powerloom-4.0.9.beta\powerloom-4.0.9.beta.vpj=20161013094614983
+[TreeExpansion2]
++ ABCLVErsion.vpj
++ platform\new-platform.vpj
+- powerloom-4.0.9.beta\powerloom-4.0.9.beta.vpj
+  + edu.isi.hello_world
+  + edu.isi.ontosaurus
+  + edu.isi.powerloom
+  + edu.isi.powerloom.extensions
+  + edu.isi.powerloom.extensions.timepoint
+  + edu.isi.powerloom.extensions.units
+  + edu.isi.powerloom.gui.common
+  + edu.isi.powerloom.gui.components
+  + edu.isi.powerloom.gui.parser
+  + edu.isi.powerloom.gui.plgui
+  + edu.isi.powerloom.gui.serverinterface
+  + edu.isi.powerloom.gui.xmlobject
+  + edu.isi.powerloom.logic
+  + edu.isi.powerloom.pl_kernel_kb
+  + edu.isi.powerloom.pl_kernel_kb.loom_api
+  + edu.isi.powerloom.rdbms
+  + edu.isi.powerloom.server
+  + edu.isi.powerloom.server.gui
+  + edu.isi.powerloom.server.plsoap
+  + edu.isi.sdbc
+  + edu.isi.stella
+  + edu.isi.stella.javalib
+  + edu.isi.stella.utilities
+  + edu.isi.webtools
+  + edu.isi.webtools.examples.addressdemo
+  + edu.isi.webtools.examples.addressexample
+  + edu.isi.webtools.examples.fetch
+  + edu.isi.webtools.examples.fetchcontent
+  + edu.isi.webtools.examples.sample
+  + edu.isi.webtools.http
+  + edu.isi.webtools.http.sun
+  + edu.isi.webtools.http.tomcat
+  + edu.isi.webtools.objects.apachesoap
+  + edu.isi.webtools.objects.soap_env
+  + edu.isi.webtools.objects.xml_objects
+  + edu.isi.webtools.objects.xmlschema
+  + edu.isi.webtools.objects.xmlschemainstance
+  + edu.isi.webtools.soap
+  + JLex
+  + native\cpp\logic
+  + native\cpp\logic\extensions
+  + native\cpp\powerloom
+  + native\cpp\rdbms
+  + native\cpp\sdbc
+  + native\cpp\stella
+  + native\cpp\stella\cpp-lib
+  + native\cpp\stella\cpp-lib\gc
+  - native\cpp\stella\cpp-lib\gc\doc
+  + native\cpp\stella\cpp-lib\gc6.7
+  + native\cpp\stella\cpp-lib\gc6.7\doc
+  + native\cpp\utilities
+  - native\lisp\logic
+  - native\lisp\logic\extensions
+  + native\lisp\ontosaurus
+  + native\lisp\powerloom
+  + native\lisp\powerloom-server
+  + native\lisp\powerloom-server\gui
+  + native\lisp\powerloom-server\plsoap
+  + native\lisp\rdbms
+  + native\lisp\sdbc
+  + native\lisp\stella
+  + native\lisp\stella\cl-lib
+  - native\lisp\utilities
+  + native\lisp\webtools
+  + native\lisp\webtools\aserve
+  + native\lisp\webtools\examples
+  + native\lisp\webtools\objects
+  + sources\hello-world
+  - sources\logic\extensions
+  - sources\ontosaurus
+  + sources\powerloom
+  + sources\powerloom-gui\doc\api
+  + sources\powerloom-gui\resources
+  - sources\powerloom-server
+  + sources\powerloom-server\gui
+  - sources\powerloom-server\plsoap
+  + sources\powerloom\doc
+  - sources\ste-bench
+  + sources\ste-bench\.git
+  + sources\ste-bench\.git\info
+  + sources\ste-bench\.git\logs
+  + sources\ste-bench\.git\logs\refs\heads
+  + sources\ste-bench\.git\logs\refs\remotes\origin
+  + sources\ste-bench\.git\refs\heads
+  + sources\ste-bench\.git\refs\remotes\origin
+  + sources\ste-bench\files
+  + sources\ste-bench\files\cl-ppcre
+  + sources\ste-bench\play
+  + sources\ste-bench\sysdep
+  + sources\stella
+  - sources\stella\cl-lib
+  - sources\stella\cpp-lib
+  + sources\stella\doc
+  - sources\systems
+  - sources\utilities
+  + sources\webtools
+  + sources\webtools\aserve
+  + sources\webtools\cl-http
+  + sources\webtools\examples
+  - sources\webtools\objects
+scroll:87
+[State]
+SCREEN: 1920 1200 -29 0 1934 1034 0 0 M 0 0 0 0 1614 644
+CWD: powerloom-4.0.9.beta\sources
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\file-a.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.3302 CL=81 LE=0 CX=80 CY=12 WI=5 BI=12 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\defpackage.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.355 CL=28 LE=0 CX=27 CY=17 WI=5 BI=15 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\systems\ste-bench-system.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.3429 CL=18 LE=0 CX=17 CY=24 WI=5 BI=13 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\files\clos.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.5395 CL=1 LE=0 CX=0 CY=28 WI=5 BI=9 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\files\crc40.lisp"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=11 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\files\math.lisp"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=18 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\files\arrays.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.698 CL=34 LE=0 CX=33 CY=13 WI=5 BI=4 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\files\math.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.4205 CL=8 LE=0 CX=7 CY=11 WI=5 BI=80 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\logic-in.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=1 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.50521 CL=29 LE=0 CX=28 CY=22 WI=5 BI=33 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\ontosaurus\shell.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=1 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.10246 CL=74 LE=0 CX=73 CY=11 WI=5 BI=22 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\collections.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.50694 CL=21 LE=0 CX=20 CY=2 WI=5 BI=83 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\cpp-translate.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.99303 CL=14 LE=0 CX=13 CY=14 WI=5 BI=82 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\hierarchy.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.25066 CL=29 LE=0 CX=28 CY=17 WI=5 BI=84 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\literals.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.35623 CL=46 LE=0 CX=45 CY=12 WI=5 BI=85 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\primal.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.109281 CL=32 LE=0 CX=31 CY=14 WI=5 BI=27 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\webtools\marshaller.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=1 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.36267 CL=34 LE=0 CX=33 CY=9 WI=5 BI=86 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\logic-macros.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.18802 CL=17 LE=0 CX=16 CY=14 WI=5 BI=39 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\backlinks.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=81 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\case-based.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.8562 CL=4 LE=0 CX=3 CY=14 WI=5 BI=26 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\kif-out.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.11750 CL=13 LE=0 CX=12 CY=14 WI=5 BI=78 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\machine-learning.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.3632 CL=17 LE=0 CX=16 CY=14 WI=5 BI=36 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\descriptions.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.78588 CL=10 LE=0 CX=9 CY=14 WI=5 BI=32 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\explanations.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=79 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\support.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.5662 CL=17 LE=0 CX=16 CY=14 WI=5 BI=76 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\goal-caches.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.13219 CL=38 LE=0 CX=37 CY=10 WI=5 BI=35 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\cl-lib\cl-primal.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.16946 CL=30 LE=0 CX=29 CY=13 WI=5 BI=77 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\macros.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.18557 CL=30 LE=0 CX=29 CY=14 WI=5 BI=28 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\frame-support.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.14527 CL=9 LE=0 CX=8 CY=14 WI=5 BI=73 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\kif-in.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.18369 CL=18 LE=0 CX=17 CY=13 WI=5 BI=75 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\files\bignum.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.1728 CL=4 LE=0 CX=3 CY=14 WI=5 BI=74 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\native\java\edu\isi\stella\List.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=96 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.3108 CL=1 LE=0 CX=0 CY=14 WI=5 BI=45 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\native\java\edu\isi\stella\Sequence.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=96 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.5397 CL=7 LE=0 CX=6 CY=14 WI=5 BI=44 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\native\java\edu\isi\stella\ExtensibleVector.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=96 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.3120 CL=39 LE=0 CX=38 CY=14 WI=5 BI=51 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\native\java\edu\isi\stella\VectorSequence.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=96 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.8641 CL=1 LE=0 CX=0 CY=24 WI=5 BI=56 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\native\java\edu\isi\ontosaurus\Thread.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=96 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.5131 CL=9 LE=0 CX=8 CY=14 WI=5 BI=61 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\native\java\edu\isi\stella\CustomVectorSequence.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=96 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.4588 CL=11 LE=0 CX=10 CY=5 WI=5 BI=70 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\native\java\edu\isi\stella\Vector.java"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Java	HM=0 MF=96 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=42 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\stella-in.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.12930 CL=12 LE=0 CX=11 CY=14 WI=5 BI=40 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\neural-network.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.61208 CL=16 LE=0 CX=15 CY=14 WI=5 BI=34 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\optimize.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=41 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\cl-translate.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.58423 CL=30 LE=0 CX=29 CY=14 WI=5 BI=38 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\defclass.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.3787 CL=41 LE=0 CX=40 CY=14 WI=5 BI=37 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\files\arrays.lisp"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.483 CL=1 LE=0 CX=0 CY=13 WI=5 BI=10 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\utilities\unit-defs.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=29 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\utilities\units.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=30 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\native\lisp\logic\frame-support.lisp"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=31 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\powerloom-server\plsoap\soap-server.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=17 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\powerloom-server\startup-system.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=14 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\ontosaurus\general-query.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=20 HT=0 HN=0 HF=0 HC=4
+BUFFER: BN="powerloom-4.0.9.beta\sources\ontosaurus\html-macros.ste"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=1 ST=0 IN=1 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Fundamental	HM=0 MF=0 TL=0 MLL=0 ASE=0 LNL=6 LCF=0 CAPS=0 E=0 ESBU2=-1
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=5 BI=24 HT=0 HN=0 HF=0 HC=4
+WINDOW: 52 52 1406 436 -1 -1 N  WF=0 WT=17 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\native\lisp\logic\frame-support.lisp"
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=270 BI=31 HT=0 HN=0 HF=0 HC=4
+WINDOW: 182 182 1302 660 -1 -1 N  WF=0 WT=13 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\ontosaurus\html-macros.ste"
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=262 BI=24 HT=0 HN=0 HF=0 HC=4
+WINDOW: 26 26 1406 436 -1 -1 N  WF=0 WT=16 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\utilities\units.ste"
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=268 BI=30 HT=0 HN=0 HF=0 HC=4
+WINDOW: 0 0 1406 436 -1 -1 N  WF=0 WT=15 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\utilities\unit-defs.ste"
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=266 BI=29 HT=0 HN=0 HF=0 HC=4
+WINDOW: 156 156 1302 660 -1 -1 N  WF=0 WT=12 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\ontosaurus\general-query.ste"
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=260 BI=20 HT=0 HN=0 HF=0 HC=4
+WINDOW: 104 104 1302 660 -1 -1 N  WF=0 WT=10 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\powerloom-server\plsoap\soap-server.ste"
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=256 BI=17 HT=0 HN=0 HF=0 HC=4
+WINDOW: 78 78 1302 660 -1 -1 N  WF=0 WT=9 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\files\math.lisp"
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=254 BI=18 HT=0 HN=0 HF=0 HC=4
+WINDOW: 286 286 1302 660 -1 -1 N  WF=0 WT=4 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\systems\ste-bench-system.ste"
+VIEW: LN=.3429 CL=22 LE=0 CX=21 CY=24 WI=244 BI=13 HT=0 HN=0 HF=0 HC=4
+WINDOW: 52 52 1302 660 -1 -1 N  WF=0 WT=8 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\files\crc40.lisp"
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=252 BI=11 HT=0 HN=0 HF=0 HC=4
+WINDOW: 26 26 1302 660 -1 -1 N  WF=0 WT=7 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\files\clos.ste"
+VIEW: LN=.5395 CL=1 LE=0 CX=0 CY=28 WI=250 BI=9 HT=0 HN=0 HF=0 HC=4
+WINDOW: 260 260 1302 660 -1 -1 N  WF=0 WT=3 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\defpackage.ste"
+VIEW: LN=.355 CL=28 LE=0 CX=27 CY=17 WI=242 BI=15 HT=0 HN=0 HF=0 HC=4
+WINDOW: 0 0 1406 436 -1 -1 N  WF=0 WT=37 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\native\java\edu\isi\stella\CustomVectorSequence.java"
+VIEW: LN=.3556 CL=18 LE=0 CX=17 CY=14 WI=285 BI=70 HT=0 HN=0 HF=0 HC=4
+WINDOW: 182 182 1406 436 -1 -1 N  WF=0 WT=35 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\native\java\edu\isi\stella\VectorSequence.java"
+VIEW: LN=.8641 CL=1 LE=0 CX=0 CY=24 WI=290 BI=56 HT=0 HN=0 HF=0 HC=4
+WINDOW: 156 156 1406 436 -1 -1 N  WF=0 WT=34 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\native\java\edu\isi\stella\ExtensibleVector.java"
+VIEW: LN=.3120 CL=39 LE=0 CX=38 CY=14 WI=287 BI=51 HT=0 HN=0 HF=0 HC=4
+WINDOW: 52 52 1406 436 -1 -1 N  WF=0 WT=31 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\native\java\edu\isi\stella\Vector.java"
+VIEW: LN=.3110 CL=1 LE=0 CX=0 CY=28 WI=274 BI=42 HT=0 HN=0 HF=0 HC=4
+WINDOW: 130 130 1406 436 -1 -1 N  WF=0 WT=33 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\native\java\edu\isi\stella\Sequence.java"
+VIEW: LN=.5397 CL=7 LE=0 CX=6 CY=14 WI=280 BI=44 HT=0 HN=0 HF=0 HC=4
+WINDOW: 104 104 1406 436 -1 -1 N  WF=0 WT=32 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\native\java\edu\isi\stella\List.java"
+VIEW: LN=.3108 CL=1 LE=0 CX=0 CY=14 WI=277 BI=45 HT=0 HN=0 HF=0 HC=4
+WINDOW: 0 0 1302 660 -1 -1 N  WF=0 WT=6 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\files\arrays.ste"
+VIEW: LN=.511 CL=58 LE=0 CX=57 CY=10 WI=248 BI=4 HT=0 HN=0 HF=0 HC=4
+WINDOW: 130 130 1406 436 -1 -1 N  WF=0 WT=51 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\webtools\marshaller.ste"
+VIEW: LN=.36267 CL=13 LE=0 CX=12 CY=9 WI=171 BI=86 HT=0 HN=0 HF=0 HC=4
+WINDOW: 78 78 1406 436 -1 -1 N  WF=0 WT=18 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\primal.ste"
+VIEW: LN=.109281 CL=32 LE=0 CX=31 CY=14 WI=272 BI=27 HT=0 HN=0 HF=0 HC=4
+WINDOW: 104 104 1406 436 -1 -1 N  WF=0 WT=50 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\literals.ste"
+VIEW: LN=.35623 CL=46 LE=0 CX=45 CY=12 WI=106 BI=85 HT=0 HN=0 HF=0 HC=4
+WINDOW: 78 78 1406 436 -1 -1 N  WF=0 WT=49 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\hierarchy.ste"
+VIEW: LN=.25066 CL=29 LE=0 CX=28 CY=17 WI=100 BI=84 HT=0 HN=0 HF=0 HC=4
+WINDOW: 52 52 1406 436 -1 -1 N  WF=0 WT=48 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\cpp-translate.ste"
+VIEW: LN=.99303 CL=14 LE=0 CX=13 CY=14 WI=203 BI=82 HT=0 HN=0 HF=0 HC=4
+WINDOW: 26 26 1406 436 -1 -1 N  WF=0 WT=47 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\collections.ste"
+VIEW: LN=.50694 CL=21 LE=0 CX=20 CY=2 WI=196 BI=83 HT=0 HN=0 HF=0 HC=4
+WINDOW: 208 208 1302 660 -1 -1 N  WF=0 WT=14 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\ontosaurus\shell.ste"
+VIEW: LN=.10246 CL=74 LE=0 CX=73 CY=11 WI=264 BI=22 HT=0 HN=0 HF=0 HC=4
+WINDOW: 208 208 1406 436 -1 -1 N  WF=0 WT=22 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\logic-in.ste"
+VIEW: LN=.50521 CL=29 LE=0 CX=28 CY=22 WI=144 BI=33 HT=0 HN=0 HF=0 HC=4
+WINDOW: 0 0 1406 436 -1 -1 N  WF=0 WT=46 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\files\math.ste"
+VIEW: LN=.4772 CL=7 LE=0 CX=6 CY=9 WI=202 BI=80 HT=0 HN=0 HF=0 HC=4
+WINDOW: 156 156 1302 660 -1 -1 N  WF=0 WT=2 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\file-a.ste"
+VIEW: LN=.3302 CL=84 LE=0 CX=83 CY=12 WI=134 BI=12 HT=0 HN=0 HF=0 HC=4
+WINDOW: 208 208 1406 436 -1 -1 N  WF=0 WT=29 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\logic-macros.ste"
+VIEW: LN=.26328 CL=92 LE=0 CX=91 CY=14 WI=180 BI=39 HT=0 HN=0 HF=0 HC=4
+WINDOW: 208 208 1406 436 -1 -1 N  WF=0 WT=45 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\backlinks.ste"
+VIEW: LN=.31109 CL=41 LE=0 CX=40 CY=13 WI=198 BI=81 HT=0 HN=0 HF=0 HC=4
+WINDOW: 78 78 1406 436 -1 -1 N  WF=0 WT=25 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\machine-learning.ste"
+VIEW: LN=.5922 CL=8 LE=0 CX=7 CY=14 WI=172 BI=36 HT=0 HN=0 HF=0 HC=4
+WINDOW: 182 182 1406 436 -1 -1 N  WF=0 WT=44 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\kif-out.ste"
+VIEW: LN=.11750 CL=13 LE=0 CX=12 CY=14 WI=190 BI=78 HT=0 HN=0 HF=0 HC=4
+WINDOW: 156 156 1406 436 -1 -1 N  WF=0 WT=20 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\case-based.ste"
+VIEW: LN=.8562 CL=4 LE=0 CX=3 CY=14 WI=142 BI=26 HT=0 HN=0 HF=0 HC=4
+WINDOW: 156 156 1406 436 -1 -1 N  WF=0 WT=43 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\explanations.ste"
+VIEW: LN=.1255 CL=74 LE=0 CX=73 CY=17 WI=191 BI=79 HT=0 HN=0 HF=0 HC=4
+WINDOW: 182 182 1406 436 -1 -1 N  WF=0 WT=21 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\descriptions.ste"
+VIEW: LN=.78588 CL=10 LE=0 CX=9 CY=14 WI=147 BI=32 HT=0 HN=0 HF=0 HC=4
+WINDOW: 104 104 1406 436 -1 -1 N  WF=0 WT=19 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\macros.ste"
+VIEW: LN=.4770 CL=12 LE=0 CX=11 CY=8 WI=102 BI=28 HT=0 HN=0 HF=0 HC=4
+WINDOW: 130 130 1406 436 -1 -1 N  WF=0 WT=42 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\cl-lib\cl-primal.ste"
+VIEW: LN=.16946 CL=30 LE=0 CX=29 CY=13 WI=163 BI=77 HT=0 HN=0 HF=0 HC=4
+WINDOW: 52 52 1406 436 -1 -1 N  WF=0 WT=24 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\goal-caches.ste"
+VIEW: LN=.13219 CL=38 LE=0 CX=37 CY=10 WI=140 BI=35 HT=0 HN=0 HF=0 HC=4
+WINDOW: 104 104 1406 436 -1 -1 N  WF=0 WT=41 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\support.ste"
+VIEW: LN=.5662 CL=17 LE=0 CX=16 CY=14 WI=186 BI=76 HT=0 HN=0 HF=0 HC=4
+WINDOW: 78 78 1406 436 -1 -1 N  WF=0 WT=40 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\kif-in.ste"
+VIEW: LN=.20149 CL=1 LE=0 CX=0 CY=13 WI=184 BI=75 HT=0 HN=0 HF=0 HC=4
+WINDOW: 52 52 1406 436 -1 -1 N  WF=0 WT=39 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\frame-support.ste"
+VIEW: LN=.14527 CL=9 LE=0 CX=8 CY=14 WI=276 BI=73 HT=0 HN=0 HF=0 HC=4
+WINDOW: 26 26 1406 436 -1 -1 N  WF=0 WT=38 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\files\bignum.ste"
+VIEW: LN=.1728 CL=4 LE=0 CX=3 CY=14 WI=279 BI=74 HT=0 HN=0 HF=0 HC=4
+WINDOW: 208 208 1406 436 -1 -1 N  WF=0 WT=36 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\native\java\edu\isi\ontosaurus\Thread.java"
+VIEW: LN=.5131 CL=9 LE=0 CX=8 CY=14 WI=289 BI=61 HT=0 HN=0 HF=0 HC=4
+WINDOW: 0 0 1406 436 -1 -1 N  WF=0 WT=30 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\optimize.ste"
+VIEW: LN=.124979 CL=30 LE=0 CX=29 CY=16 WI=173 BI=41 HT=0 HN=0 HF=0 HC=4
+WINDOW: 0 0 1406 436 -1 -1 N  WF=0 WT=23 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\logic\neural-network.ste"
+VIEW: LN=.61208 CL=16 LE=0 CX=15 CY=14 WI=145 BI=34 HT=0 HN=0 HF=0 HC=4
+WINDOW: 182 182 1406 436 -1 -1 N  WF=0 WT=28 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\stella-in.ste"
+VIEW: LN=.12930 CL=12 LE=0 CX=11 CY=14 WI=177 BI=40 HT=0 HN=0 HF=0 HC=4
+WINDOW: 156 156 1406 436 -1 -1 N  WF=0 WT=27 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\defclass.ste"
+VIEW: LN=.3787 CL=38 LE=0 CX=37 CY=14 WI=178 BI=37 HT=0 HN=0 HF=0 HC=4
+WINDOW: 130 130 1406 436 -1 -1 N  WF=0 WT=26 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\stella\cl-translate.ste"
+VIEW: LN=.58423 CL=30 LE=0 CX=29 CY=14 WI=175 BI=38 HT=0 HN=0 HF=0 HC=4
+WINDOW: 312 312 1302 660 -1 -1 N  WF=0 WT=5 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\ste-bench\files\arrays.lisp"
+VIEW: LN=.483 CL=1 LE=0 CX=0 CY=13 WI=246 BI=10 HT=0 HN=0 HF=0 HC=4
+WINDOW: 130 130 1302 660 -1 -1 M  WF=0 WT=11 "Default Fixed Font,14,0,1"
+BUFFER: BN="powerloom-4.0.9.beta\sources\powerloom-server\startup-system.ste"
+VIEW: LN=.0 CL=1 LE=0 CX=0 CY=0 WI=258 BI=14 HT=0 HN=0 HF=0 HC=4
+FILEHIST: 9
+powerloom-4.0.9.beta\sources\logic\kif-out.ste
+powerloom-4.0.9.beta\sources\logic\backlinks.ste
+powerloom-4.0.9.beta\sources\ste-bench\files\math.ste
+powerloom-4.0.9.beta\sources\stella\collections.ste
+powerloom-4.0.9.beta\sources\stella\cpp-translate.ste
+powerloom-4.0.9.beta\sources\stella\hierarchy.ste
+powerloom-4.0.9.beta\sources\stella\literals.ste
+powerloom-4.0.9.beta\sources\webtools\marshaller.ste
+powerloom-4.0.9.beta\sources\ste-bench\files\arrays.ste

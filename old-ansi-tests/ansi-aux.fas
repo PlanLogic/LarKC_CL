@@ -1,0 +1,2639 @@
+(|SYSTEM|::|VERSION| '(20080430.))
+#0Y_ #0Y |CHARSET|::|UTF-8|
+#Y(#:|1 6 (IN-PACKAGE :CL-TEST)-1|
+   #17Y(00 00 00 00 00 00 00 00 20 01 DA 31 F6 0F 01 19 01)
+   ("CL-TEST" |COMMON-LISP|::|*PACKAGE*|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|8 8 (DECLAIM (OPTIMIZE #))-2|
+   #15Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 19 01)
+   ((|COMMON-LISP|::|OPTIMIZE| (|COMMON-LISP|::|SAFETY| 3.)))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|10 12 (DEFUN NOTNOT (X) ...)-3|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|NOTNOT| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|NOTNOT| #15Y(00 00 00 00 01 00 00 00 26 02 9E 59 59 19 02)
+       () (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|14 15 (DEFMACRO NOTNOT-MV (FORM) ...)-4|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|NOTNOT-MV| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|NOTNOT-MV|
+       #36Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 63 2D 04 01 1D 0C 9F 5C 78
+            DD DE AE 7B 02 61 02 19 04 AE 2F 02 19 03)
+       (2. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR|
+        |CL-TEST|::|NOTNOT-MV-FN| |COMMON-LISP|::|MULTIPLE-VALUE-LIST|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (|CL-TEST|::|FORM|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|17 22 (DEFUN NOTNOT-MV-FN (RESULTS) ...)-5|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|NOTNOT-MV-FN| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|NOTNOT-MV-FN|
+       #27Y(00 00 00 00 01 00 00 00 26 02 93 01 0B DA 9F 5B 59 59 14 A0 5C 9B
+            01 02 3E 19 02)
+       (#.#'|COMMON-LISP|::|VALUES|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|RESULTS|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|24 25 (DEFMACRO NOT-MV (FORM) ...)-6|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|NOT-MV| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|NOT-MV|
+       #36Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 63 2D 04 01 1D 0C 9F 5C 78
+            DD DE AE 7B 02 61 02 19 04 AE 2F 02 19 03)
+       (2. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR|
+        |CL-TEST|::|NOT-MV-FN| |COMMON-LISP|::|MULTIPLE-VALUE-LIST|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (|CL-TEST|::|FORM|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|27 32 (DEFUN NOT-MV-FN (RESULTS) ...)-7|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|NOT-MV-FN| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|NOT-MV-FN|
+       #26Y(00 00 00 00 01 00 00 00 26 02 93 01 0A DA 9F 5B 59 14 A0 5C 9B 01
+            02 3E 19 02)
+       (#.#'|COMMON-LISP|::|VALUES|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|RESULTS|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|34 34 (DECLAIM (FTYPE # TO-FUNCTION))-8|
+   #15Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 19 01)
+   ((|COMMON-LISP|::|FTYPE|
+     (|COMMON-LISP|::|FUNCTION| (|COMMON-LISP|::|T|) |COMMON-LISP|::|FUNCTION|)
+     |CL-TEST|::|TO-FUNCTION|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|36 40 (DEFUN TO-FUNCTION (FN) ...)-9|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|TO-FUNCTION| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|TO-FUNCTION|
+       #70Y(00 00 00 00 01 00 00 00 26 02 AD 8E 2F 26 AD 8E 18 25 9E 20 14 94
+            01 25 00 0F 95 01 AC 8F 16 05 94 00 8E 18 16 16 01 1C 18 AD DB DC
+            70 03 DE 2D 03 05 19 02 9E 19 02 9E 5E 19 02 9D 5C 16 01 1C 68 AD
+            31 56 19 02)
+       (|COMMON-LISP|::|SETF| |CL-TEST|::|FN|
+        (|COMMON-LISP|::|FUNCTION| |COMMON-LISP|::|SYMBOL|
+         #1=(|COMMON-LISP|::|CONS| (|COMMON-LISP|::|EQL| |COMMON-LISP|::|SETF|)
+             (|COMMON-LISP|::|CONS| |COMMON-LISP|::|SYMBOL|
+              |COMMON-LISP|::|NULL|)))
+        |SYSTEM|::|TYPECASE-ERROR-STRING|
+        (|COMMON-LISP|::|OR| |COMMON-LISP|::|FUNCTION| |COMMON-LISP|::|SYMBOL|
+         #1#)
+        |SYSTEM|::|ETYPECASE-FAILED|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|FN|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|42 50 (DEFMACRO CHECK-VALUES (FORM &OPTIONAL #) ...)-10|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|CHECK-VALUES| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|CHECK-VALUES|
+       #79Y(00 00 00 00 02 00 00 00 26 03 AE DA DB 63 2D 04 02 1D 31 9F 5C 78
+            A0 5C 5C 1C 2E C9 14 38 01 72 AA 38 01 72 AA DF AE E0 B2 7B 02 7B
+            02 AE B1 7B 02 7B 02 E1 B0 B0 E2 B5 7B 02 7B 04 E3 B1 7B 02 61 04
+            19 07 AE 2F 03 19 03 A0 5C 5C 5B 1B 4D)
+       (2. 3. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR|
+        1. |COMMON-LISP|::|LET| |COMMON-LISP|::|MULTIPLE-VALUE-LIST|
+        |CL-TEST|::|CHECK-VALUES-LENGTH| |COMMON-LISP|::|QUOTE|
+        |COMMON-LISP|::|CAR|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (|CL-TEST|::|FORM| |COMMON-LISP|::|&OPTIONAL| (|CL-TEST|::|NUM| 1.)))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|52 61 (DEFUN CHECK-VALUES-LENGTH (RESULTS EXPECTED-NUMBER FORM) ...)-11|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|CHECK-VALUES-LENGTH| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|CHECK-VALUES-LENGTH|
+       #41Y(00 00 00 00 03 00 00 00 26 04 AE B0 1B 0E DA B0 B0 AF B4 33 04 1E
+            9D 5B 86 01 83 00 AC 8D 9F 76 16 01 AC 8F AC 68 00 19 05)
+       ("Expected ~A results from ~A, got ~A results instead.~%~\n
+Results: ~A~%")
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|RESULTS| |CL-TEST|::|EXPECTED-NUMBER| |CL-TEST|::|FORM|)
+       |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|63 69 (DEFMACRO MULTIPLE-VALUE-BIND* (# FORM &BODY ...) ...)-12|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|MULTIPLE-VALUE-BIND*| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|MULTIPLE-VALUE-BIND*|
+       #72Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 64 2D 04 01 1D 30 9F 5C 78
+            A0 5C 5C 78 A1 5C 5C 79 AE 72 62 38 01 72 AA DD AD DE B2 7B 02 7B
+            02 7B 01 DF AF B1 E0 B5 7B 02 7B 04 E1 B4 B1 A5 5D 5D 7A 61 04 19
+            08 AE 2F 02 19 03)
+       (3. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR|
+        |COMMON-LISP|::|LET| |COMMON-LISP|::|MULTIPLE-VALUE-LIST|
+        |CL-TEST|::|CHECK-VALUES-LENGTH| |COMMON-LISP|::|QUOTE|
+        |COMMON-LISP|::|DESTRUCTURING-BIND|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    ((|COMMON-LISP|::|&REST| |CL-TEST|::|VARS|) |CL-TEST|::|FORM|
+     |COMMON-LISP|::|&BODY| |CL-TEST|::|BODY|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|71 76 (DEFUN EQT (X Y) ...)-13|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|EQT| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|EQT|
+       #24Y(00 00 00 00 02 00 00 00 26 03 DA 99 01 B0 A1 5A 43 14 33 00 16 9B
+            00 03)
+       (#.#'|COMMON-LISP|::|VALUES| |CL-TEST|::|NOTNOT|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X| |CL-TEST|::|Y|)
+       "Like EQ, but guaranteed to return T for true." 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|78 80 (DEFUN EQLT (X Y) ...)-14|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|EQLT| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|EQLT|
+       #25Y(00 00 00 00 02 00 00 00 26 03 DA 99 01 B0 B0 32 13 43 14 33 00 16
+            9B 00 03)
+       (#.#'|COMMON-LISP|::|VALUES| |CL-TEST|::|NOTNOT|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X| |CL-TEST|::|Y|)
+       "Like EQL, but guaranteed to return T for true." 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|82 84 (DEFUN EQUALT (X Y) ...)-15|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|EQUALT| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|EQUALT|
+       #25Y(00 00 00 00 02 00 00 00 26 03 DA 99 01 B0 B0 32 14 43 14 33 00 16
+            9B 00 03)
+       (#.#'|COMMON-LISP|::|VALUES| |CL-TEST|::|NOTNOT|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X| |CL-TEST|::|Y|)
+       "Like EQUAL, but guaranteed to return T for true." 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|86 88 (DEFUN EQUALPT (X Y) ...)-16|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|EQUALPT| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|EQUALPT|
+       #25Y(00 00 00 00 02 00 00 00 26 03 DA 99 01 B0 B0 32 15 43 14 33 00 16
+            9B 00 03)
+       (#.#'|COMMON-LISP|::|VALUES| |CL-TEST|::|NOTNOT|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X| |CL-TEST|::|Y|)
+       "Like EQUALP, but guaranteed to return T for true." 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|90 92 (DEFUN EQUALPT-OR-REPORT (X Y) ...)-17|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|EQUALPT-OR-REPORT| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|EQUALPT-OR-REPORT|
+       #24Y(00 00 00 00 02 00 00 00 26 03 AE AE 30 00 1E 06 AE AE 61 02 19 03
+            19 03)
+       (|CL-TEST|::|EQUALPT|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X| |CL-TEST|::|Y|)
+       "Like EQUALPT, but return either T or a list of the arguments." 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|94 95 (DEFUN STRING=T (X Y) ...)-18|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|STRING=T| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|STRING=T|
+       #22Y(00 00 00 00 02 00 00 00 26 03 AE AE 38 04 31 35 43 14 2F 00 19 03)
+       (|CL-TEST|::|NOTNOT-MV-FN|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X| |CL-TEST|::|Y|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|97 99 (DEFUN =T (X &REST ARGS) ...)-19|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|=T| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|=T|
+       #26Y(00 00 00 00 01 00 00 00 27 17 DA 99 01 DC B1 A2 37 01 43 14 33 00
+            16 9B 00 03)
+       (#.#'|COMMON-LISP|::|VALUES| |CL-TEST|::|NOTNOT| #.#'|COMMON-LISP|::|=|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X| |COMMON-LISP|::|&REST| |CL-TEST|::|ARGS|)
+       "Like =, but guaranteed to return T for true." 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|101 103 (DEFUN <=T (X &REST ARGS) ...)-20|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|<=T| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|<=T|
+       #26Y(00 00 00 00 01 00 00 00 27 17 DA 99 01 DC B1 A2 37 01 43 14 33 00
+            16 9B 00 03)
+       (#.#'|COMMON-LISP|::|VALUES| |CL-TEST|::|NOTNOT|
+        #.#'|COMMON-LISP|::|<=|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X| |COMMON-LISP|::|&REST| |CL-TEST|::|ARGS|)
+       "Like <=, but guaranteed to return T for true." 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|105 106 (DEFUN MAKE-INT-LIST (N) ...)-21|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|MAKE-INT-LIST| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|MAKE-INT-LIST|
+       #30Y(00 00 00 00 01 00 00 00 26 02 DA 63 1B 05 AD 84 00 85 01 AD B0 91
+            01 34 75 AC 31 B1 19 04)
+       (0.) (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|N|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|108 115 (DEFUN MAKE-INT-ARRAY (N &OPTIONAL #) ...)-22|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|MAKE-INT-ARRAY| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|MAKE-INT-ARRAY|
+       #59Y(00 00 00 00 01 00 01 00 26 08 3B 01 02 C5 F9 AD 8F 18 0E 1B 05 DB
+            6F 02 2F 03 AD 8D 58 77 9E 5E F9 AD AF 76 01 DE 1B 08 AD AD AE 33
+            01 02 85 00 AC B1 91 01 34 72 16 01 15 19 03)
+       (#.#'|COMMON-LISP|::|MAKE-ARRAY|
+        (|COMMON-LISP|::|FBOUNDP| |CL-TEST|::|FN|)
+        |SYSTEM|::|ASSERT-ERROR-STRING| |SYSTEM|::|SIMPLE-ASSERT-FAILED| 0.)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|N| |COMMON-LISP|::|&OPTIONAL|
+        (|CL-TEST|::|FN| #'|COMMON-LISP|::|MAKE-ARRAY|))
+       |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|117 144 (DEFUN EQUAL-ARRAY (A1 A2) ...)-23|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|EQUAL-ARRAY| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|EQUAL-ARRAY|
+       #140Y(00 00 00 00 02 00 00 00 26 03 AE 32 31 1F 80 7A AD 32 31 1F 80 74
+             AE 71 07 AE 71 07 33 01 2F 1F 80 68 AE 71 07 8E AC 35 AE 71 09 AC
+             AF 71 09 32 14 1F 80 54 AF 71 07 DB 90 01 2F 2B AF 71 0A AC B0 71
+             0A 33 01 2F 1F 3E DC AC AE 90 01 34 34 B1 AD 70 03 B1 AE 70 03 8E
+             14 12 00 19 06 AE 6F 00 AE 6F 00 32 14 19 03 94 00 DC 1B 11 85 00
+             1B 59 B1 AD 70 00 B1 AE 70 00 8F 14 5F 85 00 AC AE 91 01 34 6D 02
+             19 06 19 05 19 04 19 03)
+       (|REGRESSION-TEST|::|MY-AREF| 1. 0.
+        |REGRESSION-TEST|::|MY-ROW-MAJOR-AREF|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|A1| |CL-TEST|::|A2|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|146 148 (DECLAIM (SPECIAL *UNIVERSE*))-24|
+   #15Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|*UNIVERSE*|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|150 164 (DEFUN EMPIRICAL-SUBTYPEP (TYPE1 TYPE2) ...)-25|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|EMPIRICAL-SUBTYPEP| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|EMPIRICAL-SUBTYPEP|
+       #52Y(00 00 00 00 02 00 00 00 26 03 AE AE 30 00 42 02 92 00 05 6B 01 63
+            1B 15 9E 19 05 00 19 07 87 01 00 14 B3 8B 02 05 AC B2 8B 02 70 83
+            01 AD 8D 9F 6D 02 19 07)
+       (|CL-TEST|::|SUBTYPEP*| |CL-TEST|::|*UNIVERSE*| |COMMON-LISP|::|TYPEP|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|TYPE1| |CL-TEST|::|TYPE2|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|166 195 (DEFUN CHECK-TYPE-PREDICATE (P TYPE) ...)-26|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|CHECK-TYPE-PREDICATE| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|CHECK-TYPE-PREDICATE|
+       #229Y(02 00 01 00 02 00 00 00 26 03 00 2B 02 7F 03 00 00 7F 02 00 01 68
+             00 00 8F 18 1B 1B 05 DA 6F 01 2F 02 68 00 00 8D 58 75 06 00 00 5E
+             0B 00 00 1B 05 DD 6F 01 2F 02 68 00 00 8F 2F 75 6B 04 9E 2B 01 00
+             0B 00 00 14 1B 80 92 E3 6B 0A 68 09 00 68 08 00 33 03 15 4D 1B 80
+             7B 58 67 00 00 01 76 00 AD 36 01 18 02 01 19 02 E9 6B 0A 68 08 00
+             68 0B 01 33 03 15 4D 16 01 1B 80 5A 16 02 1D 80 5A 1B 80 52 9F 5B
+             0B 01 00 4B 05 FF BE AE 6D 06 01 B2 6D 07 01 57 08 B0 36 00 16 06
+             4D 14 4B 0B 49 AE 6D 0C 01 B3 6D 0D 01 57 0E B0 36 00 16 06 4D 14
+             93 01 03 93 00 08 9E 59 1D 40 93 00 FF BC EA 6B 0A 68 07 00 68 06
+             00 B1 68 08 00 68 0B 01 B3 33 07 15 16 02 68 01 00 84 00 83 02 AE
+             8D 9F FF A2 AC 31 B1 19 07)
+       ((|COMMON-LISP|::|FBOUNDP| |CL-TEST|::|P|)
+        |SYSTEM|::|ASSERT-ERROR-STRING| |SYSTEM|::|SIMPLE-ASSERT-FAILED|
+        (|COMMON-LISP|::|TYPEP| |CL-TEST|::|P| '|COMMON-LISP|::|FUNCTION|)
+        |CL-TEST|::|*UNIVERSE*| #(|COMMON-LISP|::|NIL|)
+        #Y(|CL-TEST|::|CHECK-TYPE-PREDICATE-1|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|CHECK-TYPE-PREDICATE-1-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 00)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|CHECK-TYPE-PREDICATE-2|
+           #28Y(00 00 00 00 00 00 00 00 26 01 0E 01 1C 04 2E 02 19 01 69 01 01
+                69 00 01 36 01 19 01)
+           (|COMMON-LISP|::|NIL| |CL-TEST|::|*SHOULD-ALWAYS-BE-TRUE*|
+            |CL-TEST|::|SHOULD-NEVER-BE-CALLED|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+           |COMMON-LISP|::|NIL| 1)
+        (#(|COMMON-LISP|::|ERROR| 79.) 1. . 1.)
+        #Y(|CL-TEST|::|CHECK-TYPE-PREDICATE-3|
+           #55Y(00 00 00 00 03 00 00 00 21 19 DA B1 38 02 31 95 B0 2F 01 10 02
+                B2 B4 31 8D 11 B0 2F 03 DE B1 31 94 B0 2F 01 10 02 B1 B4 31 8D
+                11 B0 2F 03 DF B1 38 02 31 95 9E 19 05)
+           ("(FUNCALL " |SYSTEM|::|STREAM-START-S-EXPRESSION|
+            |COMMON-LISP|::|*PRINT-RIGHT-MARGIN*|
+            |SYSTEM|::|STREAM-END-S-EXPRESSION| #\  ") failed\n")
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        |COMMON-LISP|::|*STANDARD-OUTPUT*| #(|COMMON-LISP|::|NIL|)
+        #Y(|CL-TEST|::|CHECK-TYPE-PREDICATE-4|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|CHECK-TYPE-PREDICATE-4-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 00)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|CHECK-TYPE-PREDICATE-5|
+           #28Y(00 00 00 00 00 00 00 00 26 01 0E 01 1C 04 2E 03 19 01 69 00 01
+                69 01 02 30 02 19 01)
+           (|COMMON-LISP|::|NIL| |CL-TEST|::|*SHOULD-ALWAYS-BE-TRUE*|
+            |COMMON-LISP|::|TYPEP| |CL-TEST|::|SHOULD-NEVER-BE-CALLED|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+           |COMMON-LISP|::|NIL| 1)
+        (#(|COMMON-LISP|::|ERROR| 79.) 1. . 1.)
+        #Y(|CL-TEST|::|CHECK-TYPE-PREDICATE-6|
+           #57Y(00 00 00 00 03 00 00 00 21 19 DA B1 38 02 31 95 B0 2F 01 10 02
+                B2 B4 31 8D 11 B0 2F 03 DE B1 38 02 31 95 B0 2F 01 10 02 B1 B4
+                31 8D 11 B0 2F 03 DF B1 38 02 31 95 9E 19 05)
+           ("(TYPEP " |SYSTEM|::|STREAM-START-S-EXPRESSION|
+            |COMMON-LISP|::|*PRINT-RIGHT-MARGIN*|
+            |SYSTEM|::|STREAM-END-S-EXPRESSION| " '" ") failed\n")
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        #Y(|CL-TEST|::|CHECK-TYPE-PREDICATE-7|
+           #128Y(00 00 00 00 07 00 00 00 21 00 DA B5 38 02 31 95 B4 2F 01 10 02
+                 B6 B8 31 8D 11 B4 2F 03 DE B5 31 94 B4 2F 01 10 02 B5 B8 31 8D
+                 11 B4 2F 03 DF B5 38 02 31 95 B4 2F 01 10 02 B4 B8 31 8D 11 B4
+                 2F 03 E0 B5 38 02 31 95 B4 2F 01 10 02 B3 B8 31 8D 11 B4 2F 03
+                 E1 B5 38 02 31 95 B4 2F 01 10 02 B2 B8 31 8D 11 B4 2F 03 E2 B5
+                 38 02 31 95 B4 2F 01 10 02 B1 B8 31 8D 11 B4 2F 03 B4 31 97 9E
+                 19 09)
+           ("(FUNCALL " |SYSTEM|::|STREAM-START-S-EXPRESSION|
+            |COMMON-LISP|::|*PRINT-RIGHT-MARGIN*|
+            |SYSTEM|::|STREAM-END-S-EXPRESSION| #\  ") = " ", (TYPEP " " '"
+            ") = ")
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|P| |COMMON-LISP|::|TYPE|)
+       "Check that a predicate P is the same as #'(lambda (x) (typep x TYPE))\n
+   by applying both to all elements of *UNIVERSE*.  Print message\n
+   when a mismatch is found, and return number of mistakes."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|197 205 (DEFUN CHECK-PREDICATE (PREDICATE &OPTIONAL GUARD ...) ...)-27|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|CHECK-PREDICATE| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|CHECK-PREDICATE|
+       #41Y(00 00 00 00 01 00 02 00 26 0D 00 2B 02 7F 04 00 00 3B 03 01 00 0B
+            00 01 3B 02 03 0E 00 FA AC 6D 01 01 AF 38 05 32 6A 19 05)
+       (|CL-TEST|::|*UNIVERSE*|
+        #Y(|CL-TEST|::|CHECK-PREDICATE-1|
+           #31Y(00 00 00 00 01 00 00 00 26 02 07 00 02 1D 06 14 AE 36 01 1E 08
+                69 00 01 AE 36 01 19 02 19 02)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+           (|CL-TEST|::|E|) |COMMON-LISP|::|NIL| 1))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|PREDICATE| |COMMON-LISP|::|&OPTIONAL| |CL-TEST|::|GUARD|
+        (|CL-TEST|::|UNIVERSE| |CL-TEST|::|*UNIVERSE*|))
+       "Return all elements of UNIVERSE for which the guard (if present) is false\n
+   and for which PREDICATE is false."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|207 207 (DECLAIM (SPECIAL *CATCH-ERROR-TYPE*))-28|
+   #15Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|*CATCH-ERROR-TYPE*|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|209 222 (DEFUN CATCH-CONTINUE-DEBUGGER-HOOK (CONDITION DBH) ...)-29|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|CATCH-CONTINUE-DEBUGGER-HOOK|
+    |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|CATCH-CONTINUE-DEBUGGER-HOOK|
+       #67Y(00 00 00 00 02 00 00 00 26 03 DA AF 70 01 0E 02 1D 06 AF 6B 02 8B
+            03 11 92 00 23 CD 14 00 52 E0 6B 05 AE 33 02 15 CD 1B 73 DE 6B 05
+            B1 6B 02 33 03 15 92 00 6A E1 6B 05 33 01 15 CD 1B 5E 14 2F 09 19
+            04)
+       (|COMMON-LISP|::|CONTINUE| |COMMON-LISP|::|FIND-RESTART|
+        |CL-TEST|::|*CATCH-ERROR-TYPE*| |COMMON-LISP|::|TYPEP|
+        #Y(|CL-TEST|::|CATCH-CONTINUE-DEBUGGER-HOOK-1|
+           #45Y(00 00 00 00 03 00 00 00 21 19 DA B1 38 02 31 95 B0 2F 01 10 02
+                B2 B4 31 8D 11 B0 2F 03 DE B1 38 02 31 95 AE B1 31 90 B0 31 97
+                9E 19 05)
+           ("Condition " |SYSTEM|::|STREAM-START-S-EXPRESSION|
+            |COMMON-LISP|::|*PRINT-RIGHT-MARGIN*|
+            |SYSTEM|::|STREAM-END-S-EXPRESSION| " is not a ")
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        |COMMON-LISP|::|*STANDARD-OUTPUT*|
+        #Y(|CL-TEST|::|CATCH-CONTINUE-DEBUGGER-HOOK-2|
+           #35Y(00 00 00 00 02 00 00 00 21 18 DA B0 38 02 31 95 AF 2F 01 10 02
+                B1 B3 31 8D 11 AF 2F 03 AF 31 97 9E 19 04)
+           ("Its continue restart is " |SYSTEM|::|STREAM-START-S-EXPRESSION|
+            |COMMON-LISP|::|*PRINT-RIGHT-MARGIN*|
+            |SYSTEM|::|STREAM-END-S-EXPRESSION|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        #Y(|CL-TEST|::|CATCH-CONTINUE-DEBUGGER-HOOK-3|
+           #19Y(00 00 00 00 01 00 00 00 21 17 DA AF 38 02 31 95 9E 19 03)
+           ("It has no continue restart\n")
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        |CL-TEST|::|CONTINUE-FAILED| |COMMON-LISP|::|INVOKE-RESTART|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|COMMON-LISP|::|CONDITION| |CL-TEST|::|DBH|)
+       "Function that when used as *debugger-hook*, causes\n
+   continuable errors to be continued without user intervention."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|224 244 (DEFMACRO CATCH-TYPE-ERROR (FORM) ...)-30|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|CATCH-TYPE-ERROR| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|CATCH-TYPE-ERROR|
+       #41Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 63 2D 04 01 1D 11 9F 5C 78
+            DD DE DF E0 B0 7B 02 CC 5D 7A 61 03 19 04 AE 2F 02 19 03)
+       (2. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR|
+        |COMMON-LISP|::|LOCALLY|
+        (|COMMON-LISP|::|DECLARE|
+         (|COMMON-LISP|::|OPTIMIZE| (|COMMON-LISP|::|SAFETY| 3.)))
+        |CL-TEST|::|HANDLER-CASE| |CL-TEST|::|NORMALLY|
+        ((|COMMON-LISP|::|TYPE-ERROR| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|TYPE-ERROR|)
+         (|COMMON-LISP|::|ERROR| (|CL-TEST|::|C|) |CL-TEST|::|C|)))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|)
+       "Evaluate form in safe mode, returning its value if there is no error.\n
+If an error does occur, return type-error on TYPE-ERRORs, or the error\n
+condition itself on other errors."
+       1)
+    (|CL-TEST|::|FORM|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|246 267 (DEFMACRO CLASSIFY-ERROR* (FORM) ...)-31|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|CLASSIFY-ERROR*| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|CLASSIFY-ERROR*|
+       #41Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 63 2D 04 01 1D 11 9F 5C 78
+            DD DE DF E0 B0 7B 02 CC 5D 7A 61 03 19 04 AE 2F 02 19 03)
+       (2. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR|
+        |COMMON-LISP|::|LOCALLY|
+        (|COMMON-LISP|::|DECLARE|
+         (|COMMON-LISP|::|OPTIMIZE| (|COMMON-LISP|::|SAFETY| 3.)))
+        |CL-TEST|::|HANDLER-CASE| |CL-TEST|::|NORMALLY|
+        ((|COMMON-LISP|::|UNDEFINED-FUNCTION| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|UNDEFINED-FUNCTION|)
+         (|COMMON-LISP|::|PROGRAM-ERROR| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|PROGRAM-ERROR|)
+         (|COMMON-LISP|::|PACKAGE-ERROR| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|PACKAGE-ERROR|)
+         (|COMMON-LISP|::|TYPE-ERROR| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|TYPE-ERROR|)
+         (|COMMON-LISP|::|CONTROL-ERROR| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|CONTROL-ERROR|)
+         (|COMMON-LISP|::|PARSE-ERROR| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|PARSE-ERROR|)
+         (|COMMON-LISP|::|STREAM-ERROR| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|STREAM-ERROR|)
+         (|COMMON-LISP|::|READER-ERROR| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|READER-ERROR|)
+         (|COMMON-LISP|::|FILE-ERROR| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|FILE-ERROR|)
+         (|COMMON-LISP|::|CELL-ERROR| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|CELL-ERROR|)
+         (|COMMON-LISP|::|DIVISION-BY-ZERO| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|DIVISION-BY-ZERO|)
+         (|COMMON-LISP|::|FLOATING-POINT-OVERFLOW| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|FLOATING-POINT-OVERFLOW|)
+         (|COMMON-LISP|::|FLOATING-POINT-UNDERFLOW| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|FLOATING-POINT-UNDERFLOW|)
+         (|COMMON-LISP|::|ARITHMETIC-ERROR| |COMMON-LISP|::|NIL|
+          '|COMMON-LISP|::|ARITHMETIC-ERROR|)
+         (|COMMON-LISP|::|ERROR| |COMMON-LISP|::|NIL| '|COMMON-LISP|::|ERROR|)))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|)
+       "Evaluate form in safe mode, returning its value if there is no error.\n
+If an error does occur, return a symbol classify the error, or allow\n
+the condition to go uncaught if it cannot be classified."
+       1)
+    (|CL-TEST|::|FORM|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|269 279 (DEFUN CLASSIFY-ERROR** (FORM) ...)-32|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|CLASSIFY-ERROR**| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|CLASSIFY-ERROR**|
+       #44Y(01 00 00 00 01 00 00 00 26 02 00 2B 01 7F 02 00 00 DA AD 6D 01 01
+            57 02 B0 36 00 19 09 58 67 00 00 01 76 00 AD 36 01 18 01 00 19 02)
+       (#Y(|CL-TEST|::|CLASSIFY-ERROR**-1|
+           #13Y(00 00 00 00 00 00 00 00 26 01 C5 19 01)
+           (#Y(|CL-TEST|::|CLASSIFY-ERROR**-1-1|
+               #14Y(00 00 00 00 01 00 00 00 26 02 2E 00 19 02)
+               (|COMMON-LISP|::|MUFFLE-WARNING|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|CL-TEST|::|C|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|CLASSIFY-ERROR**-2|
+           #308Y(02 00 01 00 00 00 00 00 26 01 0E 01 1C 80 7B 2E 24 19 01 58 05
+                 00 00 0F 1B 80 64 58 05 00 00 0E 1B 80 5C 58 05 00 00 0D 1B 80
+                 54 58 05 00 00 0C 1B 80 4C 58 05 00 00 0B 1B 80 44 58 05 00 00
+                 0A 1B 3D 58 05 00 00 09 1B 36 58 05 00 00 08 1B 2F 58 05 00 00
+                 07 1B 28 58 05 00 00 06 1B 21 58 05 00 00 05 1B 1A 58 05 00 00
+                 04 1B 13 58 05 00 00 03 1B 0C 58 05 00 00 02 1B 05 58 05 00 00
+                 01 14 76 00 AD 36 01 18 02 01 19 02 DC 31 62 4B 03 80 9E 80 98
+                 80 92 80 8C 80 86 80 80 80 7A 80 74 80 6E 80 68 80 62 80 5C 80
+                 56 80 50 80 4A AE 6D 04 01 AF 6D 05 01 B0 6D 06 01 B1 6D 07 01
+                 B2 6D 08 01 B3 6D 09 01 B4 6D 0A 01 B5 6D 0B 01 B6 6D 0C 01 B7
+                 6D 0D 01 B8 6D 0E 01 B9 6D 0F 01 BA 6D 10 01 BB 6D 11 01 BC 6D
+                 12 01 2A 14 6D 13 01 57 14 B0 36 00 16 14 1B 3A 03 15 1B 36 03
+                 16 1B 32 03 17 1B 2E 03 18 1B 2A 03 19 1B 26 03 1A 1B 22 03 1B
+                 1B 1E 03 1C 1B 1A 03 1D 1B 16 03 1E 1B 12 03 1F 1B 0E 03 20 1B
+                 0A 03 21 1B 06 03 22 1B 02 03 23 4D 19 01)
+           (|COMMON-LISP|::|NIL| |CL-TEST|::|*SHOULD-ALWAYS-BE-TRUE*|
+            (|COMMON-LISP|::|OPTIMIZE| (|COMMON-LISP|::|SAFETY| 3.))
+            #(|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+              |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+              |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+              |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+              |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-1|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-1-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 0E)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-2|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-2-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 0D)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-3|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-3-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 0C)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-4|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-4-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 0B)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-5|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-5-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 0A)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-6|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-6-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 09)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-7|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-7-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 08)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-8|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-8-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 07)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-9|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-9-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 06)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-10|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-10-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 05)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-11|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-11-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 04)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-12|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-12-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 03)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-13|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-13-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 02)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-14|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-14-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 01)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-15|
+               #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+               (|COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-15-1|
+                   #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 00)
+                   (|COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CLASSIFY-ERROR**-2-16|
+               #44Y(00 00 00 00 00 00 00 00 26 01 0E 01 1C 13 2E 06 19 01 63 DD
+                    63 DE 69 00 01 7B 04 70 05 36 00 19 01 0E 02 1C 6D 69 00 01
+                    31 63 19 01)
+               (|COMMON-LISP|::|NIL| |CL-TEST|::|*SHOULD-ALWAYS-BE-TRUE*|
+                |REGRESSION-TEST|::|*COMPILE-TESTS*| |COMMON-LISP|::|LAMBDA|
+                (|COMMON-LISP|::|DECLARE|
+                 (|COMMON-LISP|::|OPTIMIZE| (|COMMON-LISP|::|SAFETY| 3.)))
+                |COMMON-LISP|::|COMPILE| |CL-TEST|::|SHOULD-NEVER-BE-CALLED|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+               |COMMON-LISP|::|NIL| 1)
+            (#(|COMMON-LISP|::|UNDEFINED-FUNCTION| 9.
+               |COMMON-LISP|::|PROGRAM-ERROR| 17.
+               |COMMON-LISP|::|PACKAGE-ERROR| 25. |COMMON-LISP|::|TYPE-ERROR|
+               33. |COMMON-LISP|::|CONTROL-ERROR| 41.
+               |COMMON-LISP|::|PARSE-ERROR| 49. |COMMON-LISP|::|STREAM-ERROR|
+               56. |COMMON-LISP|::|READER-ERROR| 63.
+               |COMMON-LISP|::|FILE-ERROR| 70. |COMMON-LISP|::|CELL-ERROR| 77.
+               |COMMON-LISP|::|DIVISION-BY-ZERO| 84.
+               |COMMON-LISP|::|FLOATING-POINT-OVERFLOW| 91.
+               |COMMON-LISP|::|FLOATING-POINT-UNDERFLOW| 98.
+               |COMMON-LISP|::|ARITHMETIC-ERROR| 105. |COMMON-LISP|::|ERROR|
+               112.)
+             1. . 1.)
+            |COMMON-LISP|::|UNDEFINED-FUNCTION| |COMMON-LISP|::|PROGRAM-ERROR|
+            |COMMON-LISP|::|PACKAGE-ERROR| |COMMON-LISP|::|TYPE-ERROR|
+            |COMMON-LISP|::|CONTROL-ERROR| |COMMON-LISP|::|PARSE-ERROR|
+            |COMMON-LISP|::|STREAM-ERROR| |COMMON-LISP|::|READER-ERROR|
+            |COMMON-LISP|::|FILE-ERROR| |COMMON-LISP|::|CELL-ERROR|
+            |COMMON-LISP|::|DIVISION-BY-ZERO|
+            |COMMON-LISP|::|FLOATING-POINT-OVERFLOW|
+            |COMMON-LISP|::|FLOATING-POINT-UNDERFLOW|
+            |COMMON-LISP|::|ARITHMETIC-ERROR| |COMMON-LISP|::|ERROR|
+            |CL-TEST|::|SHOULD-NEVER-BE-CALLED|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+           |COMMON-LISP|::|NIL| 1)
+        (#(|COMMON-LISP|::|WARNING| 19.) 0. . 0.))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|FORM|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|281 282 (DEFMACRO CLASSIFY-ERROR (FORM) ...)-33|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|CLASSIFY-ERROR| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|CLASSIFY-ERROR|
+       #36Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 63 2D 04 01 1D 0C 9F 5C 78
+            DD DE AE 7B 02 61 02 19 04 AE 2F 02 19 03)
+       (2. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR|
+        |CL-TEST|::|CLASSIFY-ERROR**| |COMMON-LISP|::|QUOTE|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (|CL-TEST|::|FORM|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|284 336 (DEFMACRO SIGNALS-ERROR (FORM ERROR-NAME &KEY ...) ...)-34|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|SIGNALS-ERROR| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|SIGNALS-ERROR|
+       #201Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 64 2D 04 01 1D 80 56 9F 5C
+             78 A0 5C 5C 78 A1 5C 5C 79 AC DD DE 72 9F AC 24 04 80 46 9D F8 64
+             AE DF DE 72 9F AC 24 04 3E 9D F8 AF E0 DE 72 9F AC 24 04 38 9D F8
+             B0 E1 31 6A E2 E3 E4 E5 E6 E7 63 E8 92 08 2A 0E 0F 1C 29 F1 EC BC
+             61 02 14 61 02 14 7B 02 7B 04 B6 F2 F3 AA 26 1A 80 4F AE 2F 02 19
+             03 C5 1B FF B7 7D 01 1B FF BE 00 1B 46 AB 1B 5F EA EB 63 EC ED 63
+             EE EF F0 C0 7B 02 7B 02 7B 02 C1 7B 04 7B 02 61 03 1B 43 03 1B 1B
+             1F 93 0A 1C F6 F7 65 1E EC B9 7B 02 7B 03 7B 02 03 1F 7A 61 01 1B
+             09 03 20 1B 05 03 21 1B 01 00 14 65 22 33 02 23 7A 7B 03 7B 03 61
+             04 19 0A)
+       (3. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR|
+        :|SAFETY| (|COMMON-LISP|::|NIL|) :|NAME| :|INLINE|
+        (:|INLINE| :|NAME| :|SAFETY|) |CL-TEST|::|HANDLER-BIND|
+        ((|COMMON-LISP|::|WARNING|
+          #'(|COMMON-LISP|::|LAMBDA| (|CL-TEST|::|C|)
+             (|COMMON-LISP|::|DECLARE|
+              (|COMMON-LISP|::|IGNORE| |CL-TEST|::|C|))
+             (|COMMON-LISP|::|MUFFLE-WARNING|))))
+        (|COMMON-LISP|::|PROCLAIM|
+         '(|COMMON-LISP|::|OPTIMIZE| (|COMMON-LISP|::|SAFETY| 3.)))
+        |CL-TEST|::|HANDLER-CASE| |COMMON-LISP|::|APPLY|
+        #'|COMMON-LISP|::|VALUES| |COMMON-LISP|::|MULTIPLE-VALUE-LIST|
+        |REGRESSION-TEST|::|*COMPILE-TESTS*| |COMMON-LISP|::|FUNCALL|
+        |COMMON-LISP|::|COMPILE| |COMMON-LISP|::|QUOTE| |COMMON-LISP|::|LAMBDA|
+        |COMMON-LISP|::|DECLARE| |COMMON-LISP|::|OPTIMIZE|
+        |COMMON-LISP|::|SAFETY| |COMMON-LISP|::|EVAL| (|CL-TEST|::|C|)
+        |COMMON-LISP|::|COND|
+        #S(|COMMON-LISP|::|HASH-TABLE| :|TEST| |EXT|::|STABLEHASH-EQ|
+           (|COMMON-LISP|::|FILE-ERROR| . 77.)
+           (|COMMON-LISP|::|READER-ERROR| . 73.)
+           (|COMMON-LISP|::|END-OF-FILE| . 73.)
+           (|COMMON-LISP|::|STREAM-ERROR| . 73.)
+           (|COMMON-LISP|::|UNBOUND-VARIABLE| . 51.)
+           (|COMMON-LISP|::|UNDEFINED-FUNCTION| . 51.)
+           (|COMMON-LISP|::|TYPE-ERROR| . 47.))
+        (((|COMMON-LISP|::|TYPEP|
+           (|COMMON-LISP|::|TYPE-ERROR-DATUM| |CL-TEST|::|C|)
+           (|COMMON-LISP|::|TYPE-ERROR-EXPECTED-TYPE| |CL-TEST|::|C|))
+          (|COMMON-LISP|::|VALUES| |COMMON-LISP|::|NIL|
+           (|COMMON-LISP|::|LIST|
+            (|COMMON-LISP|::|LIST| '|COMMON-LISP|::|TYPEP|
+             (|COMMON-LISP|::|LIST| '|COMMON-LISP|::|QUOTE|
+              (|COMMON-LISP|::|TYPE-ERROR-DATUM| |CL-TEST|::|C|))
+             (|COMMON-LISP|::|LIST| '|COMMON-LISP|::|QUOTE|
+              (|COMMON-LISP|::|TYPE-ERROR-EXPECTED-TYPE| |CL-TEST|::|C|)))
+            "==> true"))))
+        |COMMON-LISP|::|NOT| |COMMON-LISP|::|EQ|
+        (|COMMON-LISP|::|CELL-ERROR-NAME| |CL-TEST|::|C|)
+        ((|COMMON-LISP|::|VALUES| |COMMON-LISP|::|NIL|
+          (|COMMON-LISP|::|LIST| '|COMMON-LISP|::|CELL-ERROR-NAME| "==>"
+           (|COMMON-LISP|::|CELL-ERROR-NAME| |CL-TEST|::|C|))))
+        (((|COMMON-LISP|::|NOT|
+           (|COMMON-LISP|::|STREAMP|
+            (|COMMON-LISP|::|STREAM-ERROR-STREAM| |CL-TEST|::|C|)))
+          (|COMMON-LISP|::|VALUES| |COMMON-LISP|::|NIL|
+           (|COMMON-LISP|::|LIST| '|COMMON-LISP|::|STREAM-ERROR-STREAM| "==>"
+            (|COMMON-LISP|::|STREAM-ERROR-STREAM| |CL-TEST|::|C|)))))
+        (((|COMMON-LISP|::|NOT|
+           (|COMMON-LISP|::|PATHNAMEP|
+            (|COMMON-LISP|::|PATHNAME|
+             (|COMMON-LISP|::|FILE-ERROR-PATHNAME| |CL-TEST|::|C|))))
+          (|COMMON-LISP|::|VALUES| |COMMON-LISP|::|NIL|
+           (|COMMON-LISP|::|LIST| '|COMMON-LISP|::|FILE-ERROR-PATHNAME| "==>"
+            (|COMMON-LISP|::|FILE-ERROR-PATHNAME| |CL-TEST|::|C|)))))
+        ((|COMMON-LISP|::|T| (|CL-TEST|::|PRINTABLE-P| |CL-TEST|::|C|))))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (|CL-TEST|::|FORM| |CL-TEST|::|ERROR-NAME| |COMMON-LISP|::|&KEY|
+     (|COMMON-LISP|::|SAFETY| 3.)
+     (|CL-TEST|::|NAME| |COMMON-LISP|::|NIL| |CL-TEST|::|NAME-P|)
+     (|COMMON-LISP|::|INLINE| |COMMON-LISP|::|NIL|)))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|338 341 (DEFMACRO SIGNALS-ERROR-ALWAYS (FORM ERROR-NAME) ...)-35|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|SIGNALS-ERROR-ALWAYS| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|SIGNALS-ERROR-ALWAYS|
+       #48Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 63 2D 04 01 1D 18 9F 5C 78
+            A0 5C 5C 78 DD DE AF AF 7B 03 DE B0 B0 CA 5D 5D 7A 61 03 19 05 AE
+            2F 02 19 03)
+       (3. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR|
+        |COMMON-LISP|::|VALUES| |CL-TEST|::|SIGNALS-ERROR| (:|SAFETY| 0.))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (|CL-TEST|::|FORM| |CL-TEST|::|ERROR-NAME|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|343 374 (DEFMACRO SIGNALS-TYPE-ERROR (VAR DATUM-FORM FORM ...) ...)-36|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|SIGNALS-TYPE-ERROR| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|SIGNALS-TYPE-ERROR|
+       #196Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 64 2D 04 01 1D 80 93 9F 5C
+             78 A0 5C 5C 78 A1 5C 5C 5C 78 A2 5C 5C 5C 79 AC DD DE 72 9F AC 24
+             04 80 7D 9D F8 AD E0 DE 72 9F AC 24 04 80 75 9D F8 AE E1 31 6A E2
+             B2 7B 01 E3 E4 E5 B2 7B 02 7B 02 7B 02 B2 7B 04 E6 B3 B3 7B 02 7B
+             01 E7 E8 E9 EA EB EC 63 ED EE 92 0C 80 4E 0E 16 1C 80 4E F3 F2 B9
+             61 02 14 61 02 14 BE 7B 03 7B 02 7B 04 F4 F5 E6 F6 F7 65 1E 65 1F
+             C0 03 20 5D 7A 7B 02 65 21 65 22 C1 03 23 5D 5D 7A 7B 02 03 24 5D
+             7A 7B 03 7B 03 7B 03 7B 03 61 04 19 0A AE 2F 02 19 03 CA 1B FF 80
+             00 1B FF 88 EF A9 1B FF B7 F1 63 F2 BA 7B 02 61 03 1B FF AF)
+       (4. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR|
+        :|SAFETY| (|COMMON-LISP|::|NIL|) 3. :|INLINE| (:|INLINE| :|SAFETY|)
+        |COMMON-LISP|::|LAMBDA| |COMMON-LISP|::|DECLARE|
+        |COMMON-LISP|::|OPTIMIZE| |COMMON-LISP|::|SAFETY| |COMMON-LISP|::|LET|
+        (|COMMON-LISP|::|DECLARE|
+         (|COMMON-LISP|::|OPTIMIZE| |COMMON-LISP|::|SAFETY|))
+        |CL-TEST|::|HANDLER-BIND|
+        ((|COMMON-LISP|::|WARNING|
+          #'(|COMMON-LISP|::|LAMBDA| (|CL-TEST|::|C|)
+             (|COMMON-LISP|::|DECLARE|
+              (|COMMON-LISP|::|IGNORE| |CL-TEST|::|C|))
+             (|COMMON-LISP|::|MUFFLE-WARNING|))))
+        |CL-TEST|::|HANDLER-CASE| |COMMON-LISP|::|APPLY|
+        #'|COMMON-LISP|::|VALUES| |COMMON-LISP|::|MULTIPLE-VALUE-LIST|
+        |COMMON-LISP|::|FUNCALL| |COMMON-LISP|::|FUNCTION|
+        |REGRESSION-TEST|::|*COMPILE-TESTS*| |COMMON-LISP|::|COMPILE|
+        |COMMON-LISP|::|QUOTE| |COMMON-LISP|::|EVAL|
+        |COMMON-LISP|::|TYPE-ERROR| (|CL-TEST|::|C|)
+        ((|CL-TEST|::|DATUM|
+          (|COMMON-LISP|::|TYPE-ERROR-DATUM| |CL-TEST|::|C|))
+         (|CL-TEST|::|EXPECTED-TYPE|
+          (|COMMON-LISP|::|TYPE-ERROR-EXPECTED-TYPE| |CL-TEST|::|C|)))
+        |COMMON-LISP|::|COND| |COMMON-LISP|::|NOT| |COMMON-LISP|::|EQL|
+        (|CL-TEST|::|DATUM|) |COMMON-LISP|::|LIST| :|DATUM-MISMATCH|
+        (|CL-TEST|::|DATUM|)
+        (((|COMMON-LISP|::|TYPEP| |CL-TEST|::|DATUM|
+           |CL-TEST|::|EXPECTED-TYPE|)
+          (|COMMON-LISP|::|LIST| :|IS-TYPEP| |CL-TEST|::|DATUM|
+           |CL-TEST|::|EXPECTED-TYPE|))
+         (|COMMON-LISP|::|T| (|CL-TEST|::|PRINTABLE-P| |CL-TEST|::|C|))))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (|CL-TEST|::|VAR| |CL-TEST|::|DATUM-FORM| |CL-TEST|::|FORM|
+     |COMMON-LISP|::|&KEY| (|COMMON-LISP|::|SAFETY| 3.)
+     (|COMMON-LISP|::|INLINE| |COMMON-LISP|::|NIL|)))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|376 376 (DECLAIM (SPECIAL *MINI-UNIVERSE*))-37|
+   #15Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|*MINI-UNIVERSE*|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|378 388 (DEFUN CHECK-TYPE-ERROR* (PRED-FN GUARD-FN &OPTIONAL ...) ...)-38|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|CHECK-TYPE-ERROR*| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|CHECK-TYPE-ERROR*|
+       #96Y(01 00 00 00 02 00 01 00 26 09 00 2B 01 7F 04 00 00 3B 02 03 0E 00
+            FA 63 AF 01 02 1B 3A 58 67 00 00 01 76 00 AD 36 01 18 01 00 19 02
+            87 02 01 B3 AE 36 01 1C 20 A1 2B 01 7F 02 00 00 DB AD 6D 02 01 57
+            03 B0 36 00 16 07 43 FB 14 DE 8E 14 06 AD B0 7B 02 84 00 83 02 AE
+            8D 9F 51 AC 31 B1 19 09)
+       (|CL-TEST|::|*MINI-UNIVERSE*|
+        #Y(|CL-TEST|::|CHECK-TYPE-ERROR*-1|
+           #13Y(00 00 00 00 00 00 00 00 26 01 C5 19 01)
+           (#Y(|CL-TEST|::|CHECK-TYPE-ERROR*-1-1|
+               #14Y(00 00 00 00 01 00 00 00 26 02 2E 00 19 02)
+               (|COMMON-LISP|::|MUFFLE-WARNING|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|CL-TEST|::|C|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|CHECK-TYPE-ERROR*-2|
+           #107Y(02 00 01 00 00 00 00 00 26 01 0E 01 1C 13 2E 0C 19 01 58 67 00
+                 00 01 76 00 AD 36 01 18 02 01 19 02 2A 2B 01 00 0B 00 00 4B 02
+                 23 B0 AF 6D 03 02 B1 6D 04 01 57 05 B0 36 00 16 06 1B 2B E2 69
+                 00 01 A0 1B 03 E4 AE 9F 14 61 03 16 03 1B 1A 68 04 00 AC 6F 06
+                 AD 6F 07 69 00 01 AE 8F 13 5F AD AD 8A 09 61 AE 2F 0B 16 03 4D
+                 19 02)
+           (|COMMON-LISP|::|NIL| |CL-TEST|::|*SHOULD-ALWAYS-BE-TRUE*|
+            #(|COMMON-LISP|::|NIL|)
+            #Y(|CL-TEST|::|CHECK-TYPE-ERROR*-2-1|
+               #18Y(00 00 00 00 00 00 00 00 26 01 2A 14 DB 2C 02 02 19 01)
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+                #Y(|CL-TEST|::|CHECK-TYPE-ERROR*-2-1-1|
+                   #17Y(00 00 00 00 01 00 00 00 26 02 9E 0C 00 01 4E 01 00)
+                   (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+                   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+                   (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               () |COMMON-LISP|::|NIL| 1)
+            #Y(|CL-TEST|::|CHECK-TYPE-ERROR*-2-2|
+               #27Y(00 00 00 00 00 00 00 00 26 01 DB 63 69 01 01 69 02 01 AD 36
+                    01 16 01 43 9B 01 01)
+               (|COMMON-LISP|::|NIL| #.#'|COMMON-LISP|::|VALUES|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+               |COMMON-LISP|::|NIL| 1)
+            (#(|COMMON-LISP|::|TYPE-ERROR| 8.) 1. . 1.)
+            |COMMON-LISP|::|TYPE-ERROR-DATUM|
+            |COMMON-LISP|::|TYPE-ERROR-EXPECTED-TYPE| :|DATUM-MISMATCH|
+            |COMMON-LISP|::|TYPEP| :|IS-TYPEP| |CL-TEST|::|PRINTABLE-P|
+            |CL-TEST|::|SHOULD-NEVER-BE-CALLED|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+           |COMMON-LISP|::|NIL| 1)
+        (#(|COMMON-LISP|::|WARNING| 19.) 0. . 0.) (|COMMON-LISP|::|T|))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|PRED-FN| |CL-TEST|::|GUARD-FN| |COMMON-LISP|::|&OPTIONAL|
+        (|CL-TEST|::|UNIVERSE| |CL-TEST|::|*MINI-UNIVERSE*|))
+       "Check that for all elements in some set, either guard-fn is true or\n
+   pred-fn signals a type error."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|390 391 (DEFMACRO CHECK-TYPE-ERROR (&BODY ARGS) ...)-39|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|CHECK-TYPE-ERROR| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|CHECK-TYPE-ERROR|
+       #21Y(00 00 00 00 02 00 00 00 26 03 95 02 DA DB DC A0 7A 61 03 19 04)
+       (|COMMON-LISP|::|LOCALLY|
+        (|COMMON-LISP|::|DECLARE|
+         (|COMMON-LISP|::|OPTIMIZE| |COMMON-LISP|::|SAFETY|))
+        |CL-TEST|::|CHECK-TYPE-ERROR*|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (|COMMON-LISP|::|&BODY| |CL-TEST|::|ARGS|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|393 400 (DEFUN PRINTABLE-P (OBJ) ...)-40|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|PRINTABLE-P| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|PRINTABLE-P|
+       #219Y(02 00 01 00 01 00 00 00 26 02 00 2B 01 7F 02 00 00 6B 00 64 DB DC
+             63 64 64 01 05 6F 03 01 02 64 01 03 DE 63 DF 01 02 DB E0 64 01 02
+             38 01 31 78 10 07 04 1D 10 08 04 1F 10 09 04 21 10 0A 04 23 10 0B
+             04 25 10 0C 04 27 10 0D 04 29 10 0E 04 2B 10 0F 04 2D 10 10 04 2F
+             10 11 04 31 10 12 04 33 10 13 04 35 10 14 04 37 10 15 04 39 10 16
+             04 3B 10 17 04 3D 10 18 04 3F 10 19 04 41 10 1A 04 43 10 1B 04 45
+             10 1C 04 47 10 1D 04 49 10 1E 04 4B 10 1F 04 4D 10 20 04 4F 10 21
+             04 51 10 22 00 10 16 00 10 0D 04 75 2B 01 00 0B 00 00 4B 23 24 B0
+             AF 6D 24 02 B1 6D 25 01 57 26 B0 36 00 16 06 4D 16 01 1B 13 58 67
+             00 00 01 76 00 AD 36 01 18 02 01 19 02 00 4D 16 01 12 1E 19 1E)
+       (|SYSTEM|::|*COMMON-LISP-USER-PACKAGE*| 10. :|UPCASE|
+        |COMMON-LISP|::|COPY-PPRINT-DISPATCH| 1. 79.
+        |COMMON-LISP|::|SINGLE-FLOAT| |COMMON-LISP|::|*READTABLE*|
+        |COMMON-LISP|::|*PACKAGE*| |COMMON-LISP|::|*PRINT-ARRAY*|
+        |COMMON-LISP|::|*PRINT-BASE*| |COMMON-LISP|::|*PRINT-CASE*|
+        |COMMON-LISP|::|*PRINT-CIRCLE*| |COMMON-LISP|::|*PRINT-ESCAPE*|
+        |COMMON-LISP|::|*PRINT-GENSYM*| |COMMON-LISP|::|*PRINT-LENGTH*|
+        |COMMON-LISP|::|*PRINT-LEVEL*| |COMMON-LISP|::|*PRINT-LINES*|
+        |COMMON-LISP|::|*PRINT-MISER-WIDTH*|
+        |COMMON-LISP|::|*PRINT-PPRINT-DISPATCH*|
+        |COMMON-LISP|::|*PRINT-PRETTY*| |COMMON-LISP|::|*PRINT-RADIX*|
+        |COMMON-LISP|::|*PRINT-READABLY*| |COMMON-LISP|::|*PRINT-RIGHT-MARGIN*|
+        |CUSTOM|::|*PRINT-CLOSURE*| |CUSTOM|::|*PRINT-RPARS*|
+        |CUSTOM|::|*PRINT-INDENT-LISTS*| |SYSTEM|::|*PRIN-STREAM*|
+        |SYSTEM|::|*PRIN-LINELENGTH*| |SYSTEM|::|*PRIN-LINE-PREFIX*|
+        |SYSTEM|::|*LOAD-FORMS*| |COMMON-LISP|::|*READ-BASE*|
+        |COMMON-LISP|::|*READ-DEFAULT-FLOAT-FORMAT*|
+        |COMMON-LISP|::|*READ-EVAL*| |COMMON-LISP|::|*READ-SUPPRESS*|
+        #(|COMMON-LISP|::|NIL|)
+        #Y(|CL-TEST|::|PRINTABLE-P-1|
+           #18Y(00 00 00 00 00 00 00 00 26 01 2A 14 DB 2C 02 02 19 01)
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|PRINTABLE-P-1-1|
+               #17Y(00 00 00 00 01 00 00 00 26 02 9E 0C 00 01 4E 01 00)
+               (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|PRINTABLE-P-2|
+           #26Y(00 00 00 00 00 00 00 00 26 01 69 01 01 38 10 71 91 32 19 1F 03
+                02 19 01 19 01)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+           |COMMON-LISP|::|NIL| 1)
+        (#(|COMMON-LISP|::|CONDITION| 186.) 1. . 1.))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|OBJ|) "Returns T iff obj can be printed to a string." 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|402 410 (DEFUN SUBTYPEP* (TYPE1 TYPE2) ...)-41|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|SUBTYPEP*| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|SUBTYPEP*|
+       #25Y(00 00 00 00 02 00 00 00 26 03 DA 99 01 B0 B0 30 02 43 14 33 00 16
+            9B 00 03)
+       (#.#'|COMMON-LISP|::|VALUES| |CL-TEST|::|NOTNOT|
+        |COMMON-LISP|::|SUBTYPEP|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|TYPE1| |CL-TEST|::|TYPE2|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|412 416 (DEFUN SUBTYPEP*-OR-FAIL (TYPE1 TYPE2) ...)-42|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|SUBTYPEP*-OR-FAIL| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|SUBTYPEP*-OR-FAIL|
+       #39Y(00 00 00 00 02 00 00 00 26 03 AE AE 30 00 43 14 AC 72 62 DB 33 01
+            2F 1F 0C 9D 5C 5B 59 1E 06 94 00 2F 02 19 04 19 04)
+       (|COMMON-LISP|::|SUBTYPEP| 2. |CL-TEST|::|NOTNOT|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|TYPE1| |CL-TEST|::|TYPE2|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|418 422 (DEFUN SUBTYPEP*-NOT-OR-FAIL (TYPE1 TYPE2) ...)-43|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|SUBTYPEP*-NOT-OR-FAIL| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|SUBTYPEP*-NOT-OR-FAIL|
+       #38Y(00 00 00 00 02 00 00 00 26 03 AE AE 30 00 43 14 AC 72 62 DB 33 01
+            2F 1F 0B 9D 5C 5B 59 1E 05 9D 5B 59 19 04 19 04)
+       (|COMMON-LISP|::|SUBTYPEP| 2.)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|TYPE1| |CL-TEST|::|TYPE2|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|424 430 (DEFUN COMPOSE (&REST FNS) ...)-44|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|COMPOSE| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|COMPOSE|
+       #25Y(00 00 00 00 00 00 00 00 27 16 00 2B 01 AE 32 63 0B 00 00 AC 2C 00
+            01 19 03)
+       (#Y(|CL-TEST|::|COMPOSE-1|
+           #35Y(00 00 00 00 01 00 00 00 26 02 69 00 01 63 1B 0A 87 01 00 14 B0
+                36 01 FB 83 01 AD 8D 9F 72 16 02 9E 19 02)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+           (|CL-TEST|::|X|) |COMMON-LISP|::|NIL| 1))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|COMMON-LISP|::|&REST| |CL-TEST|::|FNS|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|432 433 (DEFUN EVENDIGITP (C) ...)-45|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|EVENDIGITP| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|EVENDIGITP|
+       #20Y(00 00 00 00 01 00 00 00 26 02 AD DA 38 06 72 77 2F 01 19 02)
+       ("02468" |CL-TEST|::|NOTNOT|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|C|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|435 436 (DEFUN ODDDIGITP (C) ...)-46|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|ODDDIGITP| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|ODDDIGITP|
+       #20Y(00 00 00 00 01 00 00 00 26 02 AD DA 38 06 72 77 2F 01 19 02)
+       ("13579" |CL-TEST|::|NOTNOT|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|C|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|438 439 (DEFUN NEXTDIGIT (C) ...)-47|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|NEXTDIGIT| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|NEXTDIGIT|
+       #20Y(00 00 00 00 01 00 00 00 26 02 AD DA 38 03 31 C1 5C 5B 19 02)
+       ((#\0 #\1 #\2 #\3 #\4 #\5 #\6 #\7 #\8 #\9))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|C|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|441 441 (DEFUN IS-EQ-P (X) ...)-48|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|IS-EQ-P| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|IS-EQ-P|
+       #23Y(00 00 00 00 01 00 00 00 26 02 00 2B 01 7F 02 00 00 AC 2C 00 01 19
+            03)
+       (#Y(|CL-TEST|::|IS-EQ-P-1|
+           #18Y(00 00 00 00 01 00 00 00 26 02 69 00 01 AE 30 01 19 02)
+           (|COMMON-LISP|::|NIL| |CL-TEST|::|EQT|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+           (|CL-TEST|::|Y|) |COMMON-LISP|::|NIL| 1))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+       (|CL-TEST|::|X|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|442 442 (DEFUN IS-NOT-EQ-P (X) ...)-49|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|IS-NOT-EQ-P| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|IS-NOT-EQ-P|
+       #23Y(00 00 00 00 01 00 00 00 26 02 00 2B 01 7F 02 00 00 AC 2C 00 01 19
+            03)
+       (#Y(|CL-TEST|::|IS-NOT-EQ-P-1|
+           #19Y(00 00 00 00 01 00 00 00 26 02 69 00 01 AE 30 01 59 19 02)
+           (|COMMON-LISP|::|NIL| |CL-TEST|::|EQT|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+           (|CL-TEST|::|Y|) |COMMON-LISP|::|NIL| 1))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+       (|CL-TEST|::|X|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|444 444 (DEFUN IS-EQL-P (X) ...)-50|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|IS-EQL-P| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|IS-EQL-P|
+       #23Y(00 00 00 00 01 00 00 00 26 02 00 2B 01 7F 02 00 00 AC 2C 00 01 19
+            03)
+       (#Y(|CL-TEST|::|IS-EQL-P-1|
+           #18Y(00 00 00 00 01 00 00 00 26 02 69 00 01 AE 30 01 19 02)
+           (|COMMON-LISP|::|NIL| |CL-TEST|::|EQLT|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+           (|CL-TEST|::|Y|) |COMMON-LISP|::|NIL| 1))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+       (|CL-TEST|::|X|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|445 445 (DEFUN IS-NOT-EQL-P (X) ...)-51|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|IS-NOT-EQL-P| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|IS-NOT-EQL-P|
+       #23Y(00 00 00 00 01 00 00 00 26 02 00 2B 01 7F 02 00 00 AC 2C 00 01 19
+            03)
+       (#Y(|CL-TEST|::|IS-NOT-EQL-P-1|
+           #19Y(00 00 00 00 01 00 00 00 26 02 69 00 01 AE 30 01 59 19 02)
+           (|COMMON-LISP|::|NIL| |CL-TEST|::|EQLT|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+           (|CL-TEST|::|Y|) |COMMON-LISP|::|NIL| 1))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+       (|CL-TEST|::|X|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|447 447 (DEFUN ONEP (X) ...)-52|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|ONEP| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|ONEP| #15Y(00 00 00 00 01 00 00 00 26 02 AD C5 5A 19 02)
+       (1.) (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|449 451 (DEFUN CHAR-INVERTCASE (C) ...)-53|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|CHAR-INVERTCASE| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|CHAR-INVERTCASE|
+       #24Y(00 00 00 00 01 00 00 00 26 02 AD 8C 23 05 AD 31 2B 19 02 AD 31 2C
+            19 02)
+       () (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|C|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|453 454 (DEFUN STRING-INVERTCASE (S) ...)-54|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|STRING-INVERTCASE| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|STRING-INVERTCASE|
+       #19Y(00 00 00 00 01 00 00 00 26 02 DA 99 01 AF 33 00 27 19 02)
+       (|COMMON-LISP|::|STRING| |CL-TEST|::|CHAR-INVERTCASE|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|S|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|456 457 (DEFUN SYMBOL< (X &REST ARGS) ...)-55|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|SYMBOL<| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|SYMBOL<|
+       #22Y(00 00 00 00 01 00 00 00 27 17 DA AF 72 A6 DB B0 33 00 16 9B 01 03)
+       (#.#'|COMMON-LISP|::|STRING<| #.#'|COMMON-LISP|::|SYMBOL-NAME|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X| |COMMON-LISP|::|&REST| |CL-TEST|::|ARGS|)
+       |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|460 467 (DEFUN MAKE-LIST-EXPR (ARGS) ...)-56|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|MAKE-LIST-EXPR| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|MAKE-LIST-EXPR|
+       #48Y(00 00 00 00 01 00 00 00 26 02 9E 5C 5C 5C 5C 1C 05 DB 9F 5D 19 02
+            DA 94 02 A0 5C 78 A1 5C 5C 78 A2 5C 5C 5C 78 A3 5C 5C 5C 79 6C 5E
+            61 06 19 02)
+       (|COMMON-LISP|::|LIST*| |COMMON-LISP|::|LIST|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|ARGS|)
+       "Build an expression for computing (LIST . args), but that evades\n
+   CALL-ARGUMENTS-LIMIT."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|469 472 (DEFPARAMETER +STANDARD-CHARS+ (COERCE "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~!@#$%^&*()_+\|\\\\=-`{}[]:\\";'<>?,./\n
+ " 'SIMPLE-BASE-STRING))-57|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB DC DD 72 3B 31 5A C6 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|+STANDARD-CHARS+|)
+    |CL-TEST|::|+STANDARD-CHARS+|
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~!@#$%^&*()_+|\\=-`{}[]:\";'<>?,./\n
+ "
+    |COMMON-LISP|::|SIMPLE-BASE-STRING|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|474 481 (DEFPARAMETER +BASE-CHARS+ "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<,>.?/\\"':;[{]}~`!@#$%^&*()_-+= \\\\\|")-58|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB DC 31 5A C6 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|+BASE-CHARS+|)
+    |CL-TEST|::|+BASE-CHARS+|
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<,>.?/\"':;[{]}~`!@#$%^&*()_-+= \\|")
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|484 484 (DECLAIM (TYPE SIMPLE-BASE-STRING +BASE-CHARS+))-59|
+   #15Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 19 01)
+   ((|COMMON-LISP|::|TYPE| |COMMON-LISP|::|SIMPLE-BASE-STRING|
+     |CL-TEST|::|+BASE-CHARS+|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|486 486 (DEFPARAMETER +NUM-BASE-CHARS+ (LENGTH +BASE-CHARS+))-60|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB 6B 02 72 62 31 5A C6 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|+NUM-BASE-CHARS+|)
+    |CL-TEST|::|+NUM-BASE-CHARS+| |CL-TEST|::|+BASE-CHARS+|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|488 488 (DEFPARAMETER +ALPHA-CHARS+ (SUBSEQ +STANDARD-CHARS+ 0 ...))-61|
+   #25Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB 6B 02 DD DE 72 60 31 5A C6 19
+        01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|+ALPHA-CHARS+|)
+    |CL-TEST|::|+ALPHA-CHARS+| |CL-TEST|::|+STANDARD-CHARS+| 0. 52.)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|489 489 (DEFPARAMETER +LOWER-CASE-CHARS+ (SUBSEQ +ALPHA-CHARS+ 0 ...))-62|
+   #25Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB 6B 02 DD DE 72 60 31 5A C6 19
+        01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|+LOWER-CASE-CHARS+|)
+    |CL-TEST|::|+LOWER-CASE-CHARS+| |CL-TEST|::|+ALPHA-CHARS+| 0. 26.)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|490 490 (DEFPARAMETER +UPPER-CASE-CHARS+ (SUBSEQ +ALPHA-CHARS+ 26 ...))-63|
+   #25Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB 6B 02 DD DE 72 60 31 5A C6 19
+        01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|+UPPER-CASE-CHARS+|)
+    |CL-TEST|::|+UPPER-CASE-CHARS+| |CL-TEST|::|+ALPHA-CHARS+| 26. 52.)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|491 491 (DEFPARAMETER +ALPHANUMERIC-CHARS+ (SUBSEQ +STANDARD-CHARS+ 0 ...))-64|
+   #25Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB 6B 02 DD DE 72 60 31 5A C6 19
+        01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|+ALPHANUMERIC-CHARS+|)
+    |CL-TEST|::|+ALPHANUMERIC-CHARS+| |CL-TEST|::|+STANDARD-CHARS+| 0. 62.)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|492 492 (DEFPARAMETER +DIGIT-CHARS+ "0123456789")-65|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB DC 31 5A C6 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|+DIGIT-CHARS+|)
+    |CL-TEST|::|+DIGIT-CHARS+| "0123456789")
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|493 495 (DEFPARAMETER +EXTENDED-DIGIT-CHARS+ (COERCE "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ" 'SIMPLE-BASE-STRING))-66|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB DC DD 72 3B 31 5A C6 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|+EXTENDED-DIGIT-CHARS+|)
+    |CL-TEST|::|+EXTENDED-DIGIT-CHARS+| "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    |COMMON-LISP|::|SIMPLE-BASE-STRING|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|497 499 (DECLAIM (TYPE SIMPLE-BASE-STRING +ALPHA-CHARS+ ...))-67|
+   #15Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 19 01)
+   ((|COMMON-LISP|::|TYPE| |COMMON-LISP|::|SIMPLE-BASE-STRING|
+     |CL-TEST|::|+ALPHA-CHARS+| |CL-TEST|::|+LOWER-CASE-CHARS+|
+     |CL-TEST|::|+UPPER-CASE-CHARS+| |CL-TEST|::|+ALPHANUMERIC-CHARS+|
+     |CL-TEST|::|+EXTENDED-DIGIT-CHARS+| |CL-TEST|::|+STANDARD-CHARS+|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|501 505 (DEFPARAMETER +CODE-CHARS+ (COERCE # 'SIMPLE-STRING))-68|
+   #50Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB DC 01 02 1B 0B AE 80 29 01 1D
+        03 14 84 00 85 02 AE DD 91 01 34 6F AC 31 B1 16 02 F8 DE 72 3B 31 5A C6
+        19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|+CODE-CHARS+|)
+    |CL-TEST|::|+CODE-CHARS+| 0. 256. |COMMON-LISP|::|SIMPLE-STRING|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|507 507 (DECLAIM (TYPE SIMPLE-STRING +CODE-CHARS+))-69|
+   #15Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 19 01)
+   ((|COMMON-LISP|::|TYPE| |COMMON-LISP|::|SIMPLE-STRING|
+     |CL-TEST|::|+CODE-CHARS+|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|509 509 (DEFPARAMETER +REV-CODE-CHARS+ (REVERSE +CODE-CHARS+))-70|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB 6B 02 72 63 31 5A C6 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|+REV-CODE-CHARS+|)
+    |CL-TEST|::|+REV-CODE-CHARS+| |CL-TEST|::|+CODE-CHARS+|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|511 518 (DEFUN HAS-NON-ABORT-RESTART (C) ...)-71|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|HAS-NON-ABORT-RESTART| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|HAS-NON-ABORT-RESTART|
+       #28Y(00 00 00 00 01 00 00 00 26 02 DA DB AF 6F 02 38 05 9A 03 01 DE 8E
+            7A 02 CB 52 CA 52)
+       (|CL-TEST|::|HANDLED| |COMMON-LISP|::|ABORT|
+        |COMMON-LISP|::|COMPUTE-RESTARTS| |COMMON-LISP|::|RESTART-NAME|
+        #.#'|COMMON-LISP|::|EQ| |CL-TEST|::|SUCCESS| |CL-TEST|::|FAIL|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|C|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|520 523 (DEFMACRO HANDLE-NON-ABORT-RESTART (&BODY BODY) ...)-72|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|HANDLE-NON-ABORT-RESTART| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|HANDLE-NON-ABORT-RESTART|
+       #23Y(00 00 00 00 02 00 00 00 26 03 95 02 DA DB DC DD A1 5D 7A 61 03 19
+            04)
+       (|COMMON-LISP|::|CATCH| '|CL-TEST|::|HANDLED| |CL-TEST|::|HANDLER-BIND|
+        ((|COMMON-LISP|::|ERROR| #'|CL-TEST|::|HAS-NON-ABORT-RESTART|)))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (|COMMON-LISP|::|&BODY| |CL-TEST|::|BODY|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|525 532 (DEFUN ELT-V-6-BODY NIL ...)-73|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|ELT-V-6-BODY| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|ELT-V-6-BODY|
+       #45Y(00 00 00 00 00 00 00 00 26 01 DA 6F 01 DC 38 07 A5 FB 71 1D DD 1B
+            0D 00 19 04 AC AE AE 72 5E 8F 13 75 85 00 AC DE 91 01 32 70 02 19
+            04)
+       (1000. |CL-TEST|::|MAKE-INT-LIST| (1000.) 0. 999.)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+       |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|534 537 (DEFUN MAKE-ADJ-ARRAY (N &KEY INITIAL-CONTENTS) ...)-74|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|MAKE-ADJ-ARRAY| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|MAKE-ADJ-ARRAY|
+       #41Y(00 00 00 00 01 00 00 00 A6 1C 01 00 00 00 3B 01 0D 7D 01 93 01 0B
+            AE 64 38 06 A6 FB 1B 07 92 01 75 AE 64 38 06 31 1D 19 03)
+       (:|INITIAL-CONTENTS|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|N| |COMMON-LISP|::|&KEY| |CL-TEST|::|INITIAL-CONTENTS|)
+       |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|539 546 (DEFUN ELT-ADJ-ARRAY-6-BODY NIL ...)-75|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|ELT-ADJ-ARRAY-6-BODY| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|ELT-ADJ-ARRAY-6-BODY|
+       #44Y(00 00 00 00 00 00 00 00 26 01 DA 6F 01 DC DD AE 6E 03 04 DF 1B 0D
+            00 19 04 AC AE AE 72 5E 8F 13 75 85 00 AC E0 91 01 32 70 02 19 04)
+       (1000. |CL-TEST|::|MAKE-INT-LIST| (1000.) :|INITIAL-CONTENTS|
+        |CL-TEST|::|MAKE-ADJ-ARRAY| 0. 999.)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+       |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|548 548 (DEFPARAMETER *DISPLACED* (MAKE-INT-ARRAY 100000))-76|
+   #22Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB DC 6F 03 31 5A C6 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|*DISPLACED*|)
+    |CL-TEST|::|*DISPLACED*| 100000. |CL-TEST|::|MAKE-INT-ARRAY|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|550 553 (DEFUN MAKE-DISPLACED-ARRAY (N DISPLACEMENT) ...)-77|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|MAKE-DISPLACED-ARRAY| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|MAKE-DISPLACED-ARRAY|
+       #20Y(00 00 00 00 02 00 00 00 26 03 AE 38 05 6B 00 B4 31 1D 19 03)
+       (|CL-TEST|::|*DISPLACED*|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|N| |CL-TEST|::|DISPLACEMENT|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|555 561 (DEFUN ARRAY-UNSIGNED-BYTE-FILL-TEST-FN (BYTE-SIZE &REST FILL-ARGS) ...)-78|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|ARRAY-UNSIGNED-BYTE-FILL-TEST-FN|
+    |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|ARRAY-UNSIGNED-BYTE-FILL-TEST-FN|
+       #41Y(00 00 00 00 01 00 00 00 27 17 DA 38 07 DB B7 61 02 FD C7 FB 71 1D
+            DD AD A1 77 01 AD AD 70 04 DF E0 B0 73 00 27 40 02 19 05)
+       ((5.) |COMMON-LISP|::|UNSIGNED-BYTE| (1. 2. 3. 4. 5.)
+        #.#'|COMMON-LISP|::|FILL| |CL-TEST|::|EQT| |COMMON-LISP|::|LIST|
+        #.#'|COMMON-LISP|::|IDENTITY|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|COMMON-LISP|::|BYTE-SIZE| |COMMON-LISP|::|&REST|
+        |CL-TEST|::|FILL-ARGS|)
+       |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|563 567 (DEFUN ARRAY-STRING-FILL-TEST-FN (A &REST FILL-ARGS) ...)-79|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|ARRAY-STRING-FILL-TEST-FN| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|ARRAY-STRING-FILL-TEST-FN|
+       #28Y(00 00 00 00 01 00 00 00 27 17 AE 81 61 02 DA AF A0 77 01 AF AD 70
+            01 AD 40 02 19 04)
+       (#.#'|COMMON-LISP|::|FILL| |CL-TEST|::|EQT|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|A| |COMMON-LISP|::|&REST| |CL-TEST|::|FILL-ARGS|)
+       |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|569 572 (DEFPARAMETER +FLOAT-TYPES+ '(LONG-FLOAT DOUBLE-FLOAT SHORT-FLOAT ...))-80|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB DC 31 5A C6 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|+FLOAT-TYPES+|)
+    |CL-TEST|::|+FLOAT-TYPES+|
+    (|COMMON-LISP|::|LONG-FLOAT| |COMMON-LISP|::|DOUBLE-FLOAT|
+     |COMMON-LISP|::|SHORT-FLOAT| |COMMON-LISP|::|SINGLE-FLOAT|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|574 692 (DEFPARAMETER *SUBTYPE-TABLE* (LET # # ...))-81|
+   #31Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB DC DD DE 8B 05 06 E0 AD 82 02
+        23 00 31 5A C6 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|*SUBTYPE-TABLE*|)
+    |CL-TEST|::|*SUBTYPE-TABLE*|
+    ((|COMMON-LISP|::|NULL| |COMMON-LISP|::|SYMBOL|)
+     (|COMMON-LISP|::|SYMBOL| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|BOOLEAN| |COMMON-LISP|::|SYMBOL|)
+     (|COMMON-LISP|::|STANDARD-OBJECT| |COMMON-LISP|::|T|) #'|COMMON-LISP|::|T|
+     (|COMMON-LISP|::|COMPILED-FUNCTION| |COMMON-LISP|::|FUNCTION|)
+     (|CLOS|::|GENERIC-FUNCTION| |COMMON-LISP|::|FUNCTION|)
+     (|CLOS|::|STANDARD-GENERIC-FUNCTION| |CLOS|::|GENERIC-FUNCTION|)
+     (|CLOS|::|CLASS| |COMMON-LISP|::|STANDARD-OBJECT|)
+     (|CLOS|::|BUILT-IN-CLASS| |CLOS|::|CLASS|)
+     (|CLOS|::|STRUCTURE-CLASS| |CLOS|::|CLASS|)
+     (|CLOS|::|STANDARD-CLASS| |CLOS|::|CLASS|)
+     (|CLOS|::|METHOD| |COMMON-LISP|::|STANDARD-OBJECT|)
+     (|CLOS|::|STANDARD-METHOD| |CLOS|::|METHOD|)
+     (|COMMON-LISP|::|STRUCTURE-OBJECT| |COMMON-LISP|::|T|)
+     (|CLOS|::|METHOD-COMBINATION| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|CONDITION| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|SERIOUS-CONDITION| |COMMON-LISP|::|CONDITION|)
+     (|COMMON-LISP|::|ERROR| |COMMON-LISP|::|SERIOUS-CONDITION|)
+     (|COMMON-LISP|::|TYPE-ERROR| |COMMON-LISP|::|ERROR|)
+     (|COMMON-LISP|::|SIMPLE-TYPE-ERROR| |COMMON-LISP|::|TYPE-ERROR|)
+     (|COMMON-LISP|::|SIMPLE-CONDITION| |COMMON-LISP|::|CONDITION|)
+     (|COMMON-LISP|::|SIMPLE-TYPE-ERROR| |COMMON-LISP|::|SIMPLE-CONDITION|)
+     (|COMMON-LISP|::|PARSE-ERROR| |COMMON-LISP|::|ERROR|)
+     (|COMMON-LISP|::|HASH-TABLE| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|CELL-ERROR| |COMMON-LISP|::|ERROR|)
+     (|COMMON-LISP|::|UNBOUND-SLOT| |COMMON-LISP|::|CELL-ERROR|)
+     (|COMMON-LISP|::|WARNING| |COMMON-LISP|::|CONDITION|)
+     (|COMMON-LISP|::|STYLE-WARNING| |COMMON-LISP|::|WARNING|)
+     (|COMMON-LISP|::|STORAGE-CONDITION| |COMMON-LISP|::|SERIOUS-CONDITION|)
+     (|COMMON-LISP|::|SIMPLE-WARNING| |COMMON-LISP|::|WARNING|)
+     (|COMMON-LISP|::|SIMPLE-WARNING| |COMMON-LISP|::|SIMPLE-CONDITION|)
+     (|COMMON-LISP|::|KEYWORD| |COMMON-LISP|::|SYMBOL|)
+     (|COMMON-LISP|::|UNBOUND-VARIABLE| |COMMON-LISP|::|CELL-ERROR|)
+     (|COMMON-LISP|::|CONTROL-ERROR| |COMMON-LISP|::|ERROR|)
+     (|COMMON-LISP|::|PROGRAM-ERROR| |COMMON-LISP|::|ERROR|)
+     (|COMMON-LISP|::|UNDEFINED-FUNCTION| |COMMON-LISP|::|CELL-ERROR|)
+     (|COMMON-LISP|::|PACKAGE| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|PACKAGE-ERROR| |COMMON-LISP|::|ERROR|)
+     (|COMMON-LISP|::|RANDOM-STATE| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|NUMBER| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|REAL| |COMMON-LISP|::|NUMBER|)
+     (|COMMON-LISP|::|COMPLEX| |COMMON-LISP|::|NUMBER|)
+     (|COMMON-LISP|::|FLOAT| |COMMON-LISP|::|REAL|)
+     (|COMMON-LISP|::|SHORT-FLOAT| |COMMON-LISP|::|FLOAT|)
+     (|COMMON-LISP|::|SINGLE-FLOAT| |COMMON-LISP|::|FLOAT|)
+     (|COMMON-LISP|::|DOUBLE-FLOAT| |COMMON-LISP|::|FLOAT|)
+     (|COMMON-LISP|::|LONG-FLOAT| |COMMON-LISP|::|FLOAT|)
+     (|COMMON-LISP|::|RATIONAL| |COMMON-LISP|::|REAL|)
+     (|COMMON-LISP|::|INTEGER| |COMMON-LISP|::|RATIONAL|)
+     (|COMMON-LISP|::|RATIO| |COMMON-LISP|::|RATIONAL|)
+     (|COMMON-LISP|::|SIGNED-BYTE| |COMMON-LISP|::|INTEGER|)
+     (|COMMON-LISP|::|INTEGER| |COMMON-LISP|::|SIGNED-BYTE|)
+     (|COMMON-LISP|::|UNSIGNED-BYTE| |COMMON-LISP|::|SIGNED-BYTE|)
+     (|COMMON-LISP|::|BIT| |COMMON-LISP|::|UNSIGNED-BYTE|)
+     (|COMMON-LISP|::|FIXNUM| |COMMON-LISP|::|INTEGER|)
+     (|COMMON-LISP|::|BIGNUM| |COMMON-LISP|::|INTEGER|)
+     (|COMMON-LISP|::|BIT| |COMMON-LISP|::|FIXNUM|)
+     (|COMMON-LISP|::|ARITHMETIC-ERROR| |COMMON-LISP|::|ERROR|)
+     (|COMMON-LISP|::|DIVISION-BY-ZERO| |COMMON-LISP|::|ARITHMETIC-ERROR|)
+     (|COMMON-LISP|::|FLOATING-POINT-INVALID-OPERATION|
+      |COMMON-LISP|::|ARITHMETIC-ERROR|)
+     (|COMMON-LISP|::|FLOATING-POINT-INEXACT|
+      |COMMON-LISP|::|ARITHMETIC-ERROR|)
+     (|COMMON-LISP|::|FLOATING-POINT-OVERFLOW|
+      |COMMON-LISP|::|ARITHMETIC-ERROR|)
+     (|COMMON-LISP|::|FLOATING-POINT-UNDERFLOW|
+      |COMMON-LISP|::|ARITHMETIC-ERROR|)
+     (|COMMON-LISP|::|CHARACTER| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|BASE-CHAR| |COMMON-LISP|::|CHARACTER|)
+     (|COMMON-LISP|::|STANDARD-CHAR| |COMMON-LISP|::|BASE-CHAR|)
+     (|COMMON-LISP|::|EXTENDED-CHAR| |COMMON-LISP|::|CHARACTER|)
+     (|COMMON-LISP|::|SEQUENCE| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|LIST| |COMMON-LISP|::|SEQUENCE|)
+     (|COMMON-LISP|::|NULL| |COMMON-LISP|::|LIST|)
+     (|COMMON-LISP|::|NULL| |COMMON-LISP|::|BOOLEAN|)
+     (|COMMON-LISP|::|CONS| |COMMON-LISP|::|LIST|)
+     (|COMMON-LISP|::|ARRAY| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|SIMPLE-ARRAY| |COMMON-LISP|::|ARRAY|)
+     (|COMMON-LISP|::|VECTOR| |COMMON-LISP|::|SEQUENCE|)
+     (|COMMON-LISP|::|VECTOR| |COMMON-LISP|::|ARRAY|)
+     (|COMMON-LISP|::|STRING| |COMMON-LISP|::|VECTOR|)
+     (|COMMON-LISP|::|BIT-VECTOR| |COMMON-LISP|::|VECTOR|)
+     (|COMMON-LISP|::|SIMPLE-VECTOR| |COMMON-LISP|::|VECTOR|)
+     (|COMMON-LISP|::|SIMPLE-VECTOR| |COMMON-LISP|::|SIMPLE-ARRAY|)
+     (|COMMON-LISP|::|SIMPLE-BIT-VECTOR| |COMMON-LISP|::|BIT-VECTOR|)
+     (|COMMON-LISP|::|SIMPLE-BIT-VECTOR| |COMMON-LISP|::|SIMPLE-ARRAY|)
+     (|COMMON-LISP|::|BASE-STRING| |COMMON-LISP|::|STRING|)
+     (|COMMON-LISP|::|SIMPLE-STRING| |COMMON-LISP|::|STRING|)
+     (|COMMON-LISP|::|SIMPLE-STRING| |COMMON-LISP|::|SIMPLE-ARRAY|)
+     (|COMMON-LISP|::|SIMPLE-BASE-STRING| |COMMON-LISP|::|BASE-STRING|)
+     (|COMMON-LISP|::|SIMPLE-BASE-STRING| |COMMON-LISP|::|SIMPLE-STRING|)
+     (|COMMON-LISP|::|PATHNAME| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|LOGICAL-PATHNAME| |COMMON-LISP|::|PATHNAME|)
+     (|COMMON-LISP|::|FILE-ERROR| |COMMON-LISP|::|ERROR|)
+     (|COMMON-LISP|::|STREAM| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|BROADCAST-STREAM| |COMMON-LISP|::|STREAM|)
+     (|COMMON-LISP|::|CONCATENATED-STREAM| |COMMON-LISP|::|STREAM|)
+     (|COMMON-LISP|::|ECHO-STREAM| |COMMON-LISP|::|STREAM|)
+     (|COMMON-LISP|::|FILE-STREAM| |COMMON-LISP|::|STREAM|)
+     (|COMMON-LISP|::|STRING-STREAM| |COMMON-LISP|::|STREAM|)
+     (|COMMON-LISP|::|SYNONYM-STREAM| |COMMON-LISP|::|STREAM|)
+     (|COMMON-LISP|::|TWO-WAY-STREAM| |COMMON-LISP|::|STREAM|)
+     (|COMMON-LISP|::|STREAM-ERROR| |COMMON-LISP|::|ERROR|)
+     (|COMMON-LISP|::|END-OF-FILE| |COMMON-LISP|::|STREAM-ERROR|)
+     (|COMMON-LISP|::|PRINT-NOT-READABLE| |COMMON-LISP|::|ERROR|)
+     (|COMMON-LISP|::|READTABLE| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|READER-ERROR| |COMMON-LISP|::|PARSE-ERROR|)
+     (|COMMON-LISP|::|READER-ERROR| |COMMON-LISP|::|STREAM-ERROR|))
+    |COMMON-LISP|::|CHARACTER| |COMMON-LISP|::|BASE-CHAR|
+    |CL-TEST|::|SUBTYPEP*|
+    ((|COMMON-LISP|::|CHARACTER| |COMMON-LISP|::|BASE-CHAR|)))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|694 697 (DEFPARAMETER *DISJOINT-TYPES-LIST* '(CONS SYMBOL ARRAY ...))-82|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB DC 31 5A C6 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|*DISJOINT-TYPES-LIST*|)
+    |CL-TEST|::|*DISJOINT-TYPES-LIST*|
+    (|COMMON-LISP|::|CONS| |COMMON-LISP|::|SYMBOL| |COMMON-LISP|::|ARRAY|
+     |COMMON-LISP|::|NUMBER| |COMMON-LISP|::|CHARACTER|
+     |COMMON-LISP|::|HASH-TABLE| |COMMON-LISP|::|FUNCTION|
+     |COMMON-LISP|::|READTABLE| |COMMON-LISP|::|PACKAGE|
+     |COMMON-LISP|::|PATHNAME| |COMMON-LISP|::|STREAM|
+     |COMMON-LISP|::|RANDOM-STATE| |COMMON-LISP|::|CONDITION|
+     |COMMON-LISP|::|RESTART|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|699 722 (DEFPARAMETER *DISJOINT-TYPES-LIST2* `(# # # ...))-83|
+   #129Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB DC DD DE DF E0 E1 E2 DF E0
+         8A 09 80 62 E4 61 01 5D 5D 5D 7A E5 E6 E7 E8 E9 EA 7B 02 7B 05 EB E9
+         EC 71 D9 7B 02 7B 02 ED EE EF F0 F1 F2 F3 F4 F5 F6 F7 65 1E 65 1F 65
+         20 65 21 65 22 65 23 65 24 63 30 09 59 1D 04 65 24 61 01 5D 5D 5D 5D
+         5D 5D 5D 5D 5D 5D 5D 5D 5D 5D 7A 65 25 6B 26 03 27 5D 5D 5D 5D 5D 5D
+         5D 5D 5D 5D 7A 31 5A C6 19 01 00 1B FF 9D)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|*DISJOINT-TYPES-LIST2*|)
+    |CL-TEST|::|*DISJOINT-TYPES-LIST2*|
+    (|COMMON-LISP|::|CONS|
+     (|COMMON-LISP|::|CONS| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|CONS| |COMMON-LISP|::|T|
+      (|COMMON-LISP|::|CONS| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+     (|COMMON-LISP|::|EQL| (|COMMON-LISP|::|NIL|)))
+    (|COMMON-LISP|::|SYMBOL| |COMMON-LISP|::|KEYWORD| |COMMON-LISP|::|BOOLEAN|
+     |COMMON-LISP|::|NULL| (|COMMON-LISP|::|EQL| |CL-TEST|::|A|)
+     (|COMMON-LISP|::|EQL| |COMMON-LISP|::|NIL|)
+     (|COMMON-LISP|::|EQL| |COMMON-LISP|::|T|)
+     (|COMMON-LISP|::|EQL| |COMMON-LISP|::|*|))
+    (|COMMON-LISP|::|ARRAY| |COMMON-LISP|::|VECTOR|
+     |COMMON-LISP|::|SIMPLE-ARRAY| |COMMON-LISP|::|SIMPLE-VECTOR|
+     |COMMON-LISP|::|STRING| |COMMON-LISP|::|SIMPLE-STRING|
+     |COMMON-LISP|::|BASE-STRING| |COMMON-LISP|::|SIMPLE-BASE-STRING|
+     (|COMMON-LISP|::|EQL| #()))
+    |COMMON-LISP|::|CHARACTER| |COMMON-LISP|::|BASE-CHAR|
+    |COMMON-LISP|::|STANDARD-CHAR| (|COMMON-LISP|::|EQL| #\a)
+    |COMMON-LISP|::|SUBTYPEP| |COMMON-LISP|::|EXTENDED-CHAR|
+    |COMMON-LISP|::|FUNCTION| |COMMON-LISP|::|COMPILED-FUNCTION|
+    |CLOS|::|GENERIC-FUNCTION| |CLOS|::|STANDARD-GENERIC-FUNCTION|
+    |COMMON-LISP|::|EQL| #.#'|COMMON-LISP|::|CAR| |COMMON-LISP|::|PACKAGE|
+    "COMMON-LISP"
+    (|COMMON-LISP|::|PATHNAME| |COMMON-LISP|::|LOGICAL-PATHNAME|
+     (|COMMON-LISP|::|EQL|
+      #S(|COMMON-LISP|::|PATHNAME| :|HOST| |COMMON-LISP|::|NIL|
+         :|DEVICE| |COMMON-LISP|::|NIL| :|DIRECTORY| |COMMON-LISP|::|NIL|
+         :|NAME| |COMMON-LISP|::|NIL| :|TYPE| |COMMON-LISP|::|NIL|
+         :|VERSION| |COMMON-LISP|::|NIL|)))
+    (|COMMON-LISP|::|STREAM| |COMMON-LISP|::|BROADCAST-STREAM|
+     |COMMON-LISP|::|CONCATENATED-STREAM| |COMMON-LISP|::|ECHO-STREAM|
+     |COMMON-LISP|::|FILE-STREAM| |COMMON-LISP|::|STRING-STREAM|
+     |COMMON-LISP|::|SYNONYM-STREAM| |COMMON-LISP|::|TWO-WAY-STREAM|)
+    |COMMON-LISP|::|NUMBER| |COMMON-LISP|::|REAL| |COMMON-LISP|::|COMPLEX|
+    |COMMON-LISP|::|FLOAT| |COMMON-LISP|::|INTEGER| |COMMON-LISP|::|RATIONAL|
+    |COMMON-LISP|::|RATIO| |COMMON-LISP|::|FIXNUM| |COMMON-LISP|::|BIT|
+    (|COMMON-LISP|::|INTEGER| 0. 100.) (|COMMON-LISP|::|FLOAT| 0.0f0 100.0f0)
+    (|COMMON-LISP|::|INTEGER| 0. |COMMON-LISP|::|*|)
+    (|COMMON-LISP|::|RATIONAL| 0. |COMMON-LISP|::|*|)
+    (|COMMON-LISP|::|MOD| 10.) (|COMMON-LISP|::|EQL| 0.)
+    |COMMON-LISP|::|BIGNUM| (|COMMON-LISP|::|RANDOM-STATE|)
+    |CL-TEST|::|*CONDITION-TYPES*|
+    ((|COMMON-LISP|::|RESTART|) (|COMMON-LISP|::|READTABLE|)))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|724 725 (DEFPARAMETER *TYPES-LIST3* (REDUCE #'APPEND *DISJOINT-TYPES-LIST2* ...))-84|
+   #27Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB DC 6B 03 64 38 04 72 66 31 5A
+        C6 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|*TYPES-LIST3*|)
+    |CL-TEST|::|*TYPES-LIST3*| #.#'|COMMON-LISP|::|APPEND|
+    |CL-TEST|::|*DISJOINT-TYPES-LIST2*|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|727 731 (DEFUN TRIM-LIST (LIST N) ...)-85|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|TRIM-LIST| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|TRIM-LIST|
+       #63Y(00 00 00 00 02 00 00 00 26 03 AE 72 62 AC AF 90 01 33 29 AF DA B0
+            72 60 38 02 72 8F AE B1 73 01 38 DB AE 38 02 31 95 AC AE 31 90 DC
+            AE 38 02 31 95 16 01 AC 81 90 00 33 02 23 19 04 A0 19 04)
+       (0. "And " " more omitted.")
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|COMMON-LISP|::|LIST| |CL-TEST|::|N|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|733 734 (DEFUN IS-T-OR-NIL (E) ...)-86|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|IS-T-OR-NIL| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|IS-T-OR-NIL|
+       #24Y(00 00 00 00 01 00 00 00 26 02 AD 64 30 00 1E 06 AD 63 30 00 19 02
+            19 02)
+       (|CL-TEST|::|EQT|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|E|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|736 738 (DEFUN IS-BUILTIN-CLASS (TYPE) ...)-87|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|IS-BUILTIN-CLASS| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|IS-BUILTIN-CLASS|
+       #26Y(00 00 00 00 01 00 00 00 26 02 AD 8F 18 07 AD 63 38 01 81 3A 01 AD
+            2F 00 19 02)
+       (|CLOS|::|BUILT-IN-CLASS-P|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|COMMON-LISP|::|TYPE|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|740 741 (DEFUN EVEN-SIZE-P (A) ...)-88|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|EVEN-SIZE-P| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|EVEN-SIZE-P|
+       #19Y(00 00 00 00 01 00 00 00 26 02 DA AE 71 09 33 00 29 19 02)
+       (#.#'|COMMON-LISP|::|EVENP|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|A|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|744 745 (DEFUN SAFE-ELT (X N) ...)-89|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|SAFE-ELT| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|SAFE-ELT|
+       #305Y(02 00 01 00 02 00 00 00 26 03 00 2B 02 7F 03 00 00 7F 02 00 01 4B
+             00 81 13 81 0D 81 07 81 01 80 FB 80 F5 80 EF 80 E9 80 E3 80 DD 80
+             D7 80 D1 80 CC 80 C7 80 C2 AE 6D 01 01 AF 6D 02 01 B0 6D 03 01 B1
+             6D 04 01 B2 6D 05 01 B3 6D 06 01 B4 6D 07 01 B5 6D 08 01 B6 6D 09
+             01 B7 6D 0A 01 B8 6D 0B 01 B9 6D 0C 01 BA 6D 0D 01 BB 6D 0E 01 BC
+             6D 0F 01 66 21 6D 10 01 57 11 B0 36 00 16 14 1B 80 AE 58 05 00 00
+             0F 1B 80 64 58 05 00 00 0E 1B 80 5C 58 05 00 00 0D 1B 80 54 58 05
+             00 00 0C 1B 80 4C 58 05 00 00 0B 1B 80 44 58 05 00 00 0A 1B 3D 58
+             05 00 00 09 1B 36 58 05 00 00 08 1B 2F 58 05 00 00 07 1B 28 58 05
+             00 00 06 1B 21 58 05 00 00 05 1B 1A 58 05 00 00 04 1B 13 58 05 00
+             00 03 1B 0C 58 05 00 00 02 1B 05 58 05 00 00 01 14 76 00 AD 36 01
+             18 02 01 19 02 D7 1B 34 D8 1B 31 D9 1B 2E 03 15 1B 2A 03 16 1B 26
+             03 17 1B 22 03 18 1B 1E 03 19 1B 1A 03 1A 1B 16 03 1B 1B 12 03 1C
+             1B 0E 03 1D 1B 0A 03 1E 1B 06 03 1F 1B 02 03 20 4D 19 04)
+       (#(|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+          |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+          |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+          |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+          |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+        #Y(|CL-TEST|::|SAFE-ELT-1|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-1-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 0E)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-2|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-2-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 0D)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-3|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-3-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 0C)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-4|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-4-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 0B)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-5|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-5-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 0A)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-6|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-6-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 09)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-7|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-7-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 08)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-8|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-8-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 07)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-9|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-9-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 06)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-10|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-10-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 05)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-11|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-11-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 04)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-12|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-12-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 03)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-13|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-13-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 02)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-14|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-14-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 01)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-15|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|SAFE-ELT-15-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 00)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|SAFE-ELT-16|
+           #28Y(00 00 00 00 00 00 00 00 26 01 0E 01 1C 04 2E 02 19 01 69 00 01
+                69 00 02 32 5E 19 01)
+           (|COMMON-LISP|::|NIL| |CL-TEST|::|*SHOULD-ALWAYS-BE-TRUE*|
+            |CL-TEST|::|SHOULD-NEVER-BE-CALLED|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+           |COMMON-LISP|::|NIL| 1)
+        (#(|COMMON-LISP|::|UNDEFINED-FUNCTION| 118.
+           |COMMON-LISP|::|PROGRAM-ERROR| 126. |COMMON-LISP|::|PACKAGE-ERROR|
+           134. |COMMON-LISP|::|TYPE-ERROR| 142. |COMMON-LISP|::|CONTROL-ERROR|
+           150. |COMMON-LISP|::|PARSE-ERROR| 158. |COMMON-LISP|::|STREAM-ERROR|
+           165. |COMMON-LISP|::|READER-ERROR| 172. |COMMON-LISP|::|FILE-ERROR|
+           179. |COMMON-LISP|::|CELL-ERROR| 186.
+           |COMMON-LISP|::|DIVISION-BY-ZERO| 193.
+           |COMMON-LISP|::|FLOATING-POINT-OVERFLOW| 200.
+           |COMMON-LISP|::|FLOATING-POINT-UNDERFLOW| 207.
+           |COMMON-LISP|::|ARITHMETIC-ERROR| 214. |COMMON-LISP|::|ERROR| 221.)
+         1. . 1.)
+        |COMMON-LISP|::|UNDEFINED-FUNCTION| |COMMON-LISP|::|PROGRAM-ERROR|
+        |COMMON-LISP|::|PACKAGE-ERROR| |COMMON-LISP|::|TYPE-ERROR|
+        |COMMON-LISP|::|CONTROL-ERROR| |COMMON-LISP|::|PARSE-ERROR|
+        |COMMON-LISP|::|STREAM-ERROR| |COMMON-LISP|::|READER-ERROR|
+        |COMMON-LISP|::|FILE-ERROR| |COMMON-LISP|::|CELL-ERROR|
+        |COMMON-LISP|::|DIVISION-BY-ZERO|
+        |COMMON-LISP|::|FLOATING-POINT-OVERFLOW|
+        |COMMON-LISP|::|FLOATING-POINT-UNDERFLOW|
+        |COMMON-LISP|::|ARITHMETIC-ERROR| |COMMON-LISP|::|ERROR|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X| |CL-TEST|::|N|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|747 750 (DEFMACRO DEFSTRUCT* (&BODY ARGS) ...)-90|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|DEFSTRUCT*| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|DEFSTRUCT*|
+       #31Y(00 00 00 00 02 00 00 00 26 03 95 02 DA DB DC DD DE DF A3 7A 7B 02
+            7B 02 CB 5D 7A 61 03 19 04)
+       (|COMMON-LISP|::|EVAL-WHEN|
+        (:|LOAD-TOPLEVEL| :|COMPILE-TOPLEVEL| :|EXECUTE|)
+        |CL-TEST|::|HANDLER-CASE| |COMMON-LISP|::|EVAL| |COMMON-LISP|::|QUOTE|
+        |COMMON-LISP|::|DEFSTRUCT|
+        ((|COMMON-LISP|::|SERIOUS-CONDITION| |COMMON-LISP|::|NIL|
+          |COMMON-LISP|::|NIL|)))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (|COMMON-LISP|::|&BODY| |CL-TEST|::|ARGS|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|752 758 (DEFUN SAFELY-DELETE-PACKAGE (PACKAGE-DESIGNATOR) ...)-91|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|SAFELY-DELETE-PACKAGE| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|SAFELY-DELETE-PACKAGE|
+       #45Y(00 00 00 00 01 00 00 00 26 02 AD 71 D9 9D 1F 1B 14 71 DE AC 63 1B
+            09 87 01 00 AF AD 31 ED 83 01 AD 8D 9F 73 16 03 AC 2F 00 19 03 19
+            03)
+       (|COMMON-LISP|::|DELETE-PACKAGE|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|PACKAGE-DESIGNATOR|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|760 766 (DEFUN DELETE-ALL-VERSIONS (PATHSPEC) ...)-92|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|DELETE-ALL-VERSIONS| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|DELETE-ALL-VERSIONS|
+       #30Y(00 00 00 00 01 00 00 00 26 02 AD 71 F9 38 06 DA 72 05 AC 38 03 72
+            0C DB AD 33 00 18 19 04)
+       (:|WILD| #.#'|COMMON-LISP|::|DELETE-FILE|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|PATHSPEC|)
+       "Replace the versions field of the pathname specified by pathspec with\n
+   :wild, and delete all the files this refers to."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|768 774 (DEFCONSTANT +FAIL-COUNT-LIMIT+ 20)-93|
+   #36Y(00 00 00 00 00 00 00 00 20 01 DA 38 01 8D 66 0D DB DA 71 55 8E 13 06 DA
+        DC DB 2D 03 03 DA DB 32 9D C5 19 01)
+   (|CL-TEST|::|+FAIL-COUNT-LIMIT+| 20.
+    (|COMMON-LISP|::|DEFCONSTANT| |CL-TEST|::|+FAIL-COUNT-LIMIT+| 20.)
+    |SYSTEM|::|CONSTANT-WARNING|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|776 786 (DEFUN FROB-SIMPLE-CONDITION (C EXPECTED-FMT &REST ...) ...)-94|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|FROB-SIMPLE-CONDITION| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|FROB-SIMPLE-CONDITION|
+       #40Y(00 00 00 00 02 00 00 00 27 18 AF DA 32 3C 1F 16 AF 6F 01 B0 6F 02
+            99 03 63 AF A0 77 02 32 19 1F 03 02 19 06 19 06 19 04)
+       (#.(|CLOS|::|FIND-CLASS| '|COMMON-LISP|::|SIMPLE-CONDITION|)
+        |COMMON-LISP|::|SIMPLE-CONDITION-FORMAT-CONTROL|
+        |COMMON-LISP|::|SIMPLE-CONDITION-FORMAT-ARGUMENTS|
+        |COMMON-LISP|::|FORMAT|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|C| |CL-TEST|::|EXPECTED-FMT| |COMMON-LISP|::|&REST|
+        |CL-TEST|::|EXPECTED-ARGS|)
+       "Try out the format control and format arguments of a simple-condition C,\n
+   but make no assumptions about what they print as, only that they\n
+   do print."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|788 790 (DEFUN FROB-SIMPLE-ERROR (C EXPECTED-FMT &REST ...) ...)-95|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|FROB-SIMPLE-ERROR| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|FROB-SIMPLE-ERROR|
+       #26Y(00 00 00 00 02 00 00 00 27 18 AF DA 32 3C 1F 08 99 01 B0 B0 A1 9B
+            02 04 19 04)
+       (#.(|CLOS|::|FIND-CLASS| '|COMMON-LISP|::|SIMPLE-ERROR|)
+        |CL-TEST|::|FROB-SIMPLE-CONDITION|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|C| |CL-TEST|::|EXPECTED-FMT| |COMMON-LISP|::|&REST|
+        |CL-TEST|::|EXPECTED-ARGS|)
+       |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|792 794 (DEFUN FROB-SIMPLE-WARNING (C EXPECTED-FMT &REST ...) ...)-96|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|FROB-SIMPLE-WARNING| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|FROB-SIMPLE-WARNING|
+       #26Y(00 00 00 00 02 00 00 00 27 18 AF DA 32 3C 1F 08 99 01 B0 B0 A1 9B
+            02 04 19 04)
+       (#.(|CLOS|::|FIND-CLASS| '|COMMON-LISP|::|SIMPLE-WARNING|)
+        |CL-TEST|::|FROB-SIMPLE-CONDITION|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|C| |CL-TEST|::|EXPECTED-FMT| |COMMON-LISP|::|&REST|
+        |CL-TEST|::|EXPECTED-ARGS|)
+       |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|796 801 (DEFPARAMETER *ARRAY-ELEMENT-TYPES* '(T # BIT ...))-97|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB DC 31 5A C6 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|*ARRAY-ELEMENT-TYPES*|)
+    |CL-TEST|::|*ARRAY-ELEMENT-TYPES*|
+    (|COMMON-LISP|::|T| (|COMMON-LISP|::|INTEGER| 0. 0.) |COMMON-LISP|::|BIT|
+     (|COMMON-LISP|::|UNSIGNED-BYTE| 8.) (|COMMON-LISP|::|UNSIGNED-BYTE| 16.)
+     (|COMMON-LISP|::|UNSIGNED-BYTE| 32.) |COMMON-LISP|::|FLOAT|
+     |COMMON-LISP|::|SHORT-FLOAT| |COMMON-LISP|::|SINGLE-FLOAT|
+     |COMMON-LISP|::|DOUBLE-FLOAT| |COMMON-LISP|::|LONG-FLOAT|
+     |COMMON-LISP|::|NIL| |COMMON-LISP|::|CHARACTER| |COMMON-LISP|::|BASE-CHAR|
+     |COMMON-LISP|::|SYMBOL| |COMMON-LISP|::|BOOLEAN| |COMMON-LISP|::|NULL|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|803 807 (DEFUN COLLECT-PROPERTIES (PLIST PROP) ...)-98|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|COLLECT-PROPERTIES| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|COLLECT-PROPERTIES|
+       #37Y(00 00 00 00 02 00 00 00 26 03 AE 63 1B 0F 94 01 B0 8F 13 05 9E 5C
+            78 84 00 9E 5C 5C F9 9E 21 6E AC 31 B1 19 05)
+       () (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|PLIST| |CL-TEST|::|PROP|)
+       "Collect all the properties in plist for a property prop." 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|809 822 (DEFMACRO DEF-MACRO-TEST (TEST-NAME MACRO-FORM) ...)-99|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|DEF-MACRO-TEST| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|DEF-MACRO-TEST|
+       #107Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 63 2D 04 01 1D 0B 9F 5C 78
+             A0 5C 5C 78 94 00 1B 0A AE 2F 02 19 03 DD 6F 04 2F 05 AC 8F 18 77
+             E0 AF E1 E2 E3 E4 E5 B3 7B 02 7B 02 7B 02 D1 5D 7A E2 E3 E4 E5 B4
+             7B 02 7B 02 E5 B5 7B 02 7B 03 D2 5D 7A E2 E3 E4 E5 B5 7B 02 7B 02
+             E5 B6 7B 02 D3 5D 5D 7A D4 5D 7A 7B 04 D5 5D 5D 5D 19 06)
+       (3. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR|
+        (|COMMON-LISP|::|SYMBOLP| |CL-TEST|::|MACRO-NAME|)
+        |SYSTEM|::|ASSERT-ERROR-STRING| |SYSTEM|::|SIMPLE-ASSERT-FAILED|
+        |REGRESSION-TEST|::|DEFTEST| |COMMON-LISP|::|VALUES|
+        |CL-TEST|::|SIGNALS-ERROR| |COMMON-LISP|::|FUNCALL|
+        |COMMON-LISP|::|MACRO-FUNCTION| |COMMON-LISP|::|QUOTE|
+        (|COMMON-LISP|::|PROGRAM-ERROR|) (|COMMON-LISP|::|PROGRAM-ERROR|)
+        (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+        (|COMMON-LISP|::|PROGRAM-ERROR|)
+        (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (|CL-TEST|::|TEST-NAME| |CL-TEST|::|MACRO-FORM|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|824 825 (DEFUN TYPEP* (ELEMENT TYPE) ...)-100|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|TYPEP*| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|TYPEP*|
+       #18Y(00 00 00 00 02 00 00 00 26 03 AE AE 30 00 59 59 19 03)
+       (|COMMON-LISP|::|TYPEP|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|ELEMENT| |COMMON-LISP|::|TYPE|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|827 832 (DEFUN APPLYF (FN &REST ARGS) ...)-101|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|APPLYF| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|APPLYF|
+       #55Y(00 00 00 00 01 00 00 00 27 17 00 2B 02 7F 03 00 00 7F 02 00 01 68
+            00 00 AC 8E 18 0F AC 8E 2F 11 AC DC DD 70 04 DF 2D 03 06 19 05 AD
+            2C 00 01 19 05 AD 2C 01 01 19 05)
+       (#Y(|CL-TEST|::|APPLYF-1|
+           #23Y(00 00 00 00 00 00 00 00 27 16 69 00 01 69 00 02 AF 33 02 23 9B
+                00 02)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+           (|COMMON-LISP|::|&REST| |CL-TEST|::|MORE-ARGS|) |COMMON-LISP|::|NIL|
+           1)
+        #Y(|CL-TEST|::|APPLYF-2|
+           #23Y(00 00 00 00 00 00 00 00 27 16 69 00 01 69 00 02 AF 33 02 23 9B
+                00 02)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+           (|COMMON-LISP|::|&REST| |CL-TEST|::|MORE-ARGS|) |COMMON-LISP|::|NIL|
+           1)
+        |CL-TEST|::|FN| (|COMMON-LISP|::|SYMBOL| |COMMON-LISP|::|FUNCTION|)
+        |SYSTEM|::|TYPECASE-ERROR-STRING|
+        (|COMMON-LISP|::|OR| |COMMON-LISP|::|SYMBOL| |COMMON-LISP|::|FUNCTION|)
+        |SYSTEM|::|ETYPECASE-FAILED|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|FN| |COMMON-LISP|::|&REST| |CL-TEST|::|ARGS|)
+       |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|834 835 (DEFUN SLOT-BOUNDP* (OBJECT SLOT) ...)-102|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|SLOT-BOUNDP*| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|SLOT-BOUNDP*|
+       #18Y(00 00 00 00 02 00 00 00 26 03 AE AE 72 54 2F 00 19 03)
+       (|CL-TEST|::|NOTNOT|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|OBJECT| |CL-TEST|::|SLOT|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|837 838 (DEFUN SLOT-EXISTS-P* (OBJECT SLOT) ...)-103|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|SLOT-EXISTS-P*| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|SLOT-EXISTS-P*|
+       #18Y(00 00 00 00 02 00 00 00 26 03 AE AE 72 56 2F 00 19 03)
+       (|CL-TEST|::|NOTNOT|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|OBJECT| |CL-TEST|::|SLOT|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|840 841 (DEFUN MAP-SLOT-BOUNDP* (C SLOTS) ...)-104|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|MAP-SLOT-BOUNDP*| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|MAP-SLOT-BOUNDP*|
+       #20Y(00 00 00 00 02 00 00 00 26 03 DA AF 70 01 AE 33 00 16 19 03)
+       (#.#'|CLOS|::|SLOT-BOUNDP| |CL-TEST|::|APPLYF|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|C| |CL-TEST|::|SLOTS|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|843 844 (DEFUN MAP-SLOT-EXISTS-P* (C SLOTS) ...)-105|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|MAP-SLOT-EXISTS-P*| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|MAP-SLOT-EXISTS-P*|
+       #21Y(00 00 00 00 02 00 00 00 26 03 99 00 AF 70 01 AE 33 00 16 19 03)
+       (|CL-TEST|::|SLOT-EXISTS-P*| |CL-TEST|::|APPLYF|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|C| |CL-TEST|::|SLOTS|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|846 847 (DEFUN MAP-SLOT-VALUE (C SLOTS) ...)-106|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|MAP-SLOT-VALUE| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|MAP-SLOT-VALUE|
+       #20Y(00 00 00 00 02 00 00 00 26 03 DA AF 70 01 AE 33 00 16 19 03)
+       (#.#'|CLOS|::|SLOT-VALUE| |CL-TEST|::|APPLYF|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|C| |CL-TEST|::|SLOTS|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|849 850 (DEFUN MAP-TYPEP* (OBJECT TYPES) ...)-107|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|MAP-TYPEP*| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|MAP-TYPEP*|
+       #21Y(00 00 00 00 02 00 00 00 26 03 99 00 AF 70 01 AE 33 00 16 19 03)
+       (|CL-TEST|::|TYPEP*| |CL-TEST|::|APPLYF|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|OBJECT| |CL-TEST|::|TYPES|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|852 855 (DEFUN SLOT-VALUE-OR-NIL (OBJECT SLOT-NAME) ...)-108|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|SLOT-VALUE-OR-NIL| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|SLOT-VALUE-OR-NIL|
+       #30Y(00 00 00 00 02 00 00 00 26 03 AE AE 32 56 1F 0C AE AE 32 54 1F 06
+            AE AE 32 52 19 03 19 03)
+       () (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|OBJECT| |CL-TEST|::|SLOT-NAME|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|857 863 (DEFUN IS-NONCONTIGUOUS-SUBLIST-OF (LIST1 LIST2) ...)-109|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|IS-NONCONTIGUOUS-SUBLIST-OF| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|IS-NONCONTIGUOUS-SUBLIST-OF|
+       #43Y(00 00 00 00 02 00 00 00 26 03 AE 63 1B 16 87 01 00 92 03 06 00 19
+            05 93 03 7A AC 94 04 83 05 8F 13 75 83 01 AD 8D 9F 66 02 19 05)
+       () (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|LIST1| |CL-TEST|::|LIST2|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|865 884 (DEFMACRO DEFHARMLESS (NAME FORM) ...)-110|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|DEFHARMLESS| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|DEFHARMLESS|
+       #62Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 63 2D 04 01 1D 26 9F 5C 78
+            A0 5C 5C 78 DD AE DE DF E0 E1 E2 E3 E4 E5 B6 7B 02 7B 02 D1 5D 7A
+            D2 5D 7A 7B 03 7B 03 D3 5D 5D 5D 19 05 AE 2F 02 19 03)
+       (3. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR|
+        |REGRESSION-TEST|::|DEFTEST| |COMMON-LISP|::|BLOCK| |CL-TEST|::|DONE|
+        |COMMON-LISP|::|LET|
+        ((|COMMON-LISP|::|*DEBUGGER-HOOK*|
+          #'(|COMMON-LISP|::|LAMBDA| (|COMMON-LISP|::|&REST| |CL-TEST|::|ARGS|)
+             (|COMMON-LISP|::|DECLARE|
+              (|COMMON-LISP|::|IGNORE| |CL-TEST|::|ARGS|))
+             (|COMMON-LISP|::|RETURN-FROM| |CL-TEST|::|DONE| :|GOOD|))))
+        |CL-TEST|::|HANDLER-CASE| |COMMON-LISP|::|UNWIND-PROTECT|
+        |COMMON-LISP|::|EVAL| |COMMON-LISP|::|QUOTE|
+        ((|COMMON-LISP|::|RETURN-FROM| |CL-TEST|::|DONE| :|GOOD|))
+        ((|COMMON-LISP|::|CONDITION| |COMMON-LISP|::|NIL| :|GOOD|)) (:|GOOD|))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (|CL-TEST|::|NAME| |CL-TEST|::|FORM|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|886 900 (DEFUN RATIONAL-SAFELY (X) ...)-111|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|RATIONAL-SAFELY| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|RATIONAL-SAFELY|
+       #69Y(00 00 00 00 01 00 00 00 26 02 1B 0D AF AD DD 33 00 38 1B 23 DA 6F
+            01 2F 02 AD 8F 21 77 AD 32 DE 42 03 B0 72 DA AE DD 73 00 38 90 01
+            31 5E AE DD 91 01 32 0C AF AD C8 14 72 B5 AF 33 03 39 19 06 B1 32
+            CA 19 06)
+       ((|COMMON-LISP|::|FLOATP| |CL-TEST|::|X|)
+        |SYSTEM|::|ASSERT-ERROR-STRING| |SYSTEM|::|SIMPLE-ASSERT-FAILED| 1000.)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X|)
+       "Rational a floating point number, making sure the rational\n
+   number isn't 'too big'.  This is important in implementations such\n
+   as clisp where the floating bounds can be very large."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|902 902 (DECLAIM (SPECIAL *SIMILARITY-LIST*))-112|
+   #15Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|*SIMILARITY-LIST*|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|904 906 (DEFUN IS-SIMILAR (X Y) ...)-113|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|IS-SIMILAR| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|IS-SIMILAR|
+       #20Y(00 00 00 00 02 00 00 00 26 03 00 10 00 B1 B1 30 01 11 19 03)
+       (|CL-TEST|::|*SIMILARITY-LIST*| |CL-TEST|::|IS-SIMILAR*|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X| |CL-TEST|::|Y|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|908 908 (DEFGENERIC IS-SIMILAR* (X Y))-114|
+   #120Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DA
+         6F 04 2D 03 05 6B 06 99 07 DA E2 AF E3 E4 E5 E6 E7 01 03 B8 6F 0E 1B
+         24 AF 38 01 80 A9 03 14 AD 31 B8 16 02 1B 14 94 00 94 00 9E 5C 5C 78
+         76 00 7B 02 A1 21 63 9D FC FB 16 02 83 00 AC 8D 9F 66 16 01 9E 16 01
+         F8 E9 6B 10 EB BA EC DA 6E 03 13 EE 63 6E 03 15 F0 63 F1 63 7B 08 33
+         02 23 9B 09 02)
+   (|CL-TEST|::|IS-SIMILAR*| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    |CLOS|::|DEFGENERIC| |SYSTEM|::|FBOUND-STRING|
+    |SYSTEM|::|CHECK-REDEFINITION| |CLOS|::|<STANDARD-GENERIC-FUNCTION>|
+    |CLOS|::|ENSURE-GENERIC-FUNCTION| :|GENERIC-FUNCTION-CLASS| :|LAMBDA-LIST|
+    (|CL-TEST|::|X| |CL-TEST|::|Y|) :|ARGUMENT-PRECEDENCE-ORDER|
+    (|CL-TEST|::|X| |CL-TEST|::|Y|) |CLOS|::|METHODS|
+    |CLOS|::|CLASS-DEFAULT-INITARGS| :|METHOD-CLASS|
+    |CLOS|::|<STANDARD-METHOD>| :|METHOD-COMBINATION| :|NAME|
+    |CLOS|::|MAKE-GENERIC-FUNCTION-PROTOTYPE| |CLOS|::|STANDARD|
+    |CLOS|::|FIND-METHOD-COMBINATION| :|DOCUMENTATION| :|DECLARATIONS|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|910 913 (DEFMETHOD IS-SIMILAR* (# #) ...)-115|
+   #48Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DE 63
+        DF E0 E1 E2 E3 E4 38 02 72 3A E4 38 02 72 3A 7B 02 7B 08 2D 03 0B 19
+        01)
+   (|CL-TEST|::|IS-SIMILAR*| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    #Y(#:|910 913 (DEFMETHOD IS-SIMILAR* (# #) ...)-115-1|
+       #15Y(00 00 00 00 01 00 00 00 20 02 DA C6 5D 19 02)
+       (#Y(#:|910 913 (DEFMETHOD IS-SIMILAR* (# #) ...)-115-1-1|
+           #31Y(00 00 00 00 02 00 00 00 20 03 AE 72 39 AE 32 39 5A 1F 0A AE AE
+                33 01 2F 1F 03 02 19 03 19 03)
+           () (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|T|))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+    :|QUALIFIERS| :|LAMBDA-LIST| (|CL-TEST|::|X| |CL-TEST|::|Y|)
+    |CLOS|::|SIGNATURE|
+    #(2. 0. |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+      |COMMON-LISP|::|NIL|)
+    :|SPECIALIZERS| |COMMON-LISP|::|NUMBER| |CLOS|::|DO-DEFMETHOD|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|915 916 (DEFMETHOD IS-SIMILAR* (# #) ...)-116|
+   #48Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DE 63
+        DF E0 E1 E2 E3 E4 38 02 72 3A E4 38 02 72 3A 7B 02 7B 08 2D 03 0B 19
+        01)
+   (|CL-TEST|::|IS-SIMILAR*| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    #Y(#:|915 916 (DEFMETHOD IS-SIMILAR* (# #) ...)-116-1|
+       #15Y(00 00 00 00 01 00 00 00 20 02 DA C6 5D 19 02)
+       (#Y(#:|915 916 (DEFMETHOD IS-SIMILAR* (# #) ...)-116-1-1|
+           #22Y(00 00 00 00 02 00 00 00 20 03 AE AE 33 01 07 1F 03 02 19 03 19
+                03)
+           () (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|T|))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+    :|QUALIFIERS| :|LAMBDA-LIST| (|CL-TEST|::|X| |CL-TEST|::|Y|)
+    |CLOS|::|SIGNATURE|
+    #(2. 0. |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+      |COMMON-LISP|::|NIL|)
+    :|SPECIALIZERS| |COMMON-LISP|::|CHARACTER| |CLOS|::|DO-DEFMETHOD|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|918 925 (DEFMETHOD IS-SIMILAR* (# #) ...)-117|
+   #48Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DE 63
+        DF E0 E1 E2 E3 E4 38 02 72 3A E4 38 02 72 3A 7B 02 7B 08 2D 03 0B 19
+        01)
+   (|CL-TEST|::|IS-SIMILAR*| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    #Y(#:|918 925 (DEFMETHOD IS-SIMILAR* (# #) ...)-117-1|
+       #15Y(00 00 00 00 01 00 00 00 20 02 DA C6 5D 19 02)
+       (#Y(#:|918 925 (DEFMETHOD IS-SIMILAR* (# #) ...)-117-1-1|
+           #29Y(00 00 00 00 02 00 00 00 20 03 AE 8E A4 0C AD 8E A4 08 AE 72 A6
+                AE 72 A6 30 00 02 19 03)
+           (|CL-TEST|::|IS-SIMILAR*|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|T|))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+    :|QUALIFIERS| :|LAMBDA-LIST| (|CL-TEST|::|X| |CL-TEST|::|Y|)
+    |CLOS|::|SIGNATURE|
+    #(2. 0. |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+      |COMMON-LISP|::|NIL|)
+    :|SPECIALIZERS| |COMMON-LISP|::|SYMBOL| |CLOS|::|DO-DEFMETHOD|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|927 938 (DEFMETHOD IS-SIMILAR* (# #) ...)-118|
+   #48Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DE 63
+        DF E0 E1 E2 E3 E4 38 02 72 3A E4 38 02 72 3A 7B 02 7B 08 2D 03 0B 19
+        01)
+   (|CL-TEST|::|IS-SIMILAR*| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    #Y(#:|927 938 (DEFMETHOD IS-SIMILAR* (# #) ...)-118-1|
+       #15Y(00 00 00 00 01 00 00 00 20 02 DA C6 5D 19 02)
+       (#Y(#:|927 938 (DEFMETHOD IS-SIMILAR* (# #) ...)-118-1-1|
+           #53Y(00 00 00 00 02 00 00 00 20 03 AE 72 F8 AE 72 F8 DA DB 72 EC 72
+                B2 DC 1B 13 00 16 01 3F 19 06 AD B0 72 F7 AE B0 72 F7 8F 13 6F
+                86 00 AC 8E AD 6F 16 01 02 19 06)
+           (1. 24. 50.)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|T|))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+    :|QUALIFIERS| :|LAMBDA-LIST| (|CL-TEST|::|X| |CL-TEST|::|Y|)
+    |CLOS|::|SIGNATURE|
+    #(2. 0. |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+      |COMMON-LISP|::|NIL|)
+    :|SPECIALIZERS| |COMMON-LISP|::|RANDOM-STATE| |CLOS|::|DO-DEFMETHOD|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|940 950 (DEFMETHOD IS-SIMILAR* (# #) ...)-119|
+   #48Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DE 63
+        DF E0 E1 E2 E3 E4 38 02 72 3A E4 38 02 72 3A 7B 02 7B 08 2D 03 0B 19
+        01)
+   (|CL-TEST|::|IS-SIMILAR*| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    #Y(#:|940 950 (DEFMETHOD IS-SIMILAR* (# #) ...)-119-1|
+       #15Y(00 00 00 00 01 00 00 00 20 02 DA C6 5D 19 02)
+       (#Y(#:|940 950 (DEFMETHOD IS-SIMILAR* (# #) ...)-119-1-1|
+           #78Y(00 00 00 00 02 00 00 00 20 03 AE 9F 22 22 63 6B 00 01 02 1B 02
+                83 02 AE 8C 9F 18 87 02 03 5B F9 A0 5C F8 B2 9F 23 6E B1 9E 5A
+                1D 69 16 04 1D 05 02 19 03 16 04 AE 9F 7A 0E 00 5D 10 00 94 05
+                94 05 30 01 1F 06 95 05 95 05 30 01 11 19 03)
+           (|CL-TEST|::|*SIMILARITY-LIST*| |CL-TEST|::|IS-SIMILAR*|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|T|))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+    :|QUALIFIERS| :|LAMBDA-LIST| (|CL-TEST|::|X| |CL-TEST|::|Y|)
+    |CLOS|::|SIGNATURE|
+    #(2. 0. |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+      |COMMON-LISP|::|NIL|)
+    :|SPECIALIZERS| |COMMON-LISP|::|CONS| |CLOS|::|DO-DEFMETHOD|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|952 962 (DEFMETHOD IS-SIMILAR* (# #) ...)-120|
+   #48Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DE 63
+        DF E0 E1 E2 E3 E4 38 02 72 3A E4 38 02 72 3A 7B 02 7B 08 2D 03 0B 19
+        01)
+   (|CL-TEST|::|IS-SIMILAR*| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    #Y(#:|952 962 (DEFMETHOD IS-SIMILAR* (# #) ...)-120-1|
+       #15Y(00 00 00 00 01 00 00 00 20 02 DA C6 5D 19 02)
+       (#Y(#:|952 962 (DEFMETHOD IS-SIMILAR* (# #) ...)-120-1-1|
+           #85Y(00 00 00 00 02 00 00 00 20 03 AE 9F 22 80 41 AE 8F 32 05 AE 32
+                32 1F 3B AE 72 62 AE 72 62 33 01 2F 1F 30 AE 71 06 AE 71 06 30
+                00 1F 26 AE 72 62 DB 1B 15 00 16 02 3F 19 03 B0 AD 73 01 01 B0
+                AE 73 01 01 8B 00 6D 85 00 AC AE 91 01 34 6B 16 02 02 19 03 19
+                03)
+           (|CL-TEST|::|IS-SIMILAR*| 0.)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|T|))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+    :|QUALIFIERS| :|LAMBDA-LIST| (|CL-TEST|::|X| |CL-TEST|::|Y|)
+    |CLOS|::|SIGNATURE|
+    #(2. 0. |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+      |COMMON-LISP|::|NIL|)
+    :|SPECIALIZERS| |COMMON-LISP|::|VECTOR| |CLOS|::|DO-DEFMETHOD|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|964 978 (DEFMETHOD IS-SIMILAR* (# #) ...)-121|
+   #48Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DE 63
+        DF E0 E1 E2 E3 E4 38 02 72 3A E4 38 02 72 3A 7B 02 7B 08 2D 03 0B 19
+        01)
+   (|CL-TEST|::|IS-SIMILAR*| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    #Y(#:|964 978 (DEFMETHOD IS-SIMILAR* (# #) ...)-121-1|
+       #15Y(00 00 00 00 01 00 00 00 20 02 DA C6 5D 19 02)
+       (#Y(#:|964 978 (DEFMETHOD IS-SIMILAR* (# #) ...)-121-1-1|
+           #104Y(00 00 00 00 02 00 00 00 20 03 AE 9F 22 80 54 AE 8F 32 06 AE 32
+                 32 1F 80 4D AE 71 07 AE 71 07 33 01 2F 1F 80 41 AE 71 09 AE 71
+                 09 32 14 1F 37 AE 71 06 AE 71 06 30 00 1F 2D AE 9F 7A 0E 01 5D
+                 10 01 B1 71 0A DC 1B 10 00 1B 14 B3 AD 71 04 B3 AE 71 04 8B 00
+                 72 85 00 AC AE 91 01 34 6D 02 16 02 11 1F 03 02 19 03 19 03)
+           (|CL-TEST|::|IS-SIMILAR*| |CL-TEST|::|*SIMILARITY-LIST*| 0.)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|T|))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+    :|QUALIFIERS| :|LAMBDA-LIST| (|CL-TEST|::|X| |CL-TEST|::|Y|)
+    |CLOS|::|SIGNATURE|
+    #(2. 0. |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+      |COMMON-LISP|::|NIL|)
+    :|SPECIALIZERS| |COMMON-LISP|::|ARRAY| |CLOS|::|DO-DEFMETHOD|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|980 982 (DEFMETHOD IS-SIMILAR* (# #) ...)-122|
+   #48Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DE 63
+        DF E0 E1 E2 E3 E4 38 02 72 3A E4 38 02 72 3A 7B 02 7B 08 2D 03 0B 19
+        01)
+   (|CL-TEST|::|IS-SIMILAR*| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    #Y(#:|980 982 (DEFMETHOD IS-SIMILAR* (# #) ...)-122-1|
+       #15Y(00 00 00 00 01 00 00 00 20 02 DA C6 5D 19 02)
+       (#Y(#:|980 982 (DEFMETHOD IS-SIMILAR* (# #) ...)-122-1-1|
+           #14Y(00 00 00 00 02 00 00 00 20 03 DA 33 00 1E)
+           ("Sorry, we're not computing this yet.")
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|T|))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+    :|QUALIFIERS| :|LAMBDA-LIST| (|CL-TEST|::|X| |CL-TEST|::|Y|)
+    |CLOS|::|SIGNATURE|
+    #(2. 0. |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+      |COMMON-LISP|::|NIL|)
+    :|SPECIALIZERS| |COMMON-LISP|::|HASH-TABLE| |CLOS|::|DO-DEFMETHOD|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|984 992 (DEFMETHOD IS-SIMILAR* (# #) ...)-123|
+   #48Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DE 63
+        DF E0 E1 E2 E3 E4 38 02 72 3A E4 38 02 72 3A 7B 02 7B 08 2D 03 0B 19
+        01)
+   (|CL-TEST|::|IS-SIMILAR*| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    #Y(#:|984 992 (DEFMETHOD IS-SIMILAR* (# #) ...)-123-1|
+       #15Y(00 00 00 00 01 00 00 00 20 02 DA C6 5D 19 02)
+       (#Y(#:|984 992 (DEFMETHOD IS-SIMILAR* (# #) ...)-123-1-1|
+           #96Y(00 00 00 00 02 00 00 00 20 03 AE 38 01 71 FA AE 38 01 71 FA 30
+                00 1F 80 45 AE 38 01 71 FB AE 38 01 71 FB 30 00 1F 37 AE 38 01
+                71 FC AE 38 01 71 FC 30 00 1F 29 AE 38 01 71 FD AE 38 01 71 FD
+                30 00 1F 1B AE 38 01 71 FE AE 38 01 71 FE 30 00 1F 0D AE 71 FF
+                AE 71 FF 30 00 1F 03 02 19 03 19 03)
+           (|CL-TEST|::|IS-SIMILAR*|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|T|))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+    :|QUALIFIERS| :|LAMBDA-LIST| (|CL-TEST|::|X| |CL-TEST|::|Y|)
+    |CLOS|::|SIGNATURE|
+    #(2. 0. |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+      |COMMON-LISP|::|NIL|)
+    :|SPECIALIZERS| |COMMON-LISP|::|PATHNAME| |CLOS|::|DO-DEFMETHOD|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|994 995 (DEFMETHOD IS-SIMILAR* (# #) ...)-124|
+   #48Y(00 00 00 00 00 00 00 00 20 01 DA DB 38 01 8F 9E 03 DA 2F 02 DA DD DE 63
+        DF E0 E1 E2 E3 64 38 02 72 3A 64 38 02 72 3A 7B 02 7B 08 2D 03 0A 19
+        01)
+   (|CL-TEST|::|IS-SIMILAR*| |SYSTEM|::|TRACED-DEFINITION| |SYSTEM|::|UNTRACE1|
+    #Y(#:|994 995 (DEFMETHOD IS-SIMILAR* (# #) ...)-124-1|
+       #15Y(00 00 00 00 01 00 00 00 20 02 DA C6 5D 19 02)
+       (#Y(#:|994 995 (DEFMETHOD IS-SIMILAR* (# #) ...)-124-1-1|
+           #21Y(00 00 00 00 02 00 00 00 20 03 AE AE 32 13 1F 03 02 19 03 19 03)
+           () (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+        (|COMMON-LISP|::|T|))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|))
+    :|QUALIFIERS| :|LAMBDA-LIST| (|CL-TEST|::|X| |CL-TEST|::|Y|)
+    |CLOS|::|SIGNATURE|
+    #(2. 0. |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|
+      |COMMON-LISP|::|NIL|)
+    :|SPECIALIZERS| |CLOS|::|DO-DEFMETHOD|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|997 999 (DEFPARAMETER *INITIAL-PRINT-PPRINT-DISPATCH* (IF # *PRINT-PPRINT-DISPATCH* ...))-125|
+   #26Y(00 00 00 00 00 00 00 00 20 01 DA 31 62 DB DC 8D 57 02 0E 02 14 31 5A C6
+        19 01)
+   ((|COMMON-LISP|::|SPECIAL| |CL-TEST|::|*INITIAL-PRINT-PPRINT-DISPATCH*|)
+    |CL-TEST|::|*INITIAL-PRINT-PPRINT-DISPATCH*|
+    |COMMON-LISP|::|*PRINT-PPRINT-DISPATCH*|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1001 1023 (DEFMACRO MY-WITH-STANDARD-IO-SYNTAX (&BODY BODY) ...)-126|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|MY-WITH-STANDARD-IO-SYNTAX| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|MY-WITH-STANDARD-IO-SYNTAX|
+       #19Y(00 00 00 00 02 00 00 00 26 03 95 02 DA DB 9F 5D 5D 19 04)
+       (|COMMON-LISP|::|LET|
+        ((|COMMON-LISP|::|*PACKAGE*|
+          (|COMMON-LISP|::|FIND-PACKAGE| "COMMON-LISP-USER"))
+         (|COMMON-LISP|::|*PRINT-ARRAY*| |COMMON-LISP|::|T|)
+         (|COMMON-LISP|::|*PRINT-BASE*| 10.)
+         (|COMMON-LISP|::|*PRINT-CASE*| :|UPCASE|)
+         (|COMMON-LISP|::|*PRINT-CIRCLE*| |COMMON-LISP|::|NIL|)
+         (|COMMON-LISP|::|*PRINT-ESCAPE*| |COMMON-LISP|::|T|)
+         (|COMMON-LISP|::|*PRINT-GENSYM*| |COMMON-LISP|::|T|)
+         (|COMMON-LISP|::|*PRINT-LENGTH*| |COMMON-LISP|::|NIL|)
+         (|COMMON-LISP|::|*PRINT-LEVEL*| |COMMON-LISP|::|NIL|)
+         (|COMMON-LISP|::|*PRINT-LINES*| |COMMON-LISP|::|NIL|)
+         (|COMMON-LISP|::|*PRINT-MISER-WIDTH*| |COMMON-LISP|::|NIL|)
+         (|COMMON-LISP|::|*PRINT-PPRINT-DISPATCH*|
+          |CL-TEST|::|*INITIAL-PRINT-PPRINT-DISPATCH*|)
+         (|COMMON-LISP|::|*PRINT-PRETTY*| |COMMON-LISP|::|NIL|)
+         (|COMMON-LISP|::|*PRINT-RADIX*| |COMMON-LISP|::|NIL|)
+         (|COMMON-LISP|::|*PRINT-READABLY*| |COMMON-LISP|::|T|)
+         (|COMMON-LISP|::|*PRINT-RIGHT-MARGIN*| |COMMON-LISP|::|NIL|)
+         (|COMMON-LISP|::|*READ-BASE*| 10.)
+         (|COMMON-LISP|::|*READ-DEFAULT-FLOAT-FORMAT*|
+          '|COMMON-LISP|::|SINGLE-FLOAT|)
+         (|COMMON-LISP|::|*READ-EVAL*| |COMMON-LISP|::|T|)
+         (|COMMON-LISP|::|*READ-SUPPRESS*| |COMMON-LISP|::|NIL|)
+         (|COMMON-LISP|::|*READTABLE*|
+          (|COMMON-LISP|::|COPY-READTABLE| |COMMON-LISP|::|NIL|))))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (|COMMON-LISP|::|&BODY| |CL-TEST|::|BODY|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1025 1049 (DEFUN MAKE-SPECIAL-STRING (STRING &KEY FILL ...) ...)-127|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|MAKE-SPECIAL-STRING| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|MAKE-SPECIAL-STRING|
+       #133Y(00 00 00 00 01 00 00 00 A6 1C 04 00 00 00 3D 04 3D 03 3D 02 3D 01
+             B1 72 62 92 05 21 9D 14 92 03 23 CB 14 92 05 24 AD 38 07 A5 FD 92
+             0F 80 4D 04 10 FB 93 0F 01 A7 FA AB FE 31 1D 19 09 DE AD 33 02 37
+             1B 59 CA 1B 5B D0 1B 13 E1 AE 73 02 37 38 07 E2 E3 E4 38 01 71 49
+             BE 92 12 6B D1 14 E7 38 01 71 49 82 03 26 03 A5 FD 71 1D AE B4 38
+             03 A3 FA 93 0D 01 A5 14 B2 E3 31 1D 19 0A E2 BD E8 33 02 26 1B FF
+             AC)
+       (:|FILL| :|ADJUST| :|DISPLACE| :|BASE| 4. |COMMON-LISP|::|BASE-CHAR|
+        |COMMON-LISP|::|CHARACTER| 5. |COMMON-LISP|::|STRING| 2. #\X 7. 3. #\Y
+        "ZZZZ")
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|COMMON-LISP|::|STRING| |COMMON-LISP|::|&KEY| |COMMON-LISP|::|FILL|
+        |CL-TEST|::|ADJUST| |CL-TEST|::|DISPLACE| |CL-TEST|::|BASE|)
+       |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1051 1066 (DEFMACRO DO-SPECIAL-STRINGS (# &BODY FORMS) ...)-128|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|DO-SPECIAL-STRINGS| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|DO-SPECIAL-STRINGS|
+       #140Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 64 2D 04 01 1D 80 65 9F 5C
+             78 AC DA DD 63 2D 04 01 1D 80 5D AC 94 00 9E 5C 78 9F 5C 5C 78 A4
+             5C 79 38 01 72 AA E5 72 AA E6 72 AA E7 72 AA E8 72 AA E9 B1 B5 7B
+             02 7B 01 EA B2 EB B7 7B 03 EA B3 D7 7A EA B4 D8 7A EA B5 D9 7A E9
+             BF EF BD F0 BE F1 BF F2 C0 F3 C1 7B 0A 7B 02 7B 01 04 11 5D 7A 7B
+             03 7B 03 7B 03 7B 03 61 03 19 0E AE 2F 02 19 03 DE DF B1 E0 B0 E1
+             6F 08 E3 B3 E4 33 07 1F)
+       (2. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR| 3.
+        |EXT|::|SOURCE-PROGRAM-ERROR| :|FORM| :|DETAIL|
+        "~S: ~S does not match lambda list element ~:S" |SYSTEM|::|TEXT|
+        |CL-TEST|::|DO-SPECIAL-STRINGS|
+        #1=(|CL-TEST|::|VAR| |CL-TEST|::|STRING-FORM|
+            |COMMON-LISP|::|&OPTIONAL| |CL-TEST|::|RET-FORM|)
+        "FILL" "ADJUST" "BASE" "DISPLACE" |COMMON-LISP|::|LET|
+        |COMMON-LISP|::|DOLIST| '(|COMMON-LISP|::|NIL| |COMMON-LISP|::|T|)
+        ('(|COMMON-LISP|::|NIL| |COMMON-LISP|::|T|))
+        ('(|COMMON-LISP|::|NIL| |COMMON-LISP|::|T|))
+        ('(|COMMON-LISP|::|NIL| |COMMON-LISP|::|T|))
+        |CL-TEST|::|MAKE-SPECIAL-STRING| :|FILL| :|ADJUST| :|BASE| :|DISPLACE|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (#1# |COMMON-LISP|::|&BODY| |CL-TEST|::|FORMS|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1068 1100 (DEFUN MAKE-SPECIAL-INTEGER-VECTOR (CONTENTS &KEY FILL ...) ...)-129|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|MAKE-SPECIAL-INTEGER-VECTOR| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|MAKE-SPECIAL-INTEGER-VECTOR|
+       #193Y(00 00 00 00 01 00 00 00 A6 1C 04 00 00 00 3D 04 3D 03 3D 02 3B 01
+             02 C9 F9 B1 72 62 DF B3 38 05 72 66 E0 B4 38 05 72 66 92 07 27 9F
+             14 AE B2 8B 08 30 AD B2 8B 08 2B 92 06 31 AC 38 07 AA FD 92 10 80
+             65 04 11 FB 93 10 01 A8 FA 04 0F FE 31 1D 19 0A E1 AF 33 02 37 1B
+             53 D1 1B 1E D2 1B 23 D4 1B 27 DE AF AF 61 03 FD 93 06 4F E3 AD 73
+             02 37 38 07 E4 E5 E6 BC 8A 08 60 A9 14 71 AA BF 92 13 5B D3 14 E9
+             BE 8A 08 57 AA 14 71 AA 82 03 26 03 AA FD 71 1D AD B5 38 03 A8 FA
+             93 0E 01 A6 14 B2 E5 31 1D 19 0B D0 1B 10 E4 BE E1 E5 BD 8A 08 75
+             B9 B9 73 02 37 E5 32 CE 14 71 AA 33 02 26 1B FF 84)
+       (:|FILL| :|ADJUST| :|DISPLACE| :|ETYPE| |COMMON-LISP|::|INTEGER|
+        #.#'|COMMON-LISP|::|MIN| #.#'|COMMON-LISP|::|MAX| 4.
+        |COMMON-LISP|::|TYPEP| 5. |COMMON-LISP|::|LIST| 2. 0. 7. 3. 1.)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|CONTENTS| |COMMON-LISP|::|&KEY| |COMMON-LISP|::|FILL|
+        |CL-TEST|::|ADJUST| |CL-TEST|::|DISPLACE|
+        (|CL-TEST|::|ETYPE| '|COMMON-LISP|::|INTEGER|))
+       |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1102 1119 (DEFMACRO DO-SPECIAL-INTEGER-VECTORS (# &BODY FORMS) ...)-130|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|DO-SPECIAL-INTEGER-VECTORS| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|DO-SPECIAL-INTEGER-VECTORS|
+       #196Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 64 2D 04 01 1D 80 41 9F 5C
+             78 AC DA DD 63 2D 04 01 1D 3A AC 94 00 9E 5C 78 9F 5C 5C 78 A4 5C
+             79 38 01 72 AA E5 72 AA E6 72 AA E7 72 AA E8 72 AA E9 B1 B5 7B 02
+             7B 01 EA B2 EB B7 7B 03 EA B3 D7 7A EA B4 ED EE 63 1B 1B AE 2F 02
+             19 03 DE DF B1 E0 B0 E1 6F 08 E3 B3 E4 33 07 1F F0 AE 7B 02 84 00
+             85 01 AD EF 91 01 32 72 AC 31 B1 16 01 F8 DA 63 1B 08 F1 AE 7B 02
+             84 00 85 01 AD EF 91 01 32 72 AC 31 B1 16 01 F8 F2 73 03 23 7B 02
+             7B 02 EA B5 03 19 7A E9 BF F4 BD F5 BE F6 BF F7 C0 65 1E C1 7B 0A
+             7B 02 7B 01 04 11 5D 7A 7B 03 7B 03 7B 03 7B 03 61 03 19 0E)
+       (2. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR| 3.
+        |EXT|::|SOURCE-PROGRAM-ERROR| :|FORM| :|DETAIL|
+        "~S: ~S does not match lambda list element ~:S" |SYSTEM|::|TEXT|
+        |CL-TEST|::|DO-SPECIAL-INTEGER-VECTORS|
+        #1=(|CL-TEST|::|VAR| |CL-TEST|::|VEC-FORM| |COMMON-LISP|::|&OPTIONAL|
+            |CL-TEST|::|RET-FORM|)
+        "FILL" "ADJUST" "ETYPE" "DISPLACE" |COMMON-LISP|::|LET|
+        |COMMON-LISP|::|DOLIST| '(|COMMON-LISP|::|NIL| |COMMON-LISP|::|T|)
+        ('(|COMMON-LISP|::|NIL| |COMMON-LISP|::|T|)) |COMMON-LISP|::|QUOTE| 1.
+        32. |COMMON-LISP|::|UNSIGNED-BYTE| |COMMON-LISP|::|SIGNED-BYTE|
+        (|COMMON-LISP|::|INTEGER|) ('(|COMMON-LISP|::|NIL| |COMMON-LISP|::|T|))
+        |CL-TEST|::|MAKE-SPECIAL-INTEGER-VECTOR| :|FILL| :|ADJUST| :|ETYPE|
+        :|DISPLACE|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|) |COMMON-LISP|::|NIL| 1)
+    (#1# |COMMON-LISP|::|&BODY| |CL-TEST|::|FORMS|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1121 1126 (DEFUN STRING-DESIGNATOR-P (X) ...)-131|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|STRING-DESIGNATOR-P| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|STRING-DESIGNATOR-P|
+       #56Y(02 00 01 00 01 00 00 00 26 02 00 2B 01 7F 02 00 00 4B 00 20 AE 6D
+            01 01 B1 6D 02 01 57 03 B0 36 00 16 06 1B 10 58 67 00 00 01 76 00
+            AD 36 01 18 02 01 19 02 00 4D 19 03)
+       (#(|COMMON-LISP|::|NIL|)
+        #Y(|CL-TEST|::|STRING-DESIGNATOR-P-1|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|STRING-DESIGNATOR-P-1-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 00)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|STRING-DESIGNATOR-P-2|
+           #18Y(00 00 00 00 00 00 00 00 26 01 69 00 01 31 51 02 19 01)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+           |COMMON-LISP|::|NIL| 1)
+        (#(|COMMON-LISP|::|ERROR| 27.) 1. . 1.))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1128 1138 (DEFUN APPROX= (X Y &OPTIONAL ...) ...)-132|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|APPROX=| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|APPROX=|
+       #40Y(00 00 00 00 02 00 01 00 26 09 3B 01 04 AF 2F 00 F9 AF AF 73 01 38
+            B0 72 B9 DB 73 01 35 73 01 3A 72 B9 AE 33 01 33 19 04)
+       (|CL-TEST|::|EPSILON| 1.)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X| |CL-TEST|::|Y| |COMMON-LISP|::|&OPTIONAL|
+        (|CL-TEST|::|EPS| (|CL-TEST|::|EPSILON| |CL-TEST|::|X|)))
+       |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1140 1147 (DEFUN EPSILON (NUMBER) ...)-133|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|EPSILON| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|EPSILON|
+       #72Y(00 00 00 00 01 00 00 00 26 02 AD 8E 27 1F AD 8E 22 26 AD 8E 23 25
+            AD 8E 24 24 AD 8E 25 23 AD 8E 20 23 AD E0 E1 70 08 E3 2D 03 0A 19
+            02 DA AE 72 E0 6C 57 33 02 39 19 02 C6 19 02 C7 19 02 C8 19 02 0E
+            04 19 02 CA 19 02)
+       (2. #.|COMMON-LISP|::|SHORT-FLOAT-EPSILON|
+        #.|COMMON-LISP|::|SINGLE-FLOAT-EPSILON|
+        #.|COMMON-LISP|::|DOUBLE-FLOAT-EPSILON|
+        |COMMON-LISP|::|LONG-FLOAT-EPSILON| 0. |COMMON-LISP|::|NUMBER|
+        (|COMMON-LISP|::|COMPLEX| |COMMON-LISP|::|SHORT-FLOAT|
+         |COMMON-LISP|::|SINGLE-FLOAT| |COMMON-LISP|::|DOUBLE-FLOAT|
+         |COMMON-LISP|::|LONG-FLOAT| |COMMON-LISP|::|RATIONAL|)
+        |SYSTEM|::|TYPECASE-ERROR-STRING|
+        (|COMMON-LISP|::|OR| |COMMON-LISP|::|COMPLEX|
+         |COMMON-LISP|::|SHORT-FLOAT| |COMMON-LISP|::|SINGLE-FLOAT|
+         |COMMON-LISP|::|DOUBLE-FLOAT| |COMMON-LISP|::|LONG-FLOAT|
+         |COMMON-LISP|::|RATIONAL|)
+        |SYSTEM|::|ETYPECASE-FAILED|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|COMMON-LISP|::|NUMBER|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1149 1156 (DEFUN NEGATIVE-EPSILON (NUMBER) ...)-134|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|NEGATIVE-EPSILON| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|NEGATIVE-EPSILON|
+       #72Y(00 00 00 00 01 00 00 00 26 02 AD 8E 27 1F AD 8E 22 26 AD 8E 23 25
+            AD 8E 24 24 AD 8E 25 23 AD 8E 20 23 AD E0 E1 70 08 E3 2D 03 0A 19
+            02 DA AE 72 E0 6C 57 33 02 39 19 02 C6 19 02 C7 19 02 C8 19 02 0E
+            04 19 02 CA 19 02)
+       (2. #.|COMMON-LISP|::|SHORT-FLOAT-NEGATIVE-EPSILON|
+        #.|COMMON-LISP|::|SINGLE-FLOAT-NEGATIVE-EPSILON|
+        #.|COMMON-LISP|::|DOUBLE-FLOAT-NEGATIVE-EPSILON|
+        |COMMON-LISP|::|LONG-FLOAT-NEGATIVE-EPSILON| 0. |COMMON-LISP|::|NUMBER|
+        (|COMMON-LISP|::|COMPLEX| |COMMON-LISP|::|SHORT-FLOAT|
+         |COMMON-LISP|::|SINGLE-FLOAT| |COMMON-LISP|::|DOUBLE-FLOAT|
+         |COMMON-LISP|::|LONG-FLOAT| |COMMON-LISP|::|RATIONAL|)
+        |SYSTEM|::|TYPECASE-ERROR-STRING|
+        (|COMMON-LISP|::|OR| |COMMON-LISP|::|COMPLEX|
+         |COMMON-LISP|::|SHORT-FLOAT| |COMMON-LISP|::|SINGLE-FLOAT|
+         |COMMON-LISP|::|DOUBLE-FLOAT| |COMMON-LISP|::|LONG-FLOAT|
+         |COMMON-LISP|::|RATIONAL|)
+        |SYSTEM|::|ETYPECASE-FAILED|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|COMMON-LISP|::|NUMBER|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1158 1158 (DEFUN SEQUENCEP (X) ...)-135|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|SEQUENCEP| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|SEQUENCEP|
+       #15Y(00 00 00 00 01 00 00 00 26 02 AD 32 5D 19 02) ()
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1160 1160 (DEFUN TYPEF (TYPE) ...)-136|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|TYPEF| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|TYPEF|
+       #23Y(00 00 00 00 01 00 00 00 26 02 00 2B 01 7F 02 00 00 AC 2C 00 01 19
+            03)
+       (#Y(|CL-TEST|::|TYPEF-1|
+           #18Y(00 00 00 00 01 00 00 00 26 02 AD 69 00 01 30 01 19 02)
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|TYPEP|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+           (|CL-TEST|::|X|) |COMMON-LISP|::|NIL| 1))
+       (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|)
+       (|COMMON-LISP|::|TYPE|) |COMMON-LISP|::|NIL| 1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1162 1169 (DEFUN PACKAGE-DESIGNATOR-P (X) ...)-137|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|PACKAGE-DESIGNATOR-P| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|PACKAGE-DESIGNATOR-P|
+       #63Y(02 00 01 00 01 00 00 00 26 02 00 2B 01 7F 02 00 00 14 32 30 1E 27
+            4B 00 20 AE 6D 01 01 B1 6D 02 01 57 03 B0 36 00 16 06 1B 10 58 67
+            00 00 01 76 00 AD 36 01 18 02 01 19 02 00 4D 19 03 19 03)
+       (#(|COMMON-LISP|::|NIL|)
+        #Y(|CL-TEST|::|PACKAGE-DESIGNATOR-P-1|
+           #16Y(00 00 00 00 00 00 00 00 26 01 DA 2C 01 01 19 01)
+           (|COMMON-LISP|::|NIL|
+            #Y(|CL-TEST|::|PACKAGE-DESIGNATOR-P-1-1|
+               #13Y(00 00 00 00 01 00 00 00 26 02 4E 00 00)
+               (|COMMON-LISP|::|NIL|)
+               (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+               (|COMMON-LISP|::|CONDITION|) |COMMON-LISP|::|NIL| 1))
+           (|COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL| |COMMON-LISP|::|NIL|) ()
+           |COMMON-LISP|::|NIL| 1)
+        #Y(|CL-TEST|::|PACKAGE-DESIGNATOR-P-2|
+           #22Y(00 00 00 00 00 00 00 00 26 01 69 00 01 31 51 1F 03 02 19 01 19
+                01)
+           (|COMMON-LISP|::|NIL|)
+           (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|) ()
+           |COMMON-LISP|::|NIL| 1)
+        (#(|COMMON-LISP|::|TYPE-ERROR| 32.) 1. . 1.))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X|)
+       "TRUE if x could be a package designator.  The package need not\n
+   actually exist."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1171 1179 (DEFMACRO DEF-FOLD-TEST (NAME FORM) ...)-138|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|DEF-FOLD-TEST| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|DEF-FOLD-TEST|
+       #51Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 63 2D 04 01 1D 1B 9F 5C 78
+            A0 5C 5C 78 DD AE DE DF 63 E0 B2 7B 04 7B 01 CC 5D 7A CD 5D 5D 5D
+            19 05 AE 2F 02 19 03)
+       (3. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR|
+        |REGRESSION-TEST|::|DEFTEST| |COMMON-LISP|::|FLET| |CL-TEST|::|%F|
+        (|COMMON-LISP|::|DECLARE|
+         (|COMMON-LISP|::|OPTIMIZE| (|COMMON-LISP|::|SPEED| 3.)
+          (|COMMON-LISP|::|SAFETY| 0.) (|COMMON-LISP|::|SPACE| 0.)
+          (|COMMON-LISP|::|COMPILATION-SPEED| 0.) (|COMMON-LISP|::|DEBUG| 0.)))
+        ((|COMMON-LISP|::|EQ| (|CL-TEST|::|%F|) (|CL-TEST|::|%F|)))
+        (|COMMON-LISP|::|NIL|))
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|)
+       "Create a test that FORM, which should produce a fresh value,\n
+   does not improperly introduce sharing during constant folding."
+       1)
+    (|CL-TEST|::|NAME| |CL-TEST|::|FORM|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|1181 1187 (DEFMACRO EXPAND-IN-CURRENT-ENV (MACRO-FORM &ENVIRONMENT ENV) ...)-139|
+   #23Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC DD 72 4C 32 9C C5 19 01)
+   (|CL-TEST|::|EXPAND-IN-CURRENT-ENV| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|EXPAND-IN-CURRENT-ENV|
+       #33Y(00 00 00 00 02 00 00 00 26 03 AE DA DA 63 2D 04 01 1D 09 9F 5C 78
+            AC AF 31 60 19 04 AE 2F 02 19 03)
+       (2. |SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|MACRO-CALL-ERROR|)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|SYSTEM|::|<MACRO-FORM>| |CL-TEST|::|ENV|) |COMMON-LISP|::|NIL| 1)
+    (|CL-TEST|::|MACRO-FORM| |COMMON-LISP|::|&ENVIRONMENT| |CL-TEST|::|ENV|))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))

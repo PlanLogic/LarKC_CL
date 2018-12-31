@@ -1,0 +1,15 @@
+*.snap
+*.vtg
+*~
+/phase04-sublisp/build/eclipse-classes/
+*.class
+/.metadata/.plugins/it.unibz.instasearch/searchindex/
+/.recommenders/
+/.sonarlint/
+./bin-eclipse/
+./build/
+./target/
+/runtime-extra/
+/runtime-server-4q/units/7166
+/runtime-server-4q/data/
+/runtime-server-4q/

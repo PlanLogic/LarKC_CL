@@ -1,0 +1,8 @@
+arglistBelow=true
+autoCompletionsNLimit=200
+autoFuzzyCompletions=true
+consoleCompilerLog=true
+customAutoEdits=let ;let ((|))\tdefun ;defun | ()\n  \t
+eclipse.preferences.version=1
+lispExecutable=C\:\\Program Files (x86)\\Steel Bank Common Lisp\\1.0.22\\sbcl.exe
+usePluginLisp=true

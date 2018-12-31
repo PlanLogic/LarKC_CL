@@ -1,0 +1,87 @@
+//
+//
+package com.cyc.tool.subl.jrtl.nativeCode.subLisp;
+
+import java.net.InetAddress;
+
+import com.cyc.tool.subl.jrtl.nativeCode.type.core.SubLList;
+import com.cyc.tool.subl.jrtl.nativeCode.type.core.SubLObjectFactory;
+import com.cyc.tool.subl.jrtl.nativeCode.type.symbol.SubLNil;
+import com.cyc.tool.subl.jrtl.nativeCode.type.symbol.SubLSymbol;
+import com.cyc.tool.subl.util.SubLFile;
+import com.cyc.tool.subl.util.SubLFiles;
+
+public class SystemInfo implements SubLFile {
+	public static SubLFile me;
+	public static SubLSymbol $system_info$;
+	private static SubLSymbol LISP_IMPLEMENTATION_TYPE;
+	private static SubLSymbol LISP_IMPLEMENTATION_VERSION;
+	private static SubLSymbol SHORT_SITE_NAME;
+	private static SubLSymbol LONG_SITE_NAME;
+	private static SubLSymbol MACHINE_INSTANCE;
+	private static SubLSymbol MACHINE_TYPE;
+	private static SubLSymbol MACHINE_VERSION;
+	private static SubLSymbol SOFTWARE_TYPE;
+	private static SubLSymbol SOFTWARE_VERSION;
+	private static SubLSymbol USER;
+	private static SubLSymbol PROCESS_ID;
+	private static SubLSymbol NETWORK_NAME;
+	static {
+		SystemInfo.me = new SystemInfo();
+		SystemInfo.$system_info$ = null;
+		SystemInfo.LISP_IMPLEMENTATION_TYPE = SubLObjectFactory.makeKeyword("LISP-IMPLEMENTATION-TYPE");
+		SystemInfo.LISP_IMPLEMENTATION_VERSION = SubLObjectFactory.makeKeyword("LISP-IMPLEMENTATION-VERSION");
+		SystemInfo.SHORT_SITE_NAME = SubLObjectFactory.makeKeyword("SHORT-SITE-NAME");
+		SystemInfo.LONG_SITE_NAME = SubLObjectFactory.makeKeyword("LONG-SITE-NAME");
+		SystemInfo.MACHINE_INSTANCE = SubLObjectFactory.makeKeyword("MACHINE-INSTANCE");
+		SystemInfo.MACHINE_TYPE = SubLObjectFactory.makeKeyword("MACHINE-TYPE");
+		SystemInfo.MACHINE_VERSION = SubLObjectFactory.makeKeyword("MACHINE-VERSION");
+		SystemInfo.SOFTWARE_TYPE = SubLObjectFactory.makeKeyword("SOFTWARE-TYPE");
+		SystemInfo.SOFTWARE_VERSION = SubLObjectFactory.makeKeyword("SOFTWARE-VERSION");
+		SystemInfo.USER = SubLObjectFactory.makeKeyword("USER");
+		SystemInfo.PROCESS_ID = SubLObjectFactory.makeKeyword("PROCESS-ID");
+		SystemInfo.NETWORK_NAME = SubLObjectFactory.makeKeyword("NETWORK-NAME");
+	}
+
+	public void declareFunctions() {
+	}
+
+	public void initializeVariables() {
+		SubLList systemInfoList = CommonSymbols.NIL;
+		systemInfoList = systemInfoList.push(SubLObjectFactory.makeString("Cycorp Java SubL Runtime Environment"));
+		systemInfoList = systemInfoList.push(SystemInfo.LISP_IMPLEMENTATION_TYPE);
+		systemInfoList = systemInfoList.push(SubLObjectFactory.makeString("Version 1.0"));
+		systemInfoList = systemInfoList.push(SystemInfo.LISP_IMPLEMENTATION_VERSION);
+		systemInfoList = systemInfoList.push(SubLNil.NIL);
+		systemInfoList = systemInfoList.push(SystemInfo.MACHINE_VERSION);
+		systemInfoList = systemInfoList.push(SubLNil.NIL);
+		systemInfoList = systemInfoList.push(SystemInfo.SHORT_SITE_NAME);
+		systemInfoList = systemInfoList.push(SubLNil.NIL);
+		systemInfoList = systemInfoList.push(SystemInfo.LONG_SITE_NAME);
+		systemInfoList = systemInfoList.push(SubLObjectFactory.makeString(System.getProperty("os.name") + " "
+				+ System.getProperty("os.version") + " " + System.getProperty("os.arch")));
+		systemInfoList = systemInfoList.push(SystemInfo.MACHINE_TYPE);
+		systemInfoList = systemInfoList.push(SubLNil.NIL);
+		systemInfoList = systemInfoList.push(SystemInfo.MACHINE_VERSION);
+		systemInfoList = systemInfoList.push(SubLObjectFactory.makeString(System.getProperty("user.name")));
+		systemInfoList = systemInfoList.push(SystemInfo.USER);
+		systemInfoList = systemInfoList.push(SubLObjectFactory.makeInteger(0));
+		systemInfoList = systemInfoList.push(SystemInfo.PROCESS_ID);
+		try {
+			InetAddress addr = InetAddress.getLocalHost();
+			systemInfoList = systemInfoList.push(SubLObjectFactory.makeString(addr.getHostName()));
+			systemInfoList = systemInfoList.push(SystemInfo.NETWORK_NAME);
+			systemInfoList = systemInfoList.push(SubLObjectFactory.makeString(addr.getHostName()));
+			systemInfoList = systemInfoList.push(SystemInfo.MACHINE_INSTANCE);
+		} catch (Exception e) {
+			systemInfoList = systemInfoList.push(SubLObjectFactory.makeString("UNKNOWN"));
+			systemInfoList = systemInfoList.push(SystemInfo.NETWORK_NAME);
+			systemInfoList = systemInfoList.push(SubLObjectFactory.makeString("UNKNOWN"));
+			systemInfoList = systemInfoList.push(SystemInfo.MACHINE_INSTANCE);
+		}
+		SystemInfo.$system_info$ = SubLFiles.defparameter(SystemInfo.me, "*SYSTEM-INFO*", systemInfoList);
+	}
+
+	public void runTopLevelForms() {
+	}
+}

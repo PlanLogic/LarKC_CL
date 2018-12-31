@@ -1,0 +1,874 @@
+[2016-12-30 03:50:48] Executing startup tasks
+[2016-12-30 03:50:49] Java(TM) SE Runtime Environment 1.8.0_112-b15
+[2016-12-30 03:50:49] Product self.product.version
+[2016-12-30 03:50:49] Bundle org.eclipse.oomph.setup 1.6.0.v20161019-0656, build=2710, branch=95513d92aa8d2c8727e331d29880074679ea6573
+[2016-12-30 03:50:49] Bundle org.eclipse.oomph.setup.core 1.6.0.v20161031-1248, build=2710, branch=95513d92aa8d2c8727e331d29880074679ea6573
+[2016-12-30 03:50:49] Bundle org.eclipse.oomph.setup.p2 1.6.0.v20161019-0656, build=2710, branch=95513d92aa8d2c8727e331d29880074679ea6573
+[2016-12-30 03:50:49] Performing Preference /instance/com.android.ide.eclipse.adt/com.android.ide.eclipse.adt.attrSort = logical
+[2016-12-30 03:50:49] Performing Preference /instance/com.android.ide.eclipse.adt/com.android.ide.eclipse.adt.resAutoRefresh = false
+[2016-12-30 03:50:49] Performing Preference /instance/com.android.ide.eclipse.adt/com.android.ide.eclipse.adt.sdk = G:\adt-bundle-windows-x86_64-20131030\adt-bundle-windows-x86_64-20131030\sdk
+[2016-12-30 03:50:49] Performing Preference /instance/de.defmacro.dandelion/de.defmacro.dandelion.preferences.server.count = 0
+[2016-12-30 03:50:49] Performing Preference /instance/jasko.tim.lisp/arglistBelow = true
+[2016-12-30 03:50:49] Performing Preference /instance/jasko.tim.lisp/autoCompletionsNLimit = 200
+[2016-12-30 03:50:49] Performing Preference /instance/jasko.tim.lisp/autoFuzzyCompletions = true
+[2016-12-30 03:50:49] Performing Preference /instance/jasko.tim.lisp/consoleCompilerLog = true
+[2016-12-30 03:50:49] Performing Preference /instance/jasko.tim.lisp/customAutoEdits = let ;let ((|))...
+[2016-12-30 03:50:49] Performing Preference /instance/jasko.tim.lisp/lispExecutable = C:\Program Files (x86)\Steel Bank Common Lisp\1.0.22\sbcl.exe
+[2016-12-30 03:50:49] Performing Preference /instance/jasko.tim.lisp/usePluginLisp = true
+[2016-12-30 03:50:49] Performing Preference /instance/net.sf.eclipsefp.haskell.core/HS_IMPLEMENTATIONS = <?xml version="1.0" encoding="UTF-8"?>...
+[2016-12-30 03:50:49] <?xml version="1.0" encoding="UTF-8"?>
+<hsImpls>
+  <hsImpl name="GHC 7.8.3" binDir="C:\Program Files\Haskell Platform\2014.2.0.0\bin" version="7.8.3" type="GHC"/>
+  <hsImpl name="GHC 8.0.1" binDir="C:\Program Files\Haskell Platform\8.0.1\bin" version="8.0.1" type="GHC"/>
+</hsImpls>
+
+[2016-12-30 03:50:49] Performing Preference /instance/net.sf.eclipsefp.haskell.core/SELECTED_HS_IMPLEMENTATION = GHC 8.0.1
+[2016-12-30 03:50:49] Performing Preference /instance/org.brainwy.liclipsetext.editor/LICLIPSE_COLORS = __dftl_partition_content_type=0,0,0...
+[2016-12-30 03:50:49] __dftl_partition_content_type=0,0,0
+foreground=0,0,0
+singleLineComment=63,127,95
+multiLineComment=63,127,95
+background=255,255,255
+number=0,0,0
+string=42,0,255
+bracket=0,0,0
+operator=0,0,0
+keyword=127,0,85;BOLD
+class=0,0,0;BOLD
+interface=0,0,0
+enum=0,0,0
+method=0,0,0;BOLD
+methodDeclaration=0,0,0
+annotation=100,100,100
+localVariable=0,0,0
+localVariableDeclaration=0,0,0
+inheritedMethod=0,0,0
+abstractMethod=0,0,0
+staticMethod=0,0,192;ITALIC
+javadoc=63,95,191
+javadocTag=127,127,159;BOLD
+javadocKeyword=127,159,191
+javadocLink=63,63,191
+field=0,0,192
+staticField=0,0,192;ITALIC
+staticFinalField=0,0,192;ITALIC
+parameterVariable=0,0,0
+typeArgument=0,0,0
+typeParameter=0,0,0
+deprecatedMember=0,0,0;STRIKETHROUGH
+constant=0,0,0
+matchingBracket=64,128,128
+[2016-12-30 03:50:49] Performing Preference /instance/org.codehaus.groovy.eclipse.core/groovy.classpath.use.groovy.lib.global = true
+[2016-12-30 03:50:49] Performing Preference /instance/org.codehaus.groovy.eclipse.ui/groovy.contentassist.namedarguments = true
+[2016-12-30 03:50:49] Performing Preference /instance/org.codehaus.groovy.eclipse.ui/groovy.junit.monospace.font = true
+[2016-12-30 03:50:49] Performing Preference /instance/org.cs3.pdt.common/debug.output.to = CONSOLE
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.cdt.ui/org.eclipse.cdt.ui.add_comments = true
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.cdt.ui/org.eclipse.cdt.ui.text.custom_code_templates = <?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="org.eclipse.cdt.ui.text.codetemplates.methodbody_context" deleted="false" description="Code in created method stubs" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.methodbody" name="methodbody">...
+[2016-12-30 03:50:49] <?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="org.eclipse.cdt.ui.text.codetemplates.methodbody_context" deleted="false" description="Code in created method stubs" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.methodbody" name="methodbody">	// ${todo} Auto-generated method stub
+    if(true) throw new AbstractMethodError("Auto-generated method stub: " + ${enclosing_type} + "." + ${enclosing_method});
+	${body_statement}</template></templates>
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.core.resources/pathvariable.SP_LIBRARY_DIR = C:/Program Files/SICStus Prolog VC14 4.3.3/library
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.debug.ui/Console.highWaterMark = 1000007999
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.debug.ui/Console.limitConsoleOutput = false
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.debug.ui/Console.lowWaterMark = 999999999
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.auto_remove_old_launches = false
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.manage_view_perspectives = org.eclipse.debug.ui.DebugPerspective,ocaml.perspectives.OcamlDebugPerspective,org.eclipse.jdt.ui.JavaPerspective,net.sf.eclipsefp.haskell.ui.HaskellPerspective,ar.com.tadp.prolog.PrologPerspective,
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.max_history_size = 30
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.PREF_FILTER_WORKING_SETS = true
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES = <?xml version="1.0" encoding="UTF-8" standalone="no"?>...
+[2016-12-30 03:50:49] <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchPerspectives/>
+
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.relaunch_in_debug_mode = prompt
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.RelaunchAndTerminateLaunchAction = true
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.skip_breakpoints_during_run_to_line = true
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.wait_for_build = prompt
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.dltk.debug/dbgp_bind_address = autodetect
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.core/JRE_LIB = C:/pf/java/jdk1.7.0_75/jre/lib/rt.jar
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.builder.invalidClasspath = ignore
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.builder.resourceCopyExclusionFilter = .git/,.svn/,CVS/,*.bak
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.targetPlatform = 1.6
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.compliance = 1.6
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.fieldHiding = warning
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.localVariableHiding = info
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedImport = ignore
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.unusedPrivateMember = ignore
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source = 1.6
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.debug/org.eclipse.jdt.debug.PREF_JAVA_LOGICAL_STRUCTURES = 
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.debug.ui/org.eclipse.jdt.debug.ui.active_filters = groovy.lang.*,groovy.ui.*,java.lang.reflect.*,org.codehaus.groovy.*,sun.misc.*,sun.reflect.*,java.lang.ClassLoader
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.debug.ui/org.eclipse.jdt.debug.ui.open_inspect_popup_on_exception = true
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.debug.ui/org.eclipse.jdt.debug.ui.prompt_unable_to_install_breakpoint = true
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.launching/org.eclipse.jdt.launching.only_include_exported_classpath_entries = true
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.cleanupprofiles = <?xml version="1.0" encoding="UTF-8" standalone="no"?>...
+[2016-12-30 03:50:49] <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<profiles version="2">
+<profile kind="CleanUpProfile" name="PreMerge" version="2">
+<setting id="cleanup.qualify_static_method_accesses_with_declaring_class" value="true"/>
+<setting id="cleanup.always_use_this_for_non_static_method_access" value="true"/>
+<setting id="cleanup.organize_imports" value="false"/>
+<setting id="cleanup.remove_trailing_whitespaces_ignore_empty" value="false"/>
+<setting id="cleanup.format_source_code_changes_only" value="false"/>
+<setting id="cleanup.qualify_static_field_accesses_with_declaring_class" value="true"/>
+<setting id="cleanup.add_generated_serial_version_id" value="false"/>
+<setting id="cleanup.qualify_static_member_accesses_through_subtypes_with_declaring_class" value="true"/>
+<setting id="cleanup.remove_redundant_type_arguments" value="false"/>
+<setting id="cleanup.remove_unused_imports" value="false"/>
+<setting id="cleanup.insert_inferred_type_arguments" value="false"/>
+<setting id="cleanup.make_private_fields_final" value="true"/>
+<setting id="cleanup.use_lambda" value="false"/>
+<setting id="cleanup.always_use_blocks" value="false"/>
+<setting id="cleanup.use_this_for_non_static_field_access_only_if_necessary" value="false"/>
+<setting id="cleanup.sort_members_all" value="false"/>
+<setting id="cleanup.remove_trailing_whitespaces_all" value="true"/>
+<setting id="cleanup.add_missing_annotations" value="true"/>
+<setting id="cleanup.always_use_this_for_non_static_field_access" value="true"/>
+<setting id="cleanup.make_parameters_final" value="true"/>
+<setting id="cleanup.sort_members" value="false"/>
+<setting id="cleanup.remove_private_constructors" value="true"/>
+<setting id="cleanup.always_use_parentheses_in_expressions" value="false"/>
+<setting id="cleanup.remove_unused_local_variables" value="false"/>
+<setting id="cleanup.convert_to_enhanced_for_loop" value="false"/>
+<setting id="cleanup.remove_unused_private_fields" value="true"/>
+<setting id="cleanup.never_use_blocks" value="true"/>
+<setting id="cleanup.add_missing_deprecated_annotations" value="true"/>
+<setting id="cleanup.use_this_for_non_static_field_access" value="true"/>
+<setting id="cleanup.remove_unnecessary_nls_tags" value="false"/>
+<setting id="cleanup.qualify_static_member_accesses_through_instances_with_declaring_class" value="true"/>
+<setting id="cleanup.add_missing_nls_tags" value="false"/>
+<setting id="cleanup.remove_unnecessary_casts" value="false"/>
+<setting id="cleanup.use_blocks_only_for_return_and_throw" value="false"/>
+<setting id="cleanup.format_source_code" value="false"/>
+<setting id="cleanup.convert_functional_interfaces" value="true"/>
+<setting id="cleanup.add_default_serial_version_id" value="true"/>
+<setting id="cleanup.remove_unused_private_methods" value="true"/>
+<setting id="cleanup.remove_trailing_whitespaces" value="true"/>
+<setting id="cleanup.make_type_abstract_if_missing_method" value="false"/>
+<setting id="cleanup.add_serial_version_id" value="false"/>
+<setting id="cleanup.use_this_for_non_static_method_access" value="true"/>
+<setting id="cleanup.use_this_for_non_static_method_access_only_if_necessary" value="false"/>
+<setting id="cleanup.use_anonymous_class_creation" value="true"/>
+<setting id="cleanup.add_missing_override_annotations_interface_methods" value="true"/>
+<setting id="cleanup.remove_unused_private_members" value="false"/>
+<setting id="cleanup.make_local_variable_final" value="true"/>
+<setting id="cleanup.add_missing_methods" value="true"/>
+<setting id="cleanup.never_use_parentheses_in_expressions" value="true"/>
+<setting id="cleanup.qualify_static_member_accesses_with_declaring_class" value="true"/>
+<setting id="cleanup.use_parentheses_in_expressions" value="true"/>
+<setting id="cleanup.add_missing_override_annotations" value="true"/>
+<setting id="cleanup.use_blocks" value="true"/>
+<setting id="cleanup.make_variable_declarations_final" value="true"/>
+<setting id="cleanup.correct_indentation" value="false"/>
+<setting id="cleanup.remove_unused_private_types" value="true"/>
+</profile>
+</profiles>
+
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.text.custom_code_templates = <?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="methodbody_context" deleted="false" description="Code in created method stubs" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.methodbody" name="methodbody">// ${todo} Auto-generated method stub...
+[2016-12-30 03:50:49] <?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="methodbody_context" deleted="false" description="Code in created method stubs" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.methodbody" name="methodbody">// ${todo} Auto-generated method stub
+if(true) Errors.unimplementedMethod("Auto-generated method stub:  ${enclosing_type}.${enclosing_method}");
+${body_statement}</template>
+<template autoinsert="false" context="constructorbody_context" deleted="false" description="Code in created constructor stubs" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.constructorbody" name="constructorbody">${body_statement}
+if(true) throw new AbstractMethodError("Auto-generated constructor stub: " + ${enclosing_type});// ${todo} Auto-generated constructor stub
+
+</template></templates>
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.visibility.order = B,V,R,D,
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.jdt.ui/outlinesortoption = SF,SM,F,C,I,M,SI,T,
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.m2e.discovery/org.eclipse.m2e.discovery.pref.projects = javassist;
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.ui/SHOW_MEMORY_MONITOR = true
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.ui.workbench/RECENT_FILES = 15
+[2016-12-30 03:50:49] Performing Preference /instance/org.eclipse.ui.workbench/resourcetypes = <?xml version="1.0" encoding="UTF-8"?>...
+[2016-12-30 03:50:49] <?xml version="1.0" encoding="UTF-8"?>
+<editors version="3.1">
+<info extension="bpmn2" name="*"/>
+<info extension="psgi" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.perl"/>
+</info>
+<info extension="bash_profile" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.shell"/>
+</info>
+<info extension="java" name="*">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor"/>
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.java"/>
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor"/>
+<editor id="org.eclipse.ui.DefaultTextEditor"/>
+<editor id="com.google.gwt.eclipse.core.editors.gwtJavaEditor"/>
+<editor id="hbaseplugin.editors.HBasePluginPageEditor"/>
+<defaultEditor id="org.eclipse.jdt.ui.CompilationUnitEditor"/>
+<defaultEditor id="com.brainwy.liclipse.editor.common.LiClipseEditor.java"/>
+<defaultEditor id="com.brainwy.liclipse.editor.common.LiClipseEditor"/>
+<defaultEditor id="org.eclipse.ui.DefaultTextEditor"/>
+<defaultEditor id="com.google.gwt.eclipse.core.editors.gwtJavaEditor"/>
+</info>
+<info extension="PNG" name="*"/>
+<info extension="stg" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.stringtemplate"/>
+</info>
+<info extension="tagx" name="*">
+<editor id="org.eclipse.jst.jsp.core.jspsource.source"/>
+</info>
+<info extension="shtml" name="*">
+<editor id="org.eclipse.ui.browser.editorSupport"/>
+</info>
+<info extension="workingsets" name="*">
+<editor id="org.eclipse.oomph.workingsets.presentation.WorkingSetsEditorID"/>
+</info>
+<info extension="chromium" name="*">
+<editor id="org.eclipse.wst.jsdt.chromium.debug.ui.editors.JsEditor"/>
+<defaultEditor id="org.eclipse.wst.jsdt.chromium.debug.ui.editors.JsEditor"/>
+</info>
+<info extension="package" name="*"/>
+<info extension="rsc" name="*"/>
+<info extension="p6" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.perl.6"/>
+</info>
+<info extension="rsd" name="*"/>
+<info extension="adoc" name="*"/>
+<info extension="xgui2" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.xgui20"/>
+</info>
+<info extension="jsf" name="*">
+<editor id="org.jboss.tools.jst.jsp.jspeditor.HTMLTextEditor"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source"/>
+<defaultEditor id="org.jboss.tools.jst.jsp.jspeditor.HTMLTextEditor"/>
+</info>
+<info extension="bnd" name="ext/*"/>
+<info extension="%BrlExtensions" name="*"/>
+<info extension="markdown" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.markdown"/>
+</info>
+<info extension="osm" name="*"/>
+<info extension="CSV" name="*"/>
+<info extension="gz" name="*"/>
+<info extension="jspf" name="*">
+<editor id="org.jboss.tools.jst.jsp.jspeditor.JSPTextEditor"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source"/>
+<defaultEditor id="org.jboss.tools.jst.jsp.jspeditor.JSPTextEditor"/>
+</info>
+<info extension="nim" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.nim"/>
+</info>
+<info extension="phpt" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.php"/>
+</info>
+<info extension="rule" name="*"/>
+<info extension="template" name="*"/>
+<info extension="bnd" name="bnd"/>
+<info extension="nqp" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.perl.6"/>
+</info>
+<info extension="jspx" name="*">
+<editor id="org.jboss.tools.jst.jsp.jspeditor.JSPTextEditor"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source"/>
+<defaultEditor id="org.jboss.tools.jst.jsp.jspeditor.JSPTextEditor"/>
+</info>
+<info extension="jar" name="*"/>
+<info extension="xml" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.xml"/>
+</info>
+<info extension="bat" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.dosbatch"/>
+</info>
+<info extension="Rakefile" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.ruby"/>
+</info>
+<info extension="tagf" name="*">
+<editor id="org.jboss.tools.jst.jsp.jspeditor.JSPTextEditor"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source"/>
+<defaultEditor id="org.jboss.tools.jst.jsp.jspeditor.JSPTextEditor"/>
+</info>
+<info extension="raml" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.raml"/>
+</info>
+<info extension="zip" name="*"/>
+<info extension="ctp" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.php"/>
+</info>
+<info extension="go" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.go"/>
+</info>
+<info extension="logic2" name="*"/>
+<info extension="war" name="*"/>
+<info extension="xgui2_" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.xgui20"/>
+</info>
+<info extension="scala" name="*"/>
+<info extension="parsley" name="*"/>
+<info extension="xml" name="pom">
+<editor id="org.eclipse.m2e.editor.MavenPomEditor"/>
+<defaultEditor id="org.eclipse.m2e.editor.MavenPomEditor"/>
+</info>
+<info extension="tld" name="*">
+<editor id="org.jboss.tools.jst.web.ui.editors.TLDCompoundEditor"/>
+<defaultEditor id="org.jboss.tools.jst.web.ui.editors.TLDCompoundEditor"/>
+</info>
+<info extension="xhtml" name="*">
+<editor id="org.jboss.tools.jst.jsp.jspeditor.HTMLTextEditor"/>
+<defaultEditor id="org.jboss.tools.jst.jsp.jspeditor.HTMLTextEditor"/>
+</info>
+<info extension="plt" name="*">
+<editor id="org.cs3.pdt.internal.editors.PLEditor"/>
+</info>
+<info extension="pm" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.perl"/>
+</info>
+<info extension="pl" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.perl"/>
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.perl"/>
+<editor id="org.cs3.pdt.internal.editors.PLEditor"/>
+</info>
+<info extension="TIFF" name="*"/>
+<info extension="heap" name="*"/>
+<info extension="lang" name="*"/>
+<info extension="drools" name="*"/>
+<info extension="dockerfile" name="*">
+<editor id="org.eclipse.linuxtools.DockerEditor"/>
+</info>
+<info extension="hibernate" name="*">
+<editor id="org.jboss.tools.hibernate.ui.diagram.editors.DiagramViewer"/>
+<defaultEditor id="org.jboss.tools.hibernate.ui.diagram.editors.DiagramViewer"/>
+</info>
+<info extension="css" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.css"/>
+</info>
+<info extension="gaml" name="*"/>
+<info extension="mako" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.mako"/>
+</info>
+<info extension="bashrc" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.shell"/>
+</info>
+<info extension="class" name="*">
+<editor id="org.sf.feeling.decompiler.ClassFileEditor"/>
+<editor id="de.loskutov.bco.editors.BytecodeClassFileEditor"/>
+<editor id="jodePP.JodePPClassFileEditor"/>
+<defaultEditor id="org.sf.feeling.decompiler.ClassFileEditor"/>
+</info>
+<info extension="py" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.python"/>
+<editor id="org.python.pydev.editor.PythonEditor"/>
+</info>
+<info extension="xsd" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.xml"/>
+</info>
+<info extension="rake" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.ruby"/>
+</info>
+<info extension="*" name="*"/>
+<info extension="rb" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.ruby"/>
+</info>
+<info extension="rflow" name="*"/>
+<info extension="jardesc" name="*">
+<editor id="org.eclipse.jdt.ui.JARDescEditor"/>
+<defaultEditor id="org.eclipse.jdt.ui.JARDescEditor"/>
+</info>
+<info extension="php4" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.php"/>
+</info>
+<info extension="aw" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.php"/>
+</info>
+<info extension="php5" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.php"/>
+</info>
+<info extension="rf" name="*"/>
+<info extension="e4xmi" name="*">
+<editor id="org.eclipse.e4.tools.emf.editor3x.e4wbm"/>
+<defaultEditor id="org.eclipse.e4.tools.emf.editor3x.e4wbm"/>
+</info>
+<info extension="pkg" name="*"/>
+<info extension="security" name="*"/>
+<info extension="bz2" name="*"/>
+<info extension="dslrule" name="*"/>
+<info extension="setup" name="*">
+<editor id="org.eclipse.oomph.setup.presentation.SetupEditorID"/>
+</info>
+<info extension="yml" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.yaml"/>
+</info>
+<info extension="pm6" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.perl.6"/>
+</info>
+<info extension="asciidoc" name="*"/>
+<info extension="class without source" name="*">
+<editor id="org.sf.feeling.decompiler.ClassFileEditor"/>
+<editor id="org.eclipse.jdt.ui.ClassFileEditorNoSource"/>
+<defaultEditor id="org.sf.feeling.decompiler.ClassFileEditor"/>
+</info>
+<info extension="bnd" name="build"/>
+<info extension="bash" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.shell"/>
+</info>
+<info extension="htm" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.html"/>
+<editor id="org.eclipse.ui.browser.editorSupport"/>
+<editor id="org.jboss.tools.jst.jsp.jspeditor.HTMLTextEditor"/>
+</info>
+<info extension="jpage" name="*">
+<editor id="org.eclipse.jdt.debug.ui.SnippetEditor"/>
+</info>
+<info extension="JPG" name="*"/>
+<info extension="liclipse" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.liclipse"/>
+</info>
+<info extension="crit" name="*">
+<editor id="org.hibernate.eclipse.criteriaeditor.CriteriaEditor"/>
+</info>
+<info extension="properties" name="*">
+<editor id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor"/>
+<defaultEditor id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor"/>
+</info>
+<info extension="thread" name="*"/>
+<info extension="jactr" name="*">
+<editor id="org.jactr.eclipse.ui.editor.JACTRModelEditor"/>
+</info>
+<info extension="qlf" name="*">
+<editor id="org.cs3.pdt.internal.editors.QLFEditor"/>
+</info>
+<info extension="cpu" name="*"/>
+<info extension="view" name="*"/>
+<info extension="markdn" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.markdown"/>
+</info>
+<info extension="sc" name="*"/>
+<info extension="yaml" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.yaml"/>
+</info>
+<info extension="agent" name="*"/>
+<info extension="sh" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.shell"/>
+</info>
+<info extension="html" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.html"/>
+<editor id="org.eclipse.ui.browser.editorSupport"/>
+<editor id="org.jboss.tools.jst.jsp.jspeditor.HTMLTextEditor"/>
+</info>
+<info extension="ruleflow" name="*"/>
+<info extension="_trace" name="*"/>
+<info extension="djhtml" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.django"/>
+</info>
+<info extension="pro" name="*">
+<editor id="org.cs3.pdt.internal.editors.PLEditor"/>
+</info>
+<info extension="pl6" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.perl.6"/>
+</info>
+<info extension="shp" name="*"/>
+<info extension="jl" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.julia"/>
+</info>
+<info extension="pbf" name="*"/>
+<info extension="php3" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.php"/>
+</info>
+<info extension="bash_logout" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.shell"/>
+</info>
+<info extension="coffee" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.coffeescript"/>
+</info>
+<info extension="jinja2" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.jinja2"/>
+</info>
+<info extension="scss" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.scss"/>
+</info>
+<info extension="js" name="*">
+<editor id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor"/>
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.javascript"/>
+<defaultEditor id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor"/>
+</info>
+<info extension="c" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.cpp"/>
+</info>
+<info extension="dsl" name="*"/>
+<info extension="swift" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.swift"/>
+</info>
+<info extension="dart" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.dart"/>
+</info>
+<info extension="h" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.cpp"/>
+</info>
+<info extension="routes" name="*"/>
+<info extension="BMP" name="*"/>
+<info extension="%Extensions" name="*"/>
+<info extension="dtable" name="*"/>
+<info extension="TIF" name="*"/>
+<info extension="pyw" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.python"/>
+<editor id="org.python.pydev.editor.PythonEditor"/>
+</info>
+<info extension="t" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.perl"/>
+</info>
+<info extension="tag" name="*">
+<editor id="org.jboss.tools.jst.jsp.jspeditor.JSPTextEditor"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source"/>
+<defaultEditor id="org.jboss.tools.jst.jsp.jspeditor.JSPTextEditor"/>
+</info>
+<info extension="bnd" name="*"/>
+<info extension="genmodel" name="*"/>
+<info extension="jbrule" name="*"/>
+<info extension="st" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.stringtemplate"/>
+</info>
+<info extension="ICO" name="*"/>
+<info extension="jmx" name="*">
+<editor id="org.jboss.tools.jmx.ui.internal.editors.MBeanEditor"/>
+</info>
+<info extension="bash_login" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.shell"/>
+</info>
+<info extension="lisp" name="*">
+<editor id="de.defmacro.dandelion.editor"/>
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.liclipse"/>
+<editor id="org.jactr.eclipse.ui.editor.LispModelEditor"/>
+<defaultEditor id="de.defmacro.dandelion.editor"/>
+<defaultEditor id="com.brainwy.liclipse.editor.common.LiClipseEditor.liclipse"/>
+</info>
+<info extension="mdown" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.markdown"/>
+</info>
+<info extension="cpp" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.cpp"/>
+</info>
+<info extension="less" name="*"/>
+<info extension="drl" name="*"/>
+<info extension="kv" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.kivy"/>
+</info>
+<info extension="mwe2" name="*"/>
+<info extension="properties" name="sample">
+<editor id="org.eclipse.pde.ui.sampleEditor"/>
+<defaultEditor id="org.eclipse.pde.ui.sampleEditor"/>
+</info>
+<info extension="___singlecodetemplate" name="*"/>
+<info extension="ddiagram" name="*"/>
+<info extension="dtree" name="*"/>
+<info extension="ecore" name="*"/>
+<info extension="hpp" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.cpp"/>
+</info>
+<info extension="orthoxml" name="*">
+<editor id="org.jactr.eclipse.ortho.ui.editors.SpaceSearchResultViewer"/>
+<defaultEditor id="org.jactr.eclipse.ortho.ui.editors.SpaceSearchResultViewer"/>
+</info>
+<info extension="yap" name="*">
+<editor id="org.cs3.pdt.internal.editors.PLEditor"/>
+</info>
+<info extension="svg" name="*"/>
+<info extension="md" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.markdown"/>
+</info>
+<info extension="phtml" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.php"/>
+</info>
+<info extension="JPEG" name="*"/>
+<info extension="liclipseprefs" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.yaml"/>
+</info>
+<info extension="txt" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor"/>
+<defaultEditor id="com.brainwy.liclipse.editor.common.LiClipseEditor"/>
+</info>
+<info extension="ASC" name="*"/>
+<info extension="bpmn" name="*"/>
+<info extension="logic2semantic" name="*"/>
+<info extension="codetemplates" name="*"/>
+<info extension="php" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.php"/>
+</info>
+<info extension="jsfdia" name="*"/>
+<info extension="server" name="*">
+<editor id="org.eclipse.wst.server.ui.editor"/>
+</info>
+<info extension="xtext2" name="*"/>
+<info extension="hql" name="*">
+<editor id="org.hibernate.eclipse.hqleditor.HQLEditor"/>
+</info>
+<info extension="profile" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.shell"/>
+</info>
+<info extension="groovy" name="*">
+<editor id="org.codehaus.groovy.eclipse.editor.GroovyEditor"/>
+<defaultEditor id="org.codehaus.groovy.eclipse.editor.GroovyEditor"/>
+</info>
+<info extension="rbx" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.ruby"/>
+</info>
+<info extension="jsp" name="*">
+<editor id="org.jboss.tools.jst.jsp.jspeditor.JSPTextEditor"/>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source"/>
+<defaultEditor id="org.jboss.tools.jst.jsp.jspeditor.JSPTextEditor"/>
+</info>
+<info extension="rhtml" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.erb"/>
+</info>
+<info extension="pod" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.perl"/>
+</info>
+<info extension="rst" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.restructured text"/>
+</info>
+<info extension="geo" name="*"/>
+<info extension="pom" name="*">
+<editor id="org.eclipse.m2e.editor.MavenPomEditor"/>
+<defaultEditor id="org.eclipse.m2e.editor.MavenPomEditor"/>
+</info>
+<info extension="zsh" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.shell"/>
+</info>
+<info extension="textmate_init" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.source.shell"/>
+</info>
+<info extension="lgt" name="*">
+<editor id="org.cs3.pdt.internal.editors.PLEditor"/>
+</info>
+<info extension="ear" name="*"/>
+<info extension="PGM" name="*"/>
+<info extension="xtext" name="*"/>
+<info extension="expressions" name="*"/>
+<info extension="erb" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.erb"/>
+</info>
+<info extension="html.erb" name="*">
+<editor id="com.brainwy.liclipse.editor.common.LiClipseEditor.text.html.erb"/>
+</info>
+<info extension="dslr" name="*"/>
+<info extension="aird" name="*"/>
+<info extension="bndrun" name="*"/>
+<info extension="m4" name="ltsugar">
+<editor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+<defaultEditor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+</info>
+<info extension="gradle" name="*">
+<editor id="org.eclipse.buildship.ui.gradlebuildscripteditor"/>
+<editor id="org.nodeclipse.enide.editors.gradle.editors.GradleEditor"/>
+</info>
+<info extension="m4" name="libtool">
+<editor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+<defaultEditor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+</info>
+<info extension="hamlet" name="*">
+<editor id="net.sf.eclipsefp.haskell.ui.internal.editors.web.HamletEditor"/>
+</info>
+<info extension="histdata" name="*">
+<editor id="com.jrockit.mc.console.historicaldata.editors.HistoricalDataEditor"/>
+</info>
+<info extension="m4" name="ltoptions">
+<editor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+<defaultEditor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+</info>
+<info extension="ddl" name="*">
+<editor id="org.eclipse.datatools.sqltools.sqlscrapbook.SQLScrapbookEditor"/>
+<defaultEditor id="org.eclipse.datatools.sqltools.sqlscrapbook.SQLScrapbookEditor"/>
+</info>
+<info extension="am" name="*">
+<editor id="org.eclipse.cdt.autotools.ui.editors.AutomakeEditor"/>
+<defaultEditor id="org.eclipse.cdt.autotools.ui.editors.AutomakeEditor"/>
+</info>
+<info extension="sql" name="*">
+<editor id="org.eclipse.datatools.sqltools.sqlscrapbook.SQLScrapbookEditor"/>
+<editor id="org.eclipse.datatools.sqltools.sqlbuilder"/>
+<defaultEditor id="org.eclipse.datatools.sqltools.sqlscrapbook.SQLScrapbookEditor"/>
+<defaultEditor id="org.eclipse.datatools.sqltools.sqlbuilder"/>
+</info>
+<info extension="ftlh" name="*">
+<editor id="org.jboss.ide.eclipse.freemarker.editor.FreemarkerEditor"/>
+</info>
+<info extension="ag" name="*">
+<editor id="net.sf.eclipsefp.haskell.ui.internal.editors.partitioned.UuagcEditor"/>
+</info>
+<info extension="ftlx" name="*">
+<editor id="org.jboss.ide.eclipse.freemarker.editor.FreemarkerEditor"/>
+</info>
+<info extension="mli" name="*">
+<editor id="ocaml.editors.mliEditor"/>
+</info>
+<info extension="jfc" name="*">
+<editor id="com.jrockit.mc.flightrecorder.configuration.ide.editor.JFCEditor"/>
+<editor id="com.jrockit.mc.flightrecorder.controlpanel.ui.handlers.TemplateImportOnOpenHandler"/>
+</info>
+<info extension="mlp" name="*">
+<editor id="ocaml.editors.mlpEditor"/>
+</info>
+<info extension="mll" name="*">
+<editor id="ocaml.editors.lexEditor"/>
+</info>
+<info extension="mly" name="*">
+<editor id="ocaml.editors.yaccEditor"/>
+</info>
+<info extension="hsc" name="*">
+<editor id="net.sf.eclipsefp.haskell.ui.internal.editors.haskell.HaskellEditor"/>
+</info>
+<info extension="jfr" name="*">
+<editor id="com.jrockit.mc.flightrecorder.ui.FlightRecordingEditor"/>
+</info>
+<info extension="am" name="Makefile">
+<editor id="org.eclipse.cdt.autotools.ui.editors.AutomakeEditor"/>
+<defaultEditor id="org.eclipse.cdt.autotools.ui.editors.AutomakeEditor"/>
+</info>
+<info extension="m4" name="ltdl">
+<editor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+<defaultEditor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+</info>
+<info extension="lhs" name="*">
+<editor id="net.sf.eclipsefp.haskell.ui.internal.editors.haskell.HaskellEditor"/>
+</info>
+<info extension="ml4" name="*">
+<editor id="ocaml.editors.mlpEditor"/>
+</info>
+<info extension="m4" name="acinclude">
+<editor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+<defaultEditor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+</info>
+<info extension="in" name="configure">
+<editor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+<defaultEditor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+</info>
+<info extension="m4" name="lt~obsolete">
+<editor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+<defaultEditor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+</info>
+<info extension="julius" name="*">
+<editor id="net.sf.eclipsefp.haskell.ui.internal.editors.web.JuliusEditor"/>
+</info>
+<info extension="xtpl" name="*">
+<editor id="net.sf.eclipsefp.haskell.ui.internal.editors.web.HeistXMLTemplateEditor"/>
+</info>
+<info extension="hs" name="*">
+<editor id="net.sf.eclipsefp.haskell.ui.internal.editors.haskell.HaskellEditor"/>
+</info>
+<info extension="m4" name="ltversion">
+<editor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+<defaultEditor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+</info>
+<info extension="hp" name="*">
+<editor id="net.sf.eclipsefp.haskell.profiler.internal.editors.ProfilerViewer"/>
+<defaultEditor id="net.sf.eclipsefp.haskell.profiler.internal.editors.ProfilerViewer"/>
+</info>
+<info extension="m4" name="aclocal">
+<editor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+<defaultEditor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+</info>
+<info extension="m4" name="ltgcc">
+<editor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+<defaultEditor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+</info>
+<info extension="in" name="Makefile">
+<editor id="org.eclipse.cdt.autotools.ui.editors.AutomakeEditor"/>
+<defaultEditor id="org.eclipse.cdt.autotools.ui.editors.AutomakeEditor"/>
+</info>
+<info extension="sqlpage" name="*">
+<editor id="org.eclipse.datatools.sqltools.sqlscrapbook.SQLScrapbookEditor"/>
+<defaultEditor id="org.eclipse.datatools.sqltools.sqlscrapbook.SQLScrapbookEditor"/>
+</info>
+<info extension="pyx" name="*">
+<editor id="org.python.pydev.editor.PythonEditor"/>
+<defaultEditor id="org.python.pydev.editor.PythonEditor"/>
+</info>
+<info extension="x" name="*">
+<editor id="net.sf.eclipsefp.haskell.ui.internal.editors.partitioned.AlexEditor"/>
+<editor id="net.sf.eclipsefp.haskell.ui.internal.editors.uuagcOptions.UuagcOptionsFormEditor"/>
+</info>
+<info extension="y" name="*">
+<editor id="net.sf.eclipsefp.haskell.ui.internal.editors.partitioned.HappyEditor"/>
+</info>
+<info extension="tpl" name="*">
+<editor id="net.sf.eclipsefp.haskell.ui.internal.editors.web.HeistXHTMLTemplateEditor"/>
+</info>
+<info extension="cassius" name="*">
+<editor id="net.sf.eclipsefp.haskell.ui.internal.editors.web.CassiusEditor"/>
+</info>
+<info extension="cabal" name="*">
+<editor id="net.sf.eclipsefp.haskell.ui.internal.editors.cabal.CabalFormEditor"/>
+<defaultEditor id="net.sf.eclipsefp.haskell.ui.internal.editors.cabal.CabalFormEditor"/>
+</info>
+<info extension="ac" name="configure">
+<editor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+<defaultEditor id="org.eclipse.cdt.autotools.ui.editor.autoconf"/>
+</info>
+<info extension="lucius" name="*">
+<editor id="net.sf.eclipsefp.haskell.ui.internal.editors.web.LuciusEditor"/>
+</info>
+<info extension="ml" name="*">
+<editor id="ocaml.editors.mlEditor"/>
+</info>
+<info extension="pxi" name="*">
+<editor id="org.python.pydev.editor.PythonEditor"/>
+<defaultEditor id="org.python.pydev.editor.PythonEditor"/>
+</info>
+<info extension="ftl" name="*">
+<editor id="org.jboss.ide.eclipse.freemarker.editor.FreemarkerEditor"/>
+</info>
+<info extension="pxd" name="*">
+<editor id="org.python.pydev.editor.PythonEditor"/>
+<defaultEditor id="org.python.pydev.editor.PythonEditor"/>
+</info>
+</editors>
+[2016-12-30 03:50:51] Performing Preference /instance/org.eclipse.ui.workbench/STICKY_CYCLE = true
+[2016-12-30 03:50:51] org.eclipse.swt.SWTException: Widget is disposed
+  at org.eclipse.swt.SWT.error(SWT.java:4533)
+  at org.eclipse.swt.SWT.error(SWT.java:4448)
+  at org.eclipse.swt.SWT.error(SWT.java:4419)
+  at org.eclipse.swt.widgets.Widget.error(Widget.java:482)
+  at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:596)
+  at org.eclipse.oomph.ui.UICallback.execInUI(UICallback.java:52)
+  at org.eclipse.oomph.setup.impl.SetupTaskImpl.performUI(SetupTaskImpl.java:923)
+  at org.eclipse.oomph.setup.impl.PreferenceTaskImpl.perform(PreferenceTaskImpl.java:389)
+  at org.eclipse.oomph.setup.internal.core.SetupTaskPerformer.doPerformNeededSetupTasks(SetupTaskPerformer.java:3151)
+  at org.eclipse.oomph.setup.internal.core.SetupTaskPerformer.access$1(SetupTaskPerformer.java:3094)
+  at org.eclipse.oomph.setup.internal.core.SetupTaskPerformer$WorkspaceUtil$1.run(SetupTaskPerformer.java:4315)
+  at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+  at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+  at org.eclipse.oomph.setup.internal.core.SetupTaskPerformer$WorkspaceUtil.performNeededSetupTasks(SetupTaskPerformer.java:4309)
+  at org.eclipse.oomph.setup.internal.core.SetupTaskPerformer$WorkspaceUtil.access$0(SetupTaskPerformer.java:4307)
+  at org.eclipse.oomph.setup.internal.core.SetupTaskPerformer.performNeededSetupTasks(SetupTaskPerformer.java:3085)
+  at org.eclipse.oomph.setup.internal.core.SetupTaskPerformer.performTriggeredSetupTasks(SetupTaskPerformer.java:3060)
+  at org.eclipse.oomph.setup.internal.core.SetupTaskPerformer.perform(SetupTaskPerformer.java:2960)
+  at org.eclipse.oomph.setup.ui.wizards.ProgressPage$9.run(ProgressPage.java:556)
+  at org.eclipse.oomph.setup.ui.wizards.ProgressPage$11$1.run(ProgressPage.java:682)
+  at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+[2016-12-30 03:50:51] 
+[2016-12-30 03:51:26] Executing startup tasks
+[2016-12-30 03:51:27] Java(TM) SE Runtime Environment 1.8.0_112-b15
+[2016-12-30 03:51:27] Product self.product.version
+[2016-12-30 03:51:27] Bundle org.eclipse.oomph.setup 1.6.0.v20161019-0656, build=2710, branch=95513d92aa8d2c8727e331d29880074679ea6573
+[2016-12-30 03:51:27] Bundle org.eclipse.oomph.setup.core 1.6.0.v20161031-1248, build=2710, branch=95513d92aa8d2c8727e331d29880074679ea6573
+[2016-12-30 03:51:27] Bundle org.eclipse.oomph.setup.p2 1.6.0.v20161019-0656, build=2710, branch=95513d92aa8d2c8727e331d29880074679ea6573
+[2016-12-30 03:51:27] Performing Preference /instance/org.eclipse.ui.workbench/STICKY_CYCLE = true
+[2016-12-30 03:51:27] Performing Preference /instance/org.eclipse.ui.workbench/WORKBENCH_SAVE_INTERVAL = 1
+[2016-12-30 03:51:27] Performing Preference /instance/org.eclipse.wst.validation/confirmDialog = true
+[2016-12-30 03:51:27] Performing Preference /instance/org.eclipse.wst.validation/DELEGATES_PREFERENCE = delegateValidatorList
+[2016-12-30 03:51:27] Performing Preference /instance/org.eclipse.wst.validation/override = true
+[2016-12-30 03:51:27] Performing Preference /instance/org.eclipse.wst.validation/saveAuto = false
+[2016-12-30 03:51:27] Performing Preference /instance/org.eclipse.wst.validation/stateTS = 0
+[2016-12-30 03:51:27] Performing Preference /instance/org.eclipse.wst.validation/suspend = false
+[2016-12-30 03:51:27] Performing Preference /instance/org.eclipse.wst.validation/USER_BUILD_PREFERENCE = enabledBuildValidatorListorg.eclipse.jst.j2ee.internal.web.validation.UIWarValidator;org.eclipse.jst.j2ee.internal.classpathdep.ClasspathDependencyValidator;org.eclipse.jst.j2ee.internal.validation.UIApplicationClientValidator;org.jboss.tools.common.validation.ValidatorManager;org.eclipse.jst.j2ee.internal.validation.UIEarValidator;org.eclipse.jst.j2ee.internal.jca.validation.UIConnectorValidator;org.eclipse.wst.wsi.ui.internal.WSIMessageValidator;org.eclipse.jst.j2ee.internal.ejb.workbench.validation.UIEjbValidator;
+[2016-12-30 03:51:27] Performing Preference /instance/org.eclipse.wst.validation/USER_MANUAL_PREFERENCE = enabledManualValidatorListorg.eclipse.jst.j2ee.internal.web.validation.UIWarValidator;org.eclipse.jst.j2ee.internal.classpathdep.ClasspathDependencyValidator;org.eclipse.jst.j2ee.internal.validation.UIApplicationClientValidator;org.jboss.tools.common.validation.ValidatorManager;org.eclipse.jst.j2ee.internal.validation.UIEarValidator;org.eclipse.jst.j2ee.internal.jca.validation.UIConnectorValidator;org.eclipse.wst.wsi.ui.internal.WSIMessageValidator;org.eclipse.jst.j2ee.internal.ejb.workbench.validation.UIEjbValidator;
+[2016-12-30 03:51:27] Performing Preference /instance/org.eclipse.wst.validation/USER_PREFERENCE = saveAutomaticallyfalseprojectsCanOverridetruedisableAllValidationfalseversion1.2.700.v201508251749
+[2016-12-30 03:51:27] Performing Preference /instance/org.eclipse.wst.validation/vf.version = 3
+[2016-12-30 03:51:27] Performing Preference /instance/org.jactr.eclipse.ui/enableAssist = true
+[2016-12-30 03:51:27] Performing Preference /instance/org.jactr.eclipse.ui/enableHover = true
+[2016-12-30 03:51:27] Performing Preference /instance/org.jactr.eclipse.ui/enableHyperlink = true
+[2016-12-30 03:51:27] Performing Preference /instance/org.jactr.eclipse.ui/enableReconciler = true
+[2016-12-30 03:51:27] Performing Preference /instance/org.jactr.eclipse.ui/org.jactr.eclipse.ui.template.customtemplates = <?xml version="1.0" encoding="UTF-8" standalone="no"?><templates/>
+[2016-12-30 03:51:27] Performing Preference /instance/org.jboss.ide.eclipse.archives.ui/alwaysShowProjectExplorerNode = true
+[2016-12-30 03:51:27] Performing Preference /instance/org.jboss.ide.eclipse.archives.ui/showAllProjects = true
+[2016-12-30 03:51:27] Performing Preference /instance/org.jboss.tools.cdi.core/org.jboss.tools.common.validator.enableBlock = disabled
+[2016-12-30 03:51:27] Performing Preference /instance/org.jboss.tools.ws.jaxrs.ui/org.jboss.tools.common.validator.enableBlock = disabled
+[2016-12-30 03:51:27] Performing Preference /instance/org.sf.feeling.decompiler/org.sf.feeling.decompiler.check_update = false
+[2016-12-30 03:51:27] Performing Preference /instance/org.sf.feeling.decompiler/org.sf.feeling.decompiler.type = FernFlower
+[2016-12-30 03:51:27] Performing Preference /instance/org.sf.feeling.decompiler/org.sf.feeling.decompiler.use_eclipse_formatter = false
+[2016-12-30 03:51:27] Performing Preference /instance/se.sics.sicstus.ide/P_SICSTUS_INSTALLS = <?xml version="1.0" encoding="UTF-8"?>...
+[2016-12-30 03:51:27] <?xml version="1.0" encoding="UTF-8"?>
+<vmInstalls>
+<vmInstall library="C:\Program Files\SICStus Prolog VC10 4.3.2\library" location="C:\Program Files\SICStus Prolog VC10 4.3.2\bin\sicstus.exe" name="sicstus.exe" trusted="true"/>
+<vmInstall library="C:\Program Files\SICStus Prolog VC12 4.3.1\library" location="C:\Program Files\SICStus Prolog VC12 4.3.1\bin\sicstus.exe" name="sicstus.exe" trusted="true"/>
+<vmInstall default="true" library="C:\Program Files\SICStus Prolog VC14 4.3.3\library" location="C:\Program Files\SICStus Prolog VC14 4.3.3\bin\sicstus.exe" name="sicstus.exe" trusted="true" verified="true"/>
+</vmInstalls>
+[2016-12-30 03:51:27] Performing Preference /instance/se.sics.sicstus.ide/P_SICSTUS_PATH = C:\Program Files\SICStus Prolog VC14 4.3.3\bin\sicstus.exe
+[2016-12-30 03:51:27] 

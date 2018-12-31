@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="getTextContent(element)" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="true" key="wholeword"/>
+		<list key="findhistory">
+			<item value="element.getTextContent()"/>
+			<item value="getCallerClass"/>
+			<item value="string_to_dict"/>
+			<item value="user"/>
+			<item value="undict"/>
+			<item value="slack_event"/>
+			<item value="type_to_url"/>
+			<item value="im_open"/>
+		</list>
+		<list key="replacehistory">
+			<item value="getTextContent(element)"/>
+			<item value="slack_ensure_im"/>
+			<item value="name_to_id"/>
+			<item value="slack_start_listener"/>
+			<item value="slack_chat_listener"/>
+			<item value="any_to_curls"/>
+			<item value="slack_id_time"/>
+			<item value="slack_send"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="263" key="DIALOG_WIDTH"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+		<item value="367" key="DIALOG_HEIGHT"/>
+		<item value="189" key="DIALOG_X_ORIGIN"/>
+		<item value="262" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

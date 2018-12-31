@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+repositories/file\:_D\:_workspace_.metadata_.plugins_org.eclipse.pde.core_Eclipse%20Application_.p2_org.eclipse.equinox.p2.core_cache/description=
+repositories/file\:_D\:_workspace_.metadata_.plugins_org.eclipse.pde.core_Eclipse%20Application_.p2_org.eclipse.equinox.p2.core_cache/enabled=true
+repositories/file\:_D\:_workspace_.metadata_.plugins_org.eclipse.pde.core_Eclipse%20Application_.p2_org.eclipse.equinox.p2.core_cache/isSystem=true
+repositories/file\:_D\:_workspace_.metadata_.plugins_org.eclipse.pde.core_Eclipse%20Application_.p2_org.eclipse.equinox.p2.core_cache/name=download cache
+repositories/file\:_D\:_workspace_.metadata_.plugins_org.eclipse.pde.core_Eclipse%20Application_.p2_org.eclipse.equinox.p2.core_cache/provider=
+repositories/file\:_D\:_workspace_.metadata_.plugins_org.eclipse.pde.core_Eclipse%20Application_.p2_org.eclipse.equinox.p2.core_cache/suffix=artifacts.xml
+repositories/file\:_D\:_workspace_.metadata_.plugins_org.eclipse.pde.core_Eclipse%20Application_.p2_org.eclipse.equinox.p2.core_cache/type=org.eclipse.equinox.p2.artifact.repository.simpleRepository
+repositories/file\:_D\:_workspace_.metadata_.plugins_org.eclipse.pde.core_Eclipse%20Application_.p2_org.eclipse.equinox.p2.core_cache/uri=file\:/D\:/workspace/.metadata/.plugins/org.eclipse.pde.core/Eclipse%20Application/.p2/org.eclipse.equinox.p2.core/cache/
+repositories/file\:_D\:_workspace_.metadata_.plugins_org.eclipse.pde.core_Eclipse%20Application_.p2_org.eclipse.equinox.p2.core_cache/version=1.0.0
+repositories/http\:__decompiler.chenchao.tk_update/enabled=false
+repositories/http\:__decompiler.chenchao.tk_update/isSystem=false
+repositories/http\:__decompiler.chenchao.tk_update/uri=http\://decompiler.chenchao.tk/update
+repositories/http\:__opensource.cpupk.com_decompiler_update/enabled=true
+repositories/http\:__opensource.cpupk.com_decompiler_update/isSystem=false
+repositories/http\:__opensource.cpupk.com_decompiler_update/uri=http\://opensource.cpupk.com/decompiler/update/

@@ -1,0 +1,139 @@
+---------------------------------
+Fri Dec 30 01:25:14 PST 2016
+---------------------------------
+Warning: /root/.swiplrc:11:
+	Singleton variables: [AV]
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_write_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_add_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_init_file/1 is not defined
+Warning: /root/.swiplrc:42:
+	"/mnt/dddd/workspace/phase02-jrtl/PrologMUD/pack/prologmud/runtime/" does not exist
+Warning: /root/.swiplrc:42:
+	Goal (directive) failed: user:lmcd
+% The graphical front-end will be used for subsequent tracing
+---------------------------------
+Fri Dec 30 01:27:00 PST 2016
+---------------------------------
+Warning: /root/.swiplrc:11:
+	Singleton variables: [AV]
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_write_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_add_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_init_file/1 is not defined
+Warning: /root/.swiplrc:42:
+	"/mnt/dddd/workspace/phase02-jrtl/PrologMUD/pack/prologmud/runtime/" does not exist
+Warning: /root/.swiplrc:42:
+	Goal (directive) failed: user:lmcd
+% The graphical front-end will be used for subsequent tracing
+Action (h for help) ? ---------------------------------
+Fri Dec 30 01:30:39 PST 2016
+---------------------------------
+Warning: /root/.swiplrc:11:
+	Singleton variables: [AV]
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_write_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_add_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_init_file/1 is not defined
+Warning: /root/.swiplrc:42:
+	"/mnt/dddd/workspace/phase02-jrtl/PrologMUD/pack/prologmud/runtime/" does not exist
+Warning: /root/.swiplrc:42:
+	Goal (directive) failed: user:lmcd
+% The graphical front-end will be used for subsequent tracing
+---------------------------------
+Fri Dec 30 02:01:50 PST 2016
+---------------------------------
+Warning: /root/.swiplrc:11:
+	Singleton variables: [AV]
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_write_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_add_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_init_file/1 is not defined
+Warning: /root/.swiplrc:42:
+	"/mnt/dddd/workspace/phase02-jrtl/PrologMUD/pack/prologmud/runtime/" does not exist
+Warning: /root/.swiplrc:42:
+	Goal (directive) failed: user:lmcd
+% The graphical front-end will be used for subsequent tracing
+---------------------------------
+Fri Dec 30 23:48:32 PST 2016
+---------------------------------
+Warning: /root/.swiplrc:11:
+	Singleton variables: [AV]
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_write_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_add_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_init_file/1 is not defined
+Warning: /root/.swiplrc:42:
+	"/mnt/dddd/workspace/phase02-jrtl/PrologMUD/pack/prologmud/runtime/" does not exist
+Warning: /root/.swiplrc:42:
+	Goal (directive) failed: user:lmcd
+% The graphical front-end will be used for subsequent tracing
+---------------------------------
+Fri Dec 30 23:58:59 PST 2016
+---------------------------------
+Warning: /root/.swiplrc:11:
+	Singleton variables: [AV]
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_write_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_add_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_init_file/1 is not defined
+Warning: /root/.swiplrc:42:
+	"/mnt/dddd/workspace/phase02-jrtl/PrologMUD/pack/prologmud/runtime/" does not exist
+Warning: /root/.swiplrc:42:
+	Goal (directive) failed: user:lmcd
+% The graphical front-end will be used for subsequent tracing
+---------------------------------
+Sat Dec 31 07:01:26 PST 2016
+---------------------------------
+Warning: /root/.swiplrc:11:
+	Singleton variables: [AV]
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_write_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_add_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_init_file/1 is not defined
+% The graphical front-end will be used for subsequent tracing
+% The following threads wouldn't die: [pce]
+---------------------------------
+Sat Dec 31 08:35:32 PST 2016
+---------------------------------
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_write_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_add_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_history/1 is not defined
+ERROR: /usr/lib/swipl/library/prolog_history.pl:40:
+	Exported procedure readline:rl_read_init_file/1 is not defined
+% The graphical front-end will be used for subsequent tracing
+---------------------------------
+Mon Jan 09 21:45:27 PST 2017
+---------------------------------
+% The graphical front-end will be used for subsequent tracing

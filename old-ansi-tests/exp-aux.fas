@@ -1,0 +1,21 @@
+(|SYSTEM|::|VERSION| '(20080430.))
+#0Y_ #0Y |CHARSET|::|UTF-8|
+#Y(#:|1 6 (IN-PACKAGE :CL-TEST)-1|
+   #17Y(00 00 00 00 00 00 00 00 20 01 DA 31 F6 0F 01 19 01)
+   ("CL-TEST" |COMMON-LISP|::|*PACKAGE*|)
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))
+#Y(#:|8 19 (DEFUN MY-EXP (X N) ...)-2|
+   #20Y(00 00 00 00 00 00 00 00 20 01 DA 2F 01 DA DC 32 9C C5 19 01)
+   (|CL-TEST|::|MY-EXP| |SYSTEM|::|REMOVE-OLD-DEFINITIONS|
+    #Y(|CL-TEST|::|MY-EXP|
+       #66Y(00 00 00 00 02 00 00 00 26 03 1B 05 DA 6F 01 2F 02 AE 8F 26 77 DD
+            AF 72 CA 97 03 1B 12 AD A2 1B 1C AD AF 73 02 39 AD 73 01 3A 81 B1
+            02 86 00 AC DD 91 01 31 6C 16 01 B0 8E 21 62 AD C9 14 32 C9 19 05)
+       ((|COMMON-LISP|::|REALP| |CL-TEST|::|X|) |SYSTEM|::|ASSERT-ERROR-STRING|
+        |SYSTEM|::|SIMPLE-ASSERT-FAILED| 1. 1.0f0)
+       (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|)
+       (|CL-TEST|::|X| |CL-TEST|::|N|)
+       "Compute e^x in the appropriate float result type, summing\n
+   the first n terms of the Taylor series."
+       1))
+   (|COMMON-LISP|::|T| |COMMON-LISP|::|T| |COMMON-LISP|::|T|))

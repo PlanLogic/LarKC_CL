@@ -1,0 +1,29 @@
+DEBUG_BREAK_ON_ERROR=false
+DEBUG_BREAK_ON_EXCEPTION=false
+DEBUG_PRINT_EVAL_WITH_SHOW=true
+FOLDERS_IN_NEW_PROJECT=true
+FOLDERS_SRC=src
+HS_IMPLEMENTATIONS=<?xml version\="1.0" encoding\="UTF-8"?>\n<hsImpls>\n  <hsImpl name\="GHC 7.10.3" binDir\="/usr/bin" version\="7.10.3" type\="GHC"/>\n</hsImpls>\n
+RUN_COMMAND_HISTORY_MAX=20
+SELECTED_COMPILER=ghcCompiler
+SELECTED_HS_IMPLEMENTATION=GHC 8.0.1
+TEMPLATE_CABAL=name\:           ${project_name}\r\nversion\:        0.1\r\ncabal-version\:  >\=1.2\r\nbuild-type\:     Simple\r\nauthor\:         ${user_name}\r\n\r\n${library}\r\n${executable}\r\n
+TEMPLATE_CABAL_DETAILED=test-suite ${section_name}\r\n  type\:           detailed-0.9\r\n  ghc-options\:    -Wall -rtsopts\r\n  build-depends\:  base >\= 4\r\n
+TEMPLATE_CABAL_EXE=executable ${project_name}\r\n  hs-source-dirs\: ${src}\r\n  main-is\:        Main.hs\r\n  build-depends\:  base >\= 4\r\n  ghc-options\:    -Wall\r\n
+TEMPLATE_CABAL_HTF=test-suite ${section_name}\r\n  type\:           exitcode-stdio-1.0\r\n  main-is\:        Main.hs\r\n  ghc-options\:    -Wall -rtsopts\r\n  build-depends\:  base >\= 4, HTF > 0.9\r\n
+TEMPLATE_CABAL_LIBRARY=library\r\n  hs-source-dirs\:    ${src}\r\n  build-depends\:     base >\= 4\r\n  ghc-options\:       -Wall\r\n
+TEMPLATE_CABAL_SETUP=import Distribution.Simple\r\nmain \= defaultMain\r\n
+TEMPLATE_CABAL_STDIO=test-suite ${section_name}\r\n  type\:           exitcode-stdio-1.0\r\n  ghc-options\:    -Wall -rtsopts\r\n  build-depends\:  base >\= 4\r\n
+TEMPLATE_CABAL_TASTY=test-suite ${section_name}\r\n  type\:           exitcode-stdio-1.0\r\n  main-is\:        Main.hs\r\n  ghc-options\:    -Wall -rtsopts\r\n  build-depends\:  base >\= 4, tasty > 0.10, tasty-hunit, HUnit, tasty-quickcheck, QuickCheck \r\n
+TEMPLATE_CABAL_TF=test-suite ${section_name}\r\n  type\:                  exitcode-stdio-1.0\r\n  x-uses-tf\:             true\r\n  ghc-options\:           -Wall -rtsopts\r\n  build-depends\:         base >\= 4, HUnit >\= 1.2 && < 2, QuickCheck >\= 2.4, test-framework >\= 0.4.1, test-framework-quickcheck2, test-framework-hunit\r\n
+TEMPLATE_GTK=${module}\r\nimport Graphics.UI.Gtk\r\n\r\nmain \:\: IO ()\r\nmain \= do\r\n  initGUI\r\n  window <- windowNew\r\n  button <- buttonNew\r\n  set window [ containerBorderWidth \:\= 10,\r\n               containerChild \:\= button ]\r\n  set button [ buttonLabel \:\= "Hello World" ]\r\n  onClicked button (putStrLn "Hello World")\r\n  onDestroy window mainQuit\r\n  widgetShowAll window\r\n  mainGUI\r\n
+TEMPLATE_IMPORT_HTF=import {-@ HTF_TESTS @-} ${module_name}\r\n
+TEMPLATE_MAIN=${module}\r\n${imports}\r\nmain\:\:IO()\r\nmain \= undefined
+TEMPLATE_MAIN_HTF=${module_htf}\r\n${imports_htf}\r\nmain \:\: IO()\r\nmain \= htfMain htf_importedTests\r\n
+TEMPLATE_MAIN_TASTY=${module_tasty}\r\nmain \:\: IO()\r\nmain \= defaultMain tests\r\n\r\ntests \:\: TestTree\r\ntests \= testGroup "Tests" []\r\n
+TEMPLATE_MODULE=module ${module_name} where\r\n${imports}\r\n
+TEMPLATE_MODULE_HTF={-\# OPTIONS_GHC -F -pgmF htfpp \#-}\r\n${module}\r\nimport Test.Framework\r\n
+TEMPLATE_MODULE_TASTY=${module}\r\nimport Test.Tasty\r\nimport Test.Tasty.QuickCheck as QC\r\nimport Test.Tasty.HUnit\r\n
+cabalImplementations/defaultImpl=cabal-1.22.6.0
+cabalImplementations/numImpls=0
+eclipse.preferences.version=1

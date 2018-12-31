@@ -1,0 +1,38 @@
+pdt: ----------------------------------
+pdt: Fri Dec 30 01:30:36 PST 2016
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: ----------------------------------
+pdt: Fri Dec 30 01:30:36 PST 2016
+pdt: ----------------------------------
+pdt: set debug output to LOGFILE
+pdt: WARNING - 30/12 01:52:26 - Prolog Process Default Process Work: pdt: The following Exception was caught:
+java.lang.IllegalMonitorStateException: Invalid thread access. Cannot call 'waitUntilError' from transition or work queue.
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle.waitUntilError(LifeCycle.java:160)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess.error(AbstractPrologProcess.java:516)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.error(SocketPrologProcess.java:277)
+	at org.cs3.prolog.connector.internal.process.socket.SocketPrologProcess.getShutdownSession(SocketPrologProcess.java:253)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.getShutdownSession(AbstractPrologProcess.java:224)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycleHookWrapper$3.run(LifeCycleHookWrapper.java:117)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)
+pdt: WARNING - 30/12 01:52:26 - Prolog Process Default Process Work: clearing queue
+pdt: WARNING - 30/12 01:52:26 - Prolog Process Default Process Work: There was a problem during server shutdown.
+pdt: WARNING - 30/12 01:52:26 - Prolog Process Default Process Work: pdt: The following Exception was caught:
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:211)
+	at org.cs3.prolog.connector.internal.process.socket.ReusableSocket.<init>(ReusableSocket.java:31)
+	at org.cs3.prolog.connector.internal.process.socket.SocketClient.<init>(SocketClient.java:53)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.getSocketClient(SocketServerStartAndStopStrategy.java:365)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.stopSocketServer(SocketServerStartAndStopStrategy.java:345)
+	at org.cs3.prolog.connector.internal.process.socket.SocketServerStartAndStopStrategy.stopServer(SocketServerStartAndStopStrategy.java:336)
+	at org.cs3.prolog.connector.internal.process.AbstractPrologProcess$MyLifeCycle.stopServer(AbstractPrologProcess.java:234)
+	at org.cs3.prolog.connector.internal.lifecycle.ErrorState$1.run(ErrorState.java:48)
+	at org.cs3.prolog.connector.internal.lifecycle.LifeCycle$DispatcherThread.run(LifeCycle.java:59)

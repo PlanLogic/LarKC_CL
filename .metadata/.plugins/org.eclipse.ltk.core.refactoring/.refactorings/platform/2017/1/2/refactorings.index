@@ -1,0 +1,16 @@
+1484005666181	Rename method 'createStackTraceSTring'
+1484011963132	Encapsulate field 'structureClass'
+1484050182888	Delete element
+1484050684843	Move packages
+1484050734161	Move packages
+1484051058955	Move packages
+1484051163399	Move packages
+1484198269267	Rename method 'cycSeesCL'
+1484198293588	Rename method 'clSeesCyc'
+1484200214723	Rename method 'lisp_from_prolog'
+1484200727344	Extract method 'makeSubLThreadReal'
+1484351050845	Extract method 'symbolToPrologName'
+1484354574045	Extract method 'conditionToSubLException'
+1484371838393	Encapsulate field 'tag'
+1484377341725	Delete elements
+1484377350155	Delete elements

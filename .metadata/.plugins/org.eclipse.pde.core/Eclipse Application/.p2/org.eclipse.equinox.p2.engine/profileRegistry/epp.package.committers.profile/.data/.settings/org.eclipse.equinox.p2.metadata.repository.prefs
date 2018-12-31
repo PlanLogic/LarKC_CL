@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+repositories/http\:__decompiler.chenchao.tk_update/enabled=false
+repositories/http\:__decompiler.chenchao.tk_update/isSystem=false
+repositories/http\:__decompiler.chenchao.tk_update/uri=http\://decompiler.chenchao.tk/update
+repositories/http\:__opensource.cpupk.com_decompiler_update/enabled=true
+repositories/http\:__opensource.cpupk.com_decompiler_update/isSystem=false
+repositories/http\:__opensource.cpupk.com_decompiler_update/name=Eclipse Class Decompiler Project Update
+repositories/http\:__opensource.cpupk.com_decompiler_update/suffix=content.xml
+repositories/http\:__opensource.cpupk.com_decompiler_update/type=org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository
+repositories/http\:__opensource.cpupk.com_decompiler_update/uri=http\://opensource.cpupk.com/decompiler/update/
+repositories/http\:__opensource.cpupk.com_decompiler_update/version=1.0.0

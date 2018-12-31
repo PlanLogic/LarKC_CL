@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+groovy.contentassist.namedarguments=true
+groovy.debug.force_options=false
+groovy.junit.monospace.font=true

@@ -1,0 +1,176 @@
+#0Y_ #0Y |CHARSET|::|UTF-8|
+(|COMMON-LISP|::|SETQ| |COMMON-LISP|::|*PACKAGE*|
+ (|SYSTEM|::|%FIND-PACKAGE| "CL-TEST"))
+(|SYSTEM|::|REMOVE-OLD-DEFINITIONS| '|CL-TEST|::|TEST-WITH-PACKAGE-ITERATOR|)
+(|SYSTEM|::|%PUTD| '|CL-TEST|::|TEST-WITH-PACKAGE-ITERATOR|
+ (|SYSTEM|::|MAKE-MACRO|
+  (|COMMON-LISP|::|FUNCTION| |CL-TEST|::|TEST-WITH-PACKAGE-ITERATOR|
+   (|COMMON-LISP|::|LAMBDA| (|SYSTEM|::|<MACRO-FORM>| |SYSTEM|::|<ENV-ARG>|)
+    (|COMMON-LISP|::|DECLARE| (|COMMON-LISP|::|CONS| |SYSTEM|::|<MACRO-FORM>|))
+    (|COMMON-LISP|::|DECLARE| (|COMMON-LISP|::|IGNORE| |SYSTEM|::|<ENV-ARG>|))
+    "Build an expression that tests the with-package-iterator form."
+    (|COMMON-LISP|::|IF|
+     (|COMMON-LISP|::|NOT|
+      (|SYSTEM|::|LIST-LENGTH-IN-BOUNDS-P| |SYSTEM|::|<MACRO-FORM>| 2. 2.
+       |COMMON-LISP|::|T|))
+     (|SYSTEM|::|MACRO-CALL-ERROR| |SYSTEM|::|<MACRO-FORM>|)
+     (|COMMON-LISP|::|LET*|
+      ((|CL-TEST|::|PACKAGE-LIST-EXPR|
+        (|COMMON-LISP|::|CADR| . #1=(|SYSTEM|::|<MACRO-FORM>|)))
+       (|CL-TEST|::|SYMBOL-TYPES| (|COMMON-LISP|::|CDDR| . #1#)))
+      (|COMMON-LISP|::|BLOCK| |CL-TEST|::|TEST-WITH-PACKAGE-ITERATOR|
+       (|COMMON-LISP|::|LET|
+        ((|CL-TEST|::|NAME| (|COMMON-LISP|::|GENSYM|))
+         (|CL-TEST|::|CHT-VAR| (|COMMON-LISP|::|GENSYM|))
+         (|CL-TEST|::|PKG-LIST-VAR| (|COMMON-LISP|::|GENSYM|)))
+        `(|COMMON-LISP|::|LET|
+          ((,|CL-TEST|::|CHT-VAR| (|COMMON-LISP|::|MAKE-HASH-TABLE|))
+           (,|CL-TEST|::|PKG-LIST-VAR| ,|CL-TEST|::|PACKAGE-LIST-EXPR|)
+           (|CL-TEST|::|FAIL-COUNT| 0.))
+          (|COMMON-LISP|::|WITH-PACKAGE-ITERATOR|
+           (,|CL-TEST|::|NAME| ,|CL-TEST|::|PKG-LIST-VAR|
+            ,@(|COMMON-LISP|::|COPY-LIST| |CL-TEST|::|SYMBOL-TYPES|))
+           (|COMMON-LISP|::|LOOP|
+            (|COMMON-LISP|::|BLOCK| |CL-TEST|::|FAIL|
+             (|COMMON-LISP|::|MULTIPLE-VALUE-BIND|
+              (|CL-TEST|::|MORE| |CL-TEST|::|SYM| |CL-TEST|::|ACCESS|
+               |CL-TEST|::|PKG|)
+              (,|CL-TEST|::|NAME|)
+              (|COMMON-LISP|::|UNLESS| |CL-TEST|::|MORE|
+               (|COMMON-LISP|::|RETURN| |COMMON-LISP|::|NIL|))
+              (|COMMON-LISP|::|SETF|
+               (|COMMON-LISP|::|GETHASH| |CL-TEST|::|SYM|
+                ,|CL-TEST|::|CHT-VAR|)
+               |COMMON-LISP|::|T|)
+              (|COMMON-LISP|::|UNLESS|
+               (|COMMON-LISP|::|MEMBER| |CL-TEST|::|ACCESS|
+                ',(|COMMON-LISP|::|COPY-LIST| |CL-TEST|::|SYMBOL-TYPES|))
+               (|COMMON-LISP|::|UNLESS|
+                (|COMMON-LISP|::|>| |CL-TEST|::|FAIL-COUNT|
+                 |CL-TEST|::|+FAIL-COUNT-LIMIT+|)
+                (|COMMON-LISP|::|FORMAT| |COMMON-LISP|::|T|
+                 "Bad access type: ~S ==> ~A~%" |CL-TEST|::|SYM|
+                 |CL-TEST|::|ACCESS|))
+               (|COMMON-LISP|::|WHEN|
+                (|COMMON-LISP|::|=| |CL-TEST|::|FAIL-COUNT|
+                 |CL-TEST|::|+FAIL-COUNT-LIMIT+|)
+                (|COMMON-LISP|::|FORMAT| |COMMON-LISP|::|T|
+                 "Further messages suppressed~%"))
+               (|COMMON-LISP|::|INCF| |CL-TEST|::|FAIL-COUNT|)
+               (|COMMON-LISP|::|RETURN-FROM| |CL-TEST|::|FAIL|
+                |COMMON-LISP|::|NIL|))
+              (|COMMON-LISP|::|UNLESS|
+               (|COMMON-LISP|::|PACKAGEP| |CL-TEST|::|PKG|)
+               (|COMMON-LISP|::|UNLESS|
+                (|COMMON-LISP|::|>| |CL-TEST|::|FAIL-COUNT|
+                 |CL-TEST|::|+FAIL-COUNT-LIMIT+|)
+                (|COMMON-LISP|::|FORMAT| |COMMON-LISP|::|T|
+                 "Not a package: ~S ==> ~S~%" |CL-TEST|::|SYM|
+                 |CL-TEST|::|PKG|))
+               (|COMMON-LISP|::|WHEN|
+                (|COMMON-LISP|::|=| |CL-TEST|::|FAIL-COUNT|
+                 |CL-TEST|::|+FAIL-COUNT-LIMIT+|)
+                (|COMMON-LISP|::|FORMAT| |COMMON-LISP|::|T|
+                 "Further messages suppressed~%"))
+               (|COMMON-LISP|::|INCF| |CL-TEST|::|FAIL-COUNT|)
+               (|COMMON-LISP|::|RETURN-FROM| |CL-TEST|::|FAIL|
+                |COMMON-LISP|::|NIL|))
+              (|COMMON-LISP|::|MULTIPLE-VALUE-BIND|
+               (|CL-TEST|::|SYM2| |CL-TEST|::|ACCESS2|)
+               (|COMMON-LISP|::|FIND-SYMBOL|
+                (|COMMON-LISP|::|SYMBOL-NAME| |CL-TEST|::|SYM|)
+                |CL-TEST|::|PKG|)
+               (|COMMON-LISP|::|UNLESS|
+                (|COMMON-LISP|::|OR|
+                 (|CL-TEST|::|EQT| |CL-TEST|::|SYM| |CL-TEST|::|SYM2|)
+                 (|COMMON-LISP|::|MEMBER| |CL-TEST|::|SYM2|
+                  (|COMMON-LISP|::|PACKAGE-SHADOWING-SYMBOLS|
+                   |CL-TEST|::|PKG|)))
+                (|COMMON-LISP|::|UNLESS|
+                 (|COMMON-LISP|::|>| |CL-TEST|::|FAIL-COUNT|
+                  |CL-TEST|::|+FAIL-COUNT-LIMIT+|)
+                 (|COMMON-LISP|::|FORMAT| |COMMON-LISP|::|T|
+                  "Not same symbol: ~S ~S~%" |CL-TEST|::|SYM|
+                  |CL-TEST|::|SYM2|))
+                (|COMMON-LISP|::|WHEN|
+                 (|COMMON-LISP|::|=| |CL-TEST|::|FAIL-COUNT|
+                  |CL-TEST|::|+FAIL-COUNT-LIMIT+|)
+                 (|COMMON-LISP|::|FORMAT| |COMMON-LISP|::|T|
+                  "Further messages suppressed~%"))
+                (|COMMON-LISP|::|INCF| |CL-TEST|::|FAIL-COUNT|)
+                (|COMMON-LISP|::|RETURN-FROM| |CL-TEST|::|FAIL|
+                 |COMMON-LISP|::|NIL|))
+               (|COMMON-LISP|::|UNLESS|
+                (|CL-TEST|::|EQT| |CL-TEST|::|ACCESS| |CL-TEST|::|ACCESS2|)
+                (|COMMON-LISP|::|UNLESS|
+                 (|COMMON-LISP|::|>| |CL-TEST|::|FAIL-COUNT|
+                  |CL-TEST|::|+FAIL-COUNT-LIMIT+|)
+                 (|COMMON-LISP|::|FORMAT| |COMMON-LISP|::|T|
+                  "Not same access type: ~S ~S ~S~%" |CL-TEST|::|SYM|
+                  |CL-TEST|::|ACCESS| |CL-TEST|::|ACCESS2|))
+                (|COMMON-LISP|::|WHEN|
+                 (|COMMON-LISP|::|=| |CL-TEST|::|FAIL-COUNT|
+                  |CL-TEST|::|+FAIL-COUNT-LIMIT+|)
+                 (|COMMON-LISP|::|FORMAT| |COMMON-LISP|::|T|
+                  "Further messages suppressed~%"))
+                (|COMMON-LISP|::|INCF| |CL-TEST|::|FAIL-COUNT|)
+                (|COMMON-LISP|::|RETURN-FROM| |CL-TEST|::|FAIL|
+                 |COMMON-LISP|::|NIL|)))))))
+          (|COMMON-LISP|::|LOOP| |CL-TEST|::|FOR| |CL-TEST|::|P|
+           |CL-TEST|::|IN| ,|CL-TEST|::|PKG-LIST-VAR| |COMMON-LISP|::|DO|
+           (|COMMON-LISP|::|BLOCK| |CL-TEST|::|FAIL|
+            (|COMMON-LISP|::|DO-SYMBOLS| (|CL-TEST|::|SYM| |CL-TEST|::|P|)
+             (|COMMON-LISP|::|MULTIPLE-VALUE-BIND|
+              (|CL-TEST|::|SYM2| |CL-TEST|::|ACCESS|)
+              (|COMMON-LISP|::|FIND-SYMBOL|
+               (|COMMON-LISP|::|SYMBOL-NAME| |CL-TEST|::|SYM|) |CL-TEST|::|P|)
+              (|COMMON-LISP|::|UNLESS|
+               (|CL-TEST|::|EQT| |CL-TEST|::|SYM| |CL-TEST|::|SYM2|)
+               (|COMMON-LISP|::|UNLESS|
+                (|COMMON-LISP|::|>| |CL-TEST|::|FAIL-COUNT|
+                 |CL-TEST|::|+FAIL-COUNT-LIMIT+|)
+                (|COMMON-LISP|::|FORMAT| |COMMON-LISP|::|T|
+                 "Not same symbol (2): ~S ~S~%" |CL-TEST|::|SYM|
+                 |CL-TEST|::|SYM2|))
+               (|COMMON-LISP|::|WHEN|
+                (|COMMON-LISP|::|=| |CL-TEST|::|FAIL-COUNT|
+                 |CL-TEST|::|+FAIL-COUNT-LIMIT+|)
+                (|COMMON-LISP|::|FORMAT| |COMMON-LISP|::|T|
+                 "Further messages suppressed~%"))
+               (|COMMON-LISP|::|INCF| |CL-TEST|::|FAIL-COUNT|)
+               (|COMMON-LISP|::|RETURN-FROM| |CL-TEST|::|FAIL|
+                |COMMON-LISP|::|NIL|))
+              (|COMMON-LISP|::|UNLESS|
+               (|COMMON-LISP|::|OR|
+                (|COMMON-LISP|::|NOT|
+                 (|COMMON-LISP|::|MEMBER| |CL-TEST|::|ACCESS|
+                  ',(|COMMON-LISP|::|COPY-LIST| |CL-TEST|::|SYMBOL-TYPES|)))
+                (|COMMON-LISP|::|GETHASH| |CL-TEST|::|SYM|
+                 ,|CL-TEST|::|CHT-VAR|))
+               (|COMMON-LISP|::|FORMAT| |COMMON-LISP|::|T|
+                "Symbol not found: ~S~%" |CL-TEST|::|SYM|)
+               (|COMMON-LISP|::|INCF| |CL-TEST|::|FAIL-COUNT|)
+               (|COMMON-LISP|::|RETURN-FROM| |CL-TEST|::|FAIL|
+                |COMMON-LISP|::|NIL|))))))
+          (|COMMON-LISP|::|OR| (|COMMON-LISP|::|ZEROP| |CL-TEST|::|FAIL-COUNT|)
+           |CL-TEST|::|FAIL-COUNT|))))))))
+  '(|CL-TEST|::|PACKAGE-LIST-EXPR| |COMMON-LISP|::|&REST|
+    |CL-TEST|::|SYMBOL-TYPES|)))
+(|SYSTEM|::|C-DEFUN| '|CL-TEST|::|WITH-PACKAGE-ITERATOR-INTERNAL|
+ (|SYSTEM|::|LAMBDA-LIST-TO-SIGNATURE| '(|CL-TEST|::|PACKAGES|)))
+(|SYSTEM|::|C-DEFUN| '|CL-TEST|::|WITH-PACKAGE-ITERATOR-EXTERNAL|
+ (|SYSTEM|::|LAMBDA-LIST-TO-SIGNATURE| '(|CL-TEST|::|PACKAGES|)))
+(|SYSTEM|::|C-DEFUN| '|CL-TEST|::|WITH-PACKAGE-ITERATOR-INHERITED|
+ (|SYSTEM|::|LAMBDA-LIST-TO-SIGNATURE| '(|CL-TEST|::|PACKAGES|)))
+(|SYSTEM|::|C-DEFUN| '|CL-TEST|::|WITH-PACKAGE-ITERATOR-ALL|
+ (|SYSTEM|::|LAMBDA-LIST-TO-SIGNATURE| '(|CL-TEST|::|PACKAGES|)))
+(|SYSTEM|::|C-DEFUN| '|CL-TEST|::|NUM-EXTERNAL-SYMBOLS-IN-PACKAGE|
+ (|SYSTEM|::|LAMBDA-LIST-TO-SIGNATURE| '(|CL-TEST|::|P|)))
+(|SYSTEM|::|C-DEFUN| '|CL-TEST|::|EXTERNAL-SYMBOLS-IN-PACKAGE|
+ (|SYSTEM|::|LAMBDA-LIST-TO-SIGNATURE| '(|CL-TEST|::|P|)))
+(|SYSTEM|::|C-DEFUN| '|CL-TEST|::|NUM-SYMBOLS-IN-PACKAGE|
+ (|SYSTEM|::|LAMBDA-LIST-TO-SIGNATURE| '(|CL-TEST|::|P|)))
+(|SYSTEM|::|C-DEFUN| '|CL-TEST|::|SORT-SYMBOLS|
+ (|SYSTEM|::|LAMBDA-LIST-TO-SIGNATURE| '(|CL-TEST|::|SL|)))
+(|SYSTEM|::|C-DEFUN| '|CL-TEST|::|SORT-PACKAGE-LIST|
+ (|SYSTEM|::|LAMBDA-LIST-TO-SIGNATURE| '(|CL-TEST|::|X|)))

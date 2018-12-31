@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 3 elements to &apos;platform-deps/cp/ALLJARS&apos;&#x0D;&#x0A;- Original project: &apos;platform-deps&apos;&#x0D;&#x0A;- Destination element: &apos;platform-deps/cp/ALLJARS&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     commons-discovery.jar&#x0D;&#x0A;     commons-lang-2.0.jar&#x0D;&#x0A;     junit.jar.unused&#x0D;&#x0A;- Update references to refactored element" description="Move files" destination="/cp&lt;ALLJARS" element1="cp/commons-discovery.jar" element2="cp/commons-lang-2.0.jar" element3="cp/junit.jar.unused" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1483685221971" units="0" version="1.0"/>
+</session>
